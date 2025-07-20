@@ -206,6 +206,7 @@ Unit system API is composed of logical, platform (frontend and backend) and "ope
 The direction of growth right now is ensuring a robust basic UI/UX and feature parity with Web and a subset of NodeJS (not native to the Web), like TCP and HTTP.
 
 Visit [Evolution](/src/docs/evolution/README.md) to learn more about where Unit development is headed.
+Additional early feature ideas are collected in [Ideations](src/docs/ideations/README.md).
 
 ## Community
 
