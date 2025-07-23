@@ -37,7 +37,8 @@
     "lint": "eslint src --ext .ts",
     "format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.json' --write",
     "prepublishOnly": "run-s lib build",
-    "electron": "electron lib/client/platform/electron/index.js"
+    "electron": "electron lib/client/platform/electron/index.js",
+    "build:compendium": "bash scripts/build-compendium.sh"
   },
   "dependencies": {
     "commander": "12.1.0",
