@@ -207,6 +207,8 @@ The direction of growth right now is ensuring a robust basic UI/UX and feature p
 
 Visit [Evolution](/src/docs/evolution/README.md) to learn more about where Unit development is headed.
 
+Additional early feature ideas are collected in [Ideations](src/docs/ideations/README.md).
+
 ## Community
 
 If you have a question or a suggestion related to Unit, or if you just want to talk about the future of Programming, or if you wish to join the Unit team, feel free to message me at [@io_sammt](https://x.com/io_sammt) or email me at sam@ioun.it.
