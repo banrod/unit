@@ -1,6 +1,10 @@
 import { Dict } from '../types/Dict'
 import { darkenColor, lightenColor } from './color'
 import { Mode } from './mode'
+import {
+  DEFAULT_PERSONALITY_PROFILE,
+  PersonalityProfile,
+} from './personality'
 
 export type Theme = 'light' | 'dark'
 
@@ -121,8 +125,16 @@ export const getThemeLinkModeColor = (theme: string, mode: Mode): string => {
 const DARK_DEFAULT_COLOR = '#f1f1f1'
 const LIGHT_DEFAULT_COLOR = '#1f1f1f'
 
-export const themeColor = (theme: Theme): string => {
-  return theme === 'dark' ? DARK_DEFAULT_COLOR : LIGHT_DEFAULT_COLOR
+export const themeColor = (
+  theme: Theme,
+  personality: PersonalityProfile = DEFAULT_PERSONALITY_PROFILE
+): string => {
+  const base = personality.baseColor ?? (theme === 'dark'
+      ? DARK_DEFAULT_COLOR
+      : LIGHT_DEFAULT_COLOR)
+  const factor = personality.scalar ?? 0
+
+  return applyTheme(theme, base, factor)
 }
 
 export const themeBackgroundColor = (theme: Theme): string => {

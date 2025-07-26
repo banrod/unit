@@ -15,6 +15,7 @@ import { IOElement } from './client/IOElement'
 import { Context } from './client/context'
 import { UnitPointerEvent } from './client/event/pointer'
 import { Theme } from './client/theme'
+import { Personality } from './client/personality'
 import { Point } from './client/util/geometry/types'
 import { AllTypes } from './interface'
 import { WebSocketShape } from './system/platform/api/network/WebSocket'
@@ -33,6 +34,7 @@ export interface System extends S, Registry {
   customEvent: Set<string>
   context: Context[]
   theme: Theme
+  personality: Personality
   color: string
   async: AllTypes<(unit: any) => any>
   cache: {

@@ -20,6 +20,7 @@ import { DownloadDataOpt } from '../../../types/global/DownloadData'
 import { DownloadURLOpt } from '../../../types/global/DownloadURL'
 import { LayoutNode } from '../../LayoutNode'
 import { Theme } from '../../theme'
+import { Personality } from '../../personality'
 
 export function noneApi(): API {
   const api: API = {
@@ -315,6 +316,14 @@ export function noneApi(): API {
     theme: {
       setTheme: function (theme: Theme): Promise<void> {
         throw new MethodNotImplementedError()
+      },
+    },
+    personality: {
+      setPersonality: function (personality: Personality): Promise<void> {
+        throw new MethodNotImplementedError()
+      },
+      getPersonality: function (): Personality {
+        return 'neutral'
       },
     },
     crypto: {

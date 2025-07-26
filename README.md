@@ -145,6 +145,19 @@ console.log(mergeSort.take('a')) // [1, 2]
 npm test
 ```
 
+## Personality Profiles
+
+A system instance can apply different personality profiles that tint the base
+theme color. A profile defines a base color and a scalar value used to adjust
+the tone.
+
+Use the new personality API to switch profiles at runtime:
+
+```ts
+system.setPersonality('playful')
+```
+
+
 ## Links
 
 List of related web applications:

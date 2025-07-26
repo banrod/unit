@@ -37,6 +37,7 @@ import { webSelection } from './api/selection'
 import { webSpeech } from './api/speech'
 import { webText } from './api/text'
 import { webTheme } from './api/theme'
+import { webPersonality } from './api/personality'
 import { webURI } from './api/uri'
 import { webURL } from './api/url'
 import { webWindow } from './api/window'
@@ -85,6 +86,7 @@ export function webBoot(
   const navigator = webNavigator(window, opt)
   const layout = webLayout(window, opt)
   const theme = webTheme(window, root, opt)
+  const personality = webPersonality(window, root, opt)
   const crypto = webCrypto(window, opt)
 
   const api: API = {
@@ -115,6 +117,7 @@ export function webBoot(
     window: _window,
     navigator,
     theme,
+    personality,
   }
 
   const system = boot(null, api, opt)

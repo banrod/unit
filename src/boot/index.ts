@@ -7,6 +7,11 @@ import { Registry } from '../Registry'
 import { Component } from '../client/component'
 import { icons } from '../client/icons'
 import { themeColor } from '../client/theme'
+import {
+  DEFAULT_PERSONALITY,
+  PERSONALITY_PROFILES,
+  Personality,
+} from '../client/personality'
 import { InvalidStateError } from '../exception/InvalidStateError'
 import { start } from '../start'
 import { BootOpt, System } from '../system'
@@ -96,7 +101,8 @@ export function boot(
   const componentRemoteToLocal: Dict<Component[]> = {}
 
   const theme = 'dark'
-  const color = themeColor(theme)
+  const personality: Personality = DEFAULT_PERSONALITY
+  const color = themeColor(theme, PERSONALITY_PROFILES[personality])
 
   const system: System = {
     path,
@@ -105,6 +111,7 @@ export function boot(
     root: (parent && parent.root) || null,
     color,
     theme,
+    personality,
     customEvent,
     async: ASYNC,
     input,
@@ -155,6 +162,14 @@ export function boot(
     shouldFork: shouldFork.bind(registry),
     lockSpec: lockSpec.bind(registry),
     unlockSpec: unlockSpec.bind(registry),
+    setPersonality: (p: Personality): void => {
+      system.personality = p
+      system.color = themeColor(system.theme, PERSONALITY_PROFILES[p])
+      api.personality?.setPersonality(p)
+    },
+    getPersonality: (): Personality => {
+      return system.personality
+    },
     getLocalComponents: function (remoteGlobalId: string): Component[] {
       const components = componentRemoteToLocal[remoteGlobalId]
 

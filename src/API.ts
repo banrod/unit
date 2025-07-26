@@ -2,6 +2,7 @@ import { Waiter } from './Waiter'
 import { IOElement } from './client/IOElement'
 import { LayoutNode } from './client/LayoutNode'
 import { Theme } from './client/theme'
+import { Personality } from './client/personality'
 import { Rect } from './client/util/geometry/types'
 import { System } from './system'
 import { Tag } from './system/platform/Style'
@@ -367,5 +368,9 @@ export type API = {
   }
   theme: {
     setTheme(theme: Theme): Promise<void>
+  }
+  personality: {
+    setPersonality(personality: Personality): Promise<void>
+    getPersonality(): Personality
   }
 }
