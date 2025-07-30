@@ -20,6 +20,8 @@ For an introduction to Unit Programming, visit [Getting Started](src/docs/start/
 
 The broader design philosophy behind Unit is discussed in [Concept](src/docs/concept/README.md).
 
+Unit programs follow a simple cycle of composing and collapsing graphs. Repeating this cycle creates a **flow-based fractal path** where each unit can be expanded or contracted without leaving the environment. Every input and output acts as a "nodal orbital," the stable point where data moves in and out of the graph.
+
 To jump right into the official Unit Programming Environment, visit [unit.land](https://unit.land) (beta).
 
 Check out a collection of public open source units at [unit.tools](https://unit.tools) (beta).

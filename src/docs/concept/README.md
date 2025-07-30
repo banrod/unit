@@ -6,13 +6,29 @@ Unit is based on a fundamental Law of Computing:
 
 "Every software system can be thought of as a composition of input and output (IO) machines through which the data will be transported and transformed and consumed."
 
-This can be seem as the foundation of Flow-based Programming - "data will flow through the computational graph". This principle alone can be used to define any computer program.
+This can be seen as the foundation of Flow-based Programming - "data will flow through the computational graph". This principle alone can be used to define any computer program.
 
 Unit is inspired by Functional and Reactive Programming, both sophisticated and powerful software paradigms that confer very unique properties to the development experience. Aspects of Object Oriented Programming are also present on the Unit language through the presence of "objects" representing the mutable state side of programs, essential to build real life applications. The combination of these concepts can be recursed upon on the development of useful virtual tooling at an incredible speed. Unit is the product of continuously recursing on this very own concept, with a focus on Development Experience.
 
 The Unit paradigm was specially designed to enable easy visual creation of programs called units, which can be interacted with through their inputs and outputs. A new unit can be built by piping and collapsing together smaller units, in a process called Composition. Unit's fundamentals are not new by themselves - in fact, Unit represents a purposeful re-exploration of Computer Science principles in the context of modern Software Development.
 
 The simplicity of programming in Unit comes from the very small number of repeatable steps which are enough to build any sort of application logic. One may start out with an initial set of units, which can be linked together and collapsed into a new graph unit. Symmetrically, a graph can be decomposed and disconnected into its set of smaller units. Moreover any software can be built by repeating this process.
+
+This repeated cycle naturally forms a **flow-based fractal path**. Graphs can be composed, collapsed, or decomposed over and over, each time producing a new unit that mirrors the previous level. Because code in Unit is just a graph, the same visual structure remains intact whether you zoom into a small group of units or out to a large system. Ideas grow along this fractal path without leaving the environment, allowing architecture and implementation to stay in sync.
+
+The pattern can be delineated into an _ideation pathing_ process:
+
+1. Start with simple units that each accomplish a specific task.
+2. Link these units so data flows between them, creating a graph.
+3. Collapse related units into a larger graph unit when their composition forms a clear concept.
+4. Decompose any unit back into its parts to inspect or modify its logic.
+5. Repeat these steps to build larger systems while preserving the same flow-based model.
+
+Each iteration of this cycle can be seen as an **undulation** along the fractal path. Graphs expand as units are composed and contract when decomposed. Following these undulations keeps ideas fluid while maintaining a clear structure.
+
+Every input and output of a unit can be visualized as a **nodal orbital**. These orbitals are the stable anchor points through which data enters and leaves the graph. Recognizing them helps navigate and recombine units along the fractal path.
+
+Taken together, these orbitals and undulating graphs build a metaphorical ontology of execution. The graph is both program and description, a living representation of how ideas connect and evolve within the system.
 
 The concept of a unit is essentially an advancement of the fundamental concept of a function, common to many Textual Programming Languages, such as JavaScript and C++. A function is supposed to be given an ordered list of arguments as input and it can return a single datum as output. A unit, on the other hand, can receive and send data at any time, in any order and through multiple inputs and outputs. We found that redefining the fundamental building block of Programming as a unit can exponentially reduce Software Complexity.
 
