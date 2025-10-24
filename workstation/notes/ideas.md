@@ -6,3 +6,4 @@
 - Re-ran `npm test` after installing deps; still fails to find '../../system/_ids'
 - Consider adding benchmarks for the image filter prototype
 - Outline potential CLI wrappers for quick demos
+- Review the facilitation assessment (`facilitation-assessment.md`) and turn high-impact recommendations into tasks
