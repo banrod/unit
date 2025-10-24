@@ -13,6 +13,8 @@ benchmark schedule in `notes/benchmark-plan.md`, and iterate on new ideas
 inside `notes/` before they mature. When documenting a fresh experiment, use
 `templates/experiment-readme-checklist.md` to verify hand-off readiness.
 
-To keep the broader test suite bootable, placeholder registries now live under
-`../src/system/_ids.ts`, `_classes.ts`, `_components.ts`, and `_specs.ts`.
-These shims unblock imports while we reconstruct the authoritative datasets.
+The canonical system registries now live under `../src/system/_ids.ts`,
+`_classes.ts`, `_components.ts`, and `_specs.ts`. They are regenerated from the
+authoritative datasets and exercised by `npm test`, so workstation experiments
+can rely on the same identifiers, component bindings, and spec catalogue that
+the main application uses.
