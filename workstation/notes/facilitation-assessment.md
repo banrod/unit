@@ -37,4 +37,4 @@ This document reviews how well the current working station and manifesto support
 - Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; awaiting adoption feedback.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`.)*
 - Run `workstation/scripts/verify-registries.ts` after regenerating the canonical registries and consider adding a CI job to block drift.
-- Investigate and resolve the duplicate registry IDs reported by `verify-registries.ts` (`be8e421f-efc8-4b58-a091-28514f395fd8`, `c0b85780-7e99-11ea-9a99-879f3f411ebd`, `946701f6-7dd4-11ea-a1aa-67938c0c6214`).
+- Resolved the duplicate registry IDs previously flagged by `verify-registries.ts` by issuing new identifiers for `ID_ON_LOAD_0`, `ID_SET_IF_0`, and `ID_SET_DEFAULT` (see `src/system/_ids.ts`); continue monitoring in CI.

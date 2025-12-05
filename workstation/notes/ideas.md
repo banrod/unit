@@ -9,4 +9,4 @@
 - Review the facilitation assessment (`facilitation-assessment.md`) and turn high-impact recommendations into tasks *(in progress)*
 - Reference `templates/experiment-readme-checklist.md` when spinning up new experiments
 - Keep `notes/registry-playbook.md` updated with regeneration and validation instructions as upstream datasets evolve
-- Track and remediate the duplicate registry IDs surfaced by `scripts/verify-registries.ts`
+- Keep an eye on `scripts/verify-registries.ts` now that the previously duplicated IDs are resolved, and promote it into CI

@@ -19,5 +19,7 @@ authoritative datasets and exercised by `npm test`, so workstation experiments
 can rely on the same identifiers, component bindings, and spec catalogue that
 the main application uses. Run `TS_NODE_TRANSPILE_ONLY=1 npm exec ts-node -T
 scripts/verify-registries.ts` from this directory to check that the registries
-remain aligned and free of duplicate IDs; see `notes/registry-playbook.md` for
-the full regeneration playbook and handoff checklist.
+remain aligned and free of duplicate IDs; the current snapshot passes with zero
+duplicates after refreshing the overlapping identifiers in `_ids.ts`. See
+`notes/registry-playbook.md` for the full regeneration playbook and handoff
+checklist.
