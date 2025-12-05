@@ -8,4 +8,5 @@
 - Outline potential CLI wrappers for quick demos (revisit after benchmarks)
 - Review the facilitation assessment (`facilitation-assessment.md`) and turn high-impact recommendations into tasks *(in progress)*
 - Reference `templates/experiment-readme-checklist.md` when spinning up new experiments
-- Capture a playbook for regenerating `_ids`, `_classes`, `_components`, and `_specs` so future updates stay consistent
+- Keep `notes/registry-playbook.md` updated with regeneration and validation instructions as upstream datasets evolve
+- Track and remediate the duplicate registry IDs surfaced by `scripts/verify-registries.ts`
