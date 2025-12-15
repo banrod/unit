@@ -1,3 +1,6 @@
 #!/bin/sh
-# Simple helper to execute project tests
+set -e
+
+# Simple helper to execute project tests and registry validation
 npm test
+npm run verify:registries

@@ -15,7 +15,7 @@ This playbook documents how to keep the canonical `_ids`, `_classes`, `_componen
 3. Commit the regenerated files together with any schema or data changes from the upstream dataset.
 4. Execute validation:
    - `npm test` to exercise the registries through the existing test suite.
-   - `TS_NODE_TRANSPILE_ONLY=1 npm exec ts-node -T workstation/scripts/verify-registries.ts` to confirm alignment and uniqueness across registries.
+   - `npm run verify:registries` (or `TS_NODE_TRANSPILE_ONLY=1 npm exec ts-node -T workstation/scripts/verify-registries.ts`) to confirm alignment and uniqueness across registries.
 5. If validation fails, regenerate again or investigate missing upstream data before merging.
 
 ## Drift Mitigation

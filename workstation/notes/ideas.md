@@ -9,4 +9,4 @@
 - Review the facilitation assessment (`facilitation-assessment.md`) and turn high-impact recommendations into tasks *(in progress)*
 - Reference `templates/experiment-readme-checklist.md` when spinning up new experiments
 - Keep `notes/registry-playbook.md` updated with regeneration and validation instructions as upstream datasets evolve
-- Verified registry IDs are now unique after pruning redundant exports in `_ids.ts`; continue running `scripts/verify-registries.ts` after registry updates to prevent regressions
+- Verified registry IDs are now unique after pruning redundant exports in `_ids.ts`; continue running `npm run verify:registries` after registry updates to prevent regressions

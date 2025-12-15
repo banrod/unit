@@ -7,7 +7,7 @@ This document reviews how well the current working station and manifesto support
 | Area | Current Level | Notes |
 | --- | --- | --- |
 | Documentation | **High** | Comprehensive manifesto plus detailed module docs in `workstation/`.
-| Tooling | **Improving** | Helper scripts exist; registry verification is now automated via `workstation/scripts/verify-registries.ts` and the regenerated registries keep `npm test` green.
+| Tooling | **Improving** | Helper scripts exist; registry verification is now automated via `npm run verify:registries` (wrapper over `workstation/scripts/verify-registries.ts`) and the regenerated registries keep `npm test` green.
 | Prototypes | **High** | Image filtering engine demonstrates large-scale data handling.
 | Collaboration Readiness | **Moderate** | No CI integration yet, but guidelines highlight expectations.
 
@@ -36,5 +36,5 @@ This document reviews how well the current working station and manifesto support
 
 - Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; awaiting adoption feedback.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`.)*
-- Run `workstation/scripts/verify-registries.ts` after regenerating the canonical registries and consider adding a CI job to block drift.
+- Run `npm run verify:registries` after regenerating the canonical registries and consider adding a CI job to block drift.
 - Resolved the previously reported duplicate registry IDs by pruning unused duplicate exports in `_ids.ts`; continue to monitor `verify-registries.ts` output for regressions.
