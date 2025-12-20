@@ -2,7 +2,7 @@
 
 - Explore improved build automation
 - ✅ Rebuilt the canonical registries; keep monitoring for regressions
-- Add a lightweight audit (script or CI) to confirm registry files remain aligned with their source data
+- ✅ Add a lightweight audit (script or CI) to confirm registry files remain aligned with their source data; next step is to wire it into CI for continuous coverage
 - Document future enhancements
 - Consider adding benchmarks for the image filter prototype *(see `benchmark-plan.md` for the current outline)*
 - Outline potential CLI wrappers for quick demos (revisit after benchmarks)

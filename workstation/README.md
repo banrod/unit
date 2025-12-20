@@ -9,7 +9,8 @@ This folder provides a lightweight sandbox for development experiments.
 The goal is to collect small experiments and tooling without cluttering the
 main codebase. You can run tests via `./scripts/run-tests.sh`, consult
 `notes/facilitation-assessment.md` for current facilitation levels, review the
-benchmark schedule in `notes/benchmark-plan.md`, and iterate on new ideas
+benchmark schedule in `notes/benchmark-plan.md` alongside archived runs in
+`notes/benchmark-results/`, and iterate on new ideas
 inside `notes/` before they mature. When documenting a fresh experiment, use
 `templates/experiment-readme-checklist.md` to verify hand-off readiness.
 
@@ -20,4 +21,5 @@ can rely on the same identifiers, component bindings, and spec catalogue that
 the main application uses. Run `npm run verify:registries` (or the shorthand
 `./scripts/run-tests.sh`) to check that the registries remain aligned and free
 of duplicate IDs; see `notes/registry-playbook.md` for the full regeneration
-playbook and handoff checklist.
+playbook and handoff checklist. `notes/coherence-review.md` tracks how these
+docs and scripts connect so future updates stay synchronized.

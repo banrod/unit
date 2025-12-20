@@ -16,9 +16,9 @@ Measure query latency and memory usage for the `ImageFilterStore` prototype whil
 - Throughput when applying batched updates (adds/removals).
 
 ## Tooling
-- Use Node.js benchmarks via `performance.now()` instrumentation.
+- Add lightweight `performance.now()` instrumentation around `ImageFilterStore` operations before the first recorded run.
 - Capture metrics with the existing example script and export JSON snapshots per scenario.
-- Track runs in `workstation/notes/benchmark-results/` (create per execution).
+- Track runs in `workstation/notes/benchmark-results/` (create a dated subfolder per execution).
 
 ## Timeline
 - **Day 1:** Implement instrumentation hooks in `ImageFilterStore`.

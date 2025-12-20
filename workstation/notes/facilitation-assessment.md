@@ -17,6 +17,7 @@ This document reviews how well the current working station and manifesto support
 - The personal working station enumerates where experiments live and how to run helper scripts.
 - Image filtering prototype already scales to 100k+ assets, showing real-time segmentation is feasible.
 - Canonical registries for IDs, classes, components, and specs live alongside the application, so local tooling mirrors the production catalogue.
+- A coherence review (`notes/coherence-review.md`) maps which docs and scripts depend on each other, reducing the risk of drift between guidance and implementation.
 
 ## Gaps
 
