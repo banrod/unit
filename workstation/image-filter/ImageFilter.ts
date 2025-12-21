@@ -6,14 +6,21 @@ export interface ImageMeta {
 }
 
 /**
- * ImageFilterStore maintains an index for quick tag-based lookup.
- * The store is designed to scale to 100k+ images using Maps and Sets.
+ * ImageFilterStore maintains fast lookup structures for images.
+ *
+ * Internally, images are stored in a Map keyed by ID while tags and roots
+ * maintain reverse indices using Sets. This allows tag intersections and root
+ * filtering to run in linear time with respect to the number of query terms
+ * rather than the total number of images.
  */
 export class ImageFilterStore {
   private images: Map<string, ImageMeta> = new Map()
   private tagIndex: Map<string, Set<string>> = new Map()
   private rootIndex: Map<string, Set<string>> = new Map()
 
+  /**
+   * Add a new image to the store and index it by all tags and its root.
+   */
   addImage(meta: ImageMeta): void {
     this.images.set(meta.id, meta)
     for (const tag of meta.tags) {
@@ -30,6 +37,9 @@ export class ImageFilterStore {
     }
   }
 
+  /**
+   * Remove an image and clean up its tag/root indices.
+   */
   removeImage(id: string): void {
     const meta = this.images.get(id)
     if (!meta) return
@@ -51,8 +61,11 @@ export class ImageFilterStore {
   }
 
   /**
-   * Filter images by a set of tags and optional root. Order of magnitude is
-   * O(n) in the number of tags provided, independent of total image count.
+   * Retrieve images matching every provided tag and, optionally, a root.
+   *
+   * Complexity is roughly O(t) where `t` is the number of tags, regardless of
+   * the total image count. Filtering by root is performed as a final pass over
+   * the intersection set.
    */
   filter(tags: string[], root?: string): ImageMeta[] {
     let idSets: Set<string>[] = []

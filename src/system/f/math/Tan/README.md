@@ -226,5 +226,11 @@ With this scaffold in place, every developer can:
 - Extend with new formats (e.g. video codecs, AI models)
 - Test and benchmark in CI before merging
 
+## Additional Considerations
+
+- Keep modules pure where possible so bindings stay slim
+- Provide typed APIs for safe interop across languages
+- Document performance numbers to track regressions over time
+
 Ready to spin up the initial repo, or drill into any module with working code?
 
