@@ -7,7 +7,7 @@ This document reviews how well the current working station and manifesto support
 | Area | Current Level | Notes |
 | --- | --- | --- |
 | Documentation | **High** | Comprehensive manifesto plus detailed module docs in `workstation/`.
-| Tooling | **Improved** | Helper scripts exist, registry validation runs, and tests now run against regenerated registries.
+| Tooling | **Improved** | Helper scripts exist, registry validation runs, and tests now run against regenerated registries. Added smoke graph coverage for Tan/Increment and new If/Else wiring.
 | Prototypes | **High** | Image filtering engine demonstrates large-scale data handling.
 | Collaboration Readiness | **Moderate** | No CI integration yet, but guidelines highlight expectations.
 
@@ -32,7 +32,8 @@ This document reviews how well the current working station and manifesto support
 - Collaboration processes (issue templates, PR guidelines specific to experiments) are not yet documented.
 - Registry integrity now has a static validator and smoke graph coverage, but
   validator output still reports missing class mappings that need remediation
-  before strict gating is viable.
+  before strict gating is viable. Recent mapping of `ID_IF_NOT` reduces the
+  unmapped set, and further control/array builders should follow.
 - Benchmarking currently tracks latency only; memory footprint still needs to
   be captured for a fuller facilitation picture.
 
@@ -49,7 +50,7 @@ This document reviews how well the current working station and manifesto support
 
 ## Next Steps
 
-- Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; adoption tracked in `notes/next-steps.md`.)*
+- ✅ Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; adoption tracked in `notes/next-steps.md` and instantiated in `image-filter/EXPERIMENT_CHECKLIST.md`.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`; execution tracked in `notes/next-steps.md`.)*
 - Run the new smoke graph alongside the validator in CI to keep regenerated
   `_specs`, `_classes`, and `_components` healthy. *(See `notes/next-steps.md`.)*

@@ -33,3 +33,8 @@ npm run bench:image-filter
 ```
 
 Each run records build time and per-scenario latency (avg/min/max) so regressions are easy to spot.
+
+## Readiness Checklist
+
+Review `EXPERIMENT_CHECKLIST.md` for the completed hand-off criteria covering metadata, environment setup, validation steps,
+and follow-up actions for this prototype.

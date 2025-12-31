@@ -32,6 +32,7 @@ import Constant from './f/control/Constant'
 import Default from './f/control/Default'
 import Identity from './f/control/Identity'
 import If from './f/control/If'
+import IfNot from './f/control/IfNot'
 import Iterate from './f/control/Iterate'
 import Loop from './f/control/Loop'
 import Memory from './f/control/Memory'
@@ -507,9 +508,10 @@ export default {
 	'bda175a9-a9d2-4282-9b50-1b008ae8a807': NotEqual,
 	'ff976ac8-c54f-4d37-8c7d-089c271cb433': Constant,
 	'329920ae-7e91-11ea-988e-1b12488c8b89': Default,
-	'260d774e-bc89-4027-aa92-cb1985fb312b': Identity,
-	'06bc3983-44b0-43d6-b041-2e9218ea89c8': If,
-	'8a2b756a-25e4-11eb-860d-1f34c850b992': Iterate,
+        '260d774e-bc89-4027-aa92-cb1985fb312b': Identity,
+        '06bc3983-44b0-43d6-b041-2e9218ea89c8': If,
+        '439c6b56-a0b6-4b76-9131-c6dc23375fda': IfNot,
+        '8a2b756a-25e4-11eb-860d-1f34c850b992': Iterate,
 	'3432494e-fab6-4e9d-a846-0c48a7c429cd': Loop,
 	'49e11645-c25d-4bf7-923d-56817f67b686': Memory,
 	'835edaa6-d07c-44e4-916d-eb4b9fd8f7b1': Next,

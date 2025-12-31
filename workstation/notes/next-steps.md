@@ -12,7 +12,8 @@ system registries.
       `npm run report:registries`.)*
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
-      `_classes.ts`.
+      `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue
+      filling remaining control/array builders.)*
 
 ## Testing & Tooling
 - [x] Extend the test suite with a smoke graph that exercises a representative
@@ -22,7 +23,7 @@ system registries.
       and remote runs stay aligned.
 
 ## Documentation & Handoff
-- [ ] Adopt `templates/experiment-readme-checklist.md` for new experiments and
+- [x] Adopt `templates/experiment-readme-checklist.md` for new experiments and
       link filled checklists from each prototype folder.
 - [ ] Update the facilitation assessment once validation + smoke tests land to
       reflect the new tooling maturity.

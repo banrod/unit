@@ -7,6 +7,7 @@ import { system } from '../../util/system'
 
 const INCREMENT_ID = 'fafeadd7-06a8-4bb0-9fa5-2149d1b5208e'
 const TAN_ID = '682c1419-d2cc-489d-b95f-a8b7dacada6c'
+const IF_ELSE_ID = '92760dd2-ecd9-46db-851f-70950a5b6bc3'
 
 const ensureUnitClasses = (spec: GraphSpec) => {
   const units = spec.units || {}
@@ -62,3 +63,28 @@ tan.play()
 tan.push('a', Math.PI / 4)
 assert.ok(Math.abs(tan.take('tan(a)') - Math.tan(Math.PI / 4)) < 1e-12)
 assert.equal(tan.take('tan(a)'), undefined)
+
+const ifElseSpec = _specs[IF_ELSE_ID] as GraphSpec
+
+assert.ok(ifElseSpec, 'if/else spec missing in registry')
+ensureUnitClasses(ifElseSpec)
+
+const IfElse = fromSpec<{ a: any; b: boolean }, { if: any; else: any }>(
+  ifElseSpec,
+  _specs,
+  _classes
+)
+
+const ifElse = new IfElse(system)
+
+ifElse.play()
+
+ifElse.push('a', 'left')
+ifElse.push('b', true)
+assert.equal(ifElse.take('if'), 'left')
+assert.equal(ifElse.take('else'), undefined)
+
+ifElse.push('a', 'right')
+ifElse.push('b', false)
+assert.equal(ifElse.take('else'), 'right')
+assert.equal(ifElse.take('if'), undefined)

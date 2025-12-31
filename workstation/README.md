@@ -11,7 +11,9 @@ main codebase. You can run tests via `./scripts/run-tests.sh`, consult
 `notes/facilitation-assessment.md` for current facilitation levels, review the
 benchmark schedule in `notes/benchmark-plan.md`, and iterate on new ideas
 inside `notes/` before they mature. When documenting a fresh experiment, use
-`templates/experiment-readme-checklist.md` to verify hand-off readiness.
+`templates/experiment-readme-checklist.md` to verify hand-off readiness; the
+image-filter prototype ships with a completed example in
+`image-filter/EXPERIMENT_CHECKLIST.md`.
 Run `npm run validate:registries` to sanity-check ID coverage and spec → class
 bindings after regenerating any registry; append `-- --strict` to fail on
 validation errors when you are ready to gate refreshes.
