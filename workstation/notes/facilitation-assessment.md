@@ -32,8 +32,9 @@ This document reviews how well the current working station and manifesto support
 - Collaboration processes (issue templates, PR guidelines specific to experiments) are not yet documented.
 - Registry integrity now has a static validator and smoke graph coverage, but
   validator output still reports missing class mappings that need remediation
-  before strict gating is viable. Recent mapping of `ID_IF_NOT` reduces the
-  unmapped set, and further control/array builders should follow.
+  before strict gating is viable. Mapping `ID_IF_NOT`, `ID_N_ARRAY_BUILDER`,
+  and `ID_LEVER` has lowered the missing-class count to **235**, and further
+  control/array builders should follow.
 - Benchmarking currently tracks latency only; memory footprint still needs to
   be captured for a fuller facilitation picture.
 
