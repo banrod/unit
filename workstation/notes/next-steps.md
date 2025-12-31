@@ -28,6 +28,6 @@ system registries.
       reflect the new tooling maturity.
 
 ## Image Filter Prototype
-- [ ] Instrument `ImageFilterStore` with timing hooks per benchmark scenario.
-- [ ] Capture benchmark outputs under `notes/benchmark-results/` and summarize
+- [x] Instrument `ImageFilterStore` with timing hooks per benchmark scenario.
+- [x] Capture benchmark outputs under `notes/benchmark-results/` and summarize
       the first run in `notes/facilitation-assessment.md`.

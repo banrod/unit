@@ -18,7 +18,9 @@ validation errors when you are ready to gate refreshes.
 
 Generate a snapshot data quality report with `npm run report:registries` to
 capture counts, coverage ratios, and any orphaned IDs. The most recent output
-lives in `notes/registry-report.md`.
+lives in `notes/registry-report.md`. To profile the image-filter prototype at
+100k scale, run `npm run bench:image-filter` and inspect the emitted Markdown
+under `notes/benchmark-results/`.
 
 To keep the broader test suite bootable, regenerated registries live under
 `../src/system/_ids.ts`, `_classes.ts`, `_components.ts`, and `_specs.ts`.

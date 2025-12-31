@@ -23,6 +23,8 @@ This document reviews how well the current working station and manifesto support
   status reads.
 - Registry smoke graph (`src/test/system/registry/SmokeGraph.ts`) verifies that
   canonical specs and their unit implementations remain runnable end-to-end.
+- Image filter benchmarking now emits Markdown reports with per-scenario latency
+  and result counts, keeping the high-volume prototype measurable over time.
 
 ## Gaps
 
@@ -31,6 +33,8 @@ This document reviews how well the current working station and manifesto support
 - Registry integrity now has a static validator and smoke graph coverage, but
   validator output still reports missing class mappings that need remediation
   before strict gating is viable.
+- Benchmarking currently tracks latency only; memory footprint still needs to
+  be captured for a fuller facilitation picture.
 
 ## Opportunities
 

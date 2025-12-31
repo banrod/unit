@@ -22,7 +22,8 @@ Measure query latency and memory usage for the `ImageFilterStore` prototype whil
 
 ## Timeline
 - **Day 1:** Implement instrumentation hooks in `ImageFilterStore`.
-- **Day 2:** Run scenarios, archive results, and summarize findings.
+- **Day 2:** Run scenarios, archive results, and summarize findings. *(First
+  run captured in `notes/benchmark-results/2025-12-31T05-07-03-793Z.md`.)*
 - **Day 3:** Review metrics, adjust data structures if bottlenecks appear.
 
 ## Follow-up

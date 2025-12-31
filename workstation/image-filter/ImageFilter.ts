@@ -1,8 +1,22 @@
+import { performance } from 'node:perf_hooks'
+
 export interface ImageMeta {
   id: string
   tags: string[]
   root?: string
   path: string
+}
+
+export interface FilterMetrics {
+  durationMs: number
+  tagSetsInspected: number
+  rootFiltered: number
+  resultCount: number
+}
+
+export interface FilterWithMetricsResult {
+  results: ImageMeta[]
+  metrics: FilterMetrics
 }
 
 /**
@@ -93,5 +107,28 @@ export class ImageFilterStore {
       }
     }
     return Array.from(resultIds).map((id) => this.images.get(id)!)
+  }
+
+  /**
+   * Filter images while returning metrics about the query execution.
+   *
+   * The metrics are lightweight and capture wall-clock latency along with how
+   * many tag sets and root IDs were considered. This makes it easier to track
+   * performance regressions when scaling to 100k+ images.
+   */
+  filterWithMetrics(tags: string[], root?: string): FilterWithMetricsResult {
+    const start = performance.now()
+    const results = this.filter(tags, root)
+    const durationMs = performance.now() - start
+
+    return {
+      results,
+      metrics: {
+        durationMs,
+        tagSetsInspected: tags.length,
+        rootFiltered: root ? 1 : 0,
+        resultCount: results.length,
+      },
+    }
   }
 }

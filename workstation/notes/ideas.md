@@ -4,7 +4,9 @@
 - ✅ Resolved missing `_ids` module errors; keep monitoring for regressions
 - Track `npm test` health to ensure the shim stays in sync with functional modules
 - Document future enhancements
-- Consider adding benchmarks for the image filter prototype *(see `benchmark-plan.md` for the current outline)*
+- ✅ Add benchmarks for the image filter prototype *(see `benchmark-results/` for
+  the first run and `benchmark-plan.md` for next scenarios)*
+- Capture memory footprint alongside latency in the next benchmark iteration
 - Outline potential CLI wrappers for quick demos (revisit after benchmarks)
 - Review the facilitation assessment (`facilitation-assessment.md`) and turn high-impact recommendations into tasks *(see `next-steps.md`)*
 - Reference `templates/experiment-readme-checklist.md` when spinning up new experiments
