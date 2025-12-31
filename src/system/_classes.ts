@@ -32,6 +32,7 @@ import Constant from './f/control/Constant'
 import Default from './f/control/Default'
 import Identity from './f/control/Identity'
 import If from './f/control/If'
+import IfElse from './f/control/IfElse'
 import IfNot from './f/control/IfNot'
 import Iterate from './f/control/Iterate'
 import Loop from './f/control/Loop'
@@ -514,6 +515,7 @@ export default {
         '329920ae-7e91-11ea-988e-1b12488c8b89': Default,
         '260d774e-bc89-4027-aa92-cb1985fb312b': Identity,
         '06bc3983-44b0-43d6-b041-2e9218ea89c8': If,
+        '92760dd2-ecd9-46db-851f-70950a5b6bc3': IfElse,
         '439c6b56-a0b6-4b76-9131-c6dc23375fda': IfNot,
         '8a2b756a-25e4-11eb-860d-1f34c850b992': Iterate,
         '3432494e-fab6-4e9d-a846-0c48a7c429cd': Loop,

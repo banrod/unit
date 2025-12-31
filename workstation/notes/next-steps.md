@@ -15,8 +15,9 @@ system registries.
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue
       filling remaining control/array builders.)*
   - Progress: mapped `ID_N_ARRAY_BUILDER` and `ID_LEVER` into `_classes.ts`,
-    trimming the missing class count to **235**. Continue with the
-    control/array builder IDs still flagged by the validator.
+    trimming the missing class count to **234** and adding `ID_IF_ELSE` to
+    cover core branching. Continue with the control/array builder IDs still
+    flagged by the validator.
 
 ## Testing & Tooling
 - [x] Extend the test suite with a smoke graph that exercises a representative
