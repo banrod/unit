@@ -10,7 +10,7 @@ system registries.
 - [x] Produce a short data quality report (counts, orphan detection) after each
       registry refresh. *(See `notes/registry-report.md`; regenerate with
       `npm run report:registries`.)*
-- [ ] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
+- [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`.
 

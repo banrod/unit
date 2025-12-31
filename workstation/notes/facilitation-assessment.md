@@ -27,7 +27,7 @@ This document reviews how well the current working station and manifesto support
 - Tooling coverage is limited to basic shell scripts; there is no linting or formatting pipeline in the workstation scope.
 - Collaboration processes (issue templates, PR guidelines specific to experiments) are not yet documented.
 - Registry integrity now has a static validator but still lacks smoke graph coverage to validate runtime behavior.
-- The validator currently reports duplicate IDs and missing class mappings that need remediation before strict gating is viable.
+- Validator output no longer flags duplicate IDs, but it still reports missing class mappings that need remediation before strict gating is viable.
 
 ## Opportunities
 
