@@ -21,13 +21,16 @@ This document reviews how well the current working station and manifesto support
 - Registry reporting (`npm run report:registries`) now summarizes counts,
   coverage, and unresolved orphaned IDs in `notes/registry-report.md` for quick
   status reads.
+- Registry smoke graph (`src/test/system/registry/SmokeGraph.ts`) verifies that
+  canonical specs and their unit implementations remain runnable end-to-end.
 
 ## Gaps
 
 - Tooling coverage is limited to basic shell scripts; there is no linting or formatting pipeline in the workstation scope.
 - Collaboration processes (issue templates, PR guidelines specific to experiments) are not yet documented.
-- Registry integrity now has a static validator but still lacks smoke graph coverage to validate runtime behavior.
-- Validator output no longer flags duplicate IDs, but it still reports missing class mappings that need remediation before strict gating is viable.
+- Registry integrity now has a static validator and smoke graph coverage, but
+  validator output still reports missing class mappings that need remediation
+  before strict gating is viable.
 
 ## Opportunities
 
@@ -35,11 +38,14 @@ This document reviews how well the current working station and manifesto support
 2. **Expand Tooling** – Add lint commands and optionally TypeScript project references to support the prototype modules.
 3. **Document Contribution Flow** – Outline how new experiments graduate into the main repository and how to request reviews.
 4. **Metrics Tracking** – Instrument the image filter prototype to emit query timings, ensuring facilitation data remains measurable.
-5. **Registry Safeguards** – ✅ Added validation script; next add smoke graphs and CI gates to catch runtime regressions. Data
-   quality reports can now be regenerated for each refresh to identify problem areas quickly.
+5. **Registry Safeguards** – ✅ Added validation script and smoke graph; next
+   add CI gates and resolve missing class mappings to catch runtime regressions.
+   Data quality reports can now be regenerated for each refresh to identify
+   problem areas quickly.
 
 ## Next Steps
 
 - Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; adoption tracked in `notes/next-steps.md`.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`; execution tracked in `notes/next-steps.md`.)*
-- Add smoke tests to keep regenerated `_specs`, `_classes`, and `_components` healthy and wire the validator into CI. *(See `notes/next-steps.md`.)*
+- Run the new smoke graph alongside the validator in CI to keep regenerated
+  `_specs`, `_classes`, and `_components` healthy. *(See `notes/next-steps.md`.)*

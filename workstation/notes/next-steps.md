@@ -15,8 +15,9 @@ system registries.
       `_classes.ts`.
 
 ## Testing & Tooling
-- [ ] Extend the test suite with a smoke graph that exercises a representative
-      subset of specs to ensure runtime coverage.
+- [x] Extend the test suite with a smoke graph that exercises a representative
+      subset of specs to ensure runtime coverage. *(See
+      `src/test/system/registry/SmokeGraph.ts`.)*
 - [ ] Wire the workstation `./scripts/run-tests.sh` into a CI target so local
       and remote runs stay aligned.
 

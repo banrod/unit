@@ -13,5 +13,7 @@
 - ✅ Add a registry data-quality snapshot so refreshes ship with counts and
   orphan detection *(run `npm run report:registries` and update
   `notes/registry-report.md` as needed)*
-- Add smoke graph coverage so future refreshes stay healthy *(tracked in `next-steps.md`)*
+- ✅ Add smoke graph coverage so future refreshes stay healthy *(see
+  `src/test/system/registry/SmokeGraph.ts`; CI wiring remains tracked in
+  `next-steps.md`)*
 - Resolve validator warnings (missing class mappings) before enabling strict gating *(tracked in `next-steps.md`)*
