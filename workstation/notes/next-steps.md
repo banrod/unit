@@ -33,8 +33,9 @@ system registries.
 ## Documentation & Handoff
 - [x] Adopt `templates/experiment-readme-checklist.md` for new experiments and
       link filled checklists from each prototype folder.
-- [ ] Update the facilitation assessment once validation + smoke tests land to
-      reflect the new tooling maturity.
+- [x] Update the facilitation assessment once validation + smoke tests land to
+      reflect the new tooling maturity. *(Assessment now reflects strict registry
+      gating via `npm run test:workstation` and composite-spec warning handling.)*
 
 ## Image Filter Prototype
 - [x] Instrument `ImageFilterStore` with timing hooks per benchmark scenario.
