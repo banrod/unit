@@ -28,7 +28,8 @@ system registries.
       subset of specs to ensure runtime coverage. *(See
       `src/test/system/registry/SmokeGraph.ts`.)*
 - [x] Wire the workstation `./scripts/run-tests.sh` into a CI-friendly target so local
-      and remote runs stay aligned. *(Now exposed via `npm run test:workstation` and runs `npm test`, `validate:registries:strict`, and `report:registries`.)*
+      and remote runs stay aligned. *(Exposed via `npm run test:workstation` and now
+      executed in `.github/workflows/workstation-validation.yml`.)*
 
 ## Documentation & Handoff
 - [x] Adopt `templates/experiment-readme-checklist.md` for new experiments and

@@ -9,7 +9,7 @@ This document reviews how well the current working station and manifesto support
 | Documentation | **High** | Comprehensive manifesto plus detailed module docs in `workstation/`.
 | Tooling | **Improved** | Helper scripts exist, registry validation runs, and tests now run against regenerated registries. Added smoke graph coverage for Tan/Increment and new If/Else wiring.
 | Prototypes | **High** | Image filtering engine demonstrates large-scale data handling.
-| Collaboration Readiness | **Improved** | CI-friendly entrypoint (`npm run test:workstation`) now bundles tests, strict validation, and reporting.|
+| Collaboration Readiness | **Improved** | CI workflow now runs `npm run test:workstation` on push/PR, bundling tests, strict validation, and reporting.|
 
 ## Strengths
 
@@ -51,5 +51,6 @@ This document reviews how well the current working station and manifesto support
 
 - ✅ Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; adoption tracked in `notes/next-steps.md` and instantiated in `image-filter/EXPERIMENT_CHECKLIST.md`.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`; execution tracked in `notes/next-steps.md`.)*
-- Keep `npm run test:workstation` wired into CI so smoke tests, strict
-  registry validation, and reporting run together on every refresh.
+- ✅ Keep `npm run test:workstation` wired into CI so smoke tests, strict
+  registry validation, and reporting run together on every refresh. *(See
+  `.github/workflows/workstation-validation.yml`.)*
