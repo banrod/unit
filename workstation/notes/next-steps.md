@@ -12,6 +12,8 @@ system registries.
       `npm run report:registries`.)*
 - [x] Improve registry diagnostics so missing mappings are reported with
       exported ID names and per-ID reference counts for prioritization.
+- [x] Distinguish composite spec references from true unmapped IDs in
+      registry diagnostics to reduce false-positive class-mapping errors.
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue
