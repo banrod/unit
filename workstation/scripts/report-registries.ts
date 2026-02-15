@@ -16,6 +16,32 @@ type Issue = {
 
 const MAX_LIST_PREVIEW = 20
 
+function buildIdNameIndex(): Record<string, string[]> {
+        const idEntries = Object.entries(ids) as Array<[string, string]>
+        const index: Record<string, string[]> = {}
+
+        for (const [name, value] of idEntries) {
+                if (!index[value]) {
+                        index[value] = []
+                }
+
+                index[value].push(name)
+        }
+
+        return index
+}
+
+function describeIds(values: string[], idNameIndex: Record<string, string[]>): string[] {
+        return values.map((id) => {
+                const names = idNameIndex[id]
+                if (!names || names.length === 0) {
+                        return id
+                }
+
+                return `${names.join('|')} (${id})`
+        })
+}
+
 function formatList(values: string[]): string {
         if (values.length === 0) {
                 return ''
@@ -34,6 +60,7 @@ function writeReport(lines: string[]): void {
 
 function main(): void {
         const generatedAt = new Date().toISOString()
+        const idNameIndex = buildIdNameIndex()
 
         const idValues = Object.values(ids)
         const idSet = new Set(idValues)
@@ -47,6 +74,7 @@ function main(): void {
         const idsMissingClass = Array.from(idSet).filter((id) => !classIds.has(id))
         const idsMissingComponent = Array.from(idSet).filter((id) => !componentIds.has(id))
 
+        const missingUnitClassRefs: string[] = []
         const missingUnitClasses = new Set<string>()
         const specsMissingFromIds = new Set<string>()
         let unitCount = 0
@@ -63,6 +91,7 @@ function main(): void {
                 for (const unit of unitValues) {
                         const unitId: string | undefined = unit?.id
                         if (unitId && !classIds.has(unitId)) {
+                                missingUnitClassRefs.push(unitId)
                                 missingUnitClasses.add(unitId)
                         }
                 }
@@ -74,7 +103,7 @@ function main(): void {
                 issues.push({
                         level: 'error',
                         count: duplicates.length,
-                        message: `Duplicate ID values detected: ${formatList(duplicates)}`
+                        message: `Duplicate ID values detected: ${formatList(describeIds(duplicates, idNameIndex))}`
                 })
         }
 
@@ -82,7 +111,7 @@ function main(): void {
                 issues.push({
                         level: 'warn',
                         count: idsMissingClass.length,
-                        message: `IDs missing class implementations: ${formatList(idsMissingClass)}`
+                        message: `IDs missing class implementations: ${formatList(describeIds(idsMissingClass, idNameIndex))}`
                 })
         }
 
@@ -90,15 +119,26 @@ function main(): void {
                 issues.push({
                         level: 'warn',
                         count: idsMissingComponent.length,
-                        message: `IDs missing component implementations: ${formatList(idsMissingComponent)}`
+                        message: `IDs missing component implementations: ${formatList(
+                                describeIds(idsMissingComponent, idNameIndex)
+                        )}`
                 })
         }
 
         if (missingUnitClasses.size > 0) {
+                const missingUnitClassFrequency = Object.entries(
+                        missingUnitClassRefs.reduce<Record<string, number>>((acc, id) => {
+                                acc[id] = (acc[id] ?? 0) + 1
+                                return acc
+                        }, {})
+                )
+                        .sort(([, aCount], [, bCount]) => bCount - aCount)
+                        .map(([id, count]) => `${describeIds([id], idNameIndex)[0]} ×${count}`)
+
                 issues.push({
                         level: 'error',
                         count: missingUnitClasses.size,
-                        message: `Specs reference unmapped class IDs: ${formatList(Array.from(missingUnitClasses))}`
+                        message: `Specs reference unmapped class IDs: ${formatList(missingUnitClassFrequency)}`
                 })
         }
 
@@ -106,7 +146,9 @@ function main(): void {
                 issues.push({
                         level: 'warn',
                         count: specsMissingFromIds.size,
-                        message: `Spec IDs not exported from _ids.ts: ${formatList(Array.from(specsMissingFromIds))}`
+                        message: `Spec IDs not exported from _ids.ts: ${formatList(
+                                describeIds(Array.from(specsMissingFromIds), idNameIndex)
+                        )}`
                 })
         }
 

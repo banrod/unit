@@ -10,6 +10,8 @@ system registries.
 - [x] Produce a short data quality report (counts, orphan detection) after each
       registry refresh. *(See `notes/registry-report.md`; regenerate with
       `npm run report:registries`.)*
+- [x] Improve registry diagnostics so missing mappings are reported with
+      exported ID names and per-ID reference counts for prioritization.
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue

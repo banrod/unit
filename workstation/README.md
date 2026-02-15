@@ -15,7 +15,8 @@ inside `notes/` before they mature. When documenting a fresh experiment, use
 image-filter prototype ships with a completed example in
 `image-filter/EXPERIMENT_CHECKLIST.md`.
 Run `npm run validate:registries` to sanity-check ID coverage and spec → class
-bindings after regenerating any registry; append `-- --strict` to fail on
+bindings after regenerating any registry; output now includes exported ID names
+and per-ID reference counts to speed triage. Append `-- --strict` to fail on
 validation errors when you are ready to gate refreshes.
 
 Generate a snapshot data quality report with `npm run report:registries` to
