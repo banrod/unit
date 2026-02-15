@@ -1,3 +1,6 @@
 #!/bin/sh
-# Simple helper to execute project tests
+set -eu
+
 npm test
+npm run validate:registries:strict
+npm run report:registries

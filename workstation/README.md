@@ -7,7 +7,7 @@ This folder provides a lightweight sandbox for development experiments.
 - **image-filter/** – prototype for high-volume image filtering
 
 The goal is to collect small experiments and tooling without cluttering the
-main codebase. You can run tests via `./scripts/run-tests.sh`, consult
+main codebase. You can run tests via `./scripts/run-tests.sh` (or `npm run test:workstation`), consult
 `notes/facilitation-assessment.md` for current facilitation levels, review the
 benchmark schedule in `notes/benchmark-plan.md`, and iterate on new ideas
 inside `notes/` before they mature. When documenting a fresh experiment, use
@@ -17,8 +17,8 @@ image-filter prototype ships with a completed example in
 Run `npm run validate:registries` to sanity-check ID coverage and spec → class
 bindings after regenerating any registry; output now includes exported ID names, per-ID reference counts, and a
 separate warning bucket for composite spec references (which do not require
-class mappings). Append `-- --strict` to fail on true validation errors when
-you are ready to gate refreshes.
+class mappings). Use `npm run validate:registries:strict` (or the workstation test script) to
+gate on true validation errors in automated runs.
 
 Generate a snapshot data quality report with `npm run report:registries` to
 capture counts, coverage ratios, and any orphaned IDs. The most recent output

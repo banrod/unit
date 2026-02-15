@@ -9,7 +9,7 @@ This document reviews how well the current working station and manifesto support
 | Documentation | **High** | Comprehensive manifesto plus detailed module docs in `workstation/`.
 | Tooling | **Improved** | Helper scripts exist, registry validation runs, and tests now run against regenerated registries. Added smoke graph coverage for Tan/Increment and new If/Else wiring.
 | Prototypes | **High** | Image filtering engine demonstrates large-scale data handling.
-| Collaboration Readiness | **Moderate** | No CI integration yet, but guidelines highlight expectations.
+| Collaboration Readiness | **Improved** | CI-friendly entrypoint (`npm run test:workstation`) now bundles tests, strict validation, and reporting.|
 
 ## Strengths
 
@@ -31,10 +31,9 @@ This document reviews how well the current working station and manifesto support
 - Tooling coverage is limited to basic shell scripts; there is no linting or formatting pipeline in the workstation scope.
 - Collaboration processes (issue templates, PR guidelines specific to experiments) are not yet documented.
 - Registry integrity now has a static validator and smoke graph coverage, but
-  validator output still reports missing class mappings that need remediation
-  before strict gating is viable. Mapping `ID_IF_NOT`, `ID_N_ARRAY_BUILDER`,
-  and `ID_LEVER` has lowered the missing-class count to **234** (with
-  `ID_IF_ELSE` now covered), and further control/array builders should follow.
+  registry validation now separates composite spec references as warnings, which
+  makes strict gating viable for true unresolved IDs while still surfacing
+  follow-up mapping opportunities.
 - Benchmarking currently tracks latency only; memory footprint still needs to
   be captured for a fuller facilitation picture.
 
@@ -44,14 +43,13 @@ This document reviews how well the current working station and manifesto support
 2. **Expand Tooling** – Add lint commands and optionally TypeScript project references to support the prototype modules.
 3. **Document Contribution Flow** – Outline how new experiments graduate into the main repository and how to request reviews.
 4. **Metrics Tracking** – Instrument the image filter prototype to emit query timings, ensuring facilitation data remains measurable.
-5. **Registry Safeguards** – ✅ Added validation script and smoke graph; next
-   add CI gates and resolve missing class mappings to catch runtime regressions.
-   Data quality reports can now be regenerated for each refresh to identify
-   problem areas quickly.
+5. **Registry Safeguards** – ✅ Added validation script, smoke graph checks, and
+   a strict workstation test entrypoint to gate true registry errors while
+   keeping composite-spec references visible as warnings.
 
 ## Next Steps
 
 - ✅ Draft a short checklist for experiment readmes (prerequisites, data requirements, validation results). *(Draft available in `templates/experiment-readme-checklist.md`; adoption tracked in `notes/next-steps.md` and instantiated in `image-filter/EXPERIMENT_CHECKLIST.md`.)*
 - Schedule a future benchmarking session to quantify the image filter's behavior across different dataset sizes. *(Initial plan captured in `notes/benchmark-plan.md`; execution tracked in `notes/next-steps.md`.)*
-- Run the new smoke graph alongside the validator in CI to keep regenerated
-  `_specs`, `_classes`, and `_components` healthy. *(See `notes/next-steps.md`.)*
+- Keep `npm run test:workstation` wired into CI so smoke tests, strict
+  registry validation, and reporting run together on every refresh.
