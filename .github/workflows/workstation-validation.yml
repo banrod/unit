@@ -2,14 +2,34 @@ name: Workstation Validation
 
 on:
   pull_request:
+    paths:
+      - 'src/**'
+      - 'workstation/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/workstation-validation.yml'
   push:
     branches:
       - main
       - work
+    paths:
+      - 'src/**'
+      - 'workstation/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/workstation-validation.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: workstation-validation-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   workstation-validation:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
