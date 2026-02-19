@@ -23,7 +23,8 @@ spec references (which do not require class mappings). Use
 on true validation errors in automated runs.
 
 GitHub Actions mirrors this locally supported sequence in
-`.github/workflows/workstation-validation.yml`.
+`.github/workflows/workstation-validation.yml` and uploads
+`workstation/notes/registry-report.md` as a CI artifact for auditability.
 
 Generate a snapshot data quality report with `npm run report:registries` to
 capture counts, coverage ratios, and any orphaned IDs. The most recent output
