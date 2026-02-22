@@ -45,3 +45,11 @@ jobs:
 
       - name: Run workstation validation suite
         run: npm run test:workstation
+
+      - name: Upload registry report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-report
+          path: workstation/notes/registry-report.md
+          if-no-files-found: warn

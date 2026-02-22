@@ -9,7 +9,7 @@ This document reviews how well the current working station and manifesto support
 | Documentation | **High** | Comprehensive manifesto plus detailed module docs in `workstation/`.
 | Tooling | **Improved** | Helper scripts exist, registry validation runs, and tests now run against regenerated registries. Added smoke graph coverage for Tan/Increment and new If/Else wiring.
 | Prototypes | **High** | Image filtering engine demonstrates large-scale data handling.
-| Collaboration Readiness | **Improved** | CI workflow now runs `npm run test:workstation` on push/PR with path filters, concurrency cancellation, and strict validation/reporting.|
+| Collaboration Readiness | **Improved** | CI workflow now runs `npm run test:workstation` on push/PR with path filters, concurrency cancellation, strict validation/reporting, and registry-report artifact upload.|
 
 ## Strengths
 
