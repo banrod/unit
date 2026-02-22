@@ -42,7 +42,8 @@
     "prepublishOnly": "run-s lib build",
     "electron": "electron lib/client/platform/electron/index.js",
     "validate:registries:strict": "ts-node -T workstation/scripts/validate-registries.ts --strict",
-    "test:workstation": "sh workstation/scripts/run-tests.sh"
+    "test:workstation": "sh workstation/scripts/run-tests.sh",
+    "check:registry-audit": "ts-node -T workstation/scripts/check-registry-audit.ts"
   },
   "dependencies": {
     "commander": "12.1.0",

@@ -23,7 +23,8 @@ emitted by `npm run report:registries`. Use `npm run validate:registries:strict`
 automated runs.
 
 GitHub Actions mirrors this locally supported sequence in
-`.github/workflows/workstation-validation.yml`.
+`.github/workflows/workstation-validation.yml` (tests, strict validation, audit
+option checks, and report generation).
 
 Generate a snapshot data quality report with `npm run report:registries` to
 capture counts, coverage ratios, and any orphaned IDs. The most recent output
