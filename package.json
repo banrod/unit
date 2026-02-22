@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "bin": "./lib/server/index.js",
   "repository": "git@github.com:samuelmtimbo/unit.git",
-  "author": "Samuel Timbó <samuelmtimbo@gmail.com>",
+  "author": "Samuel Timb\u00f3 <samuelmtimbo@gmail.com>",
   "license": "MIT",
   "engines": {
     "node": ">=20.9"
@@ -28,6 +28,9 @@
     "tsc": "tsc",
     "rm": "shx rm -rf lib",
     "test": "ts-node -T src/test/index.ts",
+    "validate:registries": "ts-node -T workstation/scripts/validate-registries.ts",
+    "report:registries": "ts-node -T workstation/scripts/report-registries.ts",
+    "bench:image-filter": "ts-node -T workstation/scripts/bench-image-filter.ts",
     "uuid": "ts-node -T src/script/uuid.ts",
     "build": "run-s build:system build:client",
     "build:bundle": "ts-node -T src/script/build/client.ts",
@@ -37,7 +40,9 @@
     "lint": "eslint src --ext .ts",
     "format": "prettier --config .prettierrc 'src/**/*.ts' 'src/**/*.json' --write",
     "prepublishOnly": "run-s lib build",
-    "electron": "electron lib/client/platform/electron/index.js"
+    "electron": "electron lib/client/platform/electron/index.js",
+    "validate:registries:strict": "ts-node -T workstation/scripts/validate-registries.ts --strict",
+    "test:workstation": "sh workstation/scripts/run-tests.sh"
   },
   "dependencies": {
     "commander": "12.1.0",
