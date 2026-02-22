@@ -6,6 +6,10 @@ function assert(condition: boolean, message: string): void {
   }
 }
 
+function hasMessage(messages: string[], prefix: string): boolean {
+  return messages.some((message) => message.startsWith(prefix))
+}
+
 function main(): void {
   const full = runRegistryAudit({ includeCoverageWarnings: true })
   const focused = runRegistryAudit({ includeCoverageWarnings: false })
@@ -13,35 +17,44 @@ function main(): void {
   const fullMessages = full.issues.map((issue) => issue.message)
   const focusedMessages = focused.issues.map((issue) => issue.message)
 
-  const hasClassCoverageWarning = fullMessages.some((message) =>
-    message.startsWith('IDs missing class implementations:')
+  const hasClassCoverageWarning = hasMessage(fullMessages, 'IDs missing class implementations:')
+  const hasComponentCoverageWarning = hasMessage(fullMessages, 'IDs missing component implementations:')
+
+  assert(
+    hasClassCoverageWarning === (full.idsMissingClass.length > 0),
+    'Full audit class-coverage warning should match idsMissingClass presence'
   )
-  const hasComponentCoverageWarning = fullMessages.some((message) =>
-    message.startsWith('IDs missing component implementations:')
+  assert(
+    hasComponentCoverageWarning === (full.idsMissingComponent.length > 0),
+    'Full audit component-coverage warning should match idsMissingComponent presence'
   )
 
-  assert(hasClassCoverageWarning, 'Expected full audit to include class coverage warning')
-  assert(hasComponentCoverageWarning, 'Expected full audit to include component coverage warning')
-
-  const focusedHasClassCoverageWarning = focusedMessages.some((message) =>
-    message.startsWith('IDs missing class implementations:')
+  const focusedHasClassCoverageWarning = hasMessage(
+    focusedMessages,
+    'IDs missing class implementations:'
   )
-  const focusedHasComponentCoverageWarning = focusedMessages.some((message) =>
-    message.startsWith('IDs missing component implementations:')
+  const focusedHasComponentCoverageWarning = hasMessage(
+    focusedMessages,
+    'IDs missing component implementations:'
   )
 
   assert(!focusedHasClassCoverageWarning, 'Focused audit should omit class coverage warning')
   assert(!focusedHasComponentCoverageWarning, 'Focused audit should omit component coverage warning')
 
-  const fullHasCompositeWarning = fullMessages.some((message) =>
-    message.startsWith('Spec units reference composite specs')
-  )
-  const focusedHasCompositeWarning = focusedMessages.some((message) =>
-    message.startsWith('Spec units reference composite specs')
+  const fullHasCompositeWarning = hasMessage(fullMessages, 'Spec units reference composite specs')
+  const focusedHasCompositeWarning = hasMessage(
+    focusedMessages,
+    'Spec units reference composite specs'
   )
 
-  assert(fullHasCompositeWarning, 'Expected full audit to include composite spec warning')
-  assert(focusedHasCompositeWarning, 'Expected focused audit to retain composite spec warning')
+  assert(
+    fullHasCompositeWarning === (full.compositeSpecRefUniqueCount > 0),
+    'Full audit composite warning should match compositeSpecRefUniqueCount presence'
+  )
+  assert(
+    focusedHasCompositeWarning === (focused.compositeSpecRefUniqueCount > 0),
+    'Focused audit should preserve composite warning behavior'
+  )
 
   const fullErrorCount = full.issues.filter((issue) => issue.level === 'error').length
   const focusedErrorCount = focused.issues.filter((issue) => issue.level === 'error').length
@@ -51,11 +64,10 @@ function main(): void {
   assert(fullErrorCount === focusedErrorCount, 'Focused audit must not alter error counts')
   assert(fullWarnCount >= focusedWarnCount, 'Focused audit should not increase warning counts')
 
-  const fullHasSpecExportWarning = fullMessages.some((message) =>
-    message.startsWith('Spec IDs not exported from _ids.ts:')
-  )
-  const focusedHasSpecExportWarning = focusedMessages.some((message) =>
-    message.startsWith('Spec IDs not exported from _ids.ts:')
+  const fullHasSpecExportWarning = hasMessage(fullMessages, 'Spec IDs not exported from _ids.ts:')
+  const focusedHasSpecExportWarning = hasMessage(
+    focusedMessages,
+    'Spec IDs not exported from _ids.ts:'
   )
 
   assert(

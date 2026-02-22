@@ -20,7 +20,7 @@ system registries.
       validate script; full coverage warnings in report output).
 - [x] Add a regression check for audit option behavior so focused validation
       cannot accidentally reintroduce coverage-noise warnings. *(Also asserts
-      focused/full severity invariants.)*
+      focused/full severity invariants and presence logic tied to audit counts.)*
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue
