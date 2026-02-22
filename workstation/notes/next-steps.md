@@ -19,7 +19,8 @@ system registries.
 - [x] Tune validator output for triage (actionable mapping diagnostics in
       validate script; full coverage warnings in report output).
 - [x] Add a regression check for audit option behavior so focused validation
-      cannot accidentally reintroduce coverage-noise warnings.
+      cannot accidentally reintroduce coverage-noise warnings. *(Also asserts
+      focused/full severity invariants.)*
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue

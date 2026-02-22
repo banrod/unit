@@ -43,6 +43,26 @@ function main(): void {
   assert(fullHasCompositeWarning, 'Expected full audit to include composite spec warning')
   assert(focusedHasCompositeWarning, 'Expected focused audit to retain composite spec warning')
 
+  const fullErrorCount = full.issues.filter((issue) => issue.level === 'error').length
+  const focusedErrorCount = focused.issues.filter((issue) => issue.level === 'error').length
+  const fullWarnCount = full.issues.filter((issue) => issue.level === 'warn').length
+  const focusedWarnCount = focused.issues.filter((issue) => issue.level === 'warn').length
+
+  assert(fullErrorCount === focusedErrorCount, 'Focused audit must not alter error counts')
+  assert(fullWarnCount >= focusedWarnCount, 'Focused audit should not increase warning counts')
+
+  const fullHasSpecExportWarning = fullMessages.some((message) =>
+    message.startsWith('Spec IDs not exported from _ids.ts:')
+  )
+  const focusedHasSpecExportWarning = focusedMessages.some((message) =>
+    message.startsWith('Spec IDs not exported from _ids.ts:')
+  )
+
+  assert(
+    fullHasSpecExportWarning === focusedHasSpecExportWarning,
+    'Focused audit should preserve spec-export warning behavior'
+  )
+
   console.log('Registry audit option checks passed.')
 }
 
