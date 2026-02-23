@@ -10,6 +10,8 @@ export type I<T> = {
 
 export type O<T> = {
   'a[]': T[]
+  test?: boolean
+  acc?: T[]
 }
 
 export default class NArrayBuilder<T> extends Semifunctional<I<T>, O<T>> {
@@ -20,7 +22,7 @@ export default class NArrayBuilder<T> extends Semifunctional<I<T>, O<T>> {
     super(
       {
         fi: ['n'],
-        fo: ['a[]'],
+        fo: ['a[]', 'test', 'acc'],
         i: ['a'],
         o: [],
       },
