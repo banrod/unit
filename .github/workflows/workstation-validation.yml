@@ -46,6 +46,19 @@ jobs:
       - name: Run workstation validation suite
         run: npm run test:workstation
 
+      - name: Write registry report summary
+        if: always()
+        run: |
+          if [ -f workstation/notes/registry-report.md ]; then
+            {
+              echo "## Registry Data Quality Report"
+              echo
+              sed -n '1,40p' workstation/notes/registry-report.md
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Registry report not generated." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Upload registry report artifact
         if: always()
         uses: actions/upload-artifact@v4
