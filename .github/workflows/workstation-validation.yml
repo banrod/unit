@@ -48,16 +48,7 @@ jobs:
 
       - name: Write registry report summary
         if: always()
-        run: |
-          if [ -f workstation/notes/registry-report.md ]; then
-            {
-              echo "## Registry Data Quality Report"
-              echo
-              sed -n '1,40p' workstation/notes/registry-report.md
-            } >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "Registry report not generated." >> "$GITHUB_STEP_SUMMARY"
-          fi
+        run: npx ts-node -T workstation/scripts/write-registry-step-summary.ts
 
       - name: Upload registry report artifact
         if: always()

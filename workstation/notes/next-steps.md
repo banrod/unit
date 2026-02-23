@@ -23,8 +23,8 @@ system registries.
       focused/full severity invariants and presence logic tied to audit counts.)*
 - [x] Preserve CI registry diagnostics by uploading `registry-report.md` and
       `registry-report.json` as workflow artifacts for each validation run.
-- [x] Publish a short registry report excerpt to the CI step summary for
-      quick scan without downloading artifacts.
+- [x] Publish a concise registry dashboard to the CI step summary (derived
+      from JSON diagnostics) for quick scan without downloading artifacts.
 - [x] Emit a machine-readable JSON registry report for automation alongside
       the Markdown snapshot.
 - [x] Expand JSON report payload with structured gap arrays so automation can
