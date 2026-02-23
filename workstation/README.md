@@ -24,7 +24,7 @@ automated runs.
 
 GitHub Actions mirrors this locally supported sequence in
 `.github/workflows/workstation-validation.yml` (tests, strict validation, audit
-option checks, report generation, report-schema checks, and artifact upload).
+option checks, report generation, report-schema checks (including JSON↔Markdown count parity), and artifact upload).
 
 Generate a snapshot data quality report with `npm run report:registries` to
 capture counts, coverage ratios, and any orphaned IDs. The most recent output

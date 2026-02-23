@@ -30,7 +30,7 @@ system registries.
 - [x] Keep committed JSON diagnostics compact by emitting totals plus preview
       slices for large gap arrays.
 - [x] Add a report-schema guard to ensure JSON diagnostics stay compatible
-      for automation consumers as the report evolves.
+      for automation consumers as the report evolves, including JSON↔Markdown parity checks.
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
 - [ ] Close gaps where specs reference unit IDs that are not yet mapped in
       `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue

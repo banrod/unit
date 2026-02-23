@@ -49,9 +49,44 @@ function assertPreview<T>(value: PreviewList<T>, label: string): void {
   assert(value.preview.length <= value.total, `${label}.preview length must be <= total`)
 }
 
+
+function parseMdCount(lines: string[], label: string): number {
+  const line = lines.find((entry) => entry.startsWith(`- ${label}:`))
+  if (!line) {
+    throw new Error(`Markdown report missing count line for ${label}`)
+  }
+
+  const match = line.match(/: (\d+)/)
+  if (!match) {
+    throw new Error(`Could not parse numeric count for ${label}`)
+  }
+
+  return Number(match[1])
+}
+
+function parseMdCoverage(lines: string[], label: string): { matched: number; total: number } {
+  const line = lines.find((entry) => entry.startsWith(`- ${label}:`))
+  if (!line) {
+    throw new Error(`Markdown report missing coverage line for ${label}`)
+  }
+
+  const match = line.match(/: (\d+)\/(\d+)/)
+  if (!match) {
+    throw new Error(`Could not parse coverage ratio for ${label}`)
+  }
+
+  return {
+    matched: Number(match[1]),
+    total: Number(match[2]),
+  }
+}
+
 function main(): void {
   const reportPath = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
+  const markdownReportPath = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.md')
+
   const report = JSON.parse(fs.readFileSync(reportPath, 'utf8')) as RegistryReport
+  const markdownLines = fs.readFileSync(markdownReportPath, 'utf8').split(/\r?\n/)
 
   assert(report.schemaVersion === 2, 'schemaVersion must be 2')
   assert(typeof report.generatedAt === 'string' && report.generatedAt.length > 0, 'generatedAt must be a non-empty string')
@@ -60,6 +95,44 @@ function main(): void {
   assert(report.coverage.idsWithClasses.matched <= report.coverage.idsWithClasses.total, 'idsWithClasses matched must be <= total')
   assert(report.coverage.idsWithComponents.matched <= report.coverage.idsWithComponents.total, 'idsWithComponents matched must be <= total')
   assert(report.coverage.specsPresentInIds.matched <= report.coverage.specsPresentInIds.total, 'specsPresentInIds matched must be <= total')
+
+  const mdIdExports = parseMdCount(markdownLines, 'ID exports')
+  const mdClassImplementations = parseMdCount(markdownLines, 'Class implementations')
+  const mdComponentImplementations = parseMdCount(markdownLines, 'Component implementations')
+  const mdSpecs = parseMdCount(markdownLines, 'Specs')
+  const mdSpecUnits = parseMdCount(markdownLines, 'Spec units')
+
+  assert(mdIdExports === report.counts.idExports, 'Markdown and JSON idExports counts must match')
+  assert(
+    mdClassImplementations === report.counts.classImplementations,
+    'Markdown and JSON class implementation counts must match'
+  )
+  assert(
+    mdComponentImplementations === report.counts.componentImplementations,
+    'Markdown and JSON component implementation counts must match'
+  )
+  assert(mdSpecs === report.counts.specs, 'Markdown and JSON specs counts must match')
+  assert(mdSpecUnits === report.counts.specUnits, 'Markdown and JSON spec units counts must match')
+
+  const mdIdsWithClasses = parseMdCoverage(markdownLines, 'IDs with classes')
+  const mdIdsWithComponents = parseMdCoverage(markdownLines, 'IDs with components')
+  const mdSpecsPresentInIds = parseMdCoverage(markdownLines, 'Specs present in _ids.ts')
+
+  assert(
+    mdIdsWithClasses.matched === report.coverage.idsWithClasses.matched &&
+      mdIdsWithClasses.total === report.coverage.idsWithClasses.total,
+    'Markdown and JSON idsWithClasses coverage must match'
+  )
+  assert(
+    mdIdsWithComponents.matched === report.coverage.idsWithComponents.matched &&
+      mdIdsWithComponents.total === report.coverage.idsWithComponents.total,
+    'Markdown and JSON idsWithComponents coverage must match'
+  )
+  assert(
+    mdSpecsPresentInIds.matched === report.coverage.specsPresentInIds.matched &&
+      mdSpecsPresentInIds.total === report.coverage.specsPresentInIds.total,
+    'Markdown and JSON specsPresentInIds coverage must match'
+  )
 
   const errorIssues = report.issues.filter((issue) => issue.level === 'error').length
   const warningIssues = report.issues.filter((issue) => issue.level === 'warn').length
