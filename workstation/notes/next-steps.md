@@ -25,6 +25,8 @@ system registries.
       `registry-report.json` as workflow artifacts for each validation run.
 - [x] Publish a concise registry dashboard to the CI step summary (derived
       from JSON diagnostics) for quick scan without downloading artifacts.
+- [x] Add a regression check for CI step-summary generation so JSON-driven
+      summary output remains in sync with report counts/coverage.
 - [x] Emit a machine-readable JSON registry report for automation alongside
       the Markdown snapshot.
 - [x] Expand JSON report payload with structured gap arrays so automation can

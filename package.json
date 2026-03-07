@@ -44,7 +44,9 @@
     "validate:registries:strict": "ts-node -T workstation/scripts/validate-registries.ts --strict",
     "test:workstation": "sh workstation/scripts/run-tests.sh",
     "check:registry-audit": "ts-node -T workstation/scripts/check-registry-audit.ts",
-    "check:registry-report": "ts-node -T workstation/scripts/check-registry-report.ts"
+    "check:registry-report": "ts-node -T workstation/scripts/check-registry-report.ts",
+    "write:registry-step-summary": "ts-node -T workstation/scripts/write-registry-step-summary.ts",
+    "check:registry-step-summary": "ts-node -T workstation/scripts/check-registry-step-summary.ts"
   },
   "dependencies": {
     "commander": "12.1.0",

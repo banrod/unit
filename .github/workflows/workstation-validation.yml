@@ -48,7 +48,7 @@ jobs:
 
       - name: Write registry report summary
         if: always()
-        run: npx ts-node -T workstation/scripts/write-registry-step-summary.ts
+        run: npm run write:registry-step-summary
 
       - name: Upload registry report artifact
         if: always()
