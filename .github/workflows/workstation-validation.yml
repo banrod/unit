@@ -48,7 +48,6 @@ jobs:
 
       - name: Write registry report summary
         if: always()
-        continue-on-error: true
         run: npm run write:registry-step-summary
 
       - name: Upload registry report artifact

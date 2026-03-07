@@ -107,6 +107,20 @@ function main(): void {
       invalidSummary.includes('Registry report could not be read'),
       'invalid report parse fallback message not written to summary'
     )
+
+    const schemaMismatchSummaryPath = path.join(tempDir, 'summary-schema-mismatch.md')
+    const schemaMismatchReportPath = path.join(tempDir, 'schema-mismatch-registry-report.json')
+    fs.writeFileSync(
+      schemaMismatchReportPath,
+      JSON.stringify({ generatedAt: '2026-01-01T00:00:00.000Z', issueSummary: { errors: 0, warnings: 0 } })
+    )
+    runWriter(schemaMismatchSummaryPath, schemaMismatchReportPath)
+
+    const schemaMismatchSummary = fs.readFileSync(schemaMismatchSummaryPath, 'utf8')
+    assert(
+      schemaMismatchSummary.includes('Registry report is invalid (schema mismatch).'),
+      'schema mismatch fallback message not written to summary'
+    )
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true })
   }
