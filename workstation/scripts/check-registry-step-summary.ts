@@ -96,6 +96,17 @@ function main(): void {
       missingSummary.includes('Registry report not generated.'),
       'missing report fallback message not written to summary'
     )
+
+    const invalidReportSummaryPath = path.join(tempDir, 'summary-invalid-report.md')
+    const invalidReportPath = path.join(tempDir, 'invalid-registry-report.json')
+    fs.writeFileSync(invalidReportPath, '{not valid json')
+    runWriter(invalidReportSummaryPath, invalidReportPath)
+
+    const invalidSummary = fs.readFileSync(invalidReportSummaryPath, 'utf8')
+    assert(
+      invalidSummary.includes('Registry report could not be read'),
+      'invalid report parse fallback message not written to summary'
+    )
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true })
   }
