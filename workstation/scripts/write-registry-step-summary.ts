@@ -38,6 +38,7 @@ type RegistryReport = {
   }
 }
 
+const TITLE = '## Registry Data Quality Report'
 const DEFAULT_REPORT_PATH = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
 
 function formatCoverage(label: string, metric: CoverageMetric): string {
@@ -49,32 +50,55 @@ function describeCompositeRef(ref: CompositeRef): string {
   return `- ${namePrefix}(${ref.id}) ×${ref.count}`
 }
 
-function isCoverageMetric(value: any): value is CoverageMetric {
+function isObject(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null
+}
+
+function isCoverageMetric(value: unknown): value is CoverageMetric {
+  if (!isObject(value)) {
+    return false
+  }
+
+  const { matched, total } = value
   return (
-    value &&
-    Number.isInteger(value.matched) &&
-    value.matched >= 0 &&
-    Number.isInteger(value.total) &&
-    value.total >= 0 &&
-    value.matched <= value.total
+    Number.isInteger(matched) &&
+    (matched as number) >= 0 &&
+    Number.isInteger(total) &&
+    (total as number) >= 0 &&
+    (matched as number) <= (total as number)
   )
 }
 
-function isRegistryReport(value: any): value is RegistryReport {
+function isRegistryReport(value: unknown): value is RegistryReport {
+  if (!isObject(value)) {
+    return false
+  }
+
+  if (typeof value.generatedAt !== 'string') {
+    return false
+  }
+
+  if (!isObject(value.issueSummary) || !Number.isInteger(value.issueSummary.errors) || !Number.isInteger(value.issueSummary.warnings)) {
+    return false
+  }
+
+  if (
+    !isObject(value.counts) ||
+    !Number.isInteger(value.counts.idExports) ||
+    !Number.isInteger(value.counts.uniqueIdExports) ||
+    !Number.isInteger(value.counts.classImplementations) ||
+    !Number.isInteger(value.counts.componentImplementations) ||
+    !Number.isInteger(value.counts.specs) ||
+    !Number.isInteger(value.counts.specUnits)
+  ) {
+    return false
+  }
+
+  if (!isObject(value.coverage)) {
+    return false
+  }
+
   return (
-    value &&
-    typeof value.generatedAt === 'string' &&
-    value.issueSummary &&
-    Number.isInteger(value.issueSummary.errors) &&
-    Number.isInteger(value.issueSummary.warnings) &&
-    value.counts &&
-    Number.isInteger(value.counts.idExports) &&
-    Number.isInteger(value.counts.uniqueIdExports) &&
-    Number.isInteger(value.counts.classImplementations) &&
-    Number.isInteger(value.counts.componentImplementations) &&
-    Number.isInteger(value.counts.specs) &&
-    Number.isInteger(value.counts.specUnits) &&
-    value.coverage &&
     isCoverageMetric(value.coverage.idsWithClasses) &&
     isCoverageMetric(value.coverage.idsWithComponents) &&
     isCoverageMetric(value.coverage.specsPresentInIds)
@@ -83,7 +107,7 @@ function isRegistryReport(value: any): value is RegistryReport {
 
 function buildSummary(report: RegistryReport): string {
   const lines = [
-    '## Registry Data Quality Report',
+    TITLE,
     '',
     `Generated: ${report.generatedAt}`,
     '',
@@ -117,8 +141,8 @@ function buildSummary(report: RegistryReport): string {
   return `${lines.join('\n')}\n`
 }
 
-function appendSummary(summaryPath: string, content: string): void {
-  fs.appendFileSync(summaryPath, content)
+function appendSummary(summaryPath: string, lines: string[]): void {
+  fs.appendFileSync(summaryPath, `${lines.join('\n')}\n`)
 }
 
 function main(): void {
@@ -130,22 +154,23 @@ function main(): void {
   }
 
   if (!fs.existsSync(reportPath)) {
-    appendSummary(summaryPath, '## Registry Data Quality Report\n\nRegistry report not generated.\n')
+    appendSummary(summaryPath, [TITLE, '', 'Registry report not generated.'])
     return
   }
 
   try {
-    const parsedReport = JSON.parse(fs.readFileSync(reportPath, 'utf8'))
+    const parsedReport = JSON.parse(fs.readFileSync(reportPath, 'utf8')) as unknown
 
     if (!isRegistryReport(parsedReport)) {
-      appendSummary(summaryPath, '## Registry Data Quality Report\n\nRegistry report is invalid (schema mismatch).\n')
+      appendSummary(summaryPath, [TITLE, '', `Registry report is invalid (schema mismatch): ${reportPath}`])
       return
     }
 
-    appendSummary(summaryPath, buildSummary(parsedReport))
+    fs.appendFileSync(summaryPath, buildSummary(parsedReport))
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error)
-    appendSummary(summaryPath, `## Registry Data Quality Report\n\nRegistry report could not be read (${message}).\n`)
+    console.warn(`Registry report read failed for ${reportPath}: ${message}`)
+    appendSummary(summaryPath, [TITLE, '', `Registry report could not be read: ${reportPath}`])
   }
 }
 

@@ -104,7 +104,7 @@ function main(): void {
 
     const invalidSummary = fs.readFileSync(invalidReportSummaryPath, 'utf8')
     assert(
-      invalidSummary.includes('Registry report could not be read'),
+      invalidSummary.includes(`Registry report could not be read: ${invalidReportPath}`),
       'invalid report parse fallback message not written to summary'
     )
 
@@ -118,7 +118,7 @@ function main(): void {
 
     const schemaMismatchSummary = fs.readFileSync(schemaMismatchSummaryPath, 'utf8')
     assert(
-      schemaMismatchSummary.includes('Registry report is invalid (schema mismatch).'),
+      schemaMismatchSummary.includes(`Registry report is invalid (schema mismatch): ${schemaMismatchReportPath}`),
       'schema mismatch fallback message not written to summary'
     )
   } finally {
