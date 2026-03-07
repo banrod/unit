@@ -38,6 +38,8 @@ type RegistryReport = {
   }
 }
 
+const DEFAULT_REPORT_PATH = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
+
 function formatCoverage(label: string, metric: CoverageMetric): string {
   return `| ${label} | ${metric.matched}/${metric.total} |`
 }
@@ -84,7 +86,7 @@ function buildSummary(report: RegistryReport): string {
 }
 
 function main(): void {
-  const reportPath = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
+  const reportPath = process.env.REGISTRY_REPORT_JSON_PATH ?? DEFAULT_REPORT_PATH
   const summaryPath = process.env.GITHUB_STEP_SUMMARY
 
   if (!summaryPath) {
