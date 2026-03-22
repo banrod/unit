@@ -10,7 +10,7 @@ import {
   readSummaryContent,
   unreadableReportSummary,
   writeStepSummary,
-} from './write-registry-step-summary'
+} from './registry-step-summary'
 
 type RegistryReport = {
   issueSummary: {
