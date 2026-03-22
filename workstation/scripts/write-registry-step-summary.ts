@@ -1,18 +1,18 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-type CoverageMetric = {
+export type CoverageMetric = {
   matched: number
   total: number
 }
 
-type CompositeRef = {
+export type CompositeRef = {
   id: string
   names?: string[]
   count: number
 }
 
-type RegistryReport = {
+export type RegistryReport = {
   generatedAt: string
   issueSummary: {
     errors: number
@@ -38,8 +38,8 @@ type RegistryReport = {
   }
 }
 
-const TITLE = '## Registry Data Quality Report'
-const DEFAULT_REPORT_PATH = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
+export const TITLE = '## Registry Data Quality Report'
+export const DEFAULT_REPORT_PATH = path.join(process.cwd(), 'workstation', 'notes', 'registry-report.json')
 
 function formatCoverage(label: string, metric: CoverageMetric): string {
   return `| ${label} | ${metric.matched}/${metric.total} |`
@@ -54,12 +54,13 @@ function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null
 }
 
-function isCoverageMetric(value: unknown): value is CoverageMetric {
+export function isCoverageMetric(value: unknown): value is CoverageMetric {
   if (!isObject(value)) {
     return false
   }
 
   const { matched, total } = value
+
   return (
     Number.isInteger(matched) &&
     (matched as number) >= 0 &&
@@ -69,7 +70,7 @@ function isCoverageMetric(value: unknown): value is CoverageMetric {
   )
 }
 
-function isRegistryReport(value: unknown): value is RegistryReport {
+export function isRegistryReport(value: unknown): value is RegistryReport {
   if (!isObject(value)) {
     return false
   }
@@ -78,7 +79,11 @@ function isRegistryReport(value: unknown): value is RegistryReport {
     return false
   }
 
-  if (!isObject(value.issueSummary) || !Number.isInteger(value.issueSummary.errors) || !Number.isInteger(value.issueSummary.warnings)) {
+  if (
+    !isObject(value.issueSummary) ||
+    !Number.isInteger(value.issueSummary.errors) ||
+    !Number.isInteger(value.issueSummary.warnings)
+  ) {
     return false
   }
 
@@ -105,7 +110,7 @@ function isRegistryReport(value: unknown): value is RegistryReport {
   )
 }
 
-function buildSummary(report: RegistryReport): string {
+export function buildSummary(report: RegistryReport): string {
   const lines = [
     TITLE,
     '',
@@ -141,37 +146,53 @@ function buildSummary(report: RegistryReport): string {
   return `${lines.join('\n')}\n`
 }
 
-function appendSummary(summaryPath: string, lines: string[]): void {
-  fs.appendFileSync(summaryPath, `${lines.join('\n')}\n`)
+export function missingReportSummary(): string {
+  return `${TITLE}\n\nRegistry report not generated.\n`
 }
 
-function main(): void {
-  const reportPath = process.env.REGISTRY_REPORT_JSON_PATH ?? DEFAULT_REPORT_PATH
-  const summaryPath = process.env.GITHUB_STEP_SUMMARY
+export function invalidSchemaSummary(reportPath: string): string {
+  return `${TITLE}\n\nRegistry report is invalid (schema mismatch): ${reportPath}\n`
+}
 
-  if (!summaryPath) {
-    throw new Error('GITHUB_STEP_SUMMARY is not set.')
-  }
+export function unreadableReportSummary(reportPath: string): string {
+  return `${TITLE}\n\nRegistry report could not be read: ${reportPath}\n`
+}
 
+export function readSummaryContent(reportPath: string): string {
   if (!fs.existsSync(reportPath)) {
-    appendSummary(summaryPath, [TITLE, '', 'Registry report not generated.'])
-    return
+    return missingReportSummary()
   }
 
   try {
     const parsedReport = JSON.parse(fs.readFileSync(reportPath, 'utf8')) as unknown
 
     if (!isRegistryReport(parsedReport)) {
-      appendSummary(summaryPath, [TITLE, '', `Registry report is invalid (schema mismatch): ${reportPath}`])
-      return
+      return invalidSchemaSummary(reportPath)
     }
 
-    fs.appendFileSync(summaryPath, buildSummary(parsedReport))
+    return buildSummary(parsedReport)
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error)
     console.warn(`Registry report read failed for ${reportPath}: ${message}`)
-    appendSummary(summaryPath, [TITLE, '', `Registry report could not be read: ${reportPath}`])
+    return unreadableReportSummary(reportPath)
   }
 }
 
-main()
+export function writeStepSummary(summaryPath: string, reportPath: string): void {
+  fs.appendFileSync(summaryPath, readSummaryContent(reportPath))
+}
+
+export function main(): void {
+  const summaryPath = process.env.GITHUB_STEP_SUMMARY
+
+  if (!summaryPath) {
+    throw new Error('GITHUB_STEP_SUMMARY is not set.')
+  }
+
+  const reportPath = process.env.REGISTRY_REPORT_JSON_PATH ?? DEFAULT_REPORT_PATH
+  writeStepSummary(summaryPath, reportPath)
+}
+
+if (require.main === module) {
+  main()
+}
