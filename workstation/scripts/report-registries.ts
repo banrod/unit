@@ -71,6 +71,7 @@ function writeJsonReport(result: ReturnType<typeof runRegistryAudit>): void {
           count,
         }))
       ),
+      invalidPinRefs: previewList(result.invalidPinRefs),
     },
     issues: result.issues,
   }
@@ -109,6 +110,16 @@ function main(): void {
       const bullet = issue.level === 'error' ? 'ERROR' : 'WARN'
       const countLabel = issue.count !== undefined ? ` (count: ${issue.count})` : ''
       lines.push(`- ${bullet}${countLabel}: ${issue.message}`)
+    }
+  }
+
+  lines.push('', '## Invalid Pin References')
+
+  if (result.invalidPinRefs.length === 0) {
+    lines.push('- None detected.')
+  } else {
+    for (const reference of result.invalidPinRefs.slice(0, PREVIEW_LIMIT)) {
+      lines.push(`- ${reference.message}`)
     }
   }
 
