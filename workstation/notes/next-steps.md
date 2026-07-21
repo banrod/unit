@@ -1,74 +1,71 @@
-# Next Steps (Post-Registry Regeneration)
+# Unit Kernel — Post-Consolidation Roadmap
 
-This checklist captures the immediate follow-ups after restoring the canonical
-system registries.
+The registry recovery and canonical-main consolidation are complete. This checklist now
+tracks hardening work for Unit as a portable graph execution kernel.
 
-## Data Quality & Coverage
-- [x] Add automated validation to confirm `_specs`, `_classes`, and `_components`
-      stay in sync (e.g., ID uniqueness, missing implementation checks). *(Run
-      `npm run validate:registries`.)*
-- [x] Produce a short data quality report (counts, orphan detection) after each
-      registry refresh. *(See `notes/registry-report.md`; regenerate with
-      `npm run report:registries`.)*
-- [x] Improve registry diagnostics so missing mappings are reported with
-      exported ID names and per-ID reference counts for prioritization.
-- [x] Distinguish composite spec references from true unmapped IDs in
-      registry diagnostics to reduce false-positive class-mapping errors.
-- [x] Consolidate shared registry-audit logic so validation and reporting stay
-      consistent and avoid drift between scripts.
-- [x] Tune validator output for triage (actionable mapping diagnostics in
-      validate script; full coverage warnings in report output).
-- [x] Add a regression check for audit option behavior so focused validation
-      cannot accidentally reintroduce coverage-noise warnings. *(Also asserts
-      focused/full severity invariants and presence logic tied to audit counts.)*
-- [x] Preserve CI registry diagnostics by uploading `registry-report.md` and
-      `registry-report.json` as workflow artifacts for each validation run.
-- [x] Publish a concise registry dashboard to the CI step summary (derived
-      from JSON diagnostics) for quick scan without downloading artifacts.
-- [x] Add a regression check for CI step-summary generation so JSON-driven
-      summary output remains in sync with report counts/coverage.
-- [x] Emit a machine-readable JSON registry report for automation alongside
-      the Markdown snapshot.
-- [x] Expand JSON report payload with structured gap arrays so automation can
-      consume IDs and counts without parsing free-form messages.
-- [x] Keep committed JSON diagnostics compact by emitting totals plus preview
-      slices for large gap arrays.
-- [x] Add a report-schema guard to ensure JSON diagnostics stay compatible
-      for automation consumers as the report evolves, including JSON↔Markdown parity checks
-      for counts, coverage, and top composite reference summaries.
-- [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
-- [ ] Continue triaging registry coverage without conflating composite graphs
-      with missing primitive implementations.
-  - Recorded direct class coverage gap: **495 IDs**.
-  - Recorded direct component coverage gap: **861 IDs**.
-  - Recorded composite references: **234 unique referenced specs**.
-  - Recorded fatal unresolved references: **0**.
-  - Recorded duplicate IDs: **0**.
-  - Many class-coverage entries may be graph specs rather than missing
-    primitives; classify each entry before promoting it to runtime-defect status.
+## Completed baseline
 
-## Testing & Tooling
-- [x] Extend the test suite with a smoke graph that exercises a representative
-      subset of specs to ensure runtime coverage. *(See
-      `src/test/system/registry/SmokeGraph.ts`.)*
-- [x] Wire the workstation `./scripts/run-tests.sh` into a CI-friendly target so local
-      and remote runs stay aligned. *(Exposed via `npm run test:workstation` and now
-      executed in `.github/workflows/workstation-validation.yml`.)*
-- [ ] Require both the project test workflow and workstation validation workflow
-      to complete successfully before promotion to `main`.
+- [x] Restore canonical generated `_ids`, `_classes`, `_components`, and `_specs` registries.
+- [x] Enforce generated-registry parity in CI.
+- [x] Reject duplicate source spec IDs during generation.
+- [x] Validate unit pins, merge memberships, and exposed plugs structurally.
+- [x] Resolve all fatal unresolved references, duplicate IDs, and invalid pin references.
+- [x] Require successful project and workstation workflows before the consolidation merge.
+- [x] Publish registry diagnostics as CI artifacts instead of canonical source files.
+- [x] Establish canonical repository boundaries for kernel and downstream product work.
+- [x] Publish the initial adapter-neutral `GraphRuntime` contract.
+- [x] Add canonical graph serialization and SHA-256 identity.
+- [x] Add generic capability manifests, grant evaluation, and required-capability enforcement.
+- [x] Add a reusable headless runtime conformance harness.
+- [x] Generate per-ID registry coverage classifications.
+- [x] Move the image-filter prototype to `experiments/image-filter/`.
 
-## Documentation & Handoff
-- [x] Adopt `templates/experiment-readme-checklist.md` for new experiments and
-      link filled checklists from each prototype folder.
-- [x] Update the facilitation assessment once validation + smoke tests land to
-      reflect the new tooling maturity. *(Assessment now reflects strict registry
-      gating via `npm run test:workstation` and composite-spec warning handling.)*
+## Current registry posture
 
-## Image Filter Prototype
-- [x] Instrument `ImageFilterStore` with timing hooks per benchmark scenario.
-- [x] Capture benchmark outputs under `notes/benchmark-results/` and summarize
-      the first run in `notes/facilitation-assessment.md`.
-- [x] Make image replacement an index-safe upsert by removing stale tag/root
-      entries before re-indexing an existing ID.
-- [ ] Keep the prototype outside the production kernel until its replacement,
-      removal, and benchmark tests are part of the required validation path.
+The last promoted baseline recorded:
+
+- 974 unique exported IDs and specs;
+- 479 direct class mappings;
+- 113 component mappings;
+- 234 composite-spec references;
+- 0 fatal unresolved references;
+- 0 invalid pin references;
+- 0 duplicate IDs.
+
+Raw class and component gaps are not automatically defects. Use
+`npm run classify:registries` to classify each ID as a direct primitive, optimized
+primitive, composite graph, component-only entry, or unimplemented entry before opening
+a runtime defect.
+
+## Next kernel work
+
+- [ ] Enable repository branch protection requiring `test` and `Workstation Validation`.
+- [ ] Tag the consolidated baseline as `unit-kernel-v0.1.0` after release ownership is confirmed.
+- [ ] Add concrete Node and Web adapters implementing `GraphRuntime` directly.
+- [ ] Execute the same conformance fixtures against Node, Web, and Worker adapters.
+- [ ] Define canonical snapshot serialization and compatibility versioning.
+- [ ] Add deterministic replay fixtures for time, randomness, and external I/O injection.
+- [ ] Add graph boot, propagation, snapshot, and memory performance baselines.
+- [ ] Classify and review the `unimplemented` coverage category produced by CI.
+- [ ] Publish a stable package export surface for runtime contracts and graph identity.
+
+## Downstream integration
+
+The FlowGPT OS/IAM adapter belongs outside this repository, preferably under
+`/new/packages/unit-runtime-adapter/`.
+
+That adapter should:
+
+- compile typed product steps into Unit graph bundles;
+- obtain capability grants from product policy;
+- invoke Unit through the generic runtime contract;
+- convert low-level Unit events into product receipts and telemetry;
+- store canonical graph hashes and snapshots with execution provenance.
+
+Unit must not import IAM identities, workers, prompts, queues, memory, or policy schemas.
+
+## Experiment posture
+
+`experiments/image-filter/` remains noncanonical. Promotion requires direct behavioral
+tests, latency and memory budgets, a documented external consumer, an explicit package
+boundary, and required CI coverage.
