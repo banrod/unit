@@ -1,38 +1,46 @@
 # Personal Working Station
 
-This folder provides a lightweight sandbox for development experiments.
+This folder contains repository-maintenance tooling and generated diagnostic notes.
+Product experiments do not belong here; noncanonical prototypes live under
+`../experiments/`.
 
-- **notes/** – design ideas, facilitation reviews, benchmarking plans, and scratch documents
-- **scripts/** – helper utilities and test runners
-- **image-filter/** – prototype for high-volume image filtering
+- **notes/** — facilitation reviews, benchmark plans, and generated registry diagnostics
+- **scripts/** — registry validation, classification, reporting, benchmarks, and test runners
+- **templates/** — experiment hand-off templates
 
-The goal is to collect small experiments and tooling without cluttering the
-main codebase. You can run tests via `./scripts/run-tests.sh` (or
-`npm run test:workstation`), consult `notes/facilitation-assessment.md` for
-current facilitation levels, review the
-benchmark schedule in `notes/benchmark-plan.md`, and iterate on new ideas
-inside `notes/` before they mature. When documenting a fresh experiment, use
-`templates/experiment-readme-checklist.md` to verify hand-off readiness; the
-image-filter prototype ships with a completed example in
-`image-filter/EXPERIMENT_CHECKLIST.md`.
-Run `npm run validate:registries` to sanity-check spec → class bindings after
-regenerating any registry. Validator output focuses on actionable mapping
-issues (plus composite-spec warnings), while full coverage statistics are
-emitted by `npm run report:registries`. Use `npm run validate:registries:strict`
-(or the workstation test script) to gate on true validation errors in
-automated runs.
+Run the complete local gate with:
 
-GitHub Actions mirrors this locally supported sequence in
-`.github/workflows/workstation-validation.yml` (tests, strict validation, audit
-option checks, report generation, report-schema checks (including JSON↔Markdown count parity), step-summary checks, and concise step-summary publication (from JSON report data) + artifact upload).
+```sh
+npm run test:workstation
+```
 
-Generate a snapshot data quality report with `npm run report:registries` to
-capture counts, coverage ratios, and any orphaned IDs. The most recent output
-lives in `notes/registry-report.md` (and `notes/registry-report.json` for machine-readable automation with schema, issue summary, and structured gap previews). To profile the image-filter prototype at
-100k scale, run `npm run bench:image-filter` and inspect the emitted Markdown
-under `notes/benchmark-results/`.
+The gate runs the project test suite, generates registry integrity and coverage reports,
+checks report compatibility, enforces strict structural validation, and exercises the
+audit invariants. GitHub Actions mirrors this sequence in
+`.github/workflows/workstation-validation.yml` and publishes the generated reports as
+artifacts.
 
-To keep the broader test suite bootable, regenerated registries live under
-`../src/system/_ids.ts`, `_classes.ts`, `_components.ts`, and `_specs.ts`.
-Treat them as the current source of truth and follow the workspace next steps
-in `notes/next-steps.md` to keep future refreshes validated.
+Useful commands:
+
+```sh
+npm run validate:registries
+npm run validate:registries:strict
+npm run report:registries
+npm run classify:registries
+```
+
+`report:registries` describes structural integrity and raw coverage gaps.
+`classify:registries` resolves every exported ID into one primary implementation class:
+direct primitive, optimized primitive, composite graph, component only, or
+unimplemented.
+
+Generated files under `notes/registry-report.*` and `notes/registry-coverage.*` are not
+canonical source and are ignored by Git.
+
+The image-filter prototype is quarantined at `../experiments/image-filter/`. Its
+synthetic benchmark remains available through `npm run bench:image-filter`; generated
+benchmark reports are written under `notes/benchmark-results/`.
+
+Canonical generated registries live under `../src/system/_ids.ts`, `_classes.ts`,
+`_components.ts`, and `_specs.ts`. Regeneration must remain byte-for-byte stable in the
+primary CI workflow.
