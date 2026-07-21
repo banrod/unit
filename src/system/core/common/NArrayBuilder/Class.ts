@@ -22,9 +22,9 @@ export default class NArrayBuilder<T> extends Semifunctional<I<T>, O<T>> {
     super(
       {
         fi: ['n'],
-        fo: ['a[]', 'test', 'acc'],
+        fo: ['a[]'],
         i: ['a'],
-        o: [],
+        o: ['test', 'acc'],
       },
       {},
       system,
