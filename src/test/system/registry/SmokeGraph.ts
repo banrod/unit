@@ -8,6 +8,7 @@ import { system } from '../../util/system'
 const INCREMENT_ID = 'fafeadd7-06a8-4bb0-9fa5-2149d1b5208e'
 const TAN_ID = '682c1419-d2cc-489d-b95f-a8b7dacada6c'
 const IF_ELSE_ID = '92760dd2-ecd9-46db-851f-70950a5b6bc3'
+const N_ARRAY_BUILDER_ID = '38033fcc-aa28-4df3-abc8-d4ece231028b'
 
 const ensureUnitResolvable = (spec: GraphSpec) => {
   const units = spec.units || {}
@@ -88,3 +89,34 @@ ifElse.push('a', 'right')
 ifElse.push('b', false)
 assert.equal(ifElse.take('else'), 'right')
 assert.equal(ifElse.take('if'), undefined)
+
+assert.ok(_classes[N_ARRAY_BUILDER_ID], 'n array builder class missing in registry')
+
+const NArrayBuilder = _classes[N_ARRAY_BUILDER_ID] as any
+const builder = new NArrayBuilder(system)
+
+builder.play()
+builder.push('n', 2)
+
+assert.deepEqual(builder.take('acc'), [])
+assert.equal(builder.take('test'), true)
+assert.equal(builder.take('a[]'), undefined)
+
+builder.push('a', 'first')
+assert.deepEqual(builder.take('acc'), ['first'])
+assert.equal(builder.take('test'), true)
+assert.equal(builder.take('a[]'), undefined)
+
+builder.push('a', 'second')
+assert.deepEqual(builder.take('acc'), ['first', 'second'])
+assert.equal(builder.take('test'), false)
+assert.deepEqual(builder.take('a[]'), ['first', 'second'])
+
+const emptyBuilder = new NArrayBuilder(system)
+
+emptyBuilder.play()
+emptyBuilder.push('n', 0)
+
+assert.deepEqual(emptyBuilder.take('acc'), [])
+assert.equal(emptyBuilder.take('test'), false)
+assert.deepEqual(emptyBuilder.take('a[]'), [])
