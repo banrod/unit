@@ -37,13 +37,15 @@ system registries.
       for automation consumers as the report evolves, including JSON↔Markdown parity checks
       for counts, coverage, and top composite reference summaries.
 - [x] Resolve duplicate IDs flagged by the validator in `_ids.ts`.
-- [ ] Close gaps where specs reference unit IDs that are not yet mapped in
-      `_classes.ts`. *(Mapped `ID_IF_NOT` to reduce missing coverage; continue
-      filling remaining control/array builders.)*
-  - Progress: mapped `ID_N_ARRAY_BUILDER` and `ID_LEVER` into `_classes.ts`,
-    trimming the missing class count to **234** and adding `ID_IF_ELSE` to
-    cover core branching. Continue with the control/array builder IDs still
-    flagged by the validator.
+- [ ] Continue triaging registry coverage without conflating composite graphs
+      with missing primitive implementations.
+  - Recorded direct class coverage gap: **495 IDs**.
+  - Recorded direct component coverage gap: **861 IDs**.
+  - Recorded composite references: **234 unique referenced specs**.
+  - Recorded fatal unresolved references: **0**.
+  - Recorded duplicate IDs: **0**.
+  - Many class-coverage entries may be graph specs rather than missing
+    primitives; classify each entry before promoting it to runtime-defect status.
 
 ## Testing & Tooling
 - [x] Extend the test suite with a smoke graph that exercises a representative
@@ -52,6 +54,8 @@ system registries.
 - [x] Wire the workstation `./scripts/run-tests.sh` into a CI-friendly target so local
       and remote runs stay aligned. *(Exposed via `npm run test:workstation` and now
       executed in `.github/workflows/workstation-validation.yml`.)*
+- [ ] Require both the project test workflow and workstation validation workflow
+      to complete successfully before promotion to `main`.
 
 ## Documentation & Handoff
 - [x] Adopt `templates/experiment-readme-checklist.md` for new experiments and
@@ -64,3 +68,7 @@ system registries.
 - [x] Instrument `ImageFilterStore` with timing hooks per benchmark scenario.
 - [x] Capture benchmark outputs under `notes/benchmark-results/` and summarize
       the first run in `notes/facilitation-assessment.md`.
+- [x] Make image replacement an index-safe upsert by removing stale tag/root
+      entries before re-indexing an existing ID.
+- [ ] Keep the prototype outside the production kernel until its replacement,
+      removal, and benchmark tests are part of the required validation path.
