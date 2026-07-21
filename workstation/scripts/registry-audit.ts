@@ -1,3 +1,4 @@
+import { SELF } from '../../src/constant/SELF'
 import * as ids from '../../src/system/_ids'
 import classes from '../../src/system/_classes'
 import components from '../../src/system/_components'
@@ -144,6 +145,10 @@ export function runRegistryAudit(options: RegistryAuditOptions = {}): RegistryAu
     pinId: string,
     location: string
   ): void => {
+    if (pinId === SELF) {
+      return
+    }
+
     const unit = units[unitInstanceId]
 
     if (!unit) {
