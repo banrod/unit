@@ -36,6 +36,7 @@ export function rawSync(
 
   const _specs = {}
   const specPathById = new Map<string, string>()
+  const duplicateSpecIds: string[] = []
 
   let ids = ''
   let ids_name_set = new Set<string>()
@@ -72,9 +73,10 @@ export function rawSync(
       } else {
         const previousPath = specPathById.get(id)
         if (previousPath) {
-          throw new Error(`duplicate spec id ${id}: ${previousPath} and ${spec_file_path}`)
+          duplicateSpecIds.push(`${id}: ${previousPath} and ${spec_file_path}`)
+        } else {
+          specPathById.set(id, spec_file_path)
         }
-        specPathById.set(id, spec_file_path)
       }
 
       spec.system = true
@@ -149,6 +151,10 @@ export function rawSync(
         components_export += `\t'${id}': ${name},\n`
       }
     })
+
+  if (duplicateSpecIds.length > 0) {
+    throw new Error(`duplicate spec ids detected:\n${duplicateSpecIds.join('\n')}`)
+  }
 
   classes_export += '}'
 
