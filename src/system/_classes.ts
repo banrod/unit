@@ -1,3 +1,8 @@
+import Lever from './core/common/Lever/Class'
+import NArrayBuilder from './core/common/NArrayBuilder/Class'
+import IfElse from './core/control/IfElse'
+import IfNot from './core/control/IfNot'
+import Range from './core/loop/Range/Class'
 import Add from './f/arithmetic/Add'
 import Divide from './f/arithmetic/Divide'
 import Multiply from './f/arithmetic/Multiply'
@@ -32,8 +37,6 @@ import Constant from './f/control/Constant'
 import Default from './f/control/Default'
 import Identity from './f/control/Identity'
 import If from './f/control/If'
-import IfElse from './f/control/IfElse'
-import IfNot from './f/control/IfNot'
 import Iterate from './f/control/Iterate'
 import Loop from './f/control/Loop'
 import Memory from './f/control/Memory'
@@ -111,8 +114,6 @@ import Specs from './f/meta/Specs'
 import System from './f/meta/System'
 import This from './f/meta/This'
 import Unit from './f/meta/Unit'
-import Lever from './core/common/Lever/Class'
-import NArrayBuilder from './core/common/NArrayBuilder/Class'
 import NumberToString from './f/number/NumberToString'
 import StringToFloat from './f/number/StringToFloat'
 import StringToInt from './f/number/StringToInt'
@@ -479,6 +480,11 @@ import State from './platform/State'
 import Pin from './platform/unit/Pin'
 
 export default {
+	'c37c7c14-293e-414c-8a9c-01a40186c1e5': Lever,
+	'38033fcc-aa28-4df3-abc8-d4ece231028b': NArrayBuilder,
+	'92760dd2-ecd9-46db-851f-70950a5b6bc3': IfElse,
+	'439c6b56-a0b6-4b76-9131-c6dc23375fda': IfNot,
+	'29e43ad7-be5e-437f-8f0f-2df996c8b89c': Range,
 	'6fe452f2-2ec1-4ee2-887d-751c3697e6bf': Add,
 	'158d85eb-28b8-4355-b637-28a7ec751233': Divide,
 	'872be100-f4dc-4246-8eea-6e3da31137b7': Multiply,
@@ -497,31 +503,27 @@ export default {
 	'd9cf4224-39df-434a-85a6-2b143330cbab': Prepend,
 	'22622778-d64f-47e7-8ceb-d175edcc6562': Put,
 	'f69e88e3-b2c2-481b-b036-a5c0ed7ccccb': Remove,
-        'c6bf897a-4970-4284-bea2-b4a86186f828': Slice,
-        'd4572f1c-83d3-4a3d-be76-fa16578286d2': Sort,
-        '38033fcc-aa28-4df3-abc8-d4ece231028b': NArrayBuilder,
-        'be6801c0-02e2-4f76-bcad-b68c80991fad': And,
-        '62d0c3e2-cf8b-4415-acfb-cf31739adce5': Not,
-        '0d656c2e-eb10-45f0-b236-f8916492ca86': Or,
+	'c6bf897a-4970-4284-bea2-b4a86186f828': Slice,
+	'd4572f1c-83d3-4a3d-be76-fa16578286d2': Sort,
+	'be6801c0-02e2-4f76-bcad-b68c80991fad': And,
+	'62d0c3e2-cf8b-4415-acfb-cf31739adce5': Not,
+	'0d656c2e-eb10-45f0-b236-f8916492ca86': Or,
 	'3d59edf2-5fca-4475-9df0-d876e14f990d': XOr,
 	'85204bf6-6692-4686-a785-23127c0594b5': Equals,
-        '1651ce6b-4db0-4787-9edf-f770b72d253c': GreaterThan,
-        'c9e06816-0d2b-43ec-b7c8-d07563e19b6b': GreaterThanEqual,
-        '82c3cf2a-0855-4c6d-a4c4-807b0ce1fd35': LessThan,
-        'e13f3090-62a6-4a3b-8401-c571cbf03526': LessThanEqual,
-        'bda175a9-a9d2-4282-9b50-1b008ae8a807': NotEqual,
-        'c37c7c14-293e-414c-8a9c-01a40186c1e5': Lever,
-        'ff976ac8-c54f-4d37-8c7d-089c271cb433': Constant,
-        '329920ae-7e91-11ea-988e-1b12488c8b89': Default,
-        '260d774e-bc89-4027-aa92-cb1985fb312b': Identity,
-        '06bc3983-44b0-43d6-b041-2e9218ea89c8': If,
-        '92760dd2-ecd9-46db-851f-70950a5b6bc3': IfElse,
-        '439c6b56-a0b6-4b76-9131-c6dc23375fda': IfNot,
-        '8a2b756a-25e4-11eb-860d-1f34c850b992': Iterate,
-        '3432494e-fab6-4e9d-a846-0c48a7c429cd': Loop,
-        '49e11645-c25d-4bf7-923d-56817f67b686': Memory,
-        '835edaa6-d07c-44e4-916d-eb4b9fd8f7b1': Next,
-        '36329d25-218d-48a5-a06c-1e0525da504f': Plan,
+	'1651ce6b-4db0-4787-9edf-f770b72d253c': GreaterThan,
+	'c9e06816-0d2b-43ec-b7c8-d07563e19b6b': GreaterThanEqual,
+	'82c3cf2a-0855-4c6d-a4c4-807b0ce1fd35': LessThan,
+	'e13f3090-62a6-4a3b-8401-c571cbf03526': LessThanEqual,
+	'bda175a9-a9d2-4282-9b50-1b008ae8a807': NotEqual,
+	'ff976ac8-c54f-4d37-8c7d-089c271cb433': Constant,
+	'329920ae-7e91-11ea-988e-1b12488c8b89': Default,
+	'260d774e-bc89-4027-aa92-cb1985fb312b': Identity,
+	'06bc3983-44b0-43d6-b041-2e9218ea89c8': If,
+	'8a2b756a-25e4-11eb-860d-1f34c850b992': Iterate,
+	'3432494e-fab6-4e9d-a846-0c48a7c429cd': Loop,
+	'49e11645-c25d-4bf7-923d-56817f67b686': Memory,
+	'835edaa6-d07c-44e4-916d-eb4b9fd8f7b1': Next,
+	'36329d25-218d-48a5-a06c-1e0525da504f': Plan,
 	'0f1c7d8c-87a7-44ad-bee5-de37d4800e8f': Push,
 	'99657eb7-fb94-474e-b03d-4b08c537c0a2': Throw,
 	'9d853ef5-3fff-474d-a951-6af4237cf4c4': Void,
