@@ -33,9 +33,13 @@ export class ImageFilterStore {
   private rootIndex: Map<string, Set<string>> = new Map()
 
   /**
-   * Add a new image to the store and index it by all tags and its root.
+   * Add or replace an image and keep all reverse indices consistent.
    */
   addImage(meta: ImageMeta): void {
+    if (this.images.has(meta.id)) {
+      this.removeImage(meta.id)
+    }
+
     this.images.set(meta.id, meta)
     for (const tag of meta.tags) {
       if (!this.tagIndex.has(tag)) {
@@ -82,7 +86,7 @@ export class ImageFilterStore {
    * the intersection set.
    */
   filter(tags: string[], root?: string): ImageMeta[] {
-    let idSets: Set<string>[] = []
+    const idSets: Set<string>[] = []
     for (const tag of tags) {
       const ids = this.tagIndex.get(tag)
       if (!ids) return []
