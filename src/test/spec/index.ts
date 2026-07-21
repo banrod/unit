@@ -1,5 +1,6 @@
 import './cloneUnit'
 import './createClass'
+import './identity'
 import './Lazy'
 import './parser'
 import './reducers'
