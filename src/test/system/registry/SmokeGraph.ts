@@ -9,7 +9,7 @@ const INCREMENT_ID = 'fafeadd7-06a8-4bb0-9fa5-2149d1b5208e'
 const TAN_ID = '682c1419-d2cc-489d-b95f-a8b7dacada6c'
 const IF_ELSE_ID = '92760dd2-ecd9-46db-851f-70950a5b6bc3'
 
-const ensureUnitClasses = (spec: GraphSpec) => {
+const ensureUnitResolvable = (spec: GraphSpec) => {
   const units = spec.units || {}
 
   for (const unitId in units) {
@@ -20,8 +20,8 @@ const ensureUnitClasses = (spec: GraphSpec) => {
     }
 
     assert.ok(
-      _classes[unitSpec.id],
-      `missing class for unit ${unitSpec.id} used by ${spec.name}`
+      _classes[unitSpec.id] || _specs[unitSpec.id],
+      `missing class or composite spec for unit ${unitSpec.id} used by ${spec.name}`
     )
   }
 }
@@ -29,7 +29,7 @@ const ensureUnitClasses = (spec: GraphSpec) => {
 const incrementSpec = _specs[INCREMENT_ID] as GraphSpec
 
 assert.ok(incrementSpec, 'increment spec missing in registry')
-ensureUnitClasses(incrementSpec)
+ensureUnitResolvable(incrementSpec)
 
 const Increment = fromSpec<{ a: number }, { 'a + 1': number }>(
   incrementSpec,
@@ -67,7 +67,7 @@ assert.equal(tan.take('tan(a)'), undefined)
 const ifElseSpec = _specs[IF_ELSE_ID] as GraphSpec
 
 assert.ok(ifElseSpec, 'if/else spec missing in registry')
-ensureUnitClasses(ifElseSpec)
+ensureUnitResolvable(ifElseSpec)
 
 const IfElse = fromSpec<{ a: any; b: boolean }, { if: any; else: any }>(
   ifElseSpec,
