@@ -5,6 +5,7 @@ on:
     paths:
       - 'src/**'
       - 'workstation/**'
+      - 'experiments/**'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/workstation-validation.yml'
@@ -15,6 +16,7 @@ on:
     paths:
       - 'src/**'
       - 'workstation/**'
+      - 'experiments/**'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/workstation-validation.yml'
@@ -68,4 +70,6 @@ jobs:
           path: |
             workstation/notes/registry-report.md
             workstation/notes/registry-report.json
+            workstation/notes/registry-coverage.md
+            workstation/notes/registry-coverage.json
           if-no-files-found: warn
