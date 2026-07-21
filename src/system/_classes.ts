@@ -1,8 +1,7 @@
-import Lever from './core/common/Lever/Class'
-import NArrayBuilder from './core/common/NArrayBuilder/Class'
+import Lever from './core/common/Lever'
+import NArrayBuilder from './core/common/NArrayBuilder'
 import IfElse from './core/control/IfElse'
 import IfNot from './core/control/IfNot'
-import Range from './core/loop/Range/Class'
 import Add from './f/arithmetic/Add'
 import Divide from './f/arithmetic/Divide'
 import Multiply from './f/arithmetic/Multiply'
@@ -484,7 +483,6 @@ export default {
 	'38033fcc-aa28-4df3-abc8-d4ece231028b': NArrayBuilder,
 	'92760dd2-ecd9-46db-851f-70950a5b6bc3': IfElse,
 	'439c6b56-a0b6-4b76-9131-c6dc23375fda': IfNot,
-	'29e43ad7-be5e-437f-8f0f-2df996c8b89c': Range,
 	'6fe452f2-2ec1-4ee2-887d-751c3697e6bf': Add,
 	'158d85eb-28b8-4355-b637-28a7ec751233': Divide,
 	'872be100-f4dc-4246-8eea-6e3da31137b7': Multiply,
