@@ -1,6 +1,6 @@
 import { Functional } from '../../../../Class/Functional'
 import { System } from '../../../../system'
-import { ID_SIN } from '../../../_ids'
+import { ID_TAN } from '../../../_ids'
 
 export interface I<T> {
   a: number
@@ -19,7 +19,7 @@ export default class Tan<T> extends Functional<I<T>, O<T>> {
       },
       {},
       system,
-      ID_SIN
+      ID_TAN
     )
   }
 
