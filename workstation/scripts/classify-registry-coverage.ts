@@ -10,6 +10,7 @@ type CoverageCategory =
   | 'component_only'
   | 'composite_graph'
   | 'direct_primitive'
+  | 'empty_graph'
   | 'optimized_primitive'
   | 'unimplemented'
 
@@ -36,10 +37,12 @@ const records: CoverageRecord[] = Object.keys(idNameIndex)
       throw new Error(`cannot classify ${id}: spec is missing`)
     }
 
+    const exportedNames = idNameIndex[id].sort()
     const hasClass = Object.prototype.hasOwnProperty.call(classes, id)
     const hasComponent = Object.prototype.hasOwnProperty.call(components, id)
     const unitCount = Object.keys(spec.units ?? {}).length
     const hasUnits = unitCount > 0
+    const isEmptyGraph = exportedNames.includes('ID_EMPTY')
     let category: CoverageCategory
 
     if (hasClass && hasUnits) {
@@ -50,13 +53,15 @@ const records: CoverageRecord[] = Object.keys(idNameIndex)
       category = 'composite_graph'
     } else if (hasComponent) {
       category = 'component_only'
+    } else if (isEmptyGraph) {
+      category = 'empty_graph'
     } else {
       category = 'unimplemented'
     }
 
     return {
       id,
-      exportedNames: idNameIndex[id].sort(),
+      exportedNames,
       name: spec.name,
       category,
       component: hasComponent,
@@ -74,6 +79,7 @@ const counts = records.reduce<Record<CoverageCategory, number>>(
     component_only: 0,
     composite_graph: 0,
     direct_primitive: 0,
+    empty_graph: 0,
     optimized_primitive: 0,
     unimplemented: 0,
   }
@@ -115,6 +121,7 @@ const markdown = [
   `| Optimized primitive | ${counts.optimized_primitive} |`,
   `| Composite graph | ${counts.composite_graph} |`,
   `| Component only | ${counts.component_only} |`,
+  `| Empty graph sentinel | ${counts.empty_graph} |`,
   `| Unimplemented | ${counts.unimplemented} |`,
   `| **Total** | **${report.total}** |`,
   '',
