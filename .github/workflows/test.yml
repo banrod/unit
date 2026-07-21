@@ -35,11 +35,20 @@ jobs:
 
       - name: Verify generated registry parity
         run: |
-          git diff --exit-code -- \
+          git diff -- \
             src/system/_ids.ts \
             src/system/_classes.ts \
             src/system/_components.ts \
-            src/system/_specs.ts
+            src/system/_specs.ts | tee registry-parity.diff
+          test ! -s registry-parity.diff
+
+      - name: Upload registry parity diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-parity-diff
+          path: registry-parity.diff
+          if-no-files-found: warn
 
       - name: Lint
         run: npm run lint
