@@ -60,16 +60,7 @@
           }
         }
       },
-      "output": {
-        "origin": {
-          "metadata": {
-            "position": {
-              "x": -72,
-              "y": -154
-            }
-          }
-        }
-      },
+      "output": {},
       "metadata": {
         "position": {
           "x": -103,

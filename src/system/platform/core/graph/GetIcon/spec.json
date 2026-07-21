@@ -9,7 +9,10 @@
           "constant": true,
           "data": {
             "ref": [],
-            "data": ["metadata", "icon"]
+            "data": [
+              "metadata",
+              "icon"
+            ]
           },
           "metadata": {
             "position": {
@@ -27,14 +30,6 @@
         "obj": {}
       },
       "output": {
-        "result": {
-          "metadata": {
-            "position": {
-              "x": 57,
-              "y": -30
-            }
-          }
-        },
         "value": {
           "metadata": {
             "position": {
