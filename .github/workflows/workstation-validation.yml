@@ -1,0 +1,71 @@
+name: Workstation Validation
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'workstation/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/workstation-validation.yml'
+  push:
+    branches:
+      - main
+      - work
+    paths:
+      - 'src/**'
+      - 'workstation/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/workstation-validation.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: workstation-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  workstation-validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.9'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run workstation validation suite
+        run: |
+          set -o pipefail
+          npm run test:workstation 2>&1 | tee workstation-output.log
+
+      - name: Write registry report summary
+        if: always()
+        run: npm run write:registry-step-summary
+
+      - name: Upload workstation diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: workstation-output
+          path: workstation-output.log
+          if-no-files-found: warn
+
+      - name: Upload registry report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-report
+          path: |
+            workstation/notes/registry-report.md
+            workstation/notes/registry-report.json
+          if-no-files-found: warn

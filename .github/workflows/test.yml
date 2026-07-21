@@ -1,20 +1,80 @@
 name: test
-on: [pull_request]
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
     strategy:
       matrix:
         node-version: [20.9]
     steps:
-      - uses: actions/checkout@v4
-      - name: npm i
-        run: npm i
-      - name: npm run setup
-        run: npm run setup
-      - name: npm run lint
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: |
+          set -o pipefail
+          npm run setup 2>&1 | tee setup-output.log
+
+      - name: Upload setup diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: setup-output
+          path: setup-output.log
+          if-no-files-found: warn
+
+      - name: Verify generated registry parity
+        run: |
+          git diff -- \
+            src/system/_ids.ts \
+            src/system/_classes.ts \
+            src/system/_components.ts \
+            src/system/_specs.ts | tee registry-parity.diff
+          test ! -s registry-parity.diff
+
+      - name: Upload registry parity diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: registry-parity-diff
+          path: registry-parity.diff
+          if-no-files-found: warn
+
+      - name: Lint
         run: npm run lint
-      - name: npm run type
+
+      - name: Typecheck
         run: npm run type
-      - name: npm run test
-        run: npm run test
+
+      - name: Test
+        run: |
+          set -o pipefail
+          npm run test 2>&1 | tee test-output.log
+
+      - name: Upload test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: primary-test-output
+          path: test-output.log
+          if-no-files-found: warn

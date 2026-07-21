@@ -31,8 +31,7 @@
         }
       },
       "output": {
-        "stream": {},
-        "icon": "circle-play"
+        "stream": {}
       },
       "metadata": {
         "position": {
@@ -73,7 +72,11 @@
   "metadata": {
     "icon": "video",
     "description": "get device default video stream",
-    "tags": ["platform", "core", "media"]
+    "tags": [
+      "platform",
+      "core",
+      "media"
+    ]
   },
   "id": "c03c7ef3-0649-4a99-9e9a-858bcaba1307",
   "type": "`U`&`G`"
