@@ -20,21 +20,14 @@ export interface FilterWithMetricsResult {
 }
 
 /**
- * ImageFilterStore maintains fast lookup structures for images.
- *
- * Internally, images are stored in a Map keyed by ID while tags and roots
- * maintain reverse indices using Sets. This allows tag intersections and root
- * filtering to run in linear time with respect to the number of query terms
- * rather than the total number of images.
+ * Experimental high-volume image index. This module is intentionally outside
+ * the production runtime kernel.
  */
 export class ImageFilterStore {
   private images: Map<string, ImageMeta> = new Map()
   private tagIndex: Map<string, Set<string>> = new Map()
   private rootIndex: Map<string, Set<string>> = new Map()
 
-  /**
-   * Add or replace an image and keep all reverse indices consistent.
-   */
   addImage(meta: ImageMeta): void {
     if (this.images.has(meta.id)) {
       this.removeImage(meta.id)
@@ -55,9 +48,6 @@ export class ImageFilterStore {
     }
   }
 
-  /**
-   * Remove an image and clean up its tag/root indices.
-   */
   removeImage(id: string): void {
     const meta = this.images.get(id)
     if (!meta) return
@@ -78,13 +68,6 @@ export class ImageFilterStore {
     this.images.delete(id)
   }
 
-  /**
-   * Retrieve images matching every provided tag and, optionally, a root.
-   *
-   * Complexity is roughly O(t) where `t` is the number of tags, regardless of
-   * the total image count. Filtering by root is performed as a final pass over
-   * the intersection set.
-   */
   filter(tags: string[], root?: string): ImageMeta[] {
     const idSets: Set<string>[] = []
     for (const tag of tags) {
@@ -113,13 +96,6 @@ export class ImageFilterStore {
     return Array.from(resultIds).map((id) => this.images.get(id)!)
   }
 
-  /**
-   * Filter images while returning metrics about the query execution.
-   *
-   * The metrics are lightweight and capture wall-clock latency along with how
-   * many tag sets and root IDs were considered. This makes it easier to track
-   * performance regressions when scaling to 100k+ images.
-   */
   filterWithMetrics(tags: string[], root?: string): FilterWithMetricsResult {
     const start = performance.now()
     const results = this.filter(tags, root)

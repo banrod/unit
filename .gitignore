@@ -44,4 +44,6 @@ public/build.json
 # Generated workstation diagnostics are published as CI artifacts.
 workstation/notes/registry-report.md
 workstation/notes/registry-report.json
+workstation/notes/registry-coverage.md
+workstation/notes/registry-coverage.json
 workstation/notes/benchmark-results/
