@@ -111,15 +111,9 @@ export function rawSync(
 
       let name_init = segments[l - 1]
 
-      const index_class_file_path = `${dir}/${_}/index.ts`
-      const named_class_file_path = `${dir}/${_}/Class.ts`
-      const class_import_path = existsSync(index_class_file_path)
-        ? `./${_}`
-        : existsSync(named_class_file_path)
-          ? `./${_}/Class`
-          : undefined
+      const class_file_path = `${dir}/${_}/index.ts`
 
-      if (class_import_path) {
+      if (existsSync(class_file_path)) {
         let name = name_init
         let i = 0
 
@@ -130,7 +124,7 @@ export function rawSync(
 
         class_name_set.add(name)
 
-        classes_import += `import ${name} from '${class_import_path}'\n`
+        classes_import += `import ${name} from './${_}'\n`
         classes_export += `\t'${id}': ${name},\n`
       }
 
