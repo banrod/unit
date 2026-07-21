@@ -44,14 +44,16 @@ export default class NArrayBuilder<T> extends Semifunctional<I<T>, O<T>> {
       return
     }
 
+    this._n = n
+    this._array = []
+    this._emitProgress()
+
     if (n === 0) {
       this._output['a[]'].push([])
+      this._n = undefined
 
       return
     }
-
-    this._n = n
-    this._array = []
 
     if (this._i.a !== undefined) {
       this._loop(this._i.a)
@@ -74,10 +76,20 @@ export default class NArrayBuilder<T> extends Semifunctional<I<T>, O<T>> {
     // }
   }
 
+  private _emitProgress(): void {
+    const acc = [...this._array]
+    const test = this._n !== undefined && acc.length < this._n
+
+    this._output.acc.push(acc)
+    this._output.test.push(test)
+  }
+
   private _loop(a: T) {
     this._array.push(a)
+    this._emitProgress()
+
     if (this._array.length === this._n) {
-      this._output['a[]'].push(this._array)
+      this._output['a[]'].push([...this._array])
       this._n = undefined
       this._array = []
     }
