@@ -34,8 +34,8 @@ The last promoted baseline recorded:
 
 Raw class and component gaps are not automatically defects. Use
 `npm run classify:registries` to classify each ID as a direct primitive, optimized
-primitive, composite graph, component-only entry, or unimplemented entry before opening
-a runtime defect.
+primitive, composite graph, component-only entry, the canonical empty-graph sentinel,
+or unimplemented entry before opening a runtime defect.
 
 ## Next kernel work
 
@@ -46,7 +46,7 @@ a runtime defect.
 - [ ] Define canonical snapshot serialization and compatibility versioning.
 - [ ] Add deterministic replay fixtures for time, randomness, and external I/O injection.
 - [ ] Add graph boot, propagation, snapshot, and memory performance baselines.
-- [ ] Classify and review the `unimplemented` coverage category produced by CI.
+- [ ] Review any entries in the `unimplemented` coverage category produced by CI.
 - [ ] Publish a stable package export surface for runtime contracts and graph identity.
 
 ## Downstream integration
