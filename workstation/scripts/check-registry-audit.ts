@@ -56,6 +56,22 @@ function main(): void {
     'Focused audit should preserve composite warning behavior'
   )
 
+  const fullHasInvalidPinError = hasMessage(fullMessages, 'Invalid graph pin references:')
+  const focusedHasInvalidPinError = hasMessage(focusedMessages, 'Invalid graph pin references:')
+
+  assert(
+    fullHasInvalidPinError === (full.invalidPinRefs.length > 0),
+    'Full audit invalid-pin error should match invalidPinRefs presence'
+  )
+  assert(
+    focusedHasInvalidPinError === (focused.invalidPinRefs.length > 0),
+    'Focused audit should preserve invalid-pin error behavior'
+  )
+  assert(
+    full.invalidPinRefs.length === focused.invalidPinRefs.length,
+    'Coverage filtering must not alter invalid-pin diagnostics'
+  )
+
   const fullErrorCount = full.issues.filter((issue) => issue.level === 'error').length
   const focusedErrorCount = focused.issues.filter((issue) => issue.level === 'error').length
   const fullWarnCount = full.issues.filter((issue) => issue.level === 'warn').length
