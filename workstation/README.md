@@ -31,8 +31,8 @@ npm run classify:registries
 
 `report:registries` describes structural integrity and raw coverage gaps.
 `classify:registries` resolves every exported ID into one primary implementation class:
-direct primitive, optimized primitive, composite graph, component only, or
-unimplemented.
+direct primitive, optimized primitive, composite graph, component only, the canonical
+empty-graph sentinel, or unimplemented.
 
 Generated files under `notes/registry-report.*` and `notes/registry-coverage.*` are not
 canonical source and are ignored by Git.
