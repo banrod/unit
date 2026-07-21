@@ -43,6 +43,18 @@ jobs:
           path: setup-output.log
           if-no-files-found: warn
 
+      - name: Upload generated registries
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-registries
+          path: |
+            src/system/_ids.ts
+            src/system/_classes.ts
+            src/system/_components.ts
+            src/system/_specs.ts
+          if-no-files-found: warn
+
       - name: Verify generated registry parity
         run: |
           git diff -- \
