@@ -6,6 +6,13 @@ type PreviewList<T> = {
   preview: T[]
 }
 
+type InvalidPinReference = {
+  specId: string
+  specName?: string
+  location: string
+  message: string
+}
+
 type RegistryReport = {
   schemaVersion: number
   generatedAt: string
@@ -32,6 +39,7 @@ type RegistryReport = {
     specsMissingFromIds: PreviewList<string>
     unresolvedUnitRefs: PreviewList<{ id: string; names: string[]; count: number }>
     compositeSpecRefs: PreviewList<{ id: string; names: string[]; count: number }>
+    invalidPinRefs: PreviewList<InvalidPinReference>
   }
   issues: Array<{ level: 'error' | 'warn'; count?: number; message: string }>
 }
@@ -49,7 +57,6 @@ function assertPreview<T>(value: PreviewList<T>, label: string): void {
   assert(value.preview.length <= value.total, `${label}.preview length must be <= total`)
 }
 
-
 function parseMdCount(lines: string[], label: string): number {
   const line = lines.find((entry) => entry.startsWith(`- ${label}:`))
   if (!line) {
@@ -64,11 +71,10 @@ function parseMdCount(lines: string[], label: string): number {
   return Number(match[1])
 }
 
-
-function parseTopCompositeLines(lines: string[]): string[] {
-  const headingIndex = lines.findIndex((entry) => entry.trim() === '## Top Composite Spec References')
+function parseSectionLines(lines: string[], heading: string): string[] {
+  const headingIndex = lines.findIndex((entry) => entry.trim() === heading)
   if (headingIndex === -1) {
-    throw new Error('Markdown report missing "Top Composite Spec References" section')
+    throw new Error(`Markdown report missing "${heading.replace(/^## /, '')}" section`)
   }
 
   const output: string[] = []
@@ -172,9 +178,35 @@ function main(): void {
   assertPreview(report.gaps.specsMissingFromIds, 'gaps.specsMissingFromIds')
   assertPreview(report.gaps.unresolvedUnitRefs, 'gaps.unresolvedUnitRefs')
   assertPreview(report.gaps.compositeSpecRefs, 'gaps.compositeSpecRefs')
+  assertPreview(report.gaps.invalidPinRefs, 'gaps.invalidPinRefs')
 
+  const invalidPinLines = parseSectionLines(markdownLines, '## Invalid Pin References')
+  if (report.gaps.invalidPinRefs.total === 0) {
+    assert(
+      invalidPinLines.length === 1 && invalidPinLines[0] === 'None detected.',
+      'Markdown invalid pin section should report none detected when total is zero'
+    )
+  } else {
+    const expectedInvalidPinLines = report.gaps.invalidPinRefs.preview.map((entry) => entry.message)
+    assert(
+      invalidPinLines.length === expectedInvalidPinLines.length,
+      'Markdown invalid pin section length must match JSON preview length'
+    )
+    for (let i = 0; i < expectedInvalidPinLines.length; i++) {
+      assert(
+        invalidPinLines[i] === expectedInvalidPinLines[i],
+        `Markdown invalid pin entry mismatch at index ${i}`
+      )
+    }
+  }
 
-  const topCompositeLines = parseTopCompositeLines(markdownLines)
+  for (const reference of report.gaps.invalidPinRefs.preview) {
+    assert(typeof reference.specId === 'string' && reference.specId.length > 0, 'invalid pin specId must be non-empty')
+    assert(typeof reference.location === 'string' && reference.location.length > 0, 'invalid pin location must be non-empty')
+    assert(typeof reference.message === 'string' && reference.message.length > 0, 'invalid pin message must be non-empty')
+  }
+
+  const topCompositeLines = parseSectionLines(markdownLines, '## Top Composite Spec References')
   const expectedTopComposite = report.gaps.compositeSpecRefs.preview
     .slice(0, 10)
     .map((entry) => {
