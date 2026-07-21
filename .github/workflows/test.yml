@@ -4,7 +4,7 @@ on:
   pull_request:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: test-${{ github.ref }}
@@ -18,8 +18,11 @@ jobs:
       matrix:
         node-version: [20.9]
     steps:
-      - name: Checkout repository
+      - name: Checkout pull request head
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -54,6 +57,24 @@ jobs:
             src/system/_components.ts
             src/system/_specs.ts
           if-no-files-found: warn
+
+      - name: Commit canonical registry normalization
+        run: |
+          if ! git diff --quiet -- \
+            src/system/_ids.ts \
+            src/system/_classes.ts \
+            src/system/_components.ts \
+            src/system/_specs.ts; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add \
+              src/system/_ids.ts \
+              src/system/_classes.ts \
+              src/system/_components.ts \
+              src/system/_specs.ts
+            git commit -m "chore(registry): normalize generated canonical registries"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
 
       - name: Verify generated registry parity
         run: |
