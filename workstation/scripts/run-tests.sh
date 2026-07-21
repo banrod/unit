@@ -3,6 +3,7 @@ set -eu
 
 npm test
 npm run report:registries
+npm run classify:registries
 npm run check:registry-report
 npm run check:registry-step-summary
 npm run validate:registries:strict
