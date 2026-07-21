@@ -18,6 +18,8 @@ stderr.log
 
 stdout.log
 
+test-output.log
+
 lib/**/*
 
 build/**/*
@@ -38,3 +40,8 @@ src/client/extension/src/*.js
 src/client/extension/src/*.js.map
 
 public/build.json
+
+# Generated workstation diagnostics are published as CI artifacts.
+workstation/notes/registry-report.md
+workstation/notes/registry-report.json
+workstation/notes/benchmark-results/
