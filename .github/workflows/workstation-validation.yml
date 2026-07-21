@@ -44,11 +44,21 @@ jobs:
         run: npm ci
 
       - name: Run workstation validation suite
-        run: npm run test:workstation
+        run: |
+          set -o pipefail
+          npm run test:workstation 2>&1 | tee workstation-output.log
 
       - name: Write registry report summary
         if: always()
         run: npm run write:registry-step-summary
+
+      - name: Upload workstation diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: workstation-output
+          path: workstation-output.log
+          if-no-files-found: warn
 
       - name: Upload registry report artifact
         if: always()
