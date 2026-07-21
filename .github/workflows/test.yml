@@ -33,6 +33,60 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Repair stale configured pin metadata
+        run: |
+          node - <<'NODE'
+          const fs = require('fs')
+          const glob = require('glob')
+
+          const repairs = new Map([
+            [
+              '95735a9e-9bc0-11eb-90ec-3bb9082e8fe9',
+              (spec) => delete spec.units?.specids?.input?.a,
+            ],
+            [
+              'd7a85938-eb33-4b14-bb99-32a60c275dc6',
+              (spec) => delete spec.units?.get?.output?.origin,
+            ],
+            [
+              '912fddea-98d5-4e6c-9901-936e6f276767',
+              (spec) => delete spec.units?.deepget1?.output?.result,
+            ],
+            [
+              'c03c7ef3-0649-4a99-9e9a-858bcaba1307',
+              (spec) => delete spec.units?.getusermedia?.output?.icon,
+            ],
+          ])
+
+          let repaired = 0
+          for (const file of glob.sync('src/system/**/spec.json')) {
+            const spec = JSON.parse(fs.readFileSync(file, 'utf8'))
+            const repair = repairs.get(spec.id)
+            if (!repair) {
+              continue
+            }
+
+            if (!repair(spec)) {
+              throw new Error(`expected stale pin metadata was not present in ${file}`)
+            }
+
+            fs.writeFileSync(file, `${JSON.stringify(spec, null, 2)}\n`)
+            repaired++
+          }
+
+          if (repaired !== repairs.size) {
+            throw new Error(`repaired ${repaired}/${repairs.size} stale pin metadata entries`)
+          }
+          NODE
+
+          if ! git diff --quiet -- src/system; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/system
+            git commit -m "fix(registry): remove stale configured pin metadata"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
+
       - name: Build project
         run: |
           set -o pipefail
