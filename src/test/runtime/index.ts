@@ -1,1 +1,2 @@
 import './capability'
+import './conformance'
