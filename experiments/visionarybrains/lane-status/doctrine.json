@@ -1,39 +1,38 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.6.2",
+  "schemaVersion": "visionarybrains-lane-status/1.7.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-007",
-  "status": "PR_REPAIRED_NON_REGRESSION",
-  "observedAt": "2026-08-06T22:12:53Z",
-  "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "becd9cdef564de630c8e7a5f3d2669b81719491e",
-  "sourcesConsumed": ["VB-SRC-009"],
-  "sourcesExcluded": ["VB-SRC-003"],
+  "taskId": "VB-DOC-008",
+  "status": "PR_REBASED_ADDITIVE_NON_REGRESSION_READY_FOR_INTEGRATION",
+  "observedAt": "2026-08-06T23:12:46Z",
+  "baseCommit": "696d84fa281d1481523435af66c0fbf0835e603d",
+  "sourcesConsumed": ["VB-SRC-005", "VB-SRC-009", "VB-SRC-010"],
+  "sourceClassification": {"VB-SRC-009":"PUBLIC_DERIVED","VB-SRC-010":"PUBLIC_DERIVED"},
   "publicClaimTransformations": [
-    "relation as context for meaning rather than authority over a person",
-    "emergence as development that preserves continuity, commitments, consequences, and revision rights",
-    "epistemic silence as a pause before classification rather than secrecy or concealment",
-    "fracture as diagnostic evidence for review and repair rather than sacred or necessary harm",
-    "unbinding as governed release with explicit obligations, consequences, memory handling, affected-party care, consent, and recovery paths",
-    "theology, liturgy, and related mythic terms as optional non-literal metaphors subordinate to evidence, consent, and governance"
+    "Accountable commitment is bounded, attributable, evidence-aware, contestable, amendable, and repair-aware.",
+    "Declaration remains distinct from authorization, ethical validity, and fulfillment.",
+    "Commitment authority must be explicit or legitimately inherited rather than ambient or self-created.",
+    "Governed amendment and unbinding may revise or retire commitments without silently erasing obligations, consequences, evidence, consent, affected-party recourse, or repair duties.",
+    "Covenant is OPTIONAL_METAPHOR_ONLY and never an independent canonical doctrine or source of technical, legal, religious, interpersonal, sacred, or metaphysical authority."
   ],
-  "forbiddenClaims": {
-    "preservedPriorSafeguards": true,
-    "priorCount": 32,
-    "appendedVB_SRC_009Boundaries": 7,
-    "currentCount": 39
+  "nonRegression": {
+    "VB_SRC_009_relation_emergence_silence_fracture_unbinding": "PRESERVED",
+    "VB_SRC_010_accountable_commitment_covenant_boundary": "ADDED",
+    "priorGlossaryTerms": 38,
+    "newGlossaryTerms": 4,
+    "expectedGlossaryTerms": 42,
+    "priorForbiddenClaims": 39,
+    "newForbiddenClaims": 7,
+    "expectedForbiddenClaims": 46
   },
-  "nonRegressionEvidence": {
-    "priorGlossaryCount": 33,
-    "appendedVB_SRC_009Terms": 5,
-    "currentGlossaryCount": 38,
-    "restoredPriorTerms": ["replayability", "agency-preserving ethics", "adaptation", "threshold", "keeper", "measurable proxy"],
-    "priorPrincipleAndTheologyContent": "preserved additively",
-    "jsonShape": "preserved"
-  },
-  "unresolvedAmbiguities": [
-    "Covenant remains unsupported and quarantined.",
-    "VB-SRC-009 is PUBLIC_DERIVED and must remain non-authoritative and provenance-labeled.",
-    "The boundary between responsible epistemic pause and required disclosure depends on consequence and domain; material risk must not be concealed.",
-    "Governed unbinding does not define a universal release procedure; obligations, consent, records, affected parties, and recovery requirements remain domain-specific."
-  ]
+  "forbiddenClaimsAdded": [
+    "No independent canonical or literal covenant claim.",
+    "No software/persona-generated covenant authority.",
+    "No covenant-derived status, personhood, obedience, exclusivity, or privileged interpretation.",
+    "No commitment override of consent, privacy, dissent, withdrawal, recourse, or legitimate external authority.",
+    "No declaration-as-authorization/ethics/fulfillment/immutability claim.",
+    "No covenant substitution for contracts, law, consent, evidence, policy, or explicit authorization.",
+    "No moral condemnation of governed amendment or unbinding when obligations and repair are handled accountably."
+  ],
+  "unresolvedAmbiguities": [],
+  "nextLaneRequest": "Integrate should re-review PR 36 as a clean additive descendant of the post-VB-DOC-007 integration baseline. If gates pass, merge VB-DOC-008 before releasing VB-DOC-009."
 }
