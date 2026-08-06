@@ -1,34 +1,26 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.3.1",
+  "schemaVersion": "visionarybrains-lane-status/1.4.1",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-004",
+  "taskId": "VB-DOC-005",
   "status": "PR_UPDATED",
-  "observedAt": "2026-08-06T15:13:41Z",
+  "observedAt": "2026-08-06T17:12:51Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "a85186204be32b54d654e40ae766b1a0f60c7da3",
-  "sourcesConsumed": ["VB-SRC-006"],
+  "baseCommit": "42b5c17041326a4b00e137f91c2bce3727304232",
+  "sourcesConsumed": ["VB-SRC-007"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
-    "metaphor as an optional editable lens rather than a verdict",
-    "semantic sovereignty as inspectable and contestable interpretation",
-    "field as bounded contextual awareness",
-    "ring as bounded traversal",
-    "gravity well as accumulated pressure requiring a measurable proxy before computation",
-    "silence and uncertainty labels as safeguards against premature classification",
-    "claim-level VB-SRC-006 provenance for each interpretive safeguard",
-    "preserved biological-metaphor exclusions for personhood, consciousness, autonomous legal status, and inherited legitimacy",
-    "withdrawn consent and deletion requests terminate retention, reuse, and sharing of symbolic interpretations"
+    "agency as meaningful authorship over framing, visible alternatives, challenge paths, and action within explicit constraints",
+    "possibility, resolution, witnessing, and authorization as distinct states requiring explicit evidence and authority for promotion",
+    "interface as accountable translation preserving source versus interpretation, uncertainty, consequential omission, and inspectable return language",
+    "operational conscience as a non-sentient check discipline for clarity, legitimate authority, provenance, proportionality, recoverability, and future viability",
+    "recovery and preserved future choices as stewardship requirements"
   ],
-  "forbiddenClaimsEstablished": 21,
-  "reviewRepairs": [
-    "Added a parallel interpretiveSafeguardSources map preserving renderer-compatible safeguard strings.",
-    "Restored the biological and constitutional metaphor boundary while retaining symbolic-language limits.",
-    "Added the missing prohibition against retaining, reusing, or sharing symbolic interpretations after consent withdrawal or deletion request."
-  ],
-  "audienceBoundary": "Public visitors unfamiliar with IAM; symbolic language remains optional, plain-language, non-diagnostic, non-coercive, privacy-respecting, and subordinate to evidence.",
+  "forbiddenClaimsEstablished": 27,
+  "branchRefresh": "Rebased by reconstruction onto the current integration head after Excavator commit 42b5c17041326a4b00e137f91c2bce3727304232; doctrine scope and content were preserved.",
+  "audienceBoundary": "Public visitors unfamiliar with IAM; operational metaphors remain non-sentient, non-authorizing, non-coercive, provenance-labeled, and subordinate to evidence, permissions, and domain sources of truth.",
   "unresolvedAmbiguities": [
     "Covenant remains unsupported and quarantined.",
-    "No single measurable proxy is canonical for field, ring, or gravity-well metaphors; each computational use must declare its own proxy and limits.",
-    "The underlying monograph remains internal and is not treated as public authority."
+    "VB-SRC-007 is a PUBLIC_DERIVED abstraction from a private architectural draft and must not be treated as operational authority.",
+    "No universal promotion mechanism exists among possibility, resolution, witnessing, and authorization; each domain must define evidence and legitimate authority explicitly."
   ]
 }
