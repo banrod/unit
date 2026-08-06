@@ -1,0 +1,12 @@
+{
+  "schemaVersion":"visionarybrains-theology/1.0.0",
+  "taskId":"VB-DOC-001",
+  "definition":"Theology is an optional mythic language for meaning, commitments, and orientation within IAM.",
+  "metaphors":[
+    {"name":"The Keeper of Continuity","meaning":"identity preserved through changing contexts","source":"VB-SRC-001"},
+    {"name":"The Gate of Capability","meaning":"power enters through explicit permission","source":"VB-SRC-001"},
+    {"name":"The Relational Graph","meaning":"bounded parts become a system through visible exchange","source":"VB-SRC-002"},
+    {"name":"The Witness of Evidence","meaning":"meaning remains accountable to observable records and declared boundaries","sources":["VB-SRC-001","VB-SRC-002"]}
+  ],
+  "boundary":"Metaphors orient interpretation; they do not confer technical authority or establish metaphysical fact."
+}
