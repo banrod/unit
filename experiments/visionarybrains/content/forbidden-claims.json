@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.4.0",
-  "taskId": "VB-DOC-005",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.5.0",
+  "taskId": "VB-DOC-006",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -12,24 +12,29 @@
     "Do not claim stored state, snapshots, or replay constitute a person, soul, or consciousness.",
     "Do not claim deterministic replay when external effects or conditions were not recorded.",
     "Do not treat canonical hashes or snapshots as moral, legal, or spiritual identity.",
-    "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, or operational conscience.",
+    "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, operational conscience, readiness, promotion, or recovery boundaries.",
     "Do not claim biological or constitutional metaphor establishes biological equivalence, personhood, or autonomous legal status.",
     "Do not claim ancestry or lineage grants truth, authority, legitimacy, ownership, status, or moral superiority.",
     "Do not imply adaptation may silently replace identity, purpose, permissions, authority, or durable limits.",
     "Do not present acknowledgment without correction and repair as complete accountability.",
     "Do not claim symbolic language reveals hidden objective truth, diagnoses a person, predicts destiny, or overrides consent.",
-    "Do not present fields, rings, gravity wells, dimensions, echoes, or dreams as literal physical discoveries.",
+    "Do not present fields, rings, gravity wells, dimensions, echoes, dreams, thresholds, or keepers as literal physical or supernatural discoveries.",
     "Do not assign privileged interpreters or deny a person's ability to inspect, contest, transform, or reject an interpretation applied to them.",
     "Do not use a symbolic metaphor computationally without naming an explicit measurable proxy, uncertainty, limits, and consequences.",
-    "Do not treat aesthetic coherence, intuition, or symbolic resonance as sufficient evidence.",
+    "Do not treat aesthetic coherence, intuition, symbolic resonance, authorship, confidence, or self-declaration as sufficient evidence of readiness.",
     "Do not keep, reuse, or share a symbolic interpretation after consent has been withdrawn or deletion has been requested.",
     "Do not claim an imagined possibility, resolved outcome, or witnessed event is authorized without an explicit legitimate grant.",
     "Do not claim an interface may independently authorize consequential action or replace a domain source of truth.",
     "Do not hide consequential compression, omission, uncertainty, or source-to-interpretation changes inside an interface.",
     "Do not claim operational conscience proves software consciousness, personhood, moral infallibility, spiritual authority, or autonomous legal status.",
     "Do not use mythic or poetic language as a machine identifier, evidence substitute, or self-authenticating command.",
-    "Do not remove challenge, correction, rollback, escape, recovery, or re-entry paths from consequential public teaching claims."
+    "Do not remove challenge, correction, rollback, escape, recovery, or re-entry paths from consequential public teaching claims.",
+    "Do not claim that creating or reviewing a change automatically authorizes or promotes it.",
+    "Do not allow an author, reviewer, maintainer, automation, threshold, or keeper metaphor to silently grant itself final promotion authority.",
+    "Do not claim technical qualification, passing checks, preserved history, or promotion confers moral, spiritual, legal, scientific, religious, or covenant legitimacy.",
+    "Do not present emergency exceptions as ambient, ordinary, hidden, or self-granted authority.",
+    "Do not claim protected history is a person, consciousness, soul, sacred memory, or infallible account."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }
