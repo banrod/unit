@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"visionarybrains-glossary/1.1.0",
+  "schemaVersion":"visionarybrains-glossary/1.2.0",
   "terms":[
     {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
     {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
@@ -10,6 +10,11 @@
     {"term":"evidence","definition":"An ordered account of what changed, under which conditions, and through which granted capabilities.","sources":["VB-SRC-004"]},
     {"term":"recursion","definition":"A bounded return to prior state or structure for restoration, revision, and continuation.","sources":["VB-SRC-004"]},
     {"term":"replayability","definition":"The ability to reproduce an execution account when relevant inputs, conditions, and external effects were recorded.","sources":["VB-SRC-004"]},
+    {"term":"commitment","definition":"A bounded and amendable promise whose meaning, evidence, tests, version, and challenge path are visible.","sources":["VB-SRC-005"]},
+    {"term":"agency-preserving ethics","definition":"A public ethical stance that respects consent, dignity, privacy, proportionality, legibility, and contestability under uncertainty.","sources":["VB-SRC-005"]},
+    {"term":"repair","definition":"The accountable sequence of containment, correction, communication, restoration where possible, retained evidence, and learning against recurrence.","sources":["VB-SRC-005"]},
+    {"term":"lineage","definition":"Recorded ancestry and compatibility information used for comparison, rollback, and responsible adaptation without conferring inherited authority.","sources":["VB-SRC-005"]},
+    {"term":"adaptation","definition":"Visible and inspectable change to methods or expression that does not silently replace identity, purpose, authority, or durable limits.","sources":["VB-SRC-005"]},
     {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002"]}
   ]
 }
