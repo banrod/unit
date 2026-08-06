@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "visionarybrains-lane-status/1.0.0",
+  "lane": "VisionaryBrains — Teacher",
+  "taskId": "VB-TEACH-001",
+  "status": "PR_READY",
+  "baseBranch": "experiment/visionarybrains",
+  "baseCommit": "c076aec9f26fb0b2ea47ea5aec4171dc1fa97ac0",
+  "doctrineConsumed": [
+    "content/principles.json",
+    "content/doctrine.json",
+    "content/forbidden-claims.json"
+  ],
+  "lessonsAdded": [
+    "iam-in-one-sentence",
+    "power-has-boundaries",
+    "meaning-and-evidence",
+    "relationship-before-complexity",
+    "visitor-synthesis"
+  ],
+  "audienceAssumptions": [
+    "No prior knowledge of IAM, Project Q, AlienOS, or InfiniChain",
+    "Visitors may prefer plain language before optional mythic interpretation"
+  ],
+  "accessibilityReadability": [
+    "Short summaries and explicit labels distinguish principle, architecture, practice, and metaphor",
+    "The learning path uses ordered stages and question prompts",
+    "No lesson depends on animation, sound, color, or specialist notation"
+  ],
+  "unresolvedRisks": [
+    "Memory and bounded recursion from VB-DOC-002 are not consumed until PR 28 is integrated",
+    "Covenant remains unsupported and absent from visitor teaching",
+    "Builder must validate JSON shape and rendered reading order"
+  ],
+  "publicSafety": {
+    "privateOperationalContent": "excluded",
+    "metaphysicalProofClaims": "excluded",
+    "unrestrictedAgencyClaims": "excluded",
+    "medicalLegalFinancialClaims": "excluded"
+  }
+}
