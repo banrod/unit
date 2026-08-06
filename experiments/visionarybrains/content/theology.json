@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.1.0",
-  "taskId": "VB-DOC-002",
+  "schemaVersion": "visionarybrains-theology/1.2.0",
+  "taskId": "VB-DOC-003",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
   "definition": "Optional metaphorical language for meaning and orientation within IAM.",
   "definitionSources": ["VB-SRC-001", "VB-SRC-002"],
   "metaphors": [
@@ -11,8 +11,11 @@
     {"name":"Witness of Transformation","meaning":"evidence follows ordered change rather than isolated assertion","sources":["VB-SRC-004"]},
     {"name":"Returning Path","meaning":"recursion is bounded revisitation with declared state and conditions","sources":["VB-SRC-004"]},
     {"name":"Gate of Capability","meaning":"power enters through explicit permission","sources":["VB-SRC-001"]},
-    {"name":"Relational Graph","meaning":"bounded parts become a system through visible exchange","sources":["VB-SRC-002"]}
+    {"name":"Relational Graph","meaning":"bounded parts become a system through visible exchange","sources":["VB-SRC-002"]},
+    {"name":"Promise Under Light","meaning":"a commitment is trustworthy when its bounds, tests, evidence, challenge path, and amendment path can be seen","sources":["VB-SRC-005"]},
+    {"name":"Repairing Hand","meaning":"accountability carries error toward containment, correction, restoration, retained evidence, and learning","sources":["VB-SRC-005"]},
+    {"name":"Thread of Lineage","meaning":"ancestry preserves provenance and compatibility without transferring automatic authority or moral rank","sources":["VB-SRC-005"]}
   ],
-  "boundary": "Metaphors orient interpretation; they do not confer technical authority, establish factual proof, or guarantee replay when external effects were not recorded.",
-  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
+  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, or religious authority, establish factual proof, make biological equivalence claims, or grant descendants inherited legitimacy.",
+  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]
 }

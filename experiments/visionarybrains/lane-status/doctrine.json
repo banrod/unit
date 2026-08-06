@@ -1,22 +1,14 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.1.0",
+  "schemaVersion": "visionarybrains-lane-status/1.2.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-002",
-  "status": "PR_OPENING",
-  "observedAt": "2026-08-06T10:10:17Z",
+  "taskId": "VB-DOC-003",
+  "status": "PR_UPDATED",
+  "observedAt": "2026-08-06T12:11:00Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "33cef7ebc1a30621bf4c285a05e59f3b3219cc4a",
-  "sourcesConsumed": ["VB-SRC-004"],
+  "baseCommit": "8a72d7952bf36242add20310e44c3064e04f1b7a",
+  "sourcesConsumed": ["VB-SRC-005"],
   "sourcesExcluded": ["VB-SRC-003"],
-  "publicClaimTransformations": [
-    "memory as accountable continuity joining stable structure, changing state, and recoverable sequence",
-    "evidence as ordered transformation under explicit conditions and capabilities",
-    "recursion as bounded return for restoration, revision, and continuation",
-    "replayability as conditional on recorded inputs, external effects, and execution context"
-  ],
-  "forbiddenClaimsEstablished": 11,
-  "unresolvedAmbiguities": [
-    "Covenant remains unsupported and quarantined.",
-    "The source is a candidate technical contract and must be presented only as bounded architectural teaching material."
-  ]
+  "publicClaimTransformations": ["bounded and testable commitments", "agency-preserving ethics", "repair-bearing accountability", "lineage without inherited authority", "adaptation without silent drift"],
+  "forbiddenClaimsEstablished": 15,
+  "unresolvedAmbiguities": ["Covenant remains unsupported and quarantined.", "All constitutional and biological language remains metaphorical."]
 }

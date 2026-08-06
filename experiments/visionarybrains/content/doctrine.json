@@ -1,47 +1,22 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.1.0",
-  "taskId": "VB-DOC-002",
+  "schemaVersion": "visionarybrains-doctrine/1.2.0",
+  "taskId": "VB-DOC-003",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
   "themes": {
-    "identity": {
-      "statement": "coherence maintained across contexts",
-      "sources": ["VB-SRC-001"]
-    },
-    "architecture": {
-      "statement": "intention and policy remain distinct from execution substrate",
-      "sources": ["VB-SRC-001"]
-    },
-    "agency": {
-      "statement": "action is bounded by explicit capability",
-      "sources": ["VB-SRC-001"]
-    },
-    "memory": {
-      "statement": "accountable continuity linking stable structure, changing state, and recoverable sequence",
-      "sources": ["VB-SRC-004"]
-    },
-    "recursion": {
-      "statement": "bounded return with preserved conditions for restoration, revision, and continuation",
-      "sources": ["VB-SRC-004"]
-    },
-    "stewardship": {
-      "statement": "power, evidence, memory, and experimentation require care",
-      "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
-    },
-    "interface": {
-      "statement": "translation joins intention to execution",
-      "sources": ["VB-SRC-001"]
-    },
-    "operationalConscience": {
-      "statement": "meaning may orient values while ordered evidence and explicit conditions govern public claims",
-      "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
-    }
+    "identity": {"statement": "coherence maintained across contexts", "sources": ["VB-SRC-001"]},
+    "architecture": {"statement": "intention and policy remain distinct from execution substrate", "sources": ["VB-SRC-001"]},
+    "agency": {"statement": "action is bounded by explicit capability and preserved through consent, proportionality, and contestability", "sources": ["VB-SRC-001", "VB-SRC-005"]},
+    "memory": {"statement": "accountable continuity linking stable structure, changing state, and recoverable sequence", "sources": ["VB-SRC-004"]},
+    "recursion": {"statement": "bounded return with preserved conditions for restoration, revision, and continuation", "sources": ["VB-SRC-004"]},
+    "commitment": {"statement": "a durable promise is governing only when its meaning, bounds, evidence, tests, version, challenge path, and amendment path are visible", "sources": ["VB-SRC-005"]},
+    "repair": {"statement": "accountability includes containment, correction, communication, restoration where possible, retained evidence, and learning against recurrence", "sources": ["VB-SRC-005"]},
+    "lineage": {"statement": "ancestry supports provenance, compatibility, comparison, rollback, and responsible adaptation without conferring inherited authority", "sources": ["VB-SRC-005"]},
+    "adaptation": {"statement": "methods and expression may evolve while changes to identity, purpose, authority, and durable limits remain explicit and inspectable", "sources": ["VB-SRC-005"]},
+    "stewardship": {"statement": "power, evidence, memory, experimentation, adaptation, and repair require care", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]},
+    "interface": {"statement": "translation joins intention to execution", "sources": ["VB-SRC-001"]},
+    "operationalConscience": {"statement": "meaning may orient values while ordered evidence, explicit conditions, affected-party legibility, and repair govern public accountability", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]}
   },
-  "quarantinedThemes": {
-    "covenant": "Unsupported as a public doctrine term. Continuity and responsibility do not establish covenant without a separate public-safe source."
-  },
-  "claimBoundary": {
-    "statement": "Public teaching model; not operational authority, proof of metaphysical claims, or a claim that stored state reproduces personhood or consciousness.",
-    "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
-  }
+  "quarantinedThemes": {"covenant": "Unsupported as a public doctrine term. Accountable commitments do not establish covenant without a separate public-safe source."},
+  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, proof of metaphysical claims, or a claim that biological metaphor establishes personhood, consciousness, or inherited legitimacy.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]}
 }
