@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.4.0",
+  "schemaVersion": "visionarybrains-doctrine/1.4.1",
   "taskId": "VB-DOC-005",
   "status": "PUBLIC_DERIVED",
   "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"],
@@ -21,5 +21,5 @@
     "epistemicAuthoritySequence": {"statement": "possibility, resolution, witnessing, and authorization are distinct states; movement between them requires explicit evidence and authority", "sources": ["VB-SRC-007"]}
   },
   "quarantinedThemes": {"covenant": "Unsupported as a public doctrine term. Accountable commitments do not establish covenant without a separate public-safe source."},
-  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, medical or psychological assessment, proof of metaphysical or physical claims, a claim that symbolic interpretation reveals objective truth, or a claim that an interface or operational conscience is conscious, morally infallible, spiritually authoritative, independently authorizing, or entitled to replace a domain source of truth.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"]}
+  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, medical or psychological assessment, proof of metaphysical or physical claims, a claim that symbolic interpretation reveals objective truth, a claim that biological or constitutional metaphor establishes biological equivalence, personhood, consciousness, autonomous legal status, or inherited legitimacy, or a claim that an interface or operational conscience is conscious, morally infallible, spiritually authoritative, independently authorizing, or entitled to replace a domain source of truth.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"]}
 }
