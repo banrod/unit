@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "visionarybrains-lane-status/1.0.0",
+  "lane": "VisionaryBrains — Integrate",
+  "observedAt": "2026-08-06T08:49:57Z",
+  "status": "REPAIR_REQUIRED",
+  "milestone": "M0_PUBLIC_FOUNDATION",
+  "mergedPullRequests": [],
+  "reviewedPullRequests": [
+    {
+      "number": 27,
+      "title": "[VisionaryBrains Doctrine] Compile identity-substrate-capability doctrine",
+      "headSha": "66d146d6cb81a1028bfd2f4a758cebfc211f5cef",
+      "mergeable": true,
+      "pathOwnership": "PASS",
+      "targetBranch": "PASS",
+      "laneStatusPresent": true,
+      "publicSafety": "PASS_WITH_REPAIRS",
+      "provenance": "FAIL",
+      "repairRequest": [
+        "Remove or quarantine provisional covenant and recursion themes",
+        "Add provenance to theology definition and boundary claims"
+      ]
+    }
+  ],
+  "validation": {
+    "ci": "NOT_PRESENT_OR_NOT_EVIDENCED",
+    "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY",
+    "contentSafety": "PASS_WITH_REPAIRS"
+  },
+  "unresolvedDefects": [
+    "Visitor-facing doctrine includes unsupported provisional themes.",
+    "Two theology-level claims lack direct provenance metadata."
+  ],
+  "nextActions": [
+    "Doctrine updates PR 27.",
+    "Integrate re-runs provenance and safety gates.",
+    "Teacher remains blocked until VB-DOC-001 passes and merges."
+  ]
+}
