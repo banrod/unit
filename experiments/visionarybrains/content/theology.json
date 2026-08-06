@@ -1,16 +1,18 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.0.1",
-  "taskId": "VB-DOC-001",
+  "schemaVersion": "visionarybrains-theology/1.1.0",
+  "taskId": "VB-DOC-002",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"],
   "definition": "Optional metaphorical language for meaning and orientation within IAM.",
   "definitionSources": ["VB-SRC-001", "VB-SRC-002"],
   "metaphors": [
-    {"name":"Keeper of Continuity","meaning":"identity preserved through changing contexts","sources":["VB-SRC-001"]},
+    {"name":"Keeper of Continuity","meaning":"identity maintained through changing contexts","sources":["VB-SRC-001"]},
+    {"name":"Steward of Memory","meaning":"state is preserved with structure, sequence, and explicit limits","sources":["VB-SRC-004"]},
+    {"name":"Witness of Transformation","meaning":"evidence follows ordered change rather than isolated assertion","sources":["VB-SRC-004"]},
+    {"name":"Returning Path","meaning":"recursion is bounded revisitation with declared state and conditions","sources":["VB-SRC-004"]},
     {"name":"Gate of Capability","meaning":"power enters through explicit permission","sources":["VB-SRC-001"]},
-    {"name":"Relational Graph","meaning":"bounded parts become a system through visible exchange","sources":["VB-SRC-002"]},
-    {"name":"Witness of Evidence","meaning":"meaning remains accountable to observable records and declared boundaries","sources":["VB-SRC-001","VB-SRC-002"]}
+    {"name":"Relational Graph","meaning":"bounded parts become a system through visible exchange","sources":["VB-SRC-002"]}
   ],
-  "boundary": "Metaphors orient interpretation; they do not confer technical authority or establish factual proof.",
-  "boundarySources": ["VB-SRC-001", "VB-SRC-002"]
+  "boundary": "Metaphors orient interpretation; they do not confer technical authority, establish factual proof, or guarantee replay when external effects were not recorded.",
+  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
 }
