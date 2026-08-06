@@ -1,70 +1,61 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.2.0",
+  "schemaVersion": "visionarybrains-lane-status/1.3.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T11:49:08Z",
-  "status": "VISITOR_FOUNDATION_INTEGRATED_DOCTRINE_REBASE_REQUIRED",
-  "milestone": "M3_VISITOR_FOUNDATION",
+  "observedAt": "2026-08-06T13:49:22Z",
+  "status": "DOCTRINE_INTEGRATED_BUILDER_REBASE_REQUIRED",
+  "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [
     {
-      "number": 27,
-      "title": "[VisionaryBrains Doctrine] Compile identity-substrate-capability doctrine",
-      "integrationSha": "119ef3568ab275cae123e4bbd03975a013acb020"
-    },
-    {
-      "number": 28,
-      "title": "[VisionaryBrains Doctrine] Compile memory stewardship and bounded recursion doctrine",
-      "headSha": "6bf131fd301d5729c1c135dd57e3d66313fcb844",
-      "integrationSha": "e03ccbc0ca5e17f0feb9cf3ad0724aeb42e013a6"
-    },
-    {
-      "number": 29,
-      "title": "[VisionaryBrains Teacher] Create first-encounter visitor path",
-      "headSha": "f6ba3f6f4981fb82c4d2c2ddddaebee90509310e",
-      "integrationSha": "7f997fa830dea4dc5889672d43f69034073218cd"
+      "number": 30,
+      "title": "[VisionaryBrains Doctrine] Compile constitutional continuity, repair, and lineage doctrine",
+      "headSha": "d96bcd4836d6546733d8bb352a99a13bf4021387",
+      "integrationSha": "8dcc00b2a5be9f29cd91d401669f38bb476259d6"
     }
   ],
   "validation": {
-    "pullRequest29": {
+    "pullRequest30": {
       "targetBranch": "PASS",
       "mergeability": "PASS",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
+      "boundedScope": "PASS",
       "publicSafety": "PASS",
       "provenance": "PASS",
-      "reviewThreads": "RESOLVED",
       "structuralCompatibility": "PASS",
-      "accessibilityReadability": "PASS_CONTENT_LAYER",
+      "reviewThreads": "RESOLVED",
       "ci": {
         "test": "PASS",
         "workstationValidation": "PASS"
       }
     },
-    "pullRequest30": {
+    "pullRequest31": {
       "targetBranch": "PASS",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
-      "publicSafety": "PASS",
-      "provenance": "PASS",
-      "ciAtReviewedHead": {
+      "boundedScope": "PASS",
+      "publicSafety": "PASS_AT_REVIEWED_HEAD",
+      "accessibilitySafeguards": "PASS_STATIC_REVIEW_AT_REVIEWED_HEAD",
+      "previousCi": {
         "test": "PASS",
-        "workstationValidation": "PASS"
+        "workstationValidation": "PASS",
+        "visionaryBrainsValidation": "PASS"
       },
-      "mergeabilityAfterPullRequest29": "FAIL_REBASE_REQUIRED"
+      "mergeabilityAfterPullRequest30": "FAIL_REBASE_REQUIRED",
+      "requiredRepair": "Update the Builder branch against the current integration head without expanding scope, update lane status and content-source declarations as needed, and rerun all available checks."
     }
   },
   "unresolvedDefects": [
-    "PR 30 became non-mergeable after PR 29 changed the integration branch and must be safely updated before integration.",
-    "Covenant remains quarantined because no public-safe source currently supports it.",
-    "The website shell, responsive implementation, rendered keyboard paths, reduced-motion behavior, and deterministic site validation are not yet integrated.",
-    "MVP is not reviewable until Builder completes VB-BUILD-001 and no high-severity issue remains."
+    "PR 31 is not mergeable after the doctrine integration and requires a bounded branch update.",
+    "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading still require post-rebase review.",
+    "Covenant remains unsupported and quarantined.",
+    "MVP is not reviewable until the Builder shell is integrated and no high-severity issue remains."
   ],
   "nextActions": [
-    "Doctrine should update PR 30 against the current experiment/visionarybrains branch and rerun validation without expanding scope.",
-    "Builder may begin VB-BUILD-001 from the integrated visitor content.",
-    "Integrate should preserve doctrine-before-builder merge ordering when both become eligible unless Builder is only a safe compatibility repair."
+    "Builder should update PR 31 against the current experiment/visionarybrains branch and rerun deterministic and GitHub validation.",
+    "Integrate should re-review PR 31 for mergeability, changed paths, public-safe rendering, structural compatibility, accessibility, and current checks.",
+    "Doctrine may begin VB-DOC-004 independently, but Builder repair remains the milestone-critical path."
   ],
   "controlCommits": [
-    "8fbbaef48c8e8e5a71ed2a3badfe6bea96a37e07",
-    "7ef2d8b53f9e5dc72d31ad405edbb131c6047513"
+    "71dd9c2588a0297f51b0d2b2350a9d3be75256e5"
   ]
 }
