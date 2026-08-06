@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"visionarybrains-glossary/1.4.0",
+  "schemaVersion":"visionarybrains-glossary/1.5.0",
   "terms":[
     {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
     {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
@@ -24,6 +24,12 @@
     {"term":"witnessing","definition":"Retained evidence of a consequence or transformation; witnessing does not itself grant permission to act.","sources":["VB-SRC-007"]},
     {"term":"authorization","definition":"An explicit legitimate grant permitting a consequential action within stated bounds.","sources":["VB-SRC-007"]},
     {"term":"operational conscience","definition":"A non-sentient discipline of checks for clarity, legitimate authority, provenance, proportionality, recoverability, and preservation of viable future choices.","sources":["VB-SRC-007"]},
+    {"term":"readiness","definition":"An evidence-bearing state supported by current validation, independent review, resolved objections, and an explicit promotion decision appropriate to consequence.","sources":["VB-SRC-008"]},
+    {"term":"promotion","definition":"The explicit decision to admit a reviewed and authorized change into a trusted state; promotion is distinct from creation and review.","sources":["VB-SRC-008"]},
+    {"term":"recovery boundary","definition":"A preserved known-good state, history, or rollback path that limits damage and supports accountable repair.","sources":["VB-SRC-008"]},
+    {"term":"protected history","definition":"A non-destructive account of change retained so later convenience cannot silently rewrite how a trusted state was reached.","sources":["VB-SRC-008"]},
+    {"term":"threshold","definition":"An optional metaphor for the evidence and authority boundary between a possible change and an admitted trusted state.","sources":["VB-SRC-008"]},
+    {"term":"keeper","definition":"An optional metaphor for an independent review function, not a privileged person, priesthood, sentient system, or supernatural authority.","sources":["VB-SRC-008"]},
     {"term":"field","definition":"A bounded situation containing entities, relations, pressures, absences, and observer positions.","sources":["VB-SRC-006"]},
     {"term":"ring","definition":"A metaphor for a bounded traversal with entry, movement, return, closure, and residue.","sources":["VB-SRC-006"]},
     {"term":"gravity well","definition":"A metaphor for accumulated salience, dependency, inertia, or unresolved pressure; computational use requires an explicit measurable proxy.","sources":["VB-SRC-006"]},
