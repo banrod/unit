@@ -1,12 +1,12 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.1",
+  "schemaVersion": "visionarybrains-lane-status/1.0.2",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T16:00:27Z",
+  "observedAt": "2026-08-06T17:02:03Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-005",
-  "baseCommit": "a508352b9514a0608bb77f92e9da9b43d45f4f4b",
+  "taskId": "VB-EXC-006",
+  "baseCommit": "c8f8a17e396b91f46c0978d3aac39b2b8d9e591a",
   "sourcesClassified": {
-    "PUBLIC_CANON": 3,
+    "PUBLIC_CANON": 4,
     "PUBLIC_DERIVED": 3,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
@@ -14,32 +14,33 @@
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0005-agency-interface-operational-conscience.md",
+    "experiments/visionarybrains/learning/excavation-notes/0006-release-stewardship-recovery-boundaries.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "possibility, resolution, witnessing, and authorization remain distinct",
-    "agency as authorship over framing within explicit consent, permission, safety, and evidence constraints",
-    "interface as accountable translation with visible uncertainty and consequential omissions",
-    "operational conscience as a non-sentient discipline of clarity, authority, provenance, proportionality, recoverability, and future viability",
-    "witnessed consequences and provenance before promotion or reuse",
-    "plain-language results with challenge, rollback, correction, and re-entry paths"
+    "creation, review, authorization, and promotion remain distinct",
+    "readiness is an evidence-bearing state rather than a declaration by the author",
+    "independent review and resolved objections constrain self-authorization",
+    "recovery boundaries preserve repairability and accountable continuity",
+    "protected history resists silent revision of how a system changed",
+    "threshold and keeper language may be used only as optional, non-authoritative metaphor"
   ],
   "unsafeExclusions": [
-    "internal component names, topologies, schemas, identifiers, receipts, hashes, thresholds, budgets, and implementation contracts",
-    "private source lineage, workflow mechanics, unpublished governance controls, and operational modes",
-    "interfaces presented as independent consequential authority or domain truth",
-    "operational conscience presented as consciousness, personhood, moral infallibility, spiritual authority, or autonomous legal status",
-    "mythic vocabulary used as machine identity, evidence, or self-authenticating command",
-    "hidden compression, omitted uncertainty, irreversible action without authority, or removed recovery paths",
+    "exact commit hashes, tags, branch names, repository settings, check identifiers, and administrative commands",
+    "instructions for bypassing protections or weakening review controls",
+    "technical qualification presented as moral, spiritual, legal, scientific, or religious legitimacy",
+    "reviewers, maintainers, automation, or metaphorical keepers presented as infallible or privileged interpreters",
+    "preserved technical history presented as consciousness, personal memory, a soul, or proof of identity",
+    "emergency authority presented as ambient, ordinary, or self-granted",
     "covenant promoted as supported doctrine"
   ],
   "readyTasks": [
-    "VB-DOC-005"
+    "VB-DOC-005",
+    "VB-DOC-006"
   ],
   "blockers": [
     "Covenant remains unsupported and quarantined.",
-    "The source is a draft; all doctrine derived from it must remain non-authoritative and provenance-labeled."
+    "VB-SRC-008 is technical administration guidance; downstream teaching must not convert qualification procedure into moral, spiritual, legal, scientific, or religious authority."
   ],
-  "nextLaneRequest": "Doctrine should compile VB-DOC-005 from VB-SRC-007, teaching agency as authorship under visible constraint, interface as accountable translation, and operational conscience as a non-sentient check discipline. Preserve the distinctions among possibility, resolution, witnessing, and authorization, and keep covenant quarantined."
+  "nextLaneRequest": "Doctrine should complete the higher-priority VB-DOC-005 before selecting VB-DOC-006. For VB-DOC-006, compile readiness as evidenced qualification, preserve the separation of creation, review, authorization, and promotion, and teach recovery boundaries as repair stewardship. Keep threshold and keeper language optional, non-coercive, and subordinate to explicit governance."
 }
