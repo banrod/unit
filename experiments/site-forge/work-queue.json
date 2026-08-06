@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "site-forge-queue/1.0.0",
+  "project": "AlienOS Systems Atlas",
+  "branch": "experiment/site-forge",
+  "milestone": "M0_FOUNDATION",
+  "updatedAt": "2026-08-06T07:18:00Z",
+  "activeTaskLimit": 8,
+  "tasks": [
+    {
+      "id": "SF-BLD-001",
+      "lane": "Site Forge — Build",
+      "status": "READY",
+      "priority": 100,
+      "title": "Create the static structural scaffold",
+      "ownedPaths": [
+        "experiments/site-forge/index.html",
+        "experiments/site-forge/app.js",
+        "experiments/site-forge/package.json",
+        "experiments/site-forge/tests/validate.mjs",
+        "experiments/site-forge/README.md",
+        "experiments/site-forge/lane-status/build.json",
+        ".github/workflows/site-forge-validation.yml"
+      ],
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "Semantic landmarks and responsive navigation exist.",
+        "The page renders a useful no-JavaScript baseline.",
+        "JavaScript loads content.json with a safe fallback.",
+        "The systems map is keyboard operable.",
+        "Validation checks required files, JSON shape, internal anchors, and unsafe remote references."
+      ]
+    },
+    {
+      "id": "SF-EXP-001",
+      "lane": "Site Forge — Experience",
+      "status": "READY",
+      "priority": 95,
+      "title": "Establish content schema and visual foundation",
+      "ownedPaths": [
+        "experiments/site-forge/styles.css",
+        "experiments/site-forge/content.json",
+        "experiments/site-forge/lane-status/experience.json"
+      ],
+      "dependencies": [],
+      "acceptanceCriteria": [
+        "content.json defines navigation, hero, modules, timeline, principles, and calls to action.",
+        "Copy is public-safe, conceptual, and explicitly noncanonical.",
+        "CSS provides responsive layout, visible focus, practical contrast, and reduced-motion behavior.",
+        "No external fonts, trackers, stock assets, or remote runtime dependencies are introduced."
+      ]
+    }
+  ],
+  "completed": [],
+  "blocked": [],
+  "integrationNotes": [
+    "Build and Experience paths are intentionally disjoint for the first cycle.",
+    "Integrate may merge one passing PR from each implementation lane per firing."
+  ]
+}
