@@ -1,6 +1,6 @@
 {
   "schemaVersion": "visionarybrains-work-queue/1.0.0",
-  "updatedAt": "2026-08-06T09:48:00Z",
+  "updatedAt": "2026-08-06T10:02:22Z",
   "milestone": "M1_DOCTRINE_FOUNDATION",
   "tasks": [
     {
@@ -35,10 +35,26 @@
       ]
     },
     {
+      "taskId": "VB-DOC-003",
+      "lane": "Doctrine",
+      "status": "READY",
+      "priority": 3,
+      "title": "Compile constitutional continuity, repair, and lineage doctrine",
+      "dependencies": ["VB-EXC-003"],
+      "inputs": ["learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md"],
+      "acceptanceCriteria": [
+        "Explain commitments as bounded, testable, traceable, and amendable",
+        "Define ethical action through agency, proportionality, contestability, and repair",
+        "Define lineage as accountable continuity rather than inherited authority",
+        "Trace every public claim to VB-SRC-005",
+        "Do not promote covenant as a supported doctrine term"
+      ]
+    },
+    {
       "taskId": "VB-TEACH-001",
       "lane": "Teacher",
       "status": "READY",
-      "priority": 3,
+      "priority": 4,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
       "inputs": ["content/principles.json", "content/doctrine.json", "content/forbidden-claims.json"],
@@ -52,7 +68,7 @@
       "taskId": "VB-BUILD-001",
       "lane": "Builder",
       "status": "BLOCKED",
-      "priority": 4,
+      "priority": 5,
       "title": "Build public teaching shell",
       "dependencies": ["VB-TEACH-001"],
       "inputs": ["content/site-copy.json", "content/visitor-paths.json", "content/teaching-cards.json"],
@@ -87,6 +103,18 @@
       "outputs": [
         "learning/source-index.json",
         "learning/excavation-notes/0002-memory-evidence-recursion.md"
+      ]
+    },
+    {
+      "taskId": "VB-EXC-003",
+      "lane": "Excavator",
+      "status": "COMPLETED",
+      "priority": 2,
+      "title": "Excavate constitutional continuity, repair, and lineage",
+      "dependencies": [],
+      "outputs": [
+        "learning/source-index.json",
+        "learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md"
       ]
     }
   ]

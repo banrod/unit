@@ -1,6 +1,6 @@
 {
   "schemaVersion": "visionarybrains-source-index/1.0.0",
-  "updatedAt": "2026-08-06T09:00:17Z",
+  "updatedAt": "2026-08-06T10:02:22Z",
   "sources": [
     {
       "sourceId": "VB-SRC-001",
@@ -9,12 +9,7 @@
       "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/repository-boundaries.md",
       "publicSafeAbstraction": "The IAM product layer owns identity, personas, workers, orchestration, permissions, memory, retrieval, prompts, goals, proof records, dashboards, and product policy. The general execution kernel remains separate and receives only typed graphs and explicit capability grants.",
       "unsafeExclusions": [],
-      "teachingPotential": [
-        "identity versus substrate",
-        "explicit capability grants",
-        "one-way dependency direction",
-        "doctrine is not runtime authority"
-      ]
+      "teachingPotential": ["identity versus substrate", "explicit capability grants", "one-way dependency direction", "doctrine is not runtime authority"]
     },
     {
       "sourceId": "VB-SRC-002",
@@ -22,16 +17,8 @@
       "title": "Unit public overview",
       "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/README.md",
       "publicSafeAbstraction": "Programs can be understood as graphs composed from multi-input, multi-output units. The visual environment emphasizes direct manipulation, experimentation, composition, sandboxing, and approachable software sharing.",
-      "unsafeExclusions": [
-        "third-party contact details not needed by VisionaryBrains",
-        "implementation examples irrelevant to IAM teaching"
-      ],
-      "teachingPotential": [
-        "graphs as relational language",
-        "composition over monoliths",
-        "learning through exploration",
-        "sandboxing as stewardship"
-      ]
+      "unsafeExclusions": ["third-party contact details not needed by VisionaryBrains", "implementation examples irrelevant to IAM teaching"],
+      "teachingPotential": ["graphs as relational language", "composition over monoliths", "learning through exploration", "sandboxing as stewardship"]
     },
     {
       "sourceId": "VB-SRC-003",
@@ -39,15 +26,8 @@
       "title": "PBOS artifact-vault governance summary",
       "reference": null,
       "publicSafeAbstraction": null,
-      "unsafeExclusions": [
-        "private repository location",
-        "canonical storage procedures",
-        "promotion controls",
-        "license and provenance operations"
-      ],
-      "teachingPotential": [
-        "internal evidence discipline may later yield a public-derived stewardship principle"
-      ]
+      "unsafeExclusions": ["private repository location", "canonical storage procedures", "promotion controls", "license and provenance operations"],
+      "teachingPotential": ["internal evidence discipline may later yield a public-derived stewardship principle"]
     },
     {
       "sourceId": "VB-SRC-004",
@@ -56,20 +36,30 @@
       "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/kernel-contract.md",
       "sourceStatus": "candidate technical contract",
       "publicSafeAbstraction": "Stable graph identity is separated from mutable runtime state. Snapshots preserve restorable state and sequence; ordered events preserve the path of transformation; external effects must be explicit and recorded when replayability or proof matters.",
+      "unsafeExclusions": ["claims that snapshots reproduce consciousness, persons, or souls", "determinism claims when external effects were not recorded", "moral, spiritual, or legal identity claims based on hashes", "production-authority claims derived from a candidate contract", "covenant doctrine unsupported by the source"],
+      "teachingPotential": ["memory as accountable continuity", "evidence as ordered transformation", "identity as stable form plus changing state", "bounded recursion as return with restorable context", "replayability as stewardship", "explicit external influence"]
+    },
+    {
+      "sourceId": "VB-SRC-005",
+      "classification": "PUBLIC_DERIVED",
+      "title": "IAM Constitutional Genome — public-safe constitutional abstraction",
+      "reference": "File Library artifact: IAM_Constitutional_Genome_Framework.docx, version 1.0, dated 2026-07-17",
+      "sourceStatus": "controlled working draft; internal source transformed into a non-authoritative public abstraction",
+      "publicSafeAbstraction": "IAM can be taught as an organized-cognition architecture whose commitments must be bounded, interpretable, testable, traceable, versioned, and open to amendment. Ethical action preserves legitimate agency, remains proportionate and contestable, records lineage, and treats correction and repair as part of accountability. Adaptation may refine expression but must not silently replace identity, purpose, authority, or constitutional limits.",
       "unsafeExclusions": [
-        "claims that snapshots reproduce consciousness, persons, or souls",
-        "determinism claims when external effects were not recorded",
-        "moral, spiritual, or legal identity claims based on hashes",
-        "production-authority claims derived from a candidate contract",
-        "covenant doctrine unsupported by the source"
+        "the complete internal gene, chromosome, stratum, scorecard, and release-gate specifications",
+        "claims of biological equivalence, sentience, autonomous personhood, or inherited moral authority",
+        "internal schemas, operational controls, private source lineage, and implementation details",
+        "medical, legal, psychological, spiritual, or governmental authority claims",
+        "using the term covenant as established doctrine when the source does not define it"
       ],
       "teachingPotential": [
-        "memory as accountable continuity",
-        "evidence as ordered transformation",
-        "identity as stable form plus changing state",
-        "bounded recursion as return with restorable context",
-        "replayability as stewardship",
-        "explicit external influence"
+        "commitment as testable constitutional promise",
+        "ethical action as agency plus proportionality plus contestability",
+        "repair as a necessary part of accountability",
+        "lineage as traceable continuity and compatibility",
+        "adaptation without silent identity drift",
+        "legibility to affected parties"
       ]
     }
   ]

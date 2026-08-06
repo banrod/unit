@@ -1,41 +1,42 @@
 {
   "schemaVersion": "visionarybrains-lane-status/1.0.0",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T09:00:17Z",
+  "observedAt": "2026-08-06T10:02:22Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-002",
-  "baseCommit": "43f8ea284319a344cd716e69c27be4d9f951a4dd",
+  "taskId": "VB-EXC-003",
+  "baseCommit": "c076aec9f26fb0b2ea47ea5aec4171dc1fa97ac0",
   "sourcesClassified": {
     "PUBLIC_CANON": 3,
-    "PUBLIC_DERIVED": 0,
+    "PUBLIC_DERIVED": 1,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0002-memory-evidence-recursion.md",
+    "experiments/visionarybrains/learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "memory as accountable continuity",
-    "evidence as ordered transformation",
-    "identity as stable structure related to changing state",
-    "bounded recursion as return with restorable context",
-    "replayability as preservation of conditions and outputs",
-    "external influence as explicit, bounded, and recordable"
+    "commitment as bounded, testable, traceable, and amendable",
+    "ethical action as preservation of legitimate agency under uncertainty",
+    "accountability as correction, communication, restoration, and retained learning",
+    "lineage as ancestry and compatibility without inherited authority",
+    "adaptation without silent replacement of identity or governing limits",
+    "legibility and contestability for affected parties"
   ],
   "unsafeExclusions": [
-    "claims that snapshots reproduce consciousness, persons, or souls",
-    "determinism claims without recorded external effects",
-    "moral, spiritual, or legal identity claims based on hashes",
-    "production-authority claims derived from a candidate technical contract",
-    "covenant doctrine inferred without a supporting public-safe source"
+    "complete internal constitutional specifications and implementation controls",
+    "biological equivalence, sentience, personhood, divinity, or inherited spiritual status",
+    "lineage as automatic truth, authority, legitimacy, ownership, or moral rank",
+    "legal, medical, psychological, religious, or governmental authority claims",
+    "private source lineage and exact operational details",
+    "covenant promoted as supported doctrine"
   ],
-  "readyTasks": ["VB-DOC-002"],
+  "readyTasks": ["VB-DOC-002", "VB-DOC-003", "VB-TEACH-001"],
   "blockers": [
-    "Covenant remains unsupported and must stay quarantined pending a separate PUBLIC_CANON or justified PUBLIC_DERIVED source.",
-    "VB-DOC-001 remains in repair on PR 27; this excavation does not silently normalize its provenance defects."
+    "Covenant remains unsupported as a public doctrine term. VB-SRC-005 supports accountable commitments but does not define covenant.",
+    "Builder remains dependent on integrated visitor-facing teaching content."
   ],
-  "nextLaneRequest": "Doctrine should use VB-SRC-004 and excavation note 0002 to compile memory stewardship, evidence, and bounded recursion while keeping covenant quarantined. PR 27 must independently satisfy its existing repair request."
+  "nextLaneRequest": "Doctrine should compile VB-DOC-003 from VB-SRC-005 while keeping covenant quarantined. Teacher may continue VB-TEACH-001 from the already integrated doctrine foundation; Builder should remain blocked until teaching content is integrated."
 }
