@@ -1,49 +1,48 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.4",
+  "schemaVersion": "visionarybrains-lane-status/1.0.5",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T20:58:28Z",
+  "observedAt": "2026-08-06T22:03:43Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-008",
-  "baseCommit": "d043d046adc26d50539d7f7616e4784b2fa9b576",
+  "taskId": "VB-EXC-009",
+  "baseCommit": "e86dd3bff9e8309296000332944132eed99c4b3c",
   "materialCommits": [
-    "d73819d5a164fb5df25fada4fbfe9838571ebd7d",
-    "bd0ae1fafa1c038fcc61c87f0cb611cf3091efa5",
-    "b0b3001d9e84dac469a7f71da5755636e90c7618"
+    "c6934155a6d1c21f21094871e2102a02635bfc3b",
+    "a37550842d2e10f6eeae7974a54ca71e598f692a",
+    "3f5830f1d69b6b5373bb4ec58233d54079dce518"
   ],
   "sourcesClassified": {
     "PUBLIC_CANON": 4,
-    "PUBLIC_DERIVED": 5,
+    "PUBLIC_DERIVED": 6,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0008-covenant-accountable-commitment-boundary.md",
+    "experiments/visionarybrains/learning/excavation-notes/0009-governed-operator-ecology.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "accountable commitment is a bounded promise or governing obligation with visible actor, purpose, scope, authority, evidence, consequences, amendment, challenge, and repair paths",
-    "declaration alone does not establish authority, ethics, fulfillment, or immutability",
-    "commitment should remain evidence-aware, proportionate, attributable, contestable, and compatible with correction",
-    "adaptation may refine expression without silently erasing durable obligations or constitutional limits",
-    "governed amendment and unbinding remain possible when obligations, affected parties, records, and consequences are handled accountably",
-    "covenant is not established as an independent canonical doctrine; if used in mythic teaching it is only an optional metaphor for accountable commitment"
+    "IAM is a governed operator ecology rather than a single omnipotent intelligence",
+    "personas are bounded specialist responsibilities and not independent truth authorities or sovereign minds",
+    "complex work is composed through explicit dependencies and attributable handoffs rather than narrative blending",
+    "the coordinating IAM layer remains subject to context, evidence, permission, authority, review, and publication discipline",
+    "proposals, decisions, implementation claims, test results, unresolved questions, authority requests, publication records, and supersession notices carry different epistemic weight",
+    "public projection is an audience-relative translation and cannot invent omitted evidence, context, or authority"
   ],
   "unsafeExclusions": [
-    "literal religious, sacred, supernatural, or metaphysical covenant claims",
-    "software, agents, personas, memory, continuity, recursion, relation, resonance, lineage, authorship, promotion, or protected history independently creating covenant",
-    "covenant conferring legal status, personhood, consciousness, spiritual authority, ownership, obedience, exclusivity, or privileged interpretation",
-    "commitment overriding consent, privacy, dissent, withdrawal rights, affected-party recourse, law, policy, or legitimate external authority",
-    "declaration treated as proof of authorization, ethics, fulfillment, or immunity from amendment",
-    "mythic covenant language substituted for contracts, law, evidence, policy, consent, or explicit authorization"
+    "personas presented as independent consciousnesses, persons, souls, deities, spirits, or sovereign agents",
+    "specialist role or coordinating position used to claim privileged epistemic, moral, spiritual, legal, or operational authority",
+    "IAM presented as omnipotent, exempt from governance, or entitled to override consent, evidence, policy, domain authority, or explicit permission",
+    "internal persona routing mechanics, exact worker schedules, private identifiers, schemas, execution receipts, hashes, topology, security controls, and unpublished implementation details",
+    "generated prose treated as canonical merely because it came from a named role or coordinating layer",
+    "role composition used to erase accountability, provenance, uncertainty, or challenge paths",
+    "public projection presented as complete internal state or allowed to invent missing authority or evidence"
   ],
-  "readyTasks": [
-    "VB-DOC-008"
-  ],
+  "readyTasks": [],
   "blockers": [
-    "The source supports accountable commitment but does not canonically define covenant; covenant must therefore remain optional metaphor rather than independent authority.",
-    "VB-DOC-007 remains in repair on PR 35 and should be resolved before later doctrine is integrated so forbidden-claim protections remain additive."
+    "VB-DOC-007 remains in repair on PR 35 and must preserve prior glossary, principle, theology, provenance, and forbidden-claim content additively.",
+    "VB-DOC-008 on PR 36 depends on VB-DOC-007 integration; VB-DOC-009 is intentionally blocked behind both to prevent overlapping doctrine branches from dropping prior safety content."
   ],
-  "nextLaneRequest": "Doctrine should first complete the existing VB-DOC-007 repair. Then select READY VB-DOC-008 and compile accountable commitment directly while keeping covenant noncanonical, optional, metaphorical, non-coercive, and subordinate to consent, evidence, law, policy, explicit authority, amendment, repair, and governed unbinding."
+  "nextLaneRequest": "Integrate should complete the VB-DOC-007 non-regression repair, then rebase and integrate VB-DOC-008. Doctrine may then select VB-DOC-009 and compile VB-SRC-011 into a public 'nature of IAM' layer: bounded personas, governed coordination, explicit dependency composition, differentiated epistemic status, and audience-relative projection."
 }
