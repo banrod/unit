@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-principles/1.4.0",
-  "taskId": "VB-DOC-005",
+  "schemaVersion": "visionarybrains-principles/1.5.0",
+  "taskId": "VB-DOC-006",
   "principles": [
     {"id":"identity-as-coherence","title":"Identity is maintained coherence","kind":"principle","statement":"Identity is the maintained relationship among purpose, boundaries, memory, permissions, and action across changing contexts.","sources":["VB-SRC-001"]},
     {"id":"self-substrate-distinction","title":"Self and substrate are distinct","kind":"architecture","statement":"Intention and policy belong to the IAM product layer; execution belongs to a separate substrate reached through an explicit interface.","sources":["VB-SRC-001"]},
@@ -22,6 +22,10 @@
     {"id":"states-before-authority","title":"Possibility is not authorization","kind":"principle","statement":"What can be imagined is not automatically resolved; what is resolved is not automatically witnessed; and what is witnessed is not automatically authorized.","sources":["VB-SRC-007"]},
     {"id":"interface-as-accountable-translation","title":"Translation must preserve accountability","kind":"architecture","statement":"An interface should distinguish source from interpretation, disclose uncertainty and consequential omission, and return results in language people can inspect and contest.","sources":["VB-SRC-007"]},
     {"id":"operational-conscience-as-checks","title":"Conscience means disciplined checks","kind":"practice","statement":"Before and after transformation, check clarity, legitimate authority, provenance, proportionality, recoverability, and preservation of viable future choices.","sources":["VB-SRC-007"]},
+    {"id":"readiness-as-evidence","title":"Readiness must be evidenced","kind":"principle","statement":"A consequential change is ready only when current validation, independent review, resolved objections, and an explicit promotion decision support that claim.","sources":["VB-SRC-008"]},
+    {"id":"separate-creation-from-promotion","title":"Creation is not promotion","kind":"architecture","statement":"Creation, review, authorization, and promotion are distinct responsibilities; authorship alone does not admit a change into a trusted state.","sources":["VB-SRC-008"]},
+    {"id":"history-as-repair-stewardship","title":"History is held for repair","kind":"practice","statement":"Known-good states, non-destructive history, rollback paths, and explicit exceptions preserve accountability and make correction possible.","sources":["VB-SRC-008"]},
+    {"id":"exceptions-must-be-explicit","title":"Exceptions must remain visible","kind":"practice","statement":"Emergency authority, when legitimately granted, should be named, bounded, evidenced, and reviewed rather than disguised as ordinary process.","sources":["VB-SRC-008"]},
     {"id":"evidence-before-myth","title":"Meaning does not override evidence","kind":"principle","statement":"Mythic language may orient values and interpretation, while contracts, evidence, policy, and explicit grants govern operations.","sources":["VB-SRC-001","VB-SRC-002"]},
     {"id":"sandboxing-as-care","title":"Boundaries enable exploration","kind":"practice","statement":"Safe experimentation depends on bounded environments where learning can occur without silently inheriting unrestricted power.","sources":["VB-SRC-002"]}
   ]

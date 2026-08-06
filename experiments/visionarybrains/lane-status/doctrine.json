@@ -1,26 +1,26 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.4.1",
+  "schemaVersion": "visionarybrains-lane-status/1.5.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-005",
-  "status": "PR_UPDATED",
-  "observedAt": "2026-08-06T17:12:51Z",
+  "taskId": "VB-DOC-006",
+  "status": "PR_OPENED",
+  "observedAt": "2026-08-06T18:10:30Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "42b5c17041326a4b00e137f91c2bce3727304232",
-  "sourcesConsumed": ["VB-SRC-007"],
+  "baseCommit": "3579328bc34579f38a027c6128d5da6a10ec6fdf",
+  "sourcesConsumed": ["VB-SRC-008"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
-    "agency as meaningful authorship over framing, visible alternatives, challenge paths, and action within explicit constraints",
-    "possibility, resolution, witnessing, and authorization as distinct states requiring explicit evidence and authority for promotion",
-    "interface as accountable translation preserving source versus interpretation, uncertainty, consequential omission, and inspectable return language",
-    "operational conscience as a non-sentient check discipline for clarity, legitimate authority, provenance, proportionality, recoverability, and future viability",
-    "recovery and preserved future choices as stewardship requirements"
+    "readiness as an evidence-bearing state supported by current validation, independent review, resolved objections, and explicit promotion",
+    "creation, review, authorization, and promotion as distinct responsibilities",
+    "recovery boundaries as preserved known-good states, non-destructive history, rollback paths, and explicit exceptions",
+    "threshold and keeper as optional metaphors for evidence and independent review rather than privileged persons or spiritual authority",
+    "technical qualification as distinct from moral, spiritual, legal, scientific, religious, or covenant legitimacy"
   ],
-  "forbiddenClaimsEstablished": 27,
-  "branchRefresh": "Rebased by reconstruction onto the current integration head after Excavator commit 42b5c17041326a4b00e137f91c2bce3727304232; doctrine scope and content were preserved.",
-  "audienceBoundary": "Public visitors unfamiliar with IAM; operational metaphors remain non-sentient, non-authorizing, non-coercive, provenance-labeled, and subordinate to evidence, permissions, and domain sources of truth.",
+  "forbiddenClaimsEstablished": 32,
+  "audienceBoundary": "Public visitors unfamiliar with IAM; readiness and threshold language remain non-coercive, non-sentient, non-authorizing, provenance-labeled, and subordinate to explicit governance and domain authority.",
   "unresolvedAmbiguities": [
     "Covenant remains unsupported and quarantined.",
-    "VB-SRC-007 is a PUBLIC_DERIVED abstraction from a private architectural draft and must not be treated as operational authority.",
-    "No universal promotion mechanism exists among possibility, resolution, witnessing, and authorization; each domain must define evidence and legitimate authority explicitly."
+    "VB-SRC-008 is public repository administration guidance and provides technical qualification principles, not theological or moral authority.",
+    "Evidence appropriate to readiness depends on consequence and domain; this doctrine does not define a universal validator, reviewer, or promotion mechanism.",
+    "Emergency authority must be explicitly granted, bounded, evidenced, and reviewed; no ambient exception is established."
   ]
 }
