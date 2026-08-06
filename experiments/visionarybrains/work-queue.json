@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "visionarybrains-work-queue/1.0.0",
-  "updatedAt": "2026-08-06T10:02:22Z",
-  "milestone": "M1_DOCTRINE_FOUNDATION",
+  "schemaVersion": "visionarybrains-work-queue/1.0.1",
+  "updatedAt": "2026-08-06T10:48:19Z",
+  "milestone": "M2_MEMORY_DOCTRINE",
   "tasks": [
     {
       "taskId": "VB-DOC-001",
@@ -21,7 +21,7 @@
     {
       "taskId": "VB-DOC-002",
       "lane": "Doctrine",
-      "status": "READY",
+      "status": "COMPLETED",
       "priority": 2,
       "title": "Compile memory-stewardship and bounded-recursion doctrine",
       "dependencies": ["VB-EXC-002"],
@@ -32,7 +32,15 @@
         "Present recursion only as bounded return, restoration, and continuation",
         "Trace every public claim to VB-SRC-004",
         "Keep covenant quarantined as unsupported"
-      ]
+      ],
+      "outputs": [
+        "content/doctrine.json",
+        "content/principles.json",
+        "content/theology.json",
+        "content/glossary.json",
+        "content/forbidden-claims.json"
+      ],
+      "integrationCommit": "e03ccbc0ca5e17f0feb9cf3ad0724aeb42e013a6"
     },
     {
       "taskId": "VB-DOC-003",
@@ -53,7 +61,7 @@
     {
       "taskId": "VB-TEACH-001",
       "lane": "Teacher",
-      "status": "READY",
+      "status": "IN_REPAIR",
       "priority": 4,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
@@ -61,8 +69,10 @@
       "acceptanceCriteria": [
         "Explain IAM to a visitor with no prior ecosystem knowledge",
         "Distinguish mythic language from factual and operational claims",
-        "Create orientation and deepening steps"
-      ]
+        "Create orientation and deepening steps",
+        "Keep Teacher provenance consistent with integrated doctrine"
+      ],
+      "repairRequest": "Update PR 29 against integrated VB-DOC-002 and reconcile the memory wording with lane-status provenance."
     },
     {
       "taskId": "VB-BUILD-001",
