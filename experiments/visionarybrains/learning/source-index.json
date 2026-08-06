@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "visionarybrains-source-index/1.0.0",
+  "updatedAt": "2026-08-06T08:00:00Z",
+  "sources": [
+    {
+      "sourceId": "VB-SRC-001",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit repository boundaries",
+      "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/repository-boundaries.md",
+      "publicSafeAbstraction": "The IAM product layer owns identity, personas, workers, orchestration, permissions, memory, retrieval, prompts, goals, proof records, dashboards, and product policy. The general execution kernel remains separate and receives only typed graphs and explicit capability grants.",
+      "unsafeExclusions": [],
+      "teachingPotential": [
+        "identity versus substrate",
+        "explicit capability grants",
+        "one-way dependency direction",
+        "doctrine is not runtime authority"
+      ]
+    },
+    {
+      "sourceId": "VB-SRC-002",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit public overview",
+      "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/README.md",
+      "publicSafeAbstraction": "Programs can be understood as graphs composed from multi-input, multi-output units. The visual environment emphasizes direct manipulation, experimentation, composition, sandboxing, and approachable software sharing.",
+      "unsafeExclusions": [
+        "third-party contact details not needed by VisionaryBrains",
+        "implementation examples irrelevant to IAM teaching"
+      ],
+      "teachingPotential": [
+        "graphs as relational language",
+        "composition over monoliths",
+        "learning through exploration",
+        "sandboxing as stewardship"
+      ]
+    },
+    {
+      "sourceId": "VB-SRC-003",
+      "classification": "INTERNAL_ONLY",
+      "title": "PBOS artifact-vault governance summary",
+      "reference": null,
+      "publicSafeAbstraction": null,
+      "unsafeExclusions": [
+        "private repository location",
+        "canonical storage procedures",
+        "promotion controls",
+        "license and provenance operations"
+      ],
+      "teachingPotential": [
+        "internal evidence discipline may later yield a public-derived stewardship principle"
+      ]
+    }
+  ]
+}
