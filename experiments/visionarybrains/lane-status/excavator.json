@@ -1,37 +1,41 @@
 {
   "schemaVersion": "visionarybrains-lane-status/1.0.0",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T08:00:00Z",
+  "observedAt": "2026-08-06T09:00:17Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-001",
-  "baseCommit": "58bd070d210a828986fc175e692f46e177edfa64",
+  "taskId": "VB-EXC-002",
+  "baseCommit": "43f8ea284319a344cd716e69c27be4d9f951a4dd",
   "sourcesClassified": {
-    "PUBLIC_CANON": 2,
+    "PUBLIC_CANON": 3,
     "PUBLIC_DERIVED": 0,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
-    "experiments/visionarybrains/VISIONARYBRAINS.md",
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0001-identity-substrate-capability.md"
+    "experiments/visionarybrains/learning/excavation-notes/0002-memory-evidence-recursion.md",
+    "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "identity as contextual coherence",
-    "separation of intention, policy, interface, and execution substrate",
-    "capability as explicit bounded grant",
-    "graph composition as relationship and transformation",
-    "mythic doctrine as meaning without runtime authority"
+    "memory as accountable continuity",
+    "evidence as ordered transformation",
+    "identity as stable structure related to changing state",
+    "bounded recursion as return with restorable context",
+    "replayability as preservation of conditions and outputs",
+    "external influence as explicit, bounded, and recordable"
   ],
   "unsafeExclusions": [
-    "private repository links",
-    "internal operational identifiers and digests",
-    "private workflow transcripts",
-    "security-sensitive implementation details",
-    "literal scientific or religious claims derived from metaphor"
+    "claims that snapshots reproduce consciousness, persons, or souls",
+    "determinism claims without recorded external effects",
+    "moral, spiritual, or legal identity claims based on hashes",
+    "production-authority claims derived from a candidate technical contract",
+    "covenant doctrine inferred without a supporting public-safe source"
   ],
-  "readyTasks": ["VB-DOC-001"],
-  "blockers": [],
-  "nextLaneRequest": "Doctrine should compile the first principle set and forbidden-claims baseline from excavation note 0001 before Teacher or Builder emits public copy."
+  "readyTasks": ["VB-DOC-002"],
+  "blockers": [
+    "Covenant remains unsupported and must stay quarantined pending a separate PUBLIC_CANON or justified PUBLIC_DERIVED source.",
+    "VB-DOC-001 remains in repair on PR 27; this excavation does not silently normalize its provenance defects."
+  ],
+  "nextLaneRequest": "Doctrine should use VB-SRC-004 and excavation note 0002 to compile memory stewardship, evidence, and bounded recursion while keeping covenant quarantined. PR 27 must independently satisfy its existing repair request."
 }
