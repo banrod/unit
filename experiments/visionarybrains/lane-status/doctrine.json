@@ -1,26 +1,27 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.5.0",
+  "schemaVersion": "visionarybrains-lane-status/1.6.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-006",
+  "taskId": "VB-DOC-007",
   "status": "PR_OPENED",
-  "observedAt": "2026-08-06T18:10:30Z",
+  "observedAt": "2026-08-06T19:10:51Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "3579328bc34579f38a027c6128d5da6a10ec6fdf",
-  "sourcesConsumed": ["VB-SRC-008"],
+  "baseCommit": "bea347f0aaef44c5d182776631a4b6d74c236ee2",
+  "sourcesConsumed": ["VB-SRC-009"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
-    "readiness as an evidence-bearing state supported by current validation, independent review, resolved objections, and explicit promotion",
-    "creation, review, authorization, and promotion as distinct responsibilities",
-    "recovery boundaries as preserved known-good states, non-destructive history, rollback paths, and explicit exceptions",
-    "threshold and keeper as optional metaphors for evidence and independent review rather than privileged persons or spiritual authority",
-    "technical qualification as distinct from moral, spiritual, legal, scientific, religious, or covenant legitimacy"
+    "relation as context for meaning rather than authority over a person",
+    "emergence as development that preserves continuity, commitments, consequences, and revision rights",
+    "epistemic silence as a pause before classification rather than secrecy or concealment",
+    "fracture as diagnostic evidence for review and repair rather than sacred or necessary harm",
+    "unbinding as governed release with explicit obligations, consequences, memory handling, affected-party care, consent, and recovery paths",
+    "theology, liturgy, and related mythic terms as optional non-literal metaphors subordinate to evidence, consent, and governance"
   ],
-  "forbiddenClaimsEstablished": 32,
-  "audienceBoundary": "Public visitors unfamiliar with IAM; readiness and threshold language remain non-coercive, non-sentient, non-authorizing, provenance-labeled, and subordinate to explicit governance and domain authority.",
+  "forbiddenClaimsEstablished": 28,
+  "audienceBoundary": "Public visitors unfamiliar with IAM; relational and mythic language remains optional, contestable, non-coercive, non-literal, provenance-labeled, and subordinate to evidence, consent, disclosure duties, and explicit governance.",
   "unresolvedAmbiguities": [
     "Covenant remains unsupported and quarantined.",
-    "VB-SRC-008 is public repository administration guidance and provides technical qualification principles, not theological or moral authority.",
-    "Evidence appropriate to readiness depends on consequence and domain; this doctrine does not define a universal validator, reviewer, or promotion mechanism.",
-    "Emergency authority must be explicitly granted, bounded, evidenced, and reviewed; no ambient exception is established."
+    "VB-SRC-009 is PUBLIC_DERIVED from an internal academic working monograph and must remain non-authoritative and provenance-labeled.",
+    "The boundary between responsible epistemic pause and required disclosure depends on consequence and domain; material risk must not be concealed.",
+    "Governed unbinding does not define a universal release procedure; obligations, consent, records, affected parties, and recovery requirements remain domain-specific."
   ]
 }
