@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.2.0",
-  "taskId": "VB-DOC-003",
+  "schemaVersion": "visionarybrains-doctrine/1.3.0",
+  "taskId": "VB-DOC-004",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"],
   "themes": {
     "identity": {"statement": "coherence maintained across contexts", "sources": ["VB-SRC-001"]},
     "architecture": {"statement": "intention and policy remain distinct from execution substrate", "sources": ["VB-SRC-001"]},
@@ -13,10 +13,12 @@
     "repair": {"statement": "accountability includes containment, correction, communication, restoration where possible, retained evidence, and learning against recurrence", "sources": ["VB-SRC-005"]},
     "lineage": {"statement": "ancestry supports provenance, compatibility, comparison, rollback, and responsible adaptation without conferring inherited authority", "sources": ["VB-SRC-005"]},
     "adaptation": {"statement": "methods and expression may evolve while changes to identity, purpose, authority, and durable limits remain explicit and inspectable", "sources": ["VB-SRC-005"]},
-    "stewardship": {"statement": "power, evidence, memory, experimentation, adaptation, and repair require care", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]},
+    "symbolicInterpretation": {"statement": "symbolic language is an optional and editable lens for noticing relationships, uncertainty, transition, memory, and accumulated pressure; it is not a verdict", "sources": ["VB-SRC-006"]},
+    "semanticSovereignty": {"statement": "people should be able to inspect, question, transform, and recompose interpretations applied to them", "sources": ["VB-SRC-006"]},
+    "stewardship": {"statement": "power, evidence, memory, experimentation, adaptation, interpretation, and repair require care", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]},
     "interface": {"statement": "translation joins intention to execution", "sources": ["VB-SRC-001"]},
-    "operationalConscience": {"statement": "meaning may orient values while ordered evidence, explicit conditions, affected-party legibility, and repair govern public accountability", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]}
+    "operationalConscience": {"statement": "meaning may orient values while ordered evidence, explicit conditions, affected-party legibility, contestability, and repair govern public accountability", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]}
   },
   "quarantinedThemes": {"covenant": "Unsupported as a public doctrine term. Accountable commitments do not establish covenant without a separate public-safe source."},
-  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, proof of metaphysical claims, or a claim that biological metaphor establishes personhood, consciousness, or inherited legitimacy.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]}
+  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, medical or psychological assessment, proof of metaphysical or physical claims, or a claim that symbolic interpretation reveals objective truth.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]}
 }
