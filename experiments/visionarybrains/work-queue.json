@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "visionarybrains-work-queue/1.0.1",
-  "updatedAt": "2026-08-06T10:48:19Z",
-  "milestone": "M2_MEMORY_DOCTRINE",
+  "schemaVersion": "visionarybrains-work-queue/1.0.2",
+  "updatedAt": "2026-08-06T11:49:08Z",
+  "milestone": "M3_VISITOR_FOUNDATION",
   "tasks": [
     {
       "taskId": "VB-DOC-001",
@@ -45,7 +45,7 @@
     {
       "taskId": "VB-DOC-003",
       "lane": "Doctrine",
-      "status": "READY",
+      "status": "IN_REPAIR",
       "priority": 3,
       "title": "Compile constitutional continuity, repair, and lineage doctrine",
       "dependencies": ["VB-EXC-003"],
@@ -56,12 +56,13 @@
         "Define lineage as accountable continuity rather than inherited authority",
         "Trace every public claim to VB-SRC-005",
         "Do not promote covenant as a supported doctrine term"
-      ]
+      ],
+      "repairRequest": "Update PR 30 against the current integration branch after PR 29 merged; preserve Doctrine-owned changes and rerun validation."
     },
     {
       "taskId": "VB-TEACH-001",
       "lane": "Teacher",
-      "status": "IN_REPAIR",
+      "status": "COMPLETED",
       "priority": 4,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
@@ -72,12 +73,18 @@
         "Create orientation and deepening steps",
         "Keep Teacher provenance consistent with integrated doctrine"
       ],
-      "repairRequest": "Update PR 29 against integrated VB-DOC-002 and reconcile the memory wording with lane-status provenance."
+      "outputs": [
+        "content/lessons.json",
+        "content/visitor-paths.json",
+        "content/site-copy.json",
+        "content/teaching-cards.json"
+      ],
+      "integrationCommit": "7f997fa830dea4dc5889672d43f69034073218cd"
     },
     {
       "taskId": "VB-BUILD-001",
       "lane": "Builder",
-      "status": "BLOCKED",
+      "status": "READY",
       "priority": 5,
       "title": "Build public teaching shell",
       "dependencies": ["VB-TEACH-001"],
