@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-work-queue/1.0.5",
-  "updatedAt": "2026-08-06T14:47:09Z",
+  "schemaVersion": "visionarybrains-work-queue/1.0.6",
+  "updatedAt": "2026-08-06T15:48:30Z",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "tasks": [
     {
@@ -36,13 +36,13 @@
     {
       "taskId": "VB-DOC-004",
       "lane": "Doctrine",
-      "status": "IN_REPAIR",
+      "status": "COMPLETED",
       "priority": 4,
       "title": "Compile symbolic interpretation and semantic sovereignty doctrine",
       "dependencies": ["VB-EXC-004"],
       "inputs": ["learning/excavation-notes/0004-symbolic-language-semantic-sovereignty.md"],
-      "acceptanceCriteria": ["Define metaphor as an optional editable lens rather than a verdict", "Define semantic sovereignty as inspectable and contestable interpretation", "Teach field, ring, and gravity-well language without literal scientific claims", "Require measurable proxies before computational use of metaphors", "Trace every public claim to VB-SRC-006", "Keep covenant quarantined as unsupported"],
-      "repairRequest": "Update PR 32 within Doctrine-owned files only: add claim-level VB-SRC-006 provenance to each new theology safeguard; restore the existing biological-metaphor/personhood/consciousness/inherited-legitimacy boundary while retaining the new symbolic limitations; prohibit retention or reuse of symbolic interpretations after deletion or withdrawal of consent; update lane-status claim counts; resolve all three review threads; rerun available checks."
+      "outputs": ["content/doctrine.json", "content/principles.json", "content/theology.json", "content/glossary.json", "content/forbidden-claims.json"],
+      "integrationCommit": "e245bbf58106fd2948734e81627addf963897c81"
     },
     {
       "taskId": "VB-TEACH-001",
@@ -63,7 +63,7 @@
       "dependencies": ["VB-TEACH-001"],
       "inputs": ["content/site-copy.json", "content/visitor-paths.json", "content/teaching-cards.json"],
       "acceptanceCriteria": ["Semantic responsive site shell", "Keyboard-operable navigation", "Reduced-motion support", "No unsafe external references", "Deterministic content validation"],
-      "repairRequest": "Update PR 31 within Builder-owned files only: make forbidden-claim validation match prohibited assertions or explicit patterns rather than exact policy-sentence substrings; validate the renderer-consumed structures and required fields for teaching cards, visitor path steps, and glossary entries; resolve both review threads; preserve current accessibility safeguards and rerun all available checks. Rebase again after PR 32 merges if doctrine is integrated first."
+      "repairRequest": "Update PR 31 against experiment/visionarybrains after PR 32 integration without expanding scope. Preserve the validator repairs and accessibility safeguards. Rerun VisionaryBrains validation; the latest failure occurred during GitHub runner setup before checkout or project validation, so treat it as infrastructure evidence rather than a passing site check."
     },
     {
       "taskId": "VB-EXC-001",
