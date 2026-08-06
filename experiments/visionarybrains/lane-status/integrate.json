@@ -1,37 +1,38 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.5.0",
+  "schemaVersion": "visionarybrains-lane-status/1.6.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T15:48:30Z",
-  "status": "DOCTRINE_INTEGRATED_BUILDER_UPDATE_REQUIRED",
+  "observedAt": "2026-08-06T17:47:25Z",
+  "status": "AGENCY_DOCTRINE_INTEGRATED_BUILDER_REBASE_REQUIRED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [
     {
-      "number": 32,
-      "title": "[VisionaryBrains Doctrine] Compile symbolic interpretation and semantic sovereignty doctrine",
-      "headSha": "0fd00b9abbc7a8000ec49bc92305044807827bf4",
-      "integrationSha": "e245bbf58106fd2948734e81627addf963897c81"
+      "number": 33,
+      "title": "[VisionaryBrains Doctrine] Compile agency, interface, and operational-conscience doctrine",
+      "headSha": "2d28838eea061135f21876c902ad6d56f4907629",
+      "integrationSha": "ac2b12985b1a87fd87f20c29d162daa83dbf5af9"
     }
   ],
   "validation": {
-    "pullRequest32": {
+    "pullRequest33": {
       "targetBranch": "PASS",
       "mergeability": "PASS",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
       "publicSafety": "PASS",
-      "provenance": "PASS_CLAIM_LEVEL_SOURCE_MAP",
+      "provenance": "PASS_VB_SRC_007_PUBLIC_DERIVED",
       "structuralCompatibility": "PASS",
       "reviewThreads": "RESOLVED",
+      "claimBoundaryRegression": "REPAIRED",
       "ci": {
         "test": "PASS",
-        "workstationValidation": "PASS"
+        "workstationValidation": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED"
       },
       "integrationDisposition": "MERGED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
-      "mergeabilityBeforeDoctrineMerge": "PASS",
+      "mergeability": "FAIL_AFTER_INTEGRATION_BRANCH_ADVANCEMENT",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
@@ -39,26 +40,29 @@
       "accessibilitySafeguards": "PASS_STATIC_REVIEW",
       "reviewThreads": "RESOLVED",
       "ci": {
-        "test": "PASS",
-        "workstationValidation": "PASS",
-        "visionaryBrainsValidation": "FAIL_RUNNER_SETUP_BEFORE_CHECKOUT"
+        "visionaryBrainsValidation": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED",
+        "test": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED",
+        "workstationValidation": "FAILURE_INFRASTRUCTURE_CLASSIFICATION_PENDING"
       },
-      "integrationDisposition": "HELD_FOR_POST_DOCTRINE_BRANCH_UPDATE_AND_CURRENT_HEAD_VALIDATION"
+      "integrationDisposition": "HELD_FOR_BRANCH_UPDATE_AND_DETERMINISTIC_CURRENT_HEAD_VALIDATION"
     }
   },
   "unresolvedDefects": [
-    "PR 31 must be updated against the current integration branch after PR 32 merged.",
-    "VisionaryBrains validation on Builder head 5a03b972e043540923729f3b14478d88f11c8e9e failed during GitHub runner setup before checkout or project validation; no passing deterministic-site check exists for that head.",
-    "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading require review after the Builder branch update.",
+    "PR 31 is not mergeable after integration of VB-DOC-005 and must be updated against the current integration branch.",
+    "No GitHub job has executed the Builder deterministic validator against its current head; zero-step cancelled jobs with no assigned runner are infrastructure evidence only.",
+    "Builder must consume the integrated agency, interface, operational-conscience, and epistemic-authority doctrine before integration.",
+    "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading still require integration review.",
     "Covenant remains unsupported and quarantined.",
-    "MVP is not reviewable until the Builder shell is integrated and no high-severity issue remains."
+    "MVP is not reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "nextActions": [
-    "Builder should update PR 31 against the current experiment/visionarybrains head without expanding scope.",
-    "Builder should rerun VisionaryBrains validation and preserve the repaired forbidden-assertion and renderer-shape checks.",
-    "Integrate should re-review the updated Builder head for mergeability, public-safe rendering, structural compatibility, accessibility, and current checks."
+    "Builder should update PR 31 against ac2b12985b1a87fd87f20c29d162daa83dbf5af9 without expanding scope.",
+    "Builder should preserve the repaired forbidden-assertion, renderer-shape, anchor, unsafe-reference, and accessibility validations.",
+    "Builder should obtain deterministic current-head validation or provide equivalent directly inspectable evidence.",
+    "Doctrine may proceed with READY task VB-DOC-006 independently of the held Builder PR.",
+    "Integrate should re-review PR 31 after branch update for public-safe rendering, content compatibility, accessibility, and current-head validation."
   ],
   "controlCommits": [
-    "c0dfcd759835457f4d0281b1dd76245a8bac1dd7"
+    "e91c30ea1fe7c8f532be6adb5f4e5f9aac2c8fc0"
   ]
 }
