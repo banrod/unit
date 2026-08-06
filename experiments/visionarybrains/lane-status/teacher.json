@@ -1,14 +1,23 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.0",
+  "schemaVersion": "visionarybrains-lane-status/1.0.1",
   "lane": "VisionaryBrains — Teacher",
   "taskId": "VB-TEACH-001",
-  "status": "PR_READY",
+  "status": "PR_READY_REPAIRED",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "c076aec9f26fb0b2ea47ea5aec4171dc1fa97ac0",
+  "baseCommit": "9313d54854d251e73c0e102d73f405ba9bce5497",
   "doctrineConsumed": [
-    "content/principles.json",
-    "content/doctrine.json",
+    "content/principles.json@visionarybrains-principles/1.1.0",
+    "content/doctrine.json@visionarybrains-doctrine/1.1.0",
     "content/forbidden-claims.json"
+  ],
+  "doctrineObjectsConsumed": [
+    "identity-as-coherence",
+    "self-substrate-distinction",
+    "capability-as-stewardship",
+    "composition-as-relationship",
+    "memory-as-accountable-continuity",
+    "evidence-before-myth",
+    "sandboxing-as-care"
   ],
   "lessonsAdded": [
     "iam-in-one-sentence",
@@ -26,8 +35,11 @@
     "The learning path uses ordered stages and question prompts",
     "No lesson depends on animation, sound, color, or specialist notation"
   ],
+  "repairRecord": {
+    "reason": "Integrate found a memory reference without declared VB-DOC-002 consumption.",
+    "change": "The coherence card now cites memory-as-accountable-continuity and this status records the integrated memory doctrine explicitly."
+  },
   "unresolvedRisks": [
-    "Memory and bounded recursion from VB-DOC-002 are not consumed until PR 28 is integrated",
     "Covenant remains unsupported and absent from visitor teaching",
     "Builder must validate JSON shape and rendered reading order"
   ],
