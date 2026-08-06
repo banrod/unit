@@ -1,9 +1,9 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.1.0",
+  "schemaVersion": "visionarybrains-lane-status/1.2.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T10:48:19Z",
-  "status": "MEMORY_DOCTRINE_INTEGRATED_TEACHER_REPAIR_REQUIRED",
-  "milestone": "M2_MEMORY_DOCTRINE",
+  "observedAt": "2026-08-06T11:49:08Z",
+  "status": "VISITOR_FOUNDATION_INTEGRATED_DOCTRINE_REBASE_REQUIRED",
+  "milestone": "M3_VISITOR_FOUNDATION",
   "mergedPullRequests": [
     {
       "number": 27,
@@ -15,10 +15,16 @@
       "title": "[VisionaryBrains Doctrine] Compile memory stewardship and bounded recursion doctrine",
       "headSha": "6bf131fd301d5729c1c135dd57e3d66313fcb844",
       "integrationSha": "e03ccbc0ca5e17f0feb9cf3ad0724aeb42e013a6"
+    },
+    {
+      "number": 29,
+      "title": "[VisionaryBrains Teacher] Create first-encounter visitor path",
+      "headSha": "f6ba3f6f4981fb82c4d2c2ddddaebee90509310e",
+      "integrationSha": "7f997fa830dea4dc5889672d43f69034073218cd"
     }
   ],
   "validation": {
-    "pullRequest28": {
+    "pullRequest29": {
       "targetBranch": "PASS",
       "mergeability": "PASS",
       "pathOwnership": "PASS",
@@ -26,35 +32,39 @@
       "publicSafety": "PASS",
       "provenance": "PASS",
       "reviewThreads": "RESOLVED",
+      "structuralCompatibility": "PASS",
+      "accessibilityReadability": "PASS_CONTENT_LAYER",
       "ci": {
         "test": "PASS",
         "workstationValidation": "PASS"
-      },
-      "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY"
+      }
     },
-    "pullRequest29": {
+    "pullRequest30": {
       "targetBranch": "PASS",
-      "mergeability": "PASS",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
-      "publicSafety": "PASS_WITH_REPAIR",
-      "provenance": "FAIL",
-      "reviewThread": "OPEN",
-      "ci": "NOT_EVALUATED_PENDING_REPAIR"
+      "publicSafety": "PASS",
+      "provenance": "PASS",
+      "ciAtReviewedHead": {
+        "test": "PASS",
+        "workstationValidation": "PASS"
+      },
+      "mergeabilityAfterPullRequest29": "FAIL_REBASE_REQUIRED"
     }
   },
   "unresolvedDefects": [
-    "PR 29 teaches memory in a public card while its lane status says VB-DOC-002 was not consumed; provenance and status must be reconciled against the now-integrated doctrine.",
+    "PR 30 became non-mergeable after PR 29 changed the integration branch and must be safely updated before integration.",
     "Covenant remains quarantined because no public-safe source currently supports it.",
-    "Builder remains blocked until VB-TEACH-001 is repaired and integrated.",
-    "MVP is not reviewable because visitor content and website implementation are incomplete."
+    "The website shell, responsive implementation, rendered keyboard paths, reduced-motion behavior, and deterministic site validation are not yet integrated.",
+    "MVP is not reviewable until Builder completes VB-BUILD-001 and no high-severity issue remains."
   ],
   "nextActions": [
-    "Teacher should repair PR 29 within Teacher-owned paths by updating against integrated VB-DOC-002, mapping memory wording to the integrated doctrine source, and correcting lane-status provenance.",
-    "Doctrine may execute VB-DOC-003 from VB-SRC-005.",
-    "Integrate should re-run PR 29 provenance, safety, mergeability, review-thread, and CI gates after repair."
+    "Doctrine should update PR 30 against the current experiment/visionarybrains branch and rerun validation without expanding scope.",
+    "Builder may begin VB-BUILD-001 from the integrated visitor content.",
+    "Integrate should preserve doctrine-before-builder merge ordering when both become eligible unless Builder is only a safe compatibility repair."
   ],
   "controlCommits": [
-    "8fbbaef48c8e8e5a71ed2a3badfe6bea96a37e07"
+    "8fbbaef48c8e8e5a71ed2a3badfe6bea96a37e07",
+    "7ef2d8b53f9e5dc72d31ad405edbb131c6047513"
   ]
 }
