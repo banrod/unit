@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "visionarybrains-visitor-paths/1.0.0",
+  "taskId": "VB-TEACH-001",
+  "paths": [
+    {
+      "id": "first-encounter-path",
+      "title": "Begin with IAM",
+      "audience": "Visitors with no prior IAM ecosystem knowledge",
+      "steps": [
+        {"order": 1, "stage": "first-encounter", "lessonId": "iam-in-one-sentence", "prompt": "What remains coherent when tools and contexts change?"},
+        {"order": 2, "stage": "orientation", "lessonId": "power-has-boundaries", "prompt": "What may this part of the system actually do?"},
+        {"order": 3, "stage": "deepening", "lessonId": "meaning-and-evidence", "prompt": "Is this statement metaphor, principle, architecture, or operational fact?"},
+        {"order": 4, "stage": "practice", "lessonId": "relationship-before-complexity", "prompt": "Can the inputs, outputs, and transformations be seen?"},
+        {"order": 5, "stage": "synthesis", "lessonId": "visitor-synthesis", "prompt": "How do identity, agency, stewardship, and meaning fit together?"}
+      ],
+      "completion": "The visitor can explain IAM without invoking private operations, unrestricted agency, or literal metaphysical proof."
+    }
+  ]
+}
