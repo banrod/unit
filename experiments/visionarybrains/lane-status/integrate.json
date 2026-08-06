@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.10.0",
+  "schemaVersion": "visionarybrains-lane-status/1.11.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T21:49:42Z",
-  "status": "NO_MERGE_DOCTRINE_SEQUENCE_REPAIR_REQUIRED",
+  "observedAt": "2026-08-06T22:48:00Z",
+  "status": "VB_DOC_007_MERGED_NEXT_DOCTRINE_REBASE_REQUIRED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
-  "mergedPullRequests": [],
-  "integrationCommit": "30ecf545caf21d36ea38478e9a36dc7baa9a52cc",
+  "mergedPullRequests": [35],
+  "integrationCommit": "ee8dedae00686bb4bde3c664ccf1a658716425d6",
   "validation": {
     "pullRequest35": {
       "targetBranch": "PASS",
@@ -13,47 +13,48 @@
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
       "provenance": "PASS_VB_SRC_009_PUBLIC_DERIVED",
+      "publicSafety": "PASS",
       "forbiddenClaims": "PASS_39_TOTAL_ADDITIVE_SET",
-      "doctrineNonRegression": "FAIL_UNRELATED_PRIOR_GLOSSARY_TERMS_REMOVED",
-      "mergeability": "FAIL_DIVERGED_AND_NONMERGEABLE",
-      "missingPriorGlossaryTerms": ["replayability","agency-preserving ethics","adaptation","threshold","keeper","measurable proxy"],
-      "ci": "NO_CURRENT_HEAD_PASS_EVIDENCE",
-      "integrationDisposition": "HELD_REPAIR_COMMENT_POSTED"
+      "glossaryNonRegression": "PASS_38_TOTAL_WITH_PRIOR_TERMS_RESTORED",
+      "principleAndTheologyNonRegression": "PASS_RECORDED_ADDITIVE",
+      "mergeability": "PASS",
+      "repositoryChecks": {
+        "test": "PASS",
+        "workstationValidation": "PASS",
+        "visionaryBrainsValidation": "FAIL_SITE_VALIDATOR_NOT_PRESENT_ON_DOCTRINE_BRANCH"
+      },
+      "integrationDisposition": "MERGED"
     },
     "pullRequest36": {
       "targetBranch": "PASS",
-      "mergeability": "PASS_CURRENT_BASE",
       "pathOwnership": "PASS_DOCTRINE_ONLY",
-      "laneStatusPresent": "PASS",
-      "boundedScope": "PASS",
       "provenance": "PASS_VB_SRC_010_PUBLIC_DERIVED",
       "claimFraming": "PASS_OPTIONAL_COVENANT_METAPHOR_BOUNDARY",
-      "forbiddenClaims": "PASS_39_TOTAL_FROM_PRE_VB_SRC_009_BASE",
-      "sequenceCompatibility": "HOLD_MUST_FOLLOW_VB_DOC_007_TO_PRESERVE_ADDITIVE_LINEAGE",
-      "integrationDisposition": "HELD_SEQUENCE_COMMENT_POSTED"
+      "mergeability": "FAIL_AFTER_VB_DOC_007_INTEGRATION",
+      "sequenceCompatibility": "REPAIR_REQUIRED_REBASE_ON_POST_VB_DOC_007_HEAD",
+      "integrationDisposition": "HELD_REBASE_REQUESTED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
-      "mergeability": "FAIL_STALE_AGAINST_CURRENT_INTEGRATION",
       "pathOwnership": "PASS_BUILDER_ONLY",
-      "deterministicValidation": "PASS_RECORDED_FOR_PRIOR_VALIDATED_SITE_COMMIT",
-      "githubActions": "QUEUED_NO_JOB_ALLOCATION",
+      "deterministicValidation": "PASS_PRIOR_RECORDED_CORPUS",
       "browserReview": "PENDING",
-      "integrationDisposition": "HELD_AFTER_DOCTRINE_AND_BROWSER_REVIEW"
+      "sequenceCompatibility": "HOLD_UNTIL_DOCTRINE_STABILIZES",
+      "integrationDisposition": "HELD"
     }
   },
   "unresolvedDefects": [
-    "PR 35 still removes unrelated integrated glossary primitives and is diverged from the current integration branch.",
-    "PR 36 cannot safely merge before PR 35 because both replace the same doctrine-owned files from different source baselines.",
-    "Neither current Doctrine head has passing GitHub validation evidence.",
-    "PR 31 remains downstream of Doctrine integration and lacks browser-level review evidence.",
-    "MVP is not reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
+    "PR 36 is now non-mergeable because it predates the integrated VB-DOC-007 doctrine and must be rebased additively.",
+    "VB-DOC-009 remains blocked until VB-DOC-008 is integrated.",
+    "PR 31 remains downstream of Doctrine stabilization and still lacks browser-level contrast, keyboard, responsive, reduced-motion, and content-loading review evidence.",
+    "The VisionaryBrains workflow currently assumes the Builder site validator exists on every PR; Doctrine-only branches can therefore fail that workflow even while repository checks pass.",
+    "MVP is not reviewable until the public shell is integrated and no unresolved high-severity issue remains."
   ],
   "nextActions": [
-    "Doctrine should repair PR 35 additively on the current integration head and provide non-regression evidence.",
-    "Integrate should re-review and merge PR 35 first when every gate passes.",
-    "Doctrine should then rebase PR 36 onto the post-VB-DOC-007 integration head, preserving both source lineages and all safeguards.",
-    "Builder should update PR 31 only after Doctrine stabilizes and provide browser-level accessibility and responsive review evidence."
+    "Doctrine should rebase and repair PR 36 onto the current integration head while preserving all VB-SRC-009 and VB-SRC-010 additions additively.",
+    "Integrate should merge PR 36 only after non-regression and provenance gates pass.",
+    "Doctrine may then begin VB-DOC-009 for the public nature-of-IAM layer.",
+    "Builder should rebase PR 31 after doctrine stabilization and supply browser-level review evidence before merge."
   ],
-  "controlCommits": ["30ecf545caf21d36ea38478e9a36dc7baa9a52cc"]
+  "controlCommits": ["35a9f8b95a8c08be6b822b3897e77391242d2f2e"]
 }
