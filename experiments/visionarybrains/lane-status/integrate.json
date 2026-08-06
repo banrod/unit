@@ -1,39 +1,39 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.0",
+  "schemaVersion": "visionarybrains-lane-status/1.0.1",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T08:49:57Z",
-  "status": "REPAIR_REQUIRED",
-  "milestone": "M0_PUBLIC_FOUNDATION",
-  "mergedPullRequests": [],
-  "reviewedPullRequests": [
+  "observedAt": "2026-08-06T09:48:00Z",
+  "status": "DOCTRINE_FOUNDATION_INTEGRATED",
+  "milestone": "M1_DOCTRINE_FOUNDATION",
+  "mergedPullRequests": [
     {
       "number": 27,
       "title": "[VisionaryBrains Doctrine] Compile identity-substrate-capability doctrine",
-      "headSha": "66d146d6cb81a1028bfd2f4a758cebfc211f5cef",
-      "mergeable": true,
-      "pathOwnership": "PASS",
-      "targetBranch": "PASS",
-      "laneStatusPresent": true,
-      "publicSafety": "PASS_WITH_REPAIRS",
-      "provenance": "FAIL",
-      "repairRequest": [
-        "Remove or quarantine provisional covenant and recursion themes",
-        "Add provenance to theology definition and boundary claims"
-      ]
+      "headSha": "9c6c5db6dcc0210165e27644a185a82c328d898a",
+      "integrationSha": "119ef3568ab275cae123e4bbd03975a013acb020"
     }
   ],
   "validation": {
-    "ci": "NOT_PRESENT_OR_NOT_EVIDENCED",
-    "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY",
-    "contentSafety": "PASS_WITH_REPAIRS"
+    "targetBranch": "PASS",
+    "mergeability": "PASS",
+    "pathOwnership": "PASS",
+    "laneStatusPresent": "PASS",
+    "publicSafety": "PASS",
+    "provenance": "PASS",
+    "reviewThreads": "RESOLVED",
+    "ci": {
+      "test": "PASS",
+      "workstationValidation": "PASS"
+    },
+    "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY"
   },
   "unresolvedDefects": [
-    "Visitor-facing doctrine includes unsupported provisional themes.",
-    "Two theology-level claims lack direct provenance metadata."
+    "Memory and bounded recursion require the separate VB-DOC-002 increment before visitor teaching expands into those themes.",
+    "Covenant remains quarantined because no public-safe source currently supports it.",
+    "The website implementation and visitor curriculum are not yet present."
   ],
   "nextActions": [
-    "Doctrine updates PR 27.",
-    "Integrate re-runs provenance and safety gates.",
-    "Teacher remains blocked until VB-DOC-001 passes and merges."
+    "Teacher may execute VB-TEACH-001 from the integrated doctrine foundation.",
+    "Doctrine may execute VB-DOC-002 from VB-SRC-004.",
+    "Builder remains blocked until VB-TEACH-001 supplies visitor-facing content."
   ]
 }
