@@ -1,10 +1,17 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.4.0",
+  "schemaVersion": "visionarybrains-lane-status/1.5.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T14:47:09Z",
-  "status": "DOCTRINE_AND_BUILDER_REPAIRS_REQUIRED",
+  "observedAt": "2026-08-06T15:48:30Z",
+  "status": "DOCTRINE_INTEGRATED_BUILDER_UPDATE_REQUIRED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
-  "mergedPullRequests": [],
+  "mergedPullRequests": [
+    {
+      "number": 32,
+      "title": "[VisionaryBrains Doctrine] Compile symbolic interpretation and semantic sovereignty doctrine",
+      "headSha": "0fd00b9abbc7a8000ec49bc92305044807827bf4",
+      "integrationSha": "e245bbf58106fd2948734e81627addf963897c81"
+    }
+  ],
   "validation": {
     "pullRequest32": {
       "targetBranch": "PASS",
@@ -12,56 +19,46 @@
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
-      "publicSafety": "FAIL_REPAIR_REQUIRED",
-      "provenance": "FAIL_CLAIM_LEVEL_SAFEGUARD_PROVENANCE",
-      "structuralCompatibility": "PASS_WITH_REPAIRS",
-      "reviewThreads": "FAIL_THREE_UNRESOLVED",
+      "publicSafety": "PASS",
+      "provenance": "PASS_CLAIM_LEVEL_SOURCE_MAP",
+      "structuralCompatibility": "PASS",
+      "reviewThreads": "RESOLVED",
       "ci": {
         "test": "PASS",
         "workstationValidation": "PASS"
       },
-      "requiredRepairs": [
-        "Attach VB-SRC-006 provenance to each new theology safeguard or provide an equivalent claim-level source map.",
-        "Restore the consolidated biological-metaphor exclusion for personhood, consciousness, and inherited legitimacy while retaining the new symbolic-language limitations.",
-        "Forbid retention or reuse of symbolic interpretations after deletion or withdrawal of consent.",
-        "Update lane-status claim counts and resolve all three review threads."
-      ]
+      "integrationDisposition": "MERGED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
-      "mergeability": "PASS",
+      "mergeabilityBeforeDoctrineMerge": "PASS",
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
-      "publicSafety": "FAIL_VALIDATOR_GAP",
+      "validatorRepairs": "PASS_STATIC_REVIEW",
       "accessibilitySafeguards": "PASS_STATIC_REVIEW",
-      "reviewThreads": "FAIL_TWO_UNRESOLVED",
+      "reviewThreads": "RESOLVED",
       "ci": {
         "test": "PASS",
         "workstationValidation": "PASS",
-        "visionaryBrainsValidation": "PASS"
+        "visionaryBrainsValidation": "FAIL_RUNNER_SETUP_BEFORE_CHECKOUT"
       },
-      "requiredRepairs": [
-        "Match prohibited assertions or explicit patterns instead of exact forbidden-policy sentences so unsafe visitor claims cannot bypass validation.",
-        "Validate the arrays and required fields consumed by renderCards, renderPath, and renderGlossary rather than accepting schemaVersion alone.",
-        "Resolve both review threads and rerun all available checks."
-      ],
-      "integrationDisposition": "HELD_FOR_REPAIR_AND_DOCTRINE_BEFORE_BUILDER_ORDERING"
+      "integrationDisposition": "HELD_FOR_POST_DOCTRINE_BRANCH_UPDATE_AND_CURRENT_HEAD_VALIDATION"
     }
   },
   "unresolvedDefects": [
-    "PR 32 has three unresolved review findings affecting claim-level provenance and public-safety boundary completeness.",
-    "PR 31 has two unresolved validator defects: forbidden assertions can bypass exact sentence matching, and malformed renderer inputs can pass JSON-shape validation.",
-    "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading require review after Builder repair.",
+    "PR 31 must be updated against the current integration branch after PR 32 merged.",
+    "VisionaryBrains validation on Builder head 5a03b972e043540923729f3b14478d88f11c8e9e failed during GitHub runner setup before checkout or project validation; no passing deterministic-site check exists for that head.",
+    "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading require review after the Builder branch update.",
     "Covenant remains unsupported and quarantined.",
-    "MVP is not reviewable until the doctrine and Builder repairs are integrated and no high-severity issue remains."
+    "MVP is not reviewable until the Builder shell is integrated and no high-severity issue remains."
   ],
   "nextActions": [
-    "Doctrine should apply the bounded PR 32 repairs and resolve its three review threads.",
-    "Builder should apply the bounded PR 31 validator repairs and resolve its two review threads.",
-    "Integrate should preserve doctrine-before-builder ordering, merge at most two passing PRs, and rerun current-head gate review after both repairs."
+    "Builder should update PR 31 against the current experiment/visionarybrains head without expanding scope.",
+    "Builder should rerun VisionaryBrains validation and preserve the repaired forbidden-assertion and renderer-shape checks.",
+    "Integrate should re-review the updated Builder head for mergeability, public-safe rendering, structural compatibility, accessibility, and current checks."
   ],
   "controlCommits": [
-    "c6922ae9eaddd97819a978af89aa510619e835c8"
+    "c0dfcd759835457f4d0281b1dd76245a8bac1dd7"
   ]
 }
