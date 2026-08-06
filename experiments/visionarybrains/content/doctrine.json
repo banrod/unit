@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "visionarybrains-doctrine/1.0.0",
+  "taskId": "VB-DOC-001",
+  "status": "PUBLIC_DERIVED",
+  "provenance": ["VB-SRC-001", "VB-SRC-002"],
+  "themes": {
+    "identity": "coherence maintained across contexts",
+    "architecture": "intention and policy remain distinct from execution substrate",
+    "memory": "history is held as a stewardship responsibility",
+    "agency": "action is bounded by explicit capability",
+    "covenant": "roles act within visible commitments and limits",
+    "recursion": "systems may compose systems without erasing boundaries",
+    "stewardship": "power, evidence, and experimentation require care",
+    "interface": "translation joins intention to execution",
+    "operationalConscience": "meaning informs values while evidence governs claims"
+  },
+  "claimBoundary": "Public teaching model; not operational authority or factual proof of metaphysical claims."
+}
