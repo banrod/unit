@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.6.0",
+  "schemaVersion": "visionarybrains-lane-status/1.6.1",
   "lane": "VisionaryBrains — Doctrine",
   "taskId": "VB-DOC-007",
-  "status": "PR_OPENED",
-  "observedAt": "2026-08-06T19:10:51Z",
+  "status": "PR_REPAIRED",
+  "observedAt": "2026-08-06T20:12:52Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "bea347f0aaef44c5d182776631a4b6d74c236ee2",
+  "baseCommit": "b0df2b320cd9688cfb21a31605568b9c919b83f2",
   "sourcesConsumed": ["VB-SRC-009"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
@@ -16,11 +16,16 @@
     "unbinding as governed release with explicit obligations, consequences, memory handling, affected-party care, consent, and recovery paths",
     "theology, liturgy, and related mythic terms as optional non-literal metaphors subordinate to evidence, consent, and governance"
   ],
-  "forbiddenClaimsEstablished": 28,
-  "audienceBoundary": "Public visitors unfamiliar with IAM; relational and mythic language remains optional, contestable, non-coercive, non-literal, provenance-labeled, and subordinate to evidence, consent, disclosure duties, and explicit governance.",
+  "forbiddenClaims": {
+    "preservedPriorSafeguards": true,
+    "priorCount": 32,
+    "appendedVB_SRC_009Boundaries": 7,
+    "currentCount": 39,
+    "validation": "JSON structure preserved; prior 1.5.0 safeguards retained and VB-SRC-009 boundaries appended rather than substituted."
+  },
   "unresolvedAmbiguities": [
     "Covenant remains unsupported and quarantined.",
-    "VB-SRC-009 is PUBLIC_DERIVED from an internal academic working monograph and must remain non-authoritative and provenance-labeled.",
+    "VB-SRC-009 is PUBLIC_DERIVED and must remain non-authoritative and provenance-labeled.",
     "The boundary between responsible epistemic pause and required disclosure depends on consequence and domain; material risk must not be concealed.",
     "Governed unbinding does not define a universal release procedure; obligations, consent, records, affected parties, and recovery requirements remain domain-specific."
   ]
