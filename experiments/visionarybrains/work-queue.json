@@ -1,7 +1,7 @@
 {
-  "schemaVersion": "visionarybrains-work-queue/1.0.3",
-  "updatedAt": "2026-08-06T12:00:58Z",
-  "milestone": "M3_VISITOR_FOUNDATION",
+  "schemaVersion": "visionarybrains-work-queue/1.0.4",
+  "updatedAt": "2026-08-06T13:49:22Z",
+  "milestone": "M4_PUBLIC_SHELL_PENDING",
   "tasks": [
     {
       "taskId": "VB-DOC-001",
@@ -10,8 +10,8 @@
       "priority": 1,
       "title": "Compile identity-substrate-capability doctrine",
       "dependencies": ["VB-EXC-001"],
-      "inputs": ["learning/excavation-notes/0001-identity-substrate-capability.md"],
-      "acceptanceCriteria": ["Define at least five public principles", "Separate metaphor, architecture, principle, and practice", "Create an initial forbidden-claims baseline", "Trace every public claim to VB-SRC-001 or VB-SRC-002"]
+      "outputs": ["content/doctrine.json", "content/principles.json", "content/theology.json", "content/glossary.json", "content/forbidden-claims.json"],
+      "integrationCommit": "119ef3568ab275cae123e4bbd03975a013acb020"
     },
     {
       "taskId": "VB-DOC-002",
@@ -20,21 +20,18 @@
       "priority": 2,
       "title": "Compile memory-stewardship and bounded-recursion doctrine",
       "dependencies": ["VB-EXC-002"],
-      "inputs": ["learning/excavation-notes/0002-memory-evidence-recursion.md"],
-      "acceptanceCriteria": ["Define memory as accountable continuity without personhood claims", "Define evidence as ordered transformation with explicit conditions", "Present recursion only as bounded return, restoration, and continuation", "Trace every public claim to VB-SRC-004", "Keep covenant quarantined as unsupported"],
       "outputs": ["content/doctrine.json", "content/principles.json", "content/theology.json", "content/glossary.json", "content/forbidden-claims.json"],
       "integrationCommit": "e03ccbc0ca5e17f0feb9cf3ad0724aeb42e013a6"
     },
     {
       "taskId": "VB-DOC-003",
       "lane": "Doctrine",
-      "status": "IN_REPAIR",
+      "status": "COMPLETED",
       "priority": 3,
       "title": "Compile constitutional continuity, repair, and lineage doctrine",
       "dependencies": ["VB-EXC-003"],
-      "inputs": ["learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md"],
-      "acceptanceCriteria": ["Explain commitments as bounded, testable, traceable, and amendable", "Define ethical action through agency, proportionality, contestability, and repair", "Define lineage as accountable continuity rather than inherited authority", "Trace every public claim to VB-SRC-005", "Do not promote covenant as a supported doctrine term"],
-      "repairRequest": "Update PR 30 against the current integration branch after PR 29 merged; preserve Doctrine-owned changes and rerun validation."
+      "outputs": ["content/doctrine.json", "content/principles.json", "content/theology.json", "content/glossary.json", "content/forbidden-claims.json"],
+      "integrationCommit": "8dcc00b2a5be9f29cd91d401669f38bb476259d6"
     },
     {
       "taskId": "VB-DOC-004",
@@ -53,20 +50,19 @@
       "priority": 5,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
-      "inputs": ["content/principles.json", "content/doctrine.json", "content/forbidden-claims.json"],
-      "acceptanceCriteria": ["Explain IAM to a visitor with no prior ecosystem knowledge", "Distinguish mythic language from factual and operational claims", "Create orientation and deepening steps", "Keep Teacher provenance consistent with integrated doctrine"],
       "outputs": ["content/lessons.json", "content/visitor-paths.json", "content/site-copy.json", "content/teaching-cards.json"],
       "integrationCommit": "7f997fa830dea4dc5889672d43f69034073218cd"
     },
     {
       "taskId": "VB-BUILD-001",
       "lane": "Builder",
-      "status": "READY",
+      "status": "IN_REPAIR",
       "priority": 6,
       "title": "Build public teaching shell",
       "dependencies": ["VB-TEACH-001"],
       "inputs": ["content/site-copy.json", "content/visitor-paths.json", "content/teaching-cards.json"],
-      "acceptanceCriteria": ["Semantic responsive site shell", "Keyboard-operable navigation", "Reduced-motion support", "No unsafe external references", "Deterministic content validation"]
+      "acceptanceCriteria": ["Semantic responsive site shell", "Keyboard-operable navigation", "Reduced-motion support", "No unsafe external references", "Deterministic content validation"],
+      "repairRequest": "Update PR 31 against the current integration branch after PR 30 merged; preserve Builder-owned scope and rerun all available validation."
     },
     {
       "taskId": "VB-EXC-001",
@@ -74,8 +70,7 @@
       "status": "COMPLETED",
       "priority": 0,
       "title": "Establish first public IAM teaching frame",
-      "dependencies": [],
-      "outputs": ["VISIONARYBRAINS.md", "learning/source-index.json", "learning/excavation-notes/0001-identity-substrate-capability.md"]
+      "dependencies": []
     },
     {
       "taskId": "VB-EXC-002",
@@ -83,8 +78,7 @@
       "status": "COMPLETED",
       "priority": 1,
       "title": "Excavate memory, evidence, and bounded recursion",
-      "dependencies": [],
-      "outputs": ["learning/source-index.json", "learning/excavation-notes/0002-memory-evidence-recursion.md"]
+      "dependencies": []
     },
     {
       "taskId": "VB-EXC-003",
@@ -92,8 +86,7 @@
       "status": "COMPLETED",
       "priority": 2,
       "title": "Excavate constitutional continuity, repair, and lineage",
-      "dependencies": [],
-      "outputs": ["learning/source-index.json", "learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md"]
+      "dependencies": []
     },
     {
       "taskId": "VB-EXC-004",
@@ -101,8 +94,7 @@
       "status": "COMPLETED",
       "priority": 3,
       "title": "Excavate symbolic language and semantic sovereignty",
-      "dependencies": [],
-      "outputs": ["learning/source-index.json", "learning/excavation-notes/0004-symbolic-language-semantic-sovereignty.md"]
+      "dependencies": []
     }
   ]
 }
