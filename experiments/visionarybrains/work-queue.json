@@ -1,12 +1,12 @@
 {
   "schemaVersion": "visionarybrains-work-queue/1.0.0",
-  "updatedAt": "2026-08-06T09:00:17Z",
-  "milestone": "M0_PUBLIC_FOUNDATION",
+  "updatedAt": "2026-08-06T09:48:00Z",
+  "milestone": "M1_DOCTRINE_FOUNDATION",
   "tasks": [
     {
       "taskId": "VB-DOC-001",
       "lane": "Doctrine",
-      "status": "IN_REPAIR",
+      "status": "COMPLETED",
       "priority": 1,
       "title": "Compile identity-substrate-capability doctrine",
       "dependencies": ["VB-EXC-001"],
@@ -16,14 +16,7 @@
         "Separate metaphor, architecture, principle, and practice",
         "Create an initial forbidden-claims baseline",
         "Trace every public claim to VB-SRC-001 or VB-SRC-002"
-      ],
-      "repairRequest": {
-        "pullRequest": 27,
-        "required": [
-          "Remove or explicitly quarantine provisional covenant and recursion themes until supported by public-safe evidence",
-          "Attach provenance to theology definition and boundary claims"
-        ]
-      }
+      ]
     },
     {
       "taskId": "VB-DOC-002",
@@ -44,7 +37,7 @@
     {
       "taskId": "VB-TEACH-001",
       "lane": "Teacher",
-      "status": "BLOCKED",
+      "status": "READY",
       "priority": 3,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
