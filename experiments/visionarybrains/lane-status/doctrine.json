@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.6.1",
+  "schemaVersion": "visionarybrains-lane-status/1.6.2",
   "lane": "VisionaryBrains — Doctrine",
   "taskId": "VB-DOC-007",
-  "status": "PR_REPAIRED",
-  "observedAt": "2026-08-06T20:12:52Z",
+  "status": "PR_REPAIRED_NON_REGRESSION",
+  "observedAt": "2026-08-06T22:12:53Z",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "b0df2b320cd9688cfb21a31605568b9c919b83f2",
+  "baseCommit": "becd9cdef564de630c8e7a5f3d2669b81719491e",
   "sourcesConsumed": ["VB-SRC-009"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
@@ -20,8 +20,15 @@
     "preservedPriorSafeguards": true,
     "priorCount": 32,
     "appendedVB_SRC_009Boundaries": 7,
-    "currentCount": 39,
-    "validation": "JSON structure preserved; prior 1.5.0 safeguards retained and VB-SRC-009 boundaries appended rather than substituted."
+    "currentCount": 39
+  },
+  "nonRegressionEvidence": {
+    "priorGlossaryCount": 33,
+    "appendedVB_SRC_009Terms": 5,
+    "currentGlossaryCount": 38,
+    "restoredPriorTerms": ["replayability", "agency-preserving ethics", "adaptation", "threshold", "keeper", "measurable proxy"],
+    "priorPrincipleAndTheologyContent": "preserved additively",
+    "jsonShape": "preserved"
   },
   "unresolvedAmbiguities": [
     "Covenant remains unsupported and quarantined.",
