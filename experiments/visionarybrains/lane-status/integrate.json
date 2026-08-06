@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.8.0",
+  "schemaVersion": "visionarybrains-lane-status/1.9.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T19:47:41Z",
-  "status": "NO_MERGE_REPAIR_GATES_RECORDED",
+  "observedAt": "2026-08-06T20:48:25Z",
+  "status": "NO_MERGE_DOCTRINE_NONREGRESSION_REPAIR_REQUIRED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "317e38bae411d2e37648f1c5a625d542f4282500",
+  "integrationCommit": "5aae40a8580546eb8fdb30c1b5a35cba9a6203f6",
   "validation": {
     "pullRequest35": {
       "targetBranch": "PASS",
@@ -15,9 +15,18 @@
       "boundedScope": "PASS",
       "provenance": "PASS_VB_SRC_009_PUBLIC_DERIVED",
       "newClaimFraming": "PASS_STATIC_REVIEW",
-      "publicSafetyRegression": "FAIL_FORBIDDEN_CLAIMS_REMOVED",
-      "ci": "NO_CURRENT_HEAD_RUNS",
-      "integrationDisposition": "HELD_REPAIR_REQUEST_POSTED"
+      "forbiddenClaimsRepair": "PASS_ADDITIVE_SET_RESTORED",
+      "doctrineNonRegression": "FAIL_PRIOR_GLOSSARY_AND_RELATED_PRIMITIVES_REMOVED",
+      "missingPriorGlossaryTerms": [
+        "replayability",
+        "agency-preserving ethics",
+        "adaptation",
+        "threshold",
+        "keeper",
+        "measurable proxy"
+      ],
+      "ci": "NO_CURRENT_HEAD_PASS_EVIDENCE",
+      "integrationDisposition": "HELD_SPECIFIC_REPAIR_COMMENT_POSTED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
@@ -27,37 +36,28 @@
       "boundedScope": "PASS",
       "publicSafety": "PASS_STATIC_REVIEW",
       "accessibilitySafeguards": "PASS_STATIC_REVIEW",
-      "deterministicValidation": {
-        "result": "PASS_RECORDED",
-        "validatedSiteCommit": "f1c0de82e0858f45fb79cc30b15450ed5d5e3841",
-        "requiredFiles": 11,
-        "anchors": 18,
-        "teachingCards": 6,
-        "principles": 26,
-        "metaphors": 17,
-        "visitorSteps": 5,
-        "glossaryEntries": 33
-      },
+      "deterministicValidation": "PASS_RECORDED_FOR_PRIOR_VALIDATED_SITE_COMMIT",
       "githubActions": "QUEUED_NO_JOB_ALLOCATION",
       "browserReview": "PENDING",
-      "integrationDisposition": "HELD_NON_MERGEABLE_AND_BROWSER_REVIEW_PENDING"
+      "integrationDisposition": "HELD_AFTER_DOCTRINE_AND_BROWSER_REVIEW"
     }
   },
   "unresolvedDefects": [
-    "PR 35 removes previously integrated public-safety safeguards unrelated to VB-SRC-009 and must preserve them while appending the new boundaries.",
-    "PR 31 remains non-mergeable against the current integration branch.",
-    "GitHub-hosted validation remains queued without job allocation and is not treated as passing CI.",
+    "PR 35 now preserves the prior forbidden-claims set but still removes unrelated integrated glossary and potentially related principle/theology primitives; doctrine changes must be additive or explicitly superseded with provenance.",
+    "PR 35 lacks cardinality and non-regression evidence comparing the integration base with the proposed doctrine head.",
+    "PR 31 remains non-mergeable against the current integration branch and must follow Doctrine integration.",
+    "GitHub-hosted validation has no current-head passing evidence.",
     "Browser-level contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading remain unverified.",
     "Covenant remains unsupported and quarantined.",
     "MVP is not reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "nextActions": [
-    "Doctrine should repair PR 35 by preserving the full existing forbidden-claims set, appending VB-SRC-009 safeguards, rebasing, and recording deterministic JSON validation.",
-    "Builder should update PR 31 after the Doctrine repair without expanding scope and retain the recorded deterministic validation and accessibility safeguards.",
-    "Builder or Integrate should obtain browser-level review evidence before public deployment readiness is asserted.",
-    "Integrate should re-review Doctrine before Builder and merge at most two passing PRs in source order."
+    "Doctrine should restore all unrelated prior glossary, principle, and theology primitives; append VB-SRC-009 content; and provide deterministic JSON plus cardinality/non-regression evidence.",
+    "Integrate should re-review PR 35 after the specific repair and merge it before Builder if every gate passes.",
+    "Builder should then update PR 31 from the new integration head without expanding scope and retain deterministic validation and accessibility safeguards.",
+    "Builder or Integrate should obtain browser-level review evidence before public deployment readiness is asserted."
   ],
   "controlCommits": [
-    "317e38bae411d2e37648f1c5a625d542f4282500"
+    "5aae40a8580546eb8fdb30c1b5a35cba9a6203f6"
   ]
 }
