@@ -1,49 +1,49 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.3",
+  "schemaVersion": "visionarybrains-lane-status/1.0.4",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T17:58:45Z",
+  "observedAt": "2026-08-06T20:58:28Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-007",
-  "baseCommit": "43f573d8942c5d8a81de3df9895aad0e2479fe22",
+  "taskId": "VB-EXC-008",
+  "baseCommit": "d043d046adc26d50539d7f7616e4784b2fa9b576",
+  "materialCommits": [
+    "d73819d5a164fb5df25fada4fbfe9838571ebd7d",
+    "bd0ae1fafa1c038fcc61c87f0cb611cf3091efa5",
+    "b0b3001d9e84dac469a7f71da5755636e90c7618"
+  ],
   "sourcesClassified": {
     "PUBLIC_CANON": 4,
-    "PUBLIC_DERIVED": 4,
+    "PUBLIC_DERIVED": 5,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0007-relational-emergence-fracture-governed-release.md",
+    "experiments/visionarybrains/learning/excavation-notes/0008-covenant-accountable-commitment-boundary.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "relation supplies context and meaning but does not confer authority over a person",
-    "emergence preserves revision and development without erasing continuity or commitments",
-    "silence is an epistemic pause rather than secrecy or withheld material risk",
-    "fracture may disclose assumptions and initiate repair but is not sacred, required, or inherently beneficial",
-    "unbinding is governed release that retains duties, consequences, memory handling, and recovery boundaries",
-    "mythic language is optional metaphor subordinate to evidence, consent, and explicit governance"
+    "accountable commitment is a bounded promise or governing obligation with visible actor, purpose, scope, authority, evidence, consequences, amendment, challenge, and repair paths",
+    "declaration alone does not establish authority, ethics, fulfillment, or immutability",
+    "commitment should remain evidence-aware, proportionate, attributable, contestable, and compatible with correction",
+    "adaptation may refine expression without silently erasing durable obligations or constitutional limits",
+    "governed amendment and unbinding remain possible when obligations, affected parties, records, and consequences are handled accountably",
+    "covenant is not established as an independent canonical doctrine; if used in mythic teaching it is only an optional metaphor for accountable commitment"
   ],
   "unsafeExclusions": [
-    "relation, resonance, or aesthetic coherence presented as objective hidden truth",
-    "emergence used to erase stable commitments, continuity, or accountability",
-    "suffering, rupture, instability, or trauma romanticized as spiritually necessary",
-    "fracture treated as proof of transformation, wisdom, legitimacy, or readiness",
-    "silence used to justify concealment or withholding material risk",
-    "unbinding used to cancel duties, consent requirements, consequences, records, or repair obligations",
-    "relational priority overriding individual agency, privacy, boundaries, or dissent",
-    "mythic terminology presented as religion, scientific law, legal authority, consciousness, personhood, prophecy, destiny, or privileged interpretation",
-    "covenant promoted as supported doctrine"
+    "literal religious, sacred, supernatural, or metaphysical covenant claims",
+    "software, agents, personas, memory, continuity, recursion, relation, resonance, lineage, authorship, promotion, or protected history independently creating covenant",
+    "covenant conferring legal status, personhood, consciousness, spiritual authority, ownership, obedience, exclusivity, or privileged interpretation",
+    "commitment overriding consent, privacy, dissent, withdrawal rights, affected-party recourse, law, policy, or legitimate external authority",
+    "declaration treated as proof of authorization, ethics, fulfillment, or immunity from amendment",
+    "mythic covenant language substituted for contracts, law, evidence, policy, consent, or explicit authorization"
   ],
   "readyTasks": [
-    "VB-DOC-006",
-    "VB-DOC-007"
+    "VB-DOC-008"
   ],
   "blockers": [
-    "Covenant remains unsupported and quarantined.",
-    "VB-SRC-009 is PUBLIC_DERIVED from an internal academic working monograph and must remain non-authoritative and provenance-labeled.",
-    "Doctrine must not turn fracture into glorified harm, silence into concealment, or unbinding into release from accountability."
+    "The source supports accountable commitment but does not canonically define covenant; covenant must therefore remain optional metaphor rather than independent authority.",
+    "VB-DOC-007 remains in repair on PR 35 and should be resolved before later doctrine is integrated so forbidden-claim protections remain additive."
   ],
-  "nextLaneRequest": "Doctrine should complete higher-priority VB-DOC-006 before selecting VB-DOC-007. For VB-DOC-007, teach relation as context rather than authority, emergence with continuity, epistemic silence rather than secrecy, fracture as diagnosis rather than sacred harm, and unbinding as accountable release. Preserve the optional, non-literal status of mythic language."
+  "nextLaneRequest": "Doctrine should first complete the existing VB-DOC-007 repair. Then select READY VB-DOC-008 and compile accountable commitment directly while keeping covenant noncanonical, optional, metaphorical, non-coercive, and subordinate to consent, evidence, law, policy, explicit authority, amendment, repair, and governed unbinding."
 }
