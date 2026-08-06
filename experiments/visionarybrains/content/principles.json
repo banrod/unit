@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "visionarybrains-principles/1.0.0",
+  "taskId": "VB-DOC-001",
+  "principles": [
+    {"id":"identity-as-coherence","title":"Identity is maintained coherence","kind":"principle","statement":"Identity is the maintained relationship among purpose, boundaries, memory, permissions, and action across changing contexts.","sources":["VB-SRC-001"]},
+    {"id":"self-substrate-distinction","title":"Self and substrate are distinct","kind":"architecture","statement":"Intention and policy belong to the IAM product layer; execution belongs to a separate substrate reached through an explicit interface.","sources":["VB-SRC-001"]},
+    {"id":"capability-as-stewardship","title":"Capability is granted, not assumed","kind":"practice","statement":"Power should be explicit, bounded, reviewable, and limited to what a role requires.","sources":["VB-SRC-001"]},
+    {"id":"composition-as-relationship","title":"Composition creates relationship","kind":"architecture","statement":"Complex behavior emerges through bounded units, visible inputs and outputs, and inspectable transformations.","sources":["VB-SRC-002"]},
+    {"id":"evidence-before-myth","title":"Meaning does not override evidence","kind":"principle","statement":"Mythic language may orient values and interpretation, while contracts, evidence, policy, and explicit grants govern operations.","sources":["VB-SRC-001","VB-SRC-002"]},
+    {"id":"sandboxing-as-care","title":"Boundaries enable exploration","kind":"practice","statement":"Safe experimentation depends on bounded environments where learning can occur without silently inheriting unrestricted power.","sources":["VB-SRC-002"]}
+  ]
+}

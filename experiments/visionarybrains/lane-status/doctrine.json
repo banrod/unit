@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "visionarybrains-lane-status/1.0.1",
+  "lane": "VisionaryBrains — Doctrine",
+  "taskId": "VB-DOC-001",
+  "status": "PR_REPAIRED",
+  "observedAt": "2026-08-06T09:11:00Z",
+  "baseBranch": "experiment/visionarybrains",
+  "sourcesConsumed": ["VB-SRC-001", "VB-SRC-002"],
+  "sourcesExcluded": ["VB-SRC-003"],
+  "publicClaimTransformations": [
+    "identity as contextual coherence",
+    "substrate as execution distinct from intention and policy",
+    "capability as bounded stewardship",
+    "graph composition as a relational systems model",
+    "optional metaphorical language as orientation subordinate to evidence"
+  ],
+  "repairsApplied": [
+    "Removed memory, covenant, and recursion from active public-derived themes.",
+    "Quarantined unsupported themes pending additional public-safe evidence.",
+    "Attached file-level and claim-level provenance to theology definitions and boundaries."
+  ],
+  "forbiddenClaimsEstablished": 7,
+  "unresolvedAmbiguities": [
+    "Memory, covenant, and recursion remain quarantined until supported by additional public-safe sources."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"visionarybrains-glossary/1.0.0",
+  "terms":[
+    {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
+    {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
+    {"term":"capability","definition":"An explicit grant permitting a bounded action.","sources":["VB-SRC-001"]},
+    {"term":"graph","definition":"A composition of bounded units connected through inputs, outputs, and transformations.","sources":["VB-SRC-002"]},
+    {"term":"interface","definition":"The translation boundary between intention and execution.","sources":["VB-SRC-001"]},
+    {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002"]}
+  ]
+}
