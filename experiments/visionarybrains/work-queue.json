@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-work-queue/1.0.6",
-  "updatedAt": "2026-08-06T15:48:30Z",
+  "schemaVersion": "visionarybrains-work-queue/1.0.7",
+  "updatedAt": "2026-08-06T16:00:27Z",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "tasks": [
     {
@@ -96,6 +96,26 @@
       "priority": 3,
       "title": "Excavate symbolic language and semantic sovereignty",
       "dependencies": []
+    },
+    {
+      "taskId": "VB-EXC-005",
+      "lane": "Excavator",
+      "status": "COMPLETED",
+      "priority": 4,
+      "title": "Excavate agency, interface, and operational conscience",
+      "dependencies": [],
+      "outputs": ["learning/source-index.json", "learning/excavation-notes/0005-agency-interface-operational-conscience.md"]
+    },
+    {
+      "taskId": "VB-DOC-005",
+      "lane": "Doctrine",
+      "status": "READY",
+      "priority": 7,
+      "title": "Compile agency, interface, and operational-conscience doctrine",
+      "dependencies": ["VB-EXC-005"],
+      "inputs": ["learning/excavation-notes/0005-agency-interface-operational-conscience.md"],
+      "outputs": ["content/doctrine.json", "content/principles.json", "content/theology.json", "content/glossary.json", "content/forbidden-claims.json"],
+      "acceptanceCriteria": ["Distinguish possibility, resolution, witnessing, and authorization", "Teach agency as authorship within explicit constraints", "Treat interface translation as provenance-preserving and uncertainty-visible", "Define operational conscience without implying sentience or autonomous moral authority", "Keep covenant unsupported and quarantined"]
     }
   ]
 }

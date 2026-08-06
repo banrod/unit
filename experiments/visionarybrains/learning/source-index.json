@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-source-index/1.0.0",
-  "updatedAt": "2026-08-06T12:00:58Z",
+  "schemaVersion": "visionarybrains-source-index/1.0.1",
+  "updatedAt": "2026-08-06T16:00:27Z",
   "sources": [
     {
       "sourceId": "VB-SRC-001",
@@ -58,6 +58,16 @@
       "publicSafeAbstraction": "IAM's symbolic vocabulary can be taught as an optional, editable language for noticing context, relationships, uncertainty, transition, memory, and accumulated pressure. Fields describe bounded relational situations; rings describe bounded traversal; gravity wells describe accumulated salience or inertia and become computational only when tied to explicit measurable proxies. Semantic sovereignty requires interpretations applied to people to remain inspectable, contestable, transformable, and recomposable.",
       "unsafeExclusions": ["internal module inventories, schemas, dependency registers, authority receipts, release controls, and implementation plans", "private archive references, conversation lineage, project identifiers, and operational mechanics", "claims that symbolic language reveals objective hidden truth, diagnoses people, predicts destiny, or overrides consent", "literal physical-status claims for fields, rings, gravity wells, dimensions, echoes, or dreams", "compulsory belief, privileged interpreters, manipulative spiritual framing, or aesthetic coherence treated as evidence", "memory retention or symbolic reuse that conflicts with privacy, deletion, or consent", "covenant doctrine unsupported by the source"],
       "teachingPotential": ["metaphor as lens rather than verdict", "semantic sovereignty", "field awareness", "bounded traversal", "measurable proxies for computational metaphors", "silence before premature classification", "source-interpretation-confidence separation"]
+    },
+    {
+      "sourceId": "VB-SRC-007",
+      "classification": "PUBLIC_DERIVED",
+      "title": "IAM Pilot Specification — public-safe agency and interface abstraction",
+      "reference": "File Library artifact: IAM_Pilot_Specification_v0.1.docx, draft version 0.1, dated 2026-07-17",
+      "sourceStatus": "internal architectural draft transformed into a non-authoritative public abstraction",
+      "publicSafeAbstraction": "IAM can be taught as a situated interface that helps people frame possibilities, translate among representations, witness consequences, and return understandable results without collapsing possibility, resolution, evidence, and authorization into one category. Agency includes authorship over the framing of choices while explicit constraints, permissions, evidence requirements, and recovery paths remain visible. Operational conscience is the disciplined practice of checking clarity, authority, provenance, proportionality, reversibility, and future viability before presenting or acting on a transformation.",
+      "unsafeExclusions": ["internal component names, topology, message schemas, identifiers, receipts, hashes, thresholds, budgets, and implementation contracts", "claims that an interface independently authorizes consequential action or becomes the source of domain truth", "claims that operational conscience proves consciousness, personhood, moral infallibility, spiritual authority, or autonomous legal status", "private workflow mechanics, source conversation lineage, operational modes, and unpublished governance controls", "poetic or mythic display language treated as machine identity, evidence, or self-authenticating truth", "covenant doctrine unsupported by the source"],
+      "teachingPotential": ["possibility is not resolution and resolution is not authorization", "agency as authorship under explicit constraint", "interface as accountable translation", "witnessing as provenance-preserving return", "operational conscience as checks before action", "uncertainty and lossy translation made visible", "recovery and escape paths as interface stewardship"]
     }
   ]
 }

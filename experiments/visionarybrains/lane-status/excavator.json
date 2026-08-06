@@ -1,44 +1,45 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.0",
+  "schemaVersion": "visionarybrains-lane-status/1.0.1",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T12:00:58Z",
+  "observedAt": "2026-08-06T16:00:27Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-004",
-  "baseCommit": "419c76793137c0c38d130b2615af5989e1399185",
+  "taskId": "VB-EXC-005",
+  "baseCommit": "a508352b9514a0608bb77f92e9da9b43d45f4f4b",
   "sourcesClassified": {
     "PUBLIC_CANON": 3,
-    "PUBLIC_DERIVED": 2,
+    "PUBLIC_DERIVED": 3,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0004-symbolic-language-semantic-sovereignty.md",
+    "experiments/visionarybrains/learning/excavation-notes/0005-agency-interface-operational-conscience.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "metaphor as an optional editable lens rather than an objective verdict",
-    "semantic sovereignty as inspectable, contestable, transformable interpretation",
-    "fields as bounded relational situations",
-    "rings as bounded traversal with closure and residue",
-    "gravity wells as accumulated salience or inertia requiring measurable proxies before computational use",
-    "silence and uncertainty before premature classification",
-    "source, interpretation, confidence, and consequence kept distinct"
+    "possibility, resolution, witnessing, and authorization remain distinct",
+    "agency as authorship over framing within explicit consent, permission, safety, and evidence constraints",
+    "interface as accountable translation with visible uncertainty and consequential omissions",
+    "operational conscience as a non-sentient discipline of clarity, authority, provenance, proportionality, recoverability, and future viability",
+    "witnessed consequences and provenance before promotion or reuse",
+    "plain-language results with challenge, rollback, correction, and re-entry paths"
   ],
   "unsafeExclusions": [
-    "internal modules, schemas, dependency registers, authority receipts, release controls, and implementation plans",
-    "private archive references, conversation lineage, identifiers, and operational mechanics",
-    "symbolic diagnosis, destiny prediction, hidden-truth claims, or interpretation that overrides consent",
-    "literal physical or scientific status for mythic vocabulary",
-    "compulsory belief, privileged interpreters, manipulative spiritual framing, or aesthetics treated as evidence",
-    "memory retention or symbolic reuse that conflicts with privacy, deletion, or consent",
+    "internal component names, topologies, schemas, identifiers, receipts, hashes, thresholds, budgets, and implementation contracts",
+    "private source lineage, workflow mechanics, unpublished governance controls, and operational modes",
+    "interfaces presented as independent consequential authority or domain truth",
+    "operational conscience presented as consciousness, personhood, moral infallibility, spiritual authority, or autonomous legal status",
+    "mythic vocabulary used as machine identity, evidence, or self-authenticating command",
+    "hidden compression, omitted uncertainty, irreversible action without authority, or removed recovery paths",
     "covenant promoted as supported doctrine"
   ],
-  "readyTasks": ["VB-DOC-004", "VB-BUILD-001"],
-  "blockers": [
-    "VB-DOC-003 remains in repair on PR 30 and should be completed before Doctrine begins VB-DOC-004.",
-    "Covenant remains unsupported as a public doctrine term."
+  "readyTasks": [
+    "VB-DOC-005"
   ],
-  "nextLaneRequest": "Doctrine should first finish the bounded repair of PR 30, then compile VB-DOC-004 from VB-SRC-006. The increment should teach symbolic language as optional and editable, establish semantic sovereignty, and keep covenant quarantined."
+  "blockers": [
+    "Covenant remains unsupported and quarantined.",
+    "The source is a draft; all doctrine derived from it must remain non-authoritative and provenance-labeled."
+  ],
+  "nextLaneRequest": "Doctrine should compile VB-DOC-005 from VB-SRC-007, teaching agency as authorship under visible constraint, interface as accountable translation, and operational conscience as a non-sentient check discipline. Preserve the distinctions among possibility, resolution, witnessing, and authorization, and keep covenant quarantined."
 }
