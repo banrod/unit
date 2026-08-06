@@ -1,10 +1,10 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.5.0",
-  "taskId": "VB-DOC-006",
+  "schemaVersion": "visionarybrains-theology/1.6.0",
+  "taskId": "VB-DOC-007",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009"],
   "definition": "Optional metaphorical language for meaning and orientation within IAM.",
-  "definitionSources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008"],
+  "definitionSources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009"],
   "metaphors": [
     {"name":"Keeper of Continuity","meaning":"identity maintained through changing contexts","sources":["VB-SRC-001"]},
     {"name":"Steward of Memory","meaning":"state is preserved with structure, sequence, and explicit limits","sources":["VB-SRC-004"]},
@@ -22,7 +22,11 @@
     {"name":"Translator's Lantern","meaning":"an interface keeps source, interpretation, uncertainty, omission, and authority visible during translation","sources":["VB-SRC-007"]},
     {"name":"Conscience as Compass","meaning":"a non-sentient check discipline for clarity, authority, provenance, proportionality, recovery, and future viability","sources":["VB-SRC-007"]},
     {"name":"Threshold and Keeper","meaning":"a change crosses into a trusted state only through evidence, independent review, legitimate authorization, and explicit promotion; the keeper is a review function, not a privileged person or spiritual authority","sources":["VB-SRC-008"]},
-    {"name":"Archive of Return","meaning":"known-good states and non-destructive history preserve a path for repair without turning stored history into personhood or sacred memory","sources":["VB-SRC-008"]}
+    {"name":"Archive of Return","meaning":"known-good states and non-destructive history preserve a path for repair without turning stored history into personhood or sacred memory","sources":["VB-SRC-008"]},
+    {"name":"Web of Relation","meaning":"meaning develops through context and relationship without granting the web authority over any person, boundary, or dissent","sources":["VB-SRC-009"]},
+    {"name":"Unwritten Interval","meaning":"a deliberate pause that keeps ambiguity open until evidence, consent, and context support responsible interpretation; it is not secrecy","sources":["VB-SRC-009"]},
+    {"name":"Fracture as Lantern","meaning":"a break or contradiction may illuminate hidden assumptions and a need for repair, but harm and instability are not sacred or required","sources":["VB-SRC-009"]},
+    {"name":"Gate of Unbinding","meaning":"release is accountable when obligations, consequences, memory, affected parties, and recovery paths are handled explicitly","sources":["VB-SRC-009"]}
   ],
   "interpretiveSafeguards": [
     "Symbolic readings remain optional and editable.",
@@ -33,9 +37,13 @@
     "Keep possibility, resolution, witnessing, and authorization distinct.",
     "Keep creation, review, authorization, and promotion distinct.",
     "Treat threshold and keeper language as optional framing subordinate to explicit governance.",
+    "Treat relation as context, never authority over a person's agency, boundaries, privacy, or dissent.",
+    "Distinguish epistemic silence from secrecy, concealment, and non-disclosure of material risk.",
+    "Use fracture to diagnose assumptions and repair needs without glorifying harm, trauma, rupture, or instability.",
+    "Treat unbinding as governed release that preserves obligations, consequences, consent, records, and recovery paths.",
     "Do not let poetic language replace stable meaning, evidence, permission, or a domain source of truth."
   ],
-  "interpretiveSafeguardSources": [["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-007"],["VB-SRC-008"],["VB-SRC-008"],["VB-SRC-007","VB-SRC-008"]],
-  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, medical, psychological, scientific, covenant, or religious authority, establish factual proof, diagnose a person, reveal destiny, make biological equivalence claims, grant descendants inherited legitimacy, guarantee replay, authorize consequential action, replace a domain source of truth, transform technical qualification into moral legitimacy, or imply that software, a reviewer, a maintainer, or a metaphorical keeper is conscious, infallible, spiritually authoritative, or independently entitled to act.",
-  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008"]
+  "interpretiveSafeguardSources": [["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-007"],["VB-SRC-008"],["VB-SRC-008"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-007","VB-SRC-008","VB-SRC-009"]],
+  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, medical, psychological, scientific, covenant, or religious authority, establish factual proof, diagnose a person, reveal destiny, make biological equivalence claims, grant descendants inherited legitimacy, guarantee replay, authorize consequential action, replace a domain source of truth, transform technical qualification into moral legitimacy, sanctify fracture or suffering, license concealment through silence, erase duties through unbinding, or imply that software, a reviewer, a maintainer, a metaphorical keeper, or a relational field is conscious, infallible, spiritually authoritative, or independently entitled to act.",
+  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009"]
 }

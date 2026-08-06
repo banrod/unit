@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.5.0",
-  "taskId": "VB-DOC-006",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.6.1",
+  "taskId": "VB-DOC-007",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -12,12 +12,12 @@
     "Do not claim stored state, snapshots, or replay constitute a person, soul, or consciousness.",
     "Do not claim deterministic replay when external effects or conditions were not recorded.",
     "Do not treat canonical hashes or snapshots as moral, legal, or spiritual identity.",
-    "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, operational conscience, readiness, promotion, or recovery boundaries.",
+    "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, operational conscience, readiness, promotion, relation, emergence, fracture, unbinding, or recovery boundaries.",
     "Do not claim biological or constitutional metaphor establishes biological equivalence, personhood, or autonomous legal status.",
     "Do not claim ancestry or lineage grants truth, authority, legitimacy, ownership, status, or moral superiority.",
     "Do not imply adaptation may silently replace identity, purpose, permissions, authority, or durable limits.",
     "Do not present acknowledgment without correction and repair as complete accountability.",
-    "Do not claim symbolic language reveals hidden objective truth, diagnoses a person, predicts destiny, or overrides consent.",
+    "Do not claim symbolic or relational language reveals hidden objective truth, diagnoses a person, predicts destiny, or overrides consent.",
     "Do not present fields, rings, gravity wells, dimensions, echoes, dreams, thresholds, or keepers as literal physical or supernatural discoveries.",
     "Do not assign privileged interpreters or deny a person's ability to inspect, contest, transform, or reject an interpretation applied to them.",
     "Do not use a symbolic metaphor computationally without naming an explicit measurable proxy, uncertainty, limits, and consequences.",
@@ -33,8 +33,15 @@
     "Do not allow an author, reviewer, maintainer, automation, threshold, or keeper metaphor to silently grant itself final promotion authority.",
     "Do not claim technical qualification, passing checks, preserved history, or promotion confers moral, spiritual, legal, scientific, religious, or covenant legitimacy.",
     "Do not present emergency exceptions as ambient, ordinary, hidden, or self-granted authority.",
-    "Do not claim protected history is a person, consciousness, soul, sacred memory, or infallible account."
+    "Do not claim protected history is a person, consciousness, soul, sacred memory, or infallible account.",
+    "Do not claim relation, resonance, aesthetic coherence, or observer position grants authority over a person's agency, boundaries, privacy, consent, or dissent.",
+    "Do not claim emergent identity erases stable commitments, history, consequences, or the right to revise interpretation.",
+    "Do not claim suffering, rupture, instability, trauma, or fracture is spiritually necessary, inherently beneficial, sacred, or proof of transformation, wisdom, legitimacy, or readiness.",
+    "Do not use epistemic silence to justify secrecy, concealment, non-disclosure, withholding material risk, or withholding evidence from affected parties.",
+    "Do not claim unbinding cancels duties, consent requirements, consequences, records, accountability, or repair obligations.",
+    "Do not claim governed release authorizes abandonment of affected parties or silent erasure of retained memory.",
+    "Do not present theology, liturgy, relation, emergence, fracture, silence, or unbinding as empirical law, compulsory belief, religious office, prophecy, destiny, or privileged interpretation."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-principles/1.5.0",
-  "taskId": "VB-DOC-006",
+  "schemaVersion": "visionarybrains-principles/1.6.0",
+  "taskId": "VB-DOC-007",
   "principles": [
     {"id":"identity-as-coherence","title":"Identity is maintained coherence","kind":"principle","statement":"Identity is the maintained relationship among purpose, boundaries, memory, permissions, and action across changing contexts.","sources":["VB-SRC-001"]},
     {"id":"self-substrate-distinction","title":"Self and substrate are distinct","kind":"architecture","statement":"Intention and policy belong to the IAM product layer; execution belongs to a separate substrate reached through an explicit interface.","sources":["VB-SRC-001"]},
@@ -26,6 +26,11 @@
     {"id":"separate-creation-from-promotion","title":"Creation is not promotion","kind":"architecture","statement":"Creation, review, authorization, and promotion are distinct responsibilities; authorship alone does not admit a change into a trusted state.","sources":["VB-SRC-008"]},
     {"id":"history-as-repair-stewardship","title":"History is held for repair","kind":"practice","statement":"Known-good states, non-destructive history, rollback paths, and explicit exceptions preserve accountability and make correction possible.","sources":["VB-SRC-008"]},
     {"id":"exceptions-must-be-explicit","title":"Exceptions must remain visible","kind":"practice","statement":"Emergency authority, when legitimately granted, should be named, bounded, evidenced, and reviewed rather than disguised as ordinary process.","sources":["VB-SRC-008"]},
+    {"id":"relation-as-context","title":"Relation provides context, not authority","kind":"principle","statement":"Relationships among entities, contexts, observers, permissions, memory, and time can shape meaning without overriding individual agency, boundaries, privacy, or dissent.","sources":["VB-SRC-009"]},
+    {"id":"emergence-with-continuity","title":"Emergence preserves continuity","kind":"principle","statement":"Identity and understanding may develop through context while history, commitments, consequences, and revision rights remain visible.","sources":["VB-SRC-009"]},
+    {"id":"epistemic-silence-not-secrecy","title":"Silence protects uncertainty, not concealment","kind":"practice","statement":"A deliberate pause can prevent premature classification but never excuses hiding material risk, evading required disclosure, or withholding evidence from affected parties.","sources":["VB-SRC-009"]},
+    {"id":"fracture-as-diagnosis","title":"Fracture is diagnostic, not sacred","kind":"practice","statement":"Contradiction or failure may reveal assumptions and initiate repair, but suffering, instability, rupture, and trauma are not requirements or proof of growth.","sources":["VB-SRC-009"]},
+    {"id":"unbinding-as-governed-release","title":"Release must remain accountable","kind":"principle","statement":"Retiring a role, interpretation, relationship, or structure requires explicit treatment of obligations, consequences, retained memory, affected parties, consent, and recovery paths.","sources":["VB-SRC-009"]},
     {"id":"evidence-before-myth","title":"Meaning does not override evidence","kind":"principle","statement":"Mythic language may orient values and interpretation, while contracts, evidence, policy, and explicit grants govern operations.","sources":["VB-SRC-001","VB-SRC-002"]},
     {"id":"sandboxing-as-care","title":"Boundaries enable exploration","kind":"practice","statement":"Safe experimentation depends on bounded environments where learning can occur without silently inheriting unrestricted power.","sources":["VB-SRC-002"]}
   ]

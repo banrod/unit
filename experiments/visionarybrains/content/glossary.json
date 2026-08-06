@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"visionarybrains-glossary/1.5.0",
+  "schemaVersion":"visionarybrains-glossary/1.6.1",
   "terms":[
     {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
     {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
@@ -16,7 +16,7 @@
     {"term":"repair","definition":"The accountable sequence of containment, correction, communication, restoration where possible, retained evidence, and learning against recurrence.","sources":["VB-SRC-005"]},
     {"term":"lineage","definition":"Recorded ancestry and compatibility information used for comparison, rollback, and responsible adaptation without conferring inherited authority.","sources":["VB-SRC-005"]},
     {"term":"adaptation","definition":"Visible and inspectable change to methods or expression that does not silently replace identity, purpose, authority, or durable limits.","sources":["VB-SRC-005"]},
-    {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002","VB-SRC-006"]},
+    {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002","VB-SRC-006","VB-SRC-009"]},
     {"term":"symbolic interpretation","definition":"An optional and revisable way of noticing relationships, uncertainty, transition, memory, or pressure without treating the reading as objective fact.","sources":["VB-SRC-006"]},
     {"term":"semantic sovereignty","definition":"The ability to inspect, question, transform, recompose, or reject interpretations applied to oneself.","sources":["VB-SRC-006"]},
     {"term":"possibility","definition":"An option or interpretation that can be considered but has not thereby been resolved, witnessed, or authorized.","sources":["VB-SRC-007"]},
@@ -30,6 +30,11 @@
     {"term":"protected history","definition":"A non-destructive account of change retained so later convenience cannot silently rewrite how a trusted state was reached.","sources":["VB-SRC-008"]},
     {"term":"threshold","definition":"An optional metaphor for the evidence and authority boundary between a possible change and an admitted trusted state.","sources":["VB-SRC-008"]},
     {"term":"keeper","definition":"An optional metaphor for an independent review function, not a privileged person, priesthood, sentient system, or supernatural authority.","sources":["VB-SRC-008"]},
+    {"term":"relation","definition":"Context and meaning arising among entities, observers, permissions, memory, and time without granting authority over a person.","sources":["VB-SRC-009"]},
+    {"term":"emergence","definition":"Development of identity or understanding through context while continuity, commitments, consequences, and revision rights remain visible.","sources":["VB-SRC-009"]},
+    {"term":"epistemic silence","definition":"A deliberate pause before classification when evidence, consent, or context is insufficient; it never licenses concealment of material risk.","sources":["VB-SRC-009"]},
+    {"term":"fracture","definition":"A contradiction, break, or failed form treated as diagnostic evidence for review and repair, not as sacred harm or proof of growth.","sources":["VB-SRC-009"]},
+    {"term":"governed unbinding","definition":"Accountable retirement of a role, interpretation, relationship, or structure with explicit handling of obligations, consequences, memory, affected parties, and recovery paths.","sources":["VB-SRC-009"]},
     {"term":"field","definition":"A bounded situation containing entities, relations, pressures, absences, and observer positions.","sources":["VB-SRC-006"]},
     {"term":"ring","definition":"A metaphor for a bounded traversal with entry, movement, return, closure, and residue.","sources":["VB-SRC-006"]},
     {"term":"gravity well","definition":"A metaphor for accumulated salience, dependency, inertia, or unresolved pressure; computational use requires an explicit measurable proxy.","sources":["VB-SRC-006"]},
