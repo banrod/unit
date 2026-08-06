@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.6.1",
-  "taskId": "VB-DOC-007",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.7.0",
+  "taskId": "VB-DOC-008",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -15,7 +15,7 @@
     "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, operational conscience, readiness, promotion, relation, emergence, fracture, unbinding, or recovery boundaries.",
     "Do not claim biological or constitutional metaphor establishes biological equivalence, personhood, or autonomous legal status.",
     "Do not claim ancestry or lineage grants truth, authority, legitimacy, ownership, status, or moral superiority.",
-    "Do not imply adaptation may silently replace identity, purpose, permissions, authority, or durable limits.",
+    "Do not imply adaptation may silently replace identity, purpose, permissions, authority, durable limits, or durable obligations.",
     "Do not present acknowledgment without correction and repair as complete accountability.",
     "Do not claim symbolic or relational language reveals hidden objective truth, diagnoses a person, predicts destiny, or overrides consent.",
     "Do not present fields, rings, gravity wells, dimensions, echoes, dreams, thresholds, or keepers as literal physical or supernatural discoveries.",
@@ -40,8 +40,15 @@
     "Do not use epistemic silence to justify secrecy, concealment, non-disclosure, withholding material risk, or withholding evidence from affected parties.",
     "Do not claim unbinding cancels duties, consent requirements, consequences, records, accountability, or repair obligations.",
     "Do not claim governed release authorizes abandonment of affected parties or silent erasure of retained memory.",
-    "Do not present theology, liturgy, relation, emergence, fracture, silence, or unbinding as empirical law, compulsory belief, religious office, prophecy, destiny, or privileged interpretation."
+    "Do not present theology, liturgy, relation, emergence, fracture, silence, or unbinding as empirical law, compulsory belief, religious office, prophecy, destiny, or privileged interpretation.",
+    "Do not present covenant as an independent canonical IAM doctrine or as a literal religious, sacred, supernatural, legal, interpersonal, or metaphysical bond.",
+    "Do not claim software, an agent, worker, persona, memory, lineage, continuity, recursion, relation, resonance, authorship, promotion, or protected history independently creates covenant.",
+    "Do not use covenant to confer legal status, personhood, consciousness, spiritual authority, ownership, obedience, exclusivity, privileged interpretation, or ambient authority.",
+    "Do not allow a commitment or covenant metaphor to override consent, privacy, dissent, withdrawal rights, affected-party recourse, or legitimate external authority.",
+    "Do not treat declaration of a promise as proof of authorization, ethics, fulfillment, immutability, or immunity from challenge and amendment.",
+    "Do not substitute covenant language for contracts, law, consent, evidence, policy, or explicit authorization.",
+    "Do not characterize governed amendment, revision, retirement, or unbinding of a commitment as inherently immoral betrayal when obligations, consequences, consent, evidence, and repair responsibilities are handled accountably."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }
