@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "visionarybrains-lessons/1.0.0",
+  "taskId": "VB-TEACH-001",
+  "lessons": [
+    {
+      "id": "iam-in-one-sentence",
+      "stage": "first-encounter",
+      "title": "IAM in one sentence",
+      "summary": "IAM is a way of preserving coherent identity while intentions move through changing tools, contexts, and forms of action.",
+      "kind": "principle",
+      "sources": ["identity-as-coherence", "self-substrate-distinction"]
+    },
+    {
+      "id": "power-has-boundaries",
+      "stage": "orientation",
+      "title": "Power has boundaries",
+      "summary": "An IAM-aligned system does not assume unlimited access. Capabilities are granted explicitly, kept proportionate, and made reviewable.",
+      "kind": "practice",
+      "sources": ["capability-as-stewardship", "sandboxing-as-care"]
+    },
+    {
+      "id": "meaning-and-evidence",
+      "stage": "deepening",
+      "title": "Meaning and evidence have different jobs",
+      "summary": "Mythic language can help people interpret purpose and values. Evidence, policy, contracts, and explicit permission govern factual and operational claims.",
+      "kind": "metaphor-boundary",
+      "sources": ["evidence-before-myth"]
+    },
+    {
+      "id": "relationship-before-complexity",
+      "stage": "practice",
+      "title": "Build relationships before complexity",
+      "summary": "Complex systems become understandable when their parts, inputs, outputs, and transformations remain visible.",
+      "kind": "architecture",
+      "sources": ["composition-as-relationship"]
+    },
+    {
+      "id": "visitor-synthesis",
+      "stage": "synthesis",
+      "title": "A practical reading of IAM",
+      "summary": "IAM joins identity, bounded agency, visible relationships, stewardship, and optional mythic interpretation into one public teaching frame.",
+      "kind": "synthesis",
+      "sources": ["identity-as-coherence", "capability-as-stewardship", "composition-as-relationship", "evidence-before-myth"]
+    }
+  ]
+}
