@@ -1,18 +1,41 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.0.0",
+  "schemaVersion": "visionarybrains-doctrine/1.0.1",
   "taskId": "VB-DOC-001",
   "status": "PUBLIC_DERIVED",
   "provenance": ["VB-SRC-001", "VB-SRC-002"],
   "themes": {
-    "identity": "coherence maintained across contexts",
-    "architecture": "intention and policy remain distinct from execution substrate",
-    "memory": "history is held as a stewardship responsibility",
-    "agency": "action is bounded by explicit capability",
-    "covenant": "roles act within visible commitments and limits",
-    "recursion": "systems may compose systems without erasing boundaries",
-    "stewardship": "power, evidence, and experimentation require care",
-    "interface": "translation joins intention to execution",
-    "operationalConscience": "meaning informs values while evidence governs claims"
+    "identity": {
+      "statement": "coherence maintained across contexts",
+      "sources": ["VB-SRC-001"]
+    },
+    "architecture": {
+      "statement": "intention and policy remain distinct from execution substrate",
+      "sources": ["VB-SRC-001"]
+    },
+    "agency": {
+      "statement": "action is bounded by explicit capability",
+      "sources": ["VB-SRC-001"]
+    },
+    "stewardship": {
+      "statement": "power, evidence, and experimentation require care",
+      "sources": ["VB-SRC-001", "VB-SRC-002"]
+    },
+    "interface": {
+      "statement": "translation joins intention to execution",
+      "sources": ["VB-SRC-001"]
+    },
+    "operationalConscience": {
+      "statement": "meaning informs values while evidence governs claims",
+      "sources": ["VB-SRC-001", "VB-SRC-002"]
+    }
   },
-  "claimBoundary": "Public teaching model; not operational authority or factual proof of metaphysical claims."
+  "quarantinedThemes": {
+    "memory": "Requires additional public-safe support before visitor-facing use.",
+    "covenant": "Requires additional public-safe support before visitor-facing use.",
+    "recursion": "Requires additional public-safe support before visitor-facing use."
+  },
+  "claimBoundary": {
+    "statement": "Public teaching model; not operational authority or factual proof of metaphysical claims.",
+    "sources": ["VB-SRC-001", "VB-SRC-002"]
+  }
 }
