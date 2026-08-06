@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "site-forge-lane-status/1.0.0",
+  "lane": "Site Forge — Blueprint",
+  "observedAt": "2026-08-06T07:18:00Z",
+  "state": "ACTIVE",
+  "milestone": "M0_FOUNDATION",
+  "integrationBranch": "experiment/site-forge",
+  "readyTasks": [
+    "SF-BLD-001",
+    "SF-EXP-001"
+  ],
+  "blockers": [],
+  "nextIntegratorAction": "Review and merge one passing Build PR and one passing Experience PR when available."
+}
