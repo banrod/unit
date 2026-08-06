@@ -1,6 +1,6 @@
 {
   "schemaVersion": "visionarybrains-work-queue/1.0.0",
-  "updatedAt": "2026-08-06T08:49:57Z",
+  "updatedAt": "2026-08-06T09:00:17Z",
   "milestone": "M0_PUBLIC_FOUNDATION",
   "tasks": [
     {
@@ -26,10 +26,26 @@
       }
     },
     {
+      "taskId": "VB-DOC-002",
+      "lane": "Doctrine",
+      "status": "READY",
+      "priority": 2,
+      "title": "Compile memory-stewardship and bounded-recursion doctrine",
+      "dependencies": ["VB-EXC-002"],
+      "inputs": ["learning/excavation-notes/0002-memory-evidence-recursion.md"],
+      "acceptanceCriteria": [
+        "Define memory as accountable continuity without personhood claims",
+        "Define evidence as ordered transformation with explicit conditions",
+        "Present recursion only as bounded return, restoration, and continuation",
+        "Trace every public claim to VB-SRC-004",
+        "Keep covenant quarantined as unsupported"
+      ]
+    },
+    {
       "taskId": "VB-TEACH-001",
       "lane": "Teacher",
       "status": "BLOCKED",
-      "priority": 2,
+      "priority": 3,
       "title": "Create first-encounter visitor path",
       "dependencies": ["VB-DOC-001"],
       "inputs": ["content/principles.json", "content/doctrine.json", "content/forbidden-claims.json"],
@@ -43,7 +59,7 @@
       "taskId": "VB-BUILD-001",
       "lane": "Builder",
       "status": "BLOCKED",
-      "priority": 3,
+      "priority": 4,
       "title": "Build public teaching shell",
       "dependencies": ["VB-TEACH-001"],
       "inputs": ["content/site-copy.json", "content/visitor-paths.json", "content/teaching-cards.json"],
@@ -66,6 +82,18 @@
         "VISIONARYBRAINS.md",
         "learning/source-index.json",
         "learning/excavation-notes/0001-identity-substrate-capability.md"
+      ]
+    },
+    {
+      "taskId": "VB-EXC-002",
+      "lane": "Excavator",
+      "status": "COMPLETED",
+      "priority": 1,
+      "title": "Excavate memory, evidence, and bounded recursion",
+      "dependencies": [],
+      "outputs": [
+        "learning/source-index.json",
+        "learning/excavation-notes/0002-memory-evidence-recursion.md"
       ]
     }
   ]
