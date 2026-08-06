@@ -1,26 +1,22 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.1",
+  "schemaVersion": "visionarybrains-lane-status/1.1.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-001",
-  "status": "PR_REPAIRED",
-  "observedAt": "2026-08-06T09:11:00Z",
+  "taskId": "VB-DOC-002",
+  "status": "PR_OPENING",
+  "observedAt": "2026-08-06T10:10:17Z",
   "baseBranch": "experiment/visionarybrains",
-  "sourcesConsumed": ["VB-SRC-001", "VB-SRC-002"],
+  "baseCommit": "33cef7ebc1a30621bf4c285a05e59f3b3219cc4a",
+  "sourcesConsumed": ["VB-SRC-004"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": [
-    "identity as contextual coherence",
-    "substrate as execution distinct from intention and policy",
-    "capability as bounded stewardship",
-    "graph composition as a relational systems model",
-    "optional metaphorical language as orientation subordinate to evidence"
+    "memory as accountable continuity joining stable structure, changing state, and recoverable sequence",
+    "evidence as ordered transformation under explicit conditions and capabilities",
+    "recursion as bounded return for restoration, revision, and continuation",
+    "replayability as conditional on recorded inputs, external effects, and execution context"
   ],
-  "repairsApplied": [
-    "Removed memory, covenant, and recursion from active public-derived themes.",
-    "Quarantined unsupported themes pending additional public-safe evidence.",
-    "Attached file-level and claim-level provenance to theology definitions and boundaries."
-  ],
-  "forbiddenClaimsEstablished": 7,
+  "forbiddenClaimsEstablished": 11,
   "unresolvedAmbiguities": [
-    "Memory, covenant, and recursion remain quarantined until supported by additional public-safe sources."
+    "Covenant remains unsupported and quarantined.",
+    "The source is a candidate technical contract and must be presented only as bounded architectural teaching material."
   ]
 }
