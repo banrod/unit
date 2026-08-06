@@ -1,6 +1,6 @@
 {
   "schemaVersion": "visionarybrains-source-index/1.0.0",
-  "updatedAt": "2026-08-06T08:00:00Z",
+  "updatedAt": "2026-08-06T09:00:17Z",
   "sources": [
     {
       "sourceId": "VB-SRC-001",
@@ -47,6 +47,29 @@
       ],
       "teachingPotential": [
         "internal evidence discipline may later yield a public-derived stewardship principle"
+      ]
+    },
+    {
+      "sourceId": "VB-SRC-004",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit kernel contract",
+      "reference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/kernel-contract.md",
+      "sourceStatus": "candidate technical contract",
+      "publicSafeAbstraction": "Stable graph identity is separated from mutable runtime state. Snapshots preserve restorable state and sequence; ordered events preserve the path of transformation; external effects must be explicit and recorded when replayability or proof matters.",
+      "unsafeExclusions": [
+        "claims that snapshots reproduce consciousness, persons, or souls",
+        "determinism claims when external effects were not recorded",
+        "moral, spiritual, or legal identity claims based on hashes",
+        "production-authority claims derived from a candidate contract",
+        "covenant doctrine unsupported by the source"
+      ],
+      "teachingPotential": [
+        "memory as accountable continuity",
+        "evidence as ordered transformation",
+        "identity as stable form plus changing state",
+        "bounded recursion as return with restorable context",
+        "replayability as stewardship",
+        "explicit external influence"
       ]
     }
   ]
