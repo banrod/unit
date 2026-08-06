@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.2.0",
+  "schemaVersion": "visionarybrains-theology/1.2.1",
   "taskId": "VB-DOC-003",
   "status": "PUBLIC_DERIVED",
   "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
@@ -16,6 +16,6 @@
     {"name":"Repairing Hand","meaning":"accountability carries error toward containment, correction, restoration, retained evidence, and learning","sources":["VB-SRC-005"]},
     {"name":"Thread of Lineage","meaning":"ancestry preserves provenance and compatibility without transferring automatic authority or moral rank","sources":["VB-SRC-005"]}
   ],
-  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, or religious authority, establish factual proof, make biological equivalence claims, or grant descendants inherited legitimacy.",
+  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, or religious authority, establish factual proof, make biological equivalence claims, grant descendants inherited legitimacy, or guarantee replay when relevant external effects or conditions were not recorded.",
   "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]
 }
