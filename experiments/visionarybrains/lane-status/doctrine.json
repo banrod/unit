@@ -1,14 +1,15 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.2.0",
+  "schemaVersion": "visionarybrains-lane-status/1.2.1",
   "lane": "VisionaryBrains — Doctrine",
   "taskId": "VB-DOC-003",
-  "status": "PR_UPDATED",
-  "observedAt": "2026-08-06T12:11:00Z",
+  "status": "PR_UPDATED_REPAIR_APPLIED",
+  "observedAt": "2026-08-06T13:10:13Z",
   "baseBranch": "experiment/visionarybrains",
   "baseCommit": "8a72d7952bf36242add20310e44c3064e04f1b7a",
   "sourcesConsumed": ["VB-SRC-005"],
   "sourcesExcluded": ["VB-SRC-003"],
   "publicClaimTransformations": ["bounded and testable commitments", "agency-preserving ethics", "repair-bearing accountability", "lineage without inherited authority", "adaptation without silent drift"],
   "forbiddenClaimsEstablished": 15,
+  "repairApplied": ["Restored the replay-safety qualification: metaphor does not guarantee replay when relevant external effects or conditions were not recorded."],
   "unresolvedAmbiguities": ["Covenant remains unsupported and quarantined.", "All constitutional and biological language remains metaphorical."]
 }
