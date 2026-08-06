@@ -1,12 +1,12 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.3.1",
-  "taskId": "VB-DOC-004",
+  "schemaVersion": "visionarybrains-doctrine/1.4.0",
+  "taskId": "VB-DOC-005",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"],
   "themes": {
     "identity": {"statement": "coherence maintained across contexts", "sources": ["VB-SRC-001"]},
     "architecture": {"statement": "intention and policy remain distinct from execution substrate", "sources": ["VB-SRC-001"]},
-    "agency": {"statement": "action is bounded by explicit capability and preserved through consent, proportionality, and contestability", "sources": ["VB-SRC-001", "VB-SRC-005"]},
+    "agency": {"statement": "meaningful authorship over framing, visible alternatives, challenge paths, and action within explicit consent, permission, evidence, safety, and rights constraints", "sources": ["VB-SRC-001", "VB-SRC-005", "VB-SRC-007"]},
     "memory": {"statement": "accountable continuity linking stable structure, changing state, and recoverable sequence", "sources": ["VB-SRC-004"]},
     "recursion": {"statement": "bounded return with preserved conditions for restoration, revision, and continuation", "sources": ["VB-SRC-004"]},
     "commitment": {"statement": "a durable promise is governing only when its meaning, bounds, evidence, tests, version, challenge path, and amendment path are visible", "sources": ["VB-SRC-005"]},
@@ -15,10 +15,11 @@
     "adaptation": {"statement": "methods and expression may evolve while changes to identity, purpose, authority, and durable limits remain explicit and inspectable", "sources": ["VB-SRC-005"]},
     "symbolicInterpretation": {"statement": "symbolic language is an optional and editable lens for noticing relationships, uncertainty, transition, memory, and accumulated pressure; it is not a verdict", "sources": ["VB-SRC-006"]},
     "semanticSovereignty": {"statement": "people should be able to inspect, question, transform, and recompose interpretations applied to them", "sources": ["VB-SRC-006"]},
-    "stewardship": {"statement": "power, evidence, memory, experimentation, adaptation, interpretation, and repair require care", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]},
-    "interface": {"statement": "translation joins intention to execution", "sources": ["VB-SRC-001"]},
-    "operationalConscience": {"statement": "meaning may orient values while ordered evidence, explicit conditions, affected-party legibility, contestability, and repair govern public accountability", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]}
+    "stewardship": {"statement": "power, evidence, memory, experimentation, adaptation, interpretation, translation, and repair require care", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"]},
+    "interface": {"statement": "an accountable translation surface that preserves source versus interpretation, exposes uncertainty and consequential omission, and returns inspectable language", "sources": ["VB-SRC-001", "VB-SRC-007"]},
+    "operationalConscience": {"statement": "a non-sentient discipline of checks for clarity, legitimate authority, provenance, proportionality, recoverability, and preservation of viable future choices", "sources": ["VB-SRC-007"]},
+    "epistemicAuthoritySequence": {"statement": "possibility, resolution, witnessing, and authorization are distinct states; movement between them requires explicit evidence and authority", "sources": ["VB-SRC-007"]}
   },
   "quarantinedThemes": {"covenant": "Unsupported as a public doctrine term. Accountable commitments do not establish covenant without a separate public-safe source."},
-  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, medical or psychological assessment, proof of metaphysical or physical claims, a claim that symbolic interpretation reveals objective truth, or a claim that biological or constitutional metaphor establishes biological equivalence, personhood, consciousness, autonomous legal status, or inherited legitimacy.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]}
+  "claimBoundary": {"statement": "Public teaching model; not operational authority, legal or religious authority, medical or psychological assessment, proof of metaphysical or physical claims, a claim that symbolic interpretation reveals objective truth, or a claim that an interface or operational conscience is conscious, morally infallible, spiritually authoritative, independently authorizing, or entitled to replace a domain source of truth.", "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"]}
 }
