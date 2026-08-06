@@ -1,34 +1,33 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.6.0",
+  "schemaVersion": "visionarybrains-lane-status/1.7.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T17:47:25Z",
-  "status": "AGENCY_DOCTRINE_INTEGRATED_BUILDER_REBASE_REQUIRED",
+  "observedAt": "2026-08-06T18:48:22Z",
+  "status": "READINESS_DOCTRINE_INTEGRATED_BUILDER_REPAIR_REQUIRED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [
     {
-      "number": 33,
-      "title": "[VisionaryBrains Doctrine] Compile agency, interface, and operational-conscience doctrine",
-      "headSha": "2d28838eea061135f21876c902ad6d56f4907629",
-      "integrationSha": "ac2b12985b1a87fd87f20c29d162daa83dbf5af9"
+      "number": 34,
+      "title": "[VisionaryBrains Doctrine] Compile readiness, promotion, and recovery-boundary doctrine",
+      "headSha": "77d6d84d7f205e18709284a116b33e75debf7af4",
+      "integrationSha": "5caf31b254f739d945538db2d4875453ad9190e8"
     }
   ],
   "validation": {
-    "pullRequest33": {
+    "pullRequest34": {
       "targetBranch": "PASS",
       "mergeability": "PASS",
-      "pathOwnership": "PASS",
+      "pathOwnership": "PASS_DOCTRINE_ONLY",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
       "publicSafety": "PASS",
-      "provenance": "PASS_VB_SRC_007_PUBLIC_DERIVED",
-      "structuralCompatibility": "PASS",
-      "reviewThreads": "RESOLVED",
-      "claimBoundaryRegression": "REPAIRED",
+      "provenance": "PASS_VB_SRC_008_PUBLIC_CANON",
+      "structuralCompatibility": "PASS_STATIC_REVIEW",
+      "claimBoundaries": "PASS",
       "ci": {
-        "test": "PASS",
+        "test": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED",
         "workstationValidation": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED"
       },
-      "integrationDisposition": "MERGED"
+      "integrationDisposition": "MERGED_WITH_INFRASTRUCTURE_CI_NOT_TREATED_AS_PASS"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
@@ -36,33 +35,27 @@
       "pathOwnership": "PASS",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
-      "validatorRepairs": "PASS_STATIC_REVIEW",
+      "publicSafety": "PASS_STATIC_REVIEW",
       "accessibilitySafeguards": "PASS_STATIC_REVIEW",
-      "reviewThreads": "RESOLVED",
-      "ci": {
-        "visionaryBrainsValidation": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED",
-        "test": "CANCELLED_ZERO_STEPS_NO_RUNNER_ASSIGNED",
-        "workstationValidation": "FAILURE_INFRASTRUCTURE_CLASSIFICATION_PENDING"
-      },
-      "integrationDisposition": "HELD_FOR_BRANCH_UPDATE_AND_DETERMINISTIC_CURRENT_HEAD_VALIDATION"
+      "deterministicValidator": "PRESENT_NOT_EXECUTED_ON_CURRENT_HEAD",
+      "integrationDisposition": "HELD_FOR_BRANCH_UPDATE_AND_CURRENT_HEAD_VALIDATION"
     }
   },
   "unresolvedDefects": [
-    "PR 31 is not mergeable after integration of VB-DOC-005 and must be updated against the current integration branch.",
-    "No GitHub job has executed the Builder deterministic validator against its current head; zero-step cancelled jobs with no assigned runner are infrastructure evidence only.",
-    "Builder must consume the integrated agency, interface, operational-conscience, and epistemic-authority doctrine before integration.",
+    "PR 31 is not mergeable against the integration branch after Doctrine integration and requires another branch update.",
+    "No GitHub job has executed the Builder deterministic validator against its current head; cancelled zero-step jobs are infrastructure evidence only.",
+    "Builder must consume integrated readiness, promotion, recovery-boundary, agency, interface, and operational-conscience doctrine before integration.",
     "Rendered contrast, keyboard navigation, responsive behavior, reduced-motion behavior, and content loading still require integration review.",
     "Covenant remains unsupported and quarantined.",
-    "MVP is not reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
+    "MVP is not reviewable until the Builder shell is integrated and no unresolved high-severity issue remains.",
+    "Work-queue reconciliation for VB-DOC-006 remains pending because this bounded control update did not rewrite the shared queue."
   ],
   "nextActions": [
-    "Builder should update PR 31 against ac2b12985b1a87fd87f20c29d162daa83dbf5af9 without expanding scope.",
-    "Builder should preserve the repaired forbidden-assertion, renderer-shape, anchor, unsafe-reference, and accessibility validations.",
-    "Builder should obtain deterministic current-head validation or provide equivalent directly inspectable evidence.",
-    "Doctrine may proceed with READY task VB-DOC-006 independently of the held Builder PR.",
-    "Integrate should re-review PR 31 after branch update for public-safe rendering, content compatibility, accessibility, and current-head validation."
+    "Builder should update PR 31 against integration commit 5caf31b254f739d945538db2d4875453ad9190e8 without expanding scope.",
+    "Builder should consume the integrated VB-DOC-006 content and preserve all validation and accessibility safeguards.",
+    "Builder should provide deterministic current-head validation evidence.",
+    "Integrate should reconcile VB-DOC-006 to COMPLETED in work-queue.json on the next safe control update.",
+    "Doctrine may proceed with READY task VB-DOC-007 independently of the held Builder PR."
   ],
-  "controlCommits": [
-    "e91c30ea1fe7c8f532be6adb5f4e5f9aac2c8fc0"
-  ]
+  "controlCommits": []
 }
