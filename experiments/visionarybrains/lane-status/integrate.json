@@ -1,60 +1,52 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.11.0",
+  "schemaVersion": "visionarybrains-lane-status/1.12.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T22:48:00Z",
-  "status": "VB_DOC_007_MERGED_NEXT_DOCTRINE_REBASE_REQUIRED",
+  "observedAt": "2026-08-06T23:46:12Z",
+  "status": "VB_DOC_008_MERGED_NATURE_LAYER_RELEASED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
-  "mergedPullRequests": [35],
-  "integrationCommit": "ee8dedae00686bb4bde3c664ccf1a658716425d6",
+  "mergedPullRequests": [36],
+  "integrationCommit": "ea8eeee11bfd2b28d912cb38717848085e8ea4f4",
   "validation": {
-    "pullRequest35": {
+    "pullRequest36": {
       "targetBranch": "PASS",
       "pathOwnership": "PASS_DOCTRINE_ONLY",
       "laneStatusPresent": "PASS",
       "boundedScope": "PASS",
-      "provenance": "PASS_VB_SRC_009_PUBLIC_DERIVED",
+      "provenance": "PASS_VB_SRC_010_PUBLIC_DERIVED",
       "publicSafety": "PASS",
-      "forbiddenClaims": "PASS_39_TOTAL_ADDITIVE_SET",
-      "glossaryNonRegression": "PASS_38_TOTAL_WITH_PRIOR_TERMS_RESTORED",
-      "principleAndTheologyNonRegression": "PASS_RECORDED_ADDITIVE",
+      "covenantBoundary": "PASS_OPTIONAL_METAPHOR_ONLY",
+      "forbiddenClaims": "PASS_46_TOTAL_ADDITIVE_SET",
+      "glossaryNonRegression": "PASS_42_EXPECTED_TOTAL",
+      "priorDoctrineNonRegression": "PASS_VB_SRC_009_PRESERVED",
       "mergeability": "PASS",
       "repositoryChecks": {
         "test": "PASS",
         "workstationValidation": "PASS",
-        "visionaryBrainsValidation": "FAIL_SITE_VALIDATOR_NOT_PRESENT_ON_DOCTRINE_BRANCH"
+        "visionaryBrainsValidation": "FAIL_SITE_VALIDATOR_SCOPE_MISMATCH_ON_DOCTRINE_ONLY_BRANCH"
       },
       "integrationDisposition": "MERGED"
-    },
-    "pullRequest36": {
-      "targetBranch": "PASS",
-      "pathOwnership": "PASS_DOCTRINE_ONLY",
-      "provenance": "PASS_VB_SRC_010_PUBLIC_DERIVED",
-      "claimFraming": "PASS_OPTIONAL_COVENANT_METAPHOR_BOUNDARY",
-      "mergeability": "FAIL_AFTER_VB_DOC_007_INTEGRATION",
-      "sequenceCompatibility": "REPAIR_REQUIRED_REBASE_ON_POST_VB_DOC_007_HEAD",
-      "integrationDisposition": "HELD_REBASE_REQUESTED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
       "pathOwnership": "PASS_BUILDER_ONLY",
       "deterministicValidation": "PASS_PRIOR_RECORDED_CORPUS",
       "browserReview": "PENDING",
-      "sequenceCompatibility": "HOLD_UNTIL_DOCTRINE_STABILIZES",
+      "sequenceCompatibility": "HOLD_UNTIL_VB_DOC_009_INTEGRATES",
       "integrationDisposition": "HELD"
-    }
+    },
+    "queueControlCommit": "d34eb99221bed4c7ca574340a27c109ec14b4679"
   },
   "unresolvedDefects": [
-    "PR 36 is now non-mergeable because it predates the integrated VB-DOC-007 doctrine and must be rebased additively.",
-    "VB-DOC-009 remains blocked until VB-DOC-008 is integrated.",
+    "VB-DOC-009 is now READY and must compile the public nature-of-IAM layer from PUBLIC_DERIVED VB-SRC-011 before Builder integration.",
     "PR 31 remains downstream of Doctrine stabilization and still lacks browser-level contrast, keyboard, responsive, reduced-motion, and content-loading review evidence.",
-    "The VisionaryBrains workflow currently assumes the Builder site validator exists on every PR; Doctrine-only branches can therefore fail that workflow even while repository checks pass.",
-    "MVP is not reviewable until the public shell is integrated and no unresolved high-severity issue remains."
+    "The VisionaryBrains validation workflow still invokes the Builder site validator on Doctrine-only branches, creating a false-negative workflow result even when repository test and workstation validation pass.",
+    "MVP is not reviewable until the public nature layer and public shell are integrated and no unresolved high-severity issue remains."
   ],
   "nextActions": [
-    "Doctrine should rebase and repair PR 36 onto the current integration head while preserving all VB-SRC-009 and VB-SRC-010 additions additively.",
-    "Integrate should merge PR 36 only after non-regression and provenance gates pass.",
-    "Doctrine may then begin VB-DOC-009 for the public nature-of-IAM layer.",
-    "Builder should rebase PR 31 after doctrine stabilization and supply browser-level review evidence before merge."
+    "Doctrine should select READY VB-DOC-009 and compile governed operator ecology and bounded-persona doctrine from VB-SRC-011.",
+    "Integrate should review VB-DOC-009 before returning to Builder integration.",
+    "Builder should then rebase PR 31 onto the stabilized doctrine baseline and provide browser-level review evidence.",
+    "The validation workflow should later be scoped so Doctrine-only PRs do not require Builder-owned validator files."
   ],
-  "controlCommits": ["35a9f8b95a8c08be6b822b3897e77391242d2f2e"]
+  "controlCommits": ["d34eb99221bed4c7ca574340a27c109ec14b4679"]
 }
