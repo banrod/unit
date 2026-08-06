@@ -1,46 +1,49 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.2",
+  "schemaVersion": "visionarybrains-lane-status/1.0.3",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T17:02:03Z",
+  "observedAt": "2026-08-06T17:58:45Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-006",
-  "baseCommit": "c8f8a17e396b91f46c0978d3aac39b2b8d9e591a",
+  "taskId": "VB-EXC-007",
+  "baseCommit": "43f573d8942c5d8a81de3df9895aad0e2479fe22",
   "sourcesClassified": {
     "PUBLIC_CANON": 4,
-    "PUBLIC_DERIVED": 3,
+    "PUBLIC_DERIVED": 4,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0006-release-stewardship-recovery-boundaries.md",
+    "experiments/visionarybrains/learning/excavation-notes/0007-relational-emergence-fracture-governed-release.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "creation, review, authorization, and promotion remain distinct",
-    "readiness is an evidence-bearing state rather than a declaration by the author",
-    "independent review and resolved objections constrain self-authorization",
-    "recovery boundaries preserve repairability and accountable continuity",
-    "protected history resists silent revision of how a system changed",
-    "threshold and keeper language may be used only as optional, non-authoritative metaphor"
+    "relation supplies context and meaning but does not confer authority over a person",
+    "emergence preserves revision and development without erasing continuity or commitments",
+    "silence is an epistemic pause rather than secrecy or withheld material risk",
+    "fracture may disclose assumptions and initiate repair but is not sacred, required, or inherently beneficial",
+    "unbinding is governed release that retains duties, consequences, memory handling, and recovery boundaries",
+    "mythic language is optional metaphor subordinate to evidence, consent, and explicit governance"
   ],
   "unsafeExclusions": [
-    "exact commit hashes, tags, branch names, repository settings, check identifiers, and administrative commands",
-    "instructions for bypassing protections or weakening review controls",
-    "technical qualification presented as moral, spiritual, legal, scientific, or religious legitimacy",
-    "reviewers, maintainers, automation, or metaphorical keepers presented as infallible or privileged interpreters",
-    "preserved technical history presented as consciousness, personal memory, a soul, or proof of identity",
-    "emergency authority presented as ambient, ordinary, or self-granted",
+    "relation, resonance, or aesthetic coherence presented as objective hidden truth",
+    "emergence used to erase stable commitments, continuity, or accountability",
+    "suffering, rupture, instability, or trauma romanticized as spiritually necessary",
+    "fracture treated as proof of transformation, wisdom, legitimacy, or readiness",
+    "silence used to justify concealment or withholding material risk",
+    "unbinding used to cancel duties, consent requirements, consequences, records, or repair obligations",
+    "relational priority overriding individual agency, privacy, boundaries, or dissent",
+    "mythic terminology presented as religion, scientific law, legal authority, consciousness, personhood, prophecy, destiny, or privileged interpretation",
     "covenant promoted as supported doctrine"
   ],
   "readyTasks": [
-    "VB-DOC-005",
-    "VB-DOC-006"
+    "VB-DOC-006",
+    "VB-DOC-007"
   ],
   "blockers": [
     "Covenant remains unsupported and quarantined.",
-    "VB-SRC-008 is technical administration guidance; downstream teaching must not convert qualification procedure into moral, spiritual, legal, scientific, or religious authority."
+    "VB-SRC-009 is PUBLIC_DERIVED from an internal academic working monograph and must remain non-authoritative and provenance-labeled.",
+    "Doctrine must not turn fracture into glorified harm, silence into concealment, or unbinding into release from accountability."
   ],
-  "nextLaneRequest": "Doctrine should complete the higher-priority VB-DOC-005 before selecting VB-DOC-006. For VB-DOC-006, compile readiness as evidenced qualification, preserve the separation of creation, review, authorization, and promotion, and teach recovery boundaries as repair stewardship. Keep threshold and keeper language optional, non-coercive, and subordinate to explicit governance."
+  "nextLaneRequest": "Doctrine should complete higher-priority VB-DOC-006 before selecting VB-DOC-007. For VB-DOC-007, teach relation as context rather than authority, emergence with continuity, epistemic silence rather than secrecy, fracture as diagnosis rather than sacred harm, and unbinding as accountable release. Preserve the optional, non-literal status of mythic language."
 }
