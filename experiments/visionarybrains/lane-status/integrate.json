@@ -1,39 +1,60 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.1",
+  "schemaVersion": "visionarybrains-lane-status/1.1.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-06T09:48:00Z",
-  "status": "DOCTRINE_FOUNDATION_INTEGRATED",
-  "milestone": "M1_DOCTRINE_FOUNDATION",
+  "observedAt": "2026-08-06T10:48:19Z",
+  "status": "MEMORY_DOCTRINE_INTEGRATED_TEACHER_REPAIR_REQUIRED",
+  "milestone": "M2_MEMORY_DOCTRINE",
   "mergedPullRequests": [
     {
       "number": 27,
       "title": "[VisionaryBrains Doctrine] Compile identity-substrate-capability doctrine",
-      "headSha": "9c6c5db6dcc0210165e27644a185a82c328d898a",
       "integrationSha": "119ef3568ab275cae123e4bbd03975a013acb020"
+    },
+    {
+      "number": 28,
+      "title": "[VisionaryBrains Doctrine] Compile memory stewardship and bounded recursion doctrine",
+      "headSha": "6bf131fd301d5729c1c135dd57e3d66313fcb844",
+      "integrationSha": "e03ccbc0ca5e17f0feb9cf3ad0724aeb42e013a6"
     }
   ],
   "validation": {
-    "targetBranch": "PASS",
-    "mergeability": "PASS",
-    "pathOwnership": "PASS",
-    "laneStatusPresent": "PASS",
-    "publicSafety": "PASS",
-    "provenance": "PASS",
-    "reviewThreads": "RESOLVED",
-    "ci": {
-      "test": "PASS",
-      "workstationValidation": "PASS"
+    "pullRequest28": {
+      "targetBranch": "PASS",
+      "mergeability": "PASS",
+      "pathOwnership": "PASS",
+      "laneStatusPresent": "PASS",
+      "publicSafety": "PASS",
+      "provenance": "PASS",
+      "reviewThreads": "RESOLVED",
+      "ci": {
+        "test": "PASS",
+        "workstationValidation": "PASS"
+      },
+      "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY"
     },
-    "accessibility": "NOT_APPLICABLE_DOCTRINE_ONLY"
+    "pullRequest29": {
+      "targetBranch": "PASS",
+      "mergeability": "PASS",
+      "pathOwnership": "PASS",
+      "laneStatusPresent": "PASS",
+      "publicSafety": "PASS_WITH_REPAIR",
+      "provenance": "FAIL",
+      "reviewThread": "OPEN",
+      "ci": "NOT_EVALUATED_PENDING_REPAIR"
+    }
   },
   "unresolvedDefects": [
-    "Memory and bounded recursion require the separate VB-DOC-002 increment before visitor teaching expands into those themes.",
+    "PR 29 teaches memory in a public card while its lane status says VB-DOC-002 was not consumed; provenance and status must be reconciled against the now-integrated doctrine.",
     "Covenant remains quarantined because no public-safe source currently supports it.",
-    "The website implementation and visitor curriculum are not yet present."
+    "Builder remains blocked until VB-TEACH-001 is repaired and integrated.",
+    "MVP is not reviewable because visitor content and website implementation are incomplete."
   ],
   "nextActions": [
-    "Teacher may execute VB-TEACH-001 from the integrated doctrine foundation.",
-    "Doctrine may execute VB-DOC-002 from VB-SRC-004.",
-    "Builder remains blocked until VB-TEACH-001 supplies visitor-facing content."
+    "Teacher should repair PR 29 within Teacher-owned paths by updating against integrated VB-DOC-002, mapping memory wording to the integrated doctrine source, and correcting lane-status provenance.",
+    "Doctrine may execute VB-DOC-003 from VB-SRC-005.",
+    "Integrate should re-run PR 29 provenance, safety, mergeability, review-thread, and CI gates after repair."
+  ],
+  "controlCommits": [
+    "8fbbaef48c8e8e5a71ed2a3badfe6bea96a37e07"
   ]
 }
