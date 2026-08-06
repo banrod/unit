@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "visionarybrains-teaching-cards/1.0.1",
+  "taskId": "VB-TEACH-001",
+  "cards": [
+    {"id":"coherence","label":"Principle","title":"Coherence","front":"Identity is more than a label.","back":"It is the maintained relationship among purpose, boundaries, permissions, memory, and action.","sources":["identity-as-coherence","memory-as-accountable-continuity"]},
+    {"id":"interface","label":"Architecture","title":"Interface","front":"Intention is not execution.","back":"An explicit interface translates policy and purpose into bounded action on a substrate.","sources":["self-substrate-distinction"]},
+    {"id":"capability","label":"Practice","title":"Capability","front":"Power is granted, not assumed.","back":"A role should receive only the access it needs, with boundaries that can be inspected and reviewed.","sources":["capability-as-stewardship"]},
+    {"id":"composition","label":"Architecture","title":"Composition","front":"Complexity grows from relationships.","back":"Visible units, inputs, outputs, and transformations make emergent behavior easier to understand.","sources":["composition-as-relationship"]},
+    {"id":"myth-and-evidence","label":"Interpretation","title":"Myth and evidence","front":"Meaning can orient without ruling.","back":"Metaphor may illuminate values; evidence and explicit authority govern factual and operational claims.","sources":["evidence-before-myth"]},
+    {"id":"bounded-exploration","label":"Practice","title":"Bounded exploration","front":"Safety can create freedom to learn.","back":"A bounded environment supports experimentation without silently inheriting unrestricted power.","sources":["sandboxing-as-care"]}
+  ]
+}
