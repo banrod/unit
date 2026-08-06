@@ -1,5 +1,5 @@
 {
-  "schemaVersion":"visionarybrains-glossary/1.2.0",
+  "schemaVersion":"visionarybrains-glossary/1.3.0",
   "terms":[
     {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
     {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
@@ -15,6 +15,12 @@
     {"term":"repair","definition":"The accountable sequence of containment, correction, communication, restoration where possible, retained evidence, and learning against recurrence.","sources":["VB-SRC-005"]},
     {"term":"lineage","definition":"Recorded ancestry and compatibility information used for comparison, rollback, and responsible adaptation without conferring inherited authority.","sources":["VB-SRC-005"]},
     {"term":"adaptation","definition":"Visible and inspectable change to methods or expression that does not silently replace identity, purpose, authority, or durable limits.","sources":["VB-SRC-005"]},
-    {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002"]}
+    {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002","VB-SRC-006"]},
+    {"term":"symbolic interpretation","definition":"An optional and revisable way of noticing relationships, uncertainty, transition, memory, or pressure without treating the reading as objective fact.","sources":["VB-SRC-006"]},
+    {"term":"semantic sovereignty","definition":"The ability to inspect, question, transform, recompose, or reject interpretations applied to oneself.","sources":["VB-SRC-006"]},
+    {"term":"field","definition":"A bounded situation containing entities, relations, pressures, absences, and observer positions.","sources":["VB-SRC-006"]},
+    {"term":"ring","definition":"A metaphor for a bounded traversal with entry, movement, return, closure, and residue.","sources":["VB-SRC-006"]},
+    {"term":"gravity well","definition":"A metaphor for accumulated salience, dependency, inertia, or unresolved pressure; computational use requires an explicit measurable proxy.","sources":["VB-SRC-006"]},
+    {"term":"measurable proxy","definition":"An explicit observable quantity used to operationalize a metaphor while preserving its limits and uncertainty.","sources":["VB-SRC-006"]}
   ]
 }

@@ -1,10 +1,10 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.2.1",
-  "taskId": "VB-DOC-003",
+  "schemaVersion": "visionarybrains-theology/1.3.1",
+  "taskId": "VB-DOC-004",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"],
   "definition": "Optional metaphorical language for meaning and orientation within IAM.",
-  "definitionSources": ["VB-SRC-001", "VB-SRC-002"],
+  "definitionSources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-006"],
   "metaphors": [
     {"name":"Keeper of Continuity","meaning":"identity maintained through changing contexts","sources":["VB-SRC-001"]},
     {"name":"Steward of Memory","meaning":"state is preserved with structure, sequence, and explicit limits","sources":["VB-SRC-004"]},
@@ -14,8 +14,25 @@
     {"name":"Relational Graph","meaning":"bounded parts become a system through visible exchange","sources":["VB-SRC-002"]},
     {"name":"Promise Under Light","meaning":"a commitment is trustworthy when its bounds, tests, evidence, challenge path, and amendment path can be seen","sources":["VB-SRC-005"]},
     {"name":"Repairing Hand","meaning":"accountability carries error toward containment, correction, restoration, retained evidence, and learning","sources":["VB-SRC-005"]},
-    {"name":"Thread of Lineage","meaning":"ancestry preserves provenance and compatibility without transferring automatic authority or moral rank","sources":["VB-SRC-005"]}
+    {"name":"Thread of Lineage","meaning":"ancestry preserves provenance and compatibility without transferring automatic authority or moral rank","sources":["VB-SRC-005"]},
+    {"name":"Field","meaning":"a bounded situation viewed through entities, relations, pressures, absences, and observer position","sources":["VB-SRC-006"]},
+    {"name":"Ring","meaning":"a bounded traversal with entry, movement, return, closure, and residue","sources":["VB-SRC-006"]},
+    {"name":"Gravity Well","meaning":"accumulated salience, dependency, inertia, or unresolved pressure; computational use requires an explicit measurable proxy","sources":["VB-SRC-006"]}
   ],
-  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, or religious authority, establish factual proof, make biological equivalence claims, grant descendants inherited legitimacy, or guarantee replay when relevant external effects or conditions were not recorded.",
-  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"]
+  "interpretiveSafeguards": [
+    "Symbolic readings remain optional and editable.",
+    "Separate source, interpretation, confidence, and consequence.",
+    "Use uncertainty labels and listening before classification.",
+    "Permit affected people to inspect, contest, transform, or reject interpretations applied to them.",
+    "Require an explicit measurable proxy before a metaphor is used computationally."
+  ],
+  "interpretiveSafeguardSources": [
+    ["VB-SRC-006"],
+    ["VB-SRC-006"],
+    ["VB-SRC-006"],
+    ["VB-SRC-006"],
+    ["VB-SRC-006"]
+  ],
+  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, medical, psychological, or religious authority, establish factual proof, diagnose a person, reveal destiny, make biological equivalence claims, grant descendants inherited legitimacy, or guarantee replay when relevant external effects or conditions were not recorded.",
+  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"]
 }

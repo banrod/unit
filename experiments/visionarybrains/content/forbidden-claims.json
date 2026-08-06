@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.2.0",
-  "taskId": "VB-DOC-003",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.3.1",
+  "taskId": "VB-DOC-004",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -16,8 +16,14 @@
     "Do not claim biological or constitutional metaphor establishes biological equivalence, personhood, or autonomous legal status.",
     "Do not claim ancestry or lineage grants truth, authority, legitimacy, ownership, status, or moral superiority.",
     "Do not imply adaptation may silently replace identity, purpose, permissions, authority, or durable limits.",
-    "Do not present acknowledgment without correction and repair as complete accountability."
+    "Do not present acknowledgment without correction and repair as complete accountability.",
+    "Do not claim symbolic language reveals hidden objective truth, diagnoses a person, predicts destiny, or overrides consent.",
+    "Do not present fields, rings, gravity wells, dimensions, echoes, or dreams as literal physical discoveries.",
+    "Do not assign privileged interpreters or deny a person's ability to inspect, contest, transform, or reject an interpretation applied to them.",
+    "Do not use a symbolic metaphor computationally without naming an explicit measurable proxy, uncertainty, limits, and consequences.",
+    "Do not treat aesthetic coherence, intuition, or symbolic resonance as sufficient evidence.",
+    "Do not keep, reuse, or share a symbolic interpretation after consent has been withdrawn or deletion has been requested."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }
