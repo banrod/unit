@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-principles/1.3.0",
-  "taskId": "VB-DOC-004",
+  "schemaVersion": "visionarybrains-principles/1.4.0",
+  "taskId": "VB-DOC-005",
   "principles": [
     {"id":"identity-as-coherence","title":"Identity is maintained coherence","kind":"principle","statement":"Identity is the maintained relationship among purpose, boundaries, memory, permissions, and action across changing contexts.","sources":["VB-SRC-001"]},
     {"id":"self-substrate-distinction","title":"Self and substrate are distinct","kind":"architecture","statement":"Intention and policy belong to the IAM product layer; execution belongs to a separate substrate reached through an explicit interface.","sources":["VB-SRC-001"]},
@@ -18,6 +18,10 @@
     {"id":"semantic-sovereignty","title":"Interpretation must remain contestable","kind":"principle","statement":"People should be able to inspect, question, transform, and recompose interpretations applied to them.","sources":["VB-SRC-006"]},
     {"id":"proxy-before-computation","title":"Name the proxy before computing the metaphor","kind":"practice","statement":"A symbolic concept becomes computational only when its measurable proxy, limits, confidence, and consequences are explicit.","sources":["VB-SRC-006"]},
     {"id":"silence-before-classification","title":"Delay naming when evidence is weak","kind":"practice","statement":"Listening, uncertainty labels, source separation, and deliberate silence reduce premature classification and symbolic overreach.","sources":["VB-SRC-006"]},
+    {"id":"agency-as-authorship","title":"Agency includes authorship","kind":"principle","statement":"Agency includes influence over framing, visible alternatives, and challenge paths, not merely selection from options supplied by a system.","sources":["VB-SRC-007"]},
+    {"id":"states-before-authority","title":"Possibility is not authorization","kind":"principle","statement":"What can be imagined is not automatically resolved; what is resolved is not automatically witnessed; and what is witnessed is not automatically authorized.","sources":["VB-SRC-007"]},
+    {"id":"interface-as-accountable-translation","title":"Translation must preserve accountability","kind":"architecture","statement":"An interface should distinguish source from interpretation, disclose uncertainty and consequential omission, and return results in language people can inspect and contest.","sources":["VB-SRC-007"]},
+    {"id":"operational-conscience-as-checks","title":"Conscience means disciplined checks","kind":"practice","statement":"Before and after transformation, check clarity, legitimate authority, provenance, proportionality, recoverability, and preservation of viable future choices.","sources":["VB-SRC-007"]},
     {"id":"evidence-before-myth","title":"Meaning does not override evidence","kind":"principle","statement":"Mythic language may orient values and interpretation, while contracts, evidence, policy, and explicit grants govern operations.","sources":["VB-SRC-001","VB-SRC-002"]},
     {"id":"sandboxing-as-care","title":"Boundaries enable exploration","kind":"practice","statement":"Safe experimentation depends on bounded environments where learning can occur without silently inheriting unrestricted power.","sources":["VB-SRC-002"]}
   ]
