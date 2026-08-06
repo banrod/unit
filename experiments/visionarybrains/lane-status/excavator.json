@@ -1,42 +1,44 @@
 {
   "schemaVersion": "visionarybrains-lane-status/1.0.0",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-06T10:02:22Z",
+  "observedAt": "2026-08-06T12:00:58Z",
   "verdict": "MATERIAL_EXCAVATION_COMMITTED",
-  "taskId": "VB-EXC-003",
-  "baseCommit": "c076aec9f26fb0b2ea47ea5aec4171dc1fa97ac0",
+  "taskId": "VB-EXC-004",
+  "baseCommit": "419c76793137c0c38d130b2615af5989e1399185",
   "sourcesClassified": {
     "PUBLIC_CANON": 3,
-    "PUBLIC_DERIVED": 1,
+    "PUBLIC_DERIVED": 2,
     "INTERNAL_ONLY": 1,
     "REJECTED": 0
   },
   "outputs": [
     "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/learning/source-index.json",
-    "experiments/visionarybrains/learning/excavation-notes/0003-constitutional-continuity-repair-lineage.md",
+    "experiments/visionarybrains/learning/excavation-notes/0004-symbolic-language-semantic-sovereignty.md",
     "experiments/visionarybrains/lane-status/excavator.json"
   ],
   "publicTeachingFrame": [
-    "commitment as bounded, testable, traceable, and amendable",
-    "ethical action as preservation of legitimate agency under uncertainty",
-    "accountability as correction, communication, restoration, and retained learning",
-    "lineage as ancestry and compatibility without inherited authority",
-    "adaptation without silent replacement of identity or governing limits",
-    "legibility and contestability for affected parties"
+    "metaphor as an optional editable lens rather than an objective verdict",
+    "semantic sovereignty as inspectable, contestable, transformable interpretation",
+    "fields as bounded relational situations",
+    "rings as bounded traversal with closure and residue",
+    "gravity wells as accumulated salience or inertia requiring measurable proxies before computational use",
+    "silence and uncertainty before premature classification",
+    "source, interpretation, confidence, and consequence kept distinct"
   ],
   "unsafeExclusions": [
-    "complete internal constitutional specifications and implementation controls",
-    "biological equivalence, sentience, personhood, divinity, or inherited spiritual status",
-    "lineage as automatic truth, authority, legitimacy, ownership, or moral rank",
-    "legal, medical, psychological, religious, or governmental authority claims",
-    "private source lineage and exact operational details",
+    "internal modules, schemas, dependency registers, authority receipts, release controls, and implementation plans",
+    "private archive references, conversation lineage, identifiers, and operational mechanics",
+    "symbolic diagnosis, destiny prediction, hidden-truth claims, or interpretation that overrides consent",
+    "literal physical or scientific status for mythic vocabulary",
+    "compulsory belief, privileged interpreters, manipulative spiritual framing, or aesthetics treated as evidence",
+    "memory retention or symbolic reuse that conflicts with privacy, deletion, or consent",
     "covenant promoted as supported doctrine"
   ],
-  "readyTasks": ["VB-DOC-002", "VB-DOC-003", "VB-TEACH-001"],
+  "readyTasks": ["VB-DOC-004", "VB-BUILD-001"],
   "blockers": [
-    "Covenant remains unsupported as a public doctrine term. VB-SRC-005 supports accountable commitments but does not define covenant.",
-    "Builder remains dependent on integrated visitor-facing teaching content."
+    "VB-DOC-003 remains in repair on PR 30 and should be completed before Doctrine begins VB-DOC-004.",
+    "Covenant remains unsupported as a public doctrine term."
   ],
-  "nextLaneRequest": "Doctrine should compile VB-DOC-003 from VB-SRC-005 while keeping covenant quarantined. Teacher may continue VB-TEACH-001 from the already integrated doctrine foundation; Builder should remain blocked until teaching content is integrated."
+  "nextLaneRequest": "Doctrine should first finish the bounded repair of PR 30, then compile VB-DOC-004 from VB-SRC-006. The increment should teach symbolic language as optional and editable, establish semantic sovereignty, and keep covenant quarantined."
 }
