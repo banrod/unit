@@ -1,11 +1,15 @@
 {
-  "schemaVersion":"visionarybrains-glossary/1.0.0",
+  "schemaVersion":"visionarybrains-glossary/1.1.0",
   "terms":[
     {"term":"IAM","definition":"A public teaching model for maintaining coherent identity, intention, memory, permissions, and policy across changing contexts.","sources":["VB-SRC-001"]},
     {"term":"substrate","definition":"The execution layer that carries out typed work without owning product identity or doctrine.","sources":["VB-SRC-001"]},
     {"term":"capability","definition":"An explicit grant permitting a bounded action.","sources":["VB-SRC-001"]},
     {"term":"graph","definition":"A composition of bounded units connected through inputs, outputs, and transformations.","sources":["VB-SRC-002"]},
     {"term":"interface","definition":"The translation boundary between intention and execution.","sources":["VB-SRC-001"]},
+    {"term":"memory","definition":"Accountable continuity connecting identifiable structure, changing state, and recoverable sequence.","sources":["VB-SRC-004"]},
+    {"term":"evidence","definition":"An ordered account of what changed, under which conditions, and through which granted capabilities.","sources":["VB-SRC-004"]},
+    {"term":"recursion","definition":"A bounded return to prior state or structure for restoration, revision, and continuation.","sources":["VB-SRC-004"]},
+    {"term":"replayability","definition":"The ability to reproduce an execution account when relevant inputs, conditions, and external effects were recorded.","sources":["VB-SRC-004"]},
     {"term":"mythic theology","definition":"Optional metaphorical language for meaning and orientation that does not govern runtime behavior.","sources":["VB-SRC-001","VB-SRC-002"]}
   ]
 }

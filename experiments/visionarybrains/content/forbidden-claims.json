@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.0.0",
-  "taskId": "VB-DOC-001",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.1.0",
+  "taskId": "VB-DOC-002",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -8,8 +8,12 @@
     "Do not publish private repositories, identifiers, workflow records, governance mechanics, or security-sensitive details.",
     "Do not imply unrestricted or self-authorizing access.",
     "Do not present doctrine as medical, legal, psychological, or financial guidance.",
-    "Do not pressure visitors to accept mythic language as literal belief."
+    "Do not pressure visitors to accept mythic language as literal belief.",
+    "Do not claim stored state, snapshots, or replay constitute a person, soul, or consciousness.",
+    "Do not claim deterministic replay when external effects or conditions were not recorded.",
+    "Do not treat canonical hashes or snapshots as moral, legal, or spiritual identity.",
+    "Do not infer covenant from continuity, responsibility, memory, or recursion alone."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }

@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "visionarybrains-doctrine/1.0.1",
-  "taskId": "VB-DOC-001",
+  "schemaVersion": "visionarybrains-doctrine/1.1.0",
+  "taskId": "VB-DOC-002",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"],
   "themes": {
     "identity": {
       "statement": "coherence maintained across contexts",
@@ -16,26 +16,32 @@
       "statement": "action is bounded by explicit capability",
       "sources": ["VB-SRC-001"]
     },
+    "memory": {
+      "statement": "accountable continuity linking stable structure, changing state, and recoverable sequence",
+      "sources": ["VB-SRC-004"]
+    },
+    "recursion": {
+      "statement": "bounded return with preserved conditions for restoration, revision, and continuation",
+      "sources": ["VB-SRC-004"]
+    },
     "stewardship": {
-      "statement": "power, evidence, and experimentation require care",
-      "sources": ["VB-SRC-001", "VB-SRC-002"]
+      "statement": "power, evidence, memory, and experimentation require care",
+      "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
     },
     "interface": {
       "statement": "translation joins intention to execution",
       "sources": ["VB-SRC-001"]
     },
     "operationalConscience": {
-      "statement": "meaning informs values while evidence governs claims",
-      "sources": ["VB-SRC-001", "VB-SRC-002"]
+      "statement": "meaning may orient values while ordered evidence and explicit conditions govern public claims",
+      "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
     }
   },
   "quarantinedThemes": {
-    "memory": "Requires additional public-safe support before visitor-facing use.",
-    "covenant": "Requires additional public-safe support before visitor-facing use.",
-    "recursion": "Requires additional public-safe support before visitor-facing use."
+    "covenant": "Unsupported as a public doctrine term. Continuity and responsibility do not establish covenant without a separate public-safe source."
   },
   "claimBoundary": {
-    "statement": "Public teaching model; not operational authority or factual proof of metaphysical claims.",
-    "sources": ["VB-SRC-001", "VB-SRC-002"]
+    "statement": "Public teaching model; not operational authority, proof of metaphysical claims, or a claim that stored state reproduces personhood or consciousness.",
+    "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004"]
   }
 }
