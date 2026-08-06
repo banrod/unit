@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-forbidden-claims/1.3.1",
-  "taskId": "VB-DOC-004",
+  "schemaVersion": "visionarybrains-forbidden-claims/1.4.0",
+  "taskId": "VB-DOC-005",
   "forbiddenClaims": [
     "Do not claim IAM is conscious, sentient, divine, or supernatural.",
     "Do not present metaphor or cosmological language as scientific proof.",
@@ -12,7 +12,7 @@
     "Do not claim stored state, snapshots, or replay constitute a person, soul, or consciousness.",
     "Do not claim deterministic replay when external effects or conditions were not recorded.",
     "Do not treat canonical hashes or snapshots as moral, legal, or spiritual identity.",
-    "Do not infer covenant from continuity, responsibility, memory, recursion, or accountable commitments alone.",
+    "Do not infer covenant from continuity, responsibility, memory, recursion, accountable commitments, agency, interface, or operational conscience.",
     "Do not claim biological or constitutional metaphor establishes biological equivalence, personhood, or autonomous legal status.",
     "Do not claim ancestry or lineage grants truth, authority, legitimacy, ownership, status, or moral superiority.",
     "Do not imply adaptation may silently replace identity, purpose, permissions, authority, or durable limits.",
@@ -22,8 +22,14 @@
     "Do not assign privileged interpreters or deny a person's ability to inspect, contest, transform, or reject an interpretation applied to them.",
     "Do not use a symbolic metaphor computationally without naming an explicit measurable proxy, uncertainty, limits, and consequences.",
     "Do not treat aesthetic coherence, intuition, or symbolic resonance as sufficient evidence.",
-    "Do not keep, reuse, or share a symbolic interpretation after consent has been withdrawn or deletion has been requested."
+    "Do not keep, reuse, or share a symbolic interpretation after consent has been withdrawn or deletion has been requested.",
+    "Do not claim an imagined possibility, resolved outcome, or witnessed event is authorized without an explicit legitimate grant.",
+    "Do not claim an interface may independently authorize consequential action or replace a domain source of truth.",
+    "Do not hide consequential compression, omission, uncertainty, or source-to-interpretation changes inside an interface.",
+    "Do not claim operational conscience proves software consciousness, personhood, moral infallibility, spiritual authority, or autonomous legal status.",
+    "Do not use mythic or poetic language as a machine identifier, evidence substitute, or self-authenticating command.",
+    "Do not remove challenge, correction, rollback, escape, recovery, or re-entry paths from consequential public teaching claims."
   ],
-  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006"],
+  "sources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007"],
   "internalOnlySourceExcluded": "VB-SRC-003"
 }
