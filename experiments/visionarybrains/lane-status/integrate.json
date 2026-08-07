@@ -1,43 +1,45 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.23.0",
+  "schemaVersion": "visionarybrains-lane-status/1.24.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T22:46:39Z",
-  "status": "VB_BUILD_001_BROWSER_HARNESS_STILL_FAILING_CURRENT_HEAD",
+  "observedAt": "2026-08-07T23:47:55Z",
+  "status": "VB_BUILD_001_DYNAMIC_CDP_REPAIR_STILL_FAILING",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "1a7434513c8750bfc4d1637637a73f0094903036",
+  "integrationCommit": "7597529dace66a81c8fbda14958d8366f78080b1",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "80abb8189917408c4f45129a81278f035b14f4e2",
+      "headSha": "fbd13b625a6c57a9d0fe6ba790cae94ce29d1335",
       "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY_9_FILES",
       "laneStatusPresent": "PASS",
-      "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "FAIL_RUN_31224471767_HEADLESS_CHROMIUM_QUALIFICATION",
-        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31224471767",
-        "test": "PASS_RUN_31224471862",
-        "workstationValidation": "PASS_RUN_31224471851"
+        "visionaryBrainsValidation": "FAIL_RUN_31227854003_HEADLESS_CHROMIUM_QUALIFICATION",
+        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31227854003",
+        "test": "PASS_RUN_31227854025",
+        "workstationValidation": "PASS_RUN_31227854001"
       },
-      "browserReview": "FAIL_HEADLESS_CHROMIUM_QUALIFICATION_CURRENT_HEAD",
-      "browserFailureEvidence": "GitHub job 93015835601 completed with the deterministic public-shell step passing and the headless Chromium qualification step failing on PR head 80abb8189917408c4f45129a81278f035b14f4e2. GitHub exposes only a generic exit-code annotation for this run, so the harness must surface Chromium startup stderr and endpoint-discovery evidence directly.",
-      "repairRequest": "Repair browser harness startup and CDP discovery deterministically. Prefer an ephemeral remote-debugging port and parse Chromium's 'DevTools listening on ws://...' stderr endpoint, or otherwise capture child exit plus stderr and use the discovered local endpoint instead of assuming fixed-port readiness. Keep all traffic loopback-only, add no remote/runtime dependency, preserve Builder-owned scope, and require a green VisionaryBrains validation run on the repaired head before integration.",
-      "integrationDisposition": "HELD_FOR_GREEN_BROWSER_QUALIFICATION"
+      "browserReview": "FAIL_HEADLESS_CHROMIUM_QUALIFICATION_AFTER_DYNAMIC_PORT_REPAIR",
+      "browserFailureEvidence": "GitHub job 93025630328 fails only the headless Chromium qualification on PR head fbd13b625a6c57a9d0fe6ba790cae94ce29d1335. Check annotations expose only the workflow exit code, not the browser:harness stack or bounded Chromium stderr, so the precise failing stage remains unavailable to Integrate.",
+      "mergeability": "HELD_GITHUB_REPORTED_NOT_MERGEABLE_AFTER_INTEGRATION_CONTROL_COMMIT",
+      "branchRelation": "DIVERGED_AHEAD_30_BEHIND_9_MERGE_BASE_3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
+      "repairRequest": "Make the exact browser:harness failure and bounded Chromium stderr deterministically visible in GitHub check output or job summary before another broad browser-startup rewrite. Repair the evidenced failing stage only, keep browser traffic loopback-only, add no remote/runtime dependency, remain inside Builder-owned paths, and provide a green VisionaryBrains validation run. After the browser gate is green, synchronize the Builder branch with experiment/visionarybrains and re-run checks before integration.",
+      "integrationDisposition": "HELD_FOR_DIAGNOSABLE_GREEN_BROWSER_QUALIFICATION_AND_SAFE_SYNCHRONIZATION"
     }
   },
   "unresolvedDefects": [
-    "PR 31 head 80abb8189917408c4f45129a81278f035b14f4e2 remains mergeable and scope-clean but fails VisionaryBrains validation run 31224471767 in the headless Chromium qualification step.",
-    "Current GitHub annotations do not expose the underlying Chromium startup/readiness error, so the browser harness lacks sufficient deterministic diagnostics for integration acceptance."
+    "PR 31 head fbd13b625a6c57a9d0fe6ba790cae94ce29d1335 still fails VisionaryBrains validation run 31227854003 in the headless Chromium qualification after the dynamic-port/CDP-endpoint repair.",
+    "GitHub's exposed annotations do not contain the harness stack or Chromium stderr, so another behavioral rewrite would be insufficiently evidence-driven.",
+    "The Builder branch is now diverged from experiment/visionarybrains by 30 commits ahead and 9 commits behind; GitHub currently reports the PR not mergeable after the integration control update."
   ],
   "nextActions": [
-    "Builder should make Chromium startup/CDP endpoint discovery self-diagnosing and runner-portable, ideally by parsing the DevTools endpoint from Chromium stderr rather than assuming a fixed readiness endpoint.",
-    "Integrate should require a green VisionaryBrains validation run on the repaired PR head before merge.",
-    "After the browser gate is green, re-check mergeability against the latest experiment/visionarybrains head, changed-path ownership, public-safety claims, structural compatibility, semantic structure, keyboard behavior, reduced motion, and contrast evidence before merging PR 31.",
+    "Builder should surface the exact browser:harness failure and bounded Chromium stderr in deterministic GitHub-visible evidence, then repair only the evidenced failing stage.",
+    "Integrate should require a green VisionaryBrains validation run on the repaired head before considering merge.",
+    "After browser qualification is green, Builder should safely synchronize with the latest experiment/visionarybrains head; Integrate should then re-check changed-path ownership, public-safety claims, structural compatibility, semantic structure, keyboard behavior, reduced motion, contrast evidence, and mergeability.",
     "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "controlCommits": [
-    "1a7434513c8750bfc4d1637637a73f0094903036"
+    "7597529dace66a81c8fbda14958d8366f78080b1"
   ]
 }
