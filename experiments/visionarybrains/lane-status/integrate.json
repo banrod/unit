@@ -1,25 +1,28 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.17.0",
+  "schemaVersion": "visionarybrains-lane-status/1.18.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T06:49:29Z",
-  "status": "VB_BUILD_001_DETERMINISTIC_GREEN_BROWSER_QUALIFICATION_PENDING",
+  "observedAt": "2026-08-07T14:49:24Z",
+  "status": "VB_BUILD_001_CURRENT_HEAD_DETERMINISTIC_GREEN_BROWSER_QUALIFICATION_PENDING",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
   "integrationCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "5833236879db90d4fdddf7195cfb21acaf462d76",
+      "headSha": "7b57138eec53365a39a96a359c1f0bf10511534a",
       "pathOwnership": "PASS_EIGHT_BUILDER_OWNED_FILES",
       "laneStatusPresent": "PASS",
       "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
-      "contentCompatibility": "PASS_TEACHER_V1_1_CONSUMPTION_IMPLEMENTED",
-      "reviewThreads": "PASS_PRIOR_VALIDATOR_P1_P2_THREADS_RESOLVED_AND_OUTDATED",
+      "boundedScope": "PASS_733_ADDITIONS_3_DELETIONS_EIGHT_FILES",
+      "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
+      "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
+      "reviewThreads": "PASS_TWO_PRIOR_VALIDATOR_THREADS_RESOLVED_AND_OUTDATED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "PASS_RUN_31154471510",
-        "test": "PASS_RUN_31154471511",
-        "workstationValidation": "PASS_RUN_31154471537"
+        "visionaryBrainsValidation": "PASS_RUN_31183378728",
+        "test": "PASS_RUN_31183378818",
+        "workstationValidation": "PASS_RUN_31183378547"
       },
+      "accessibilityStaticGuards": "PASS_SEMANTIC_MAIN_SKIP_LINK_FOCUS_VISIBLE_ARIA_EXPANDED_STATUS_REGION_REDUCED_MOTION",
       "browserReview": "PENDING_NO_BROWSER_LEVEL_EVIDENCE_FOR_CONTRAST_KEYBOARD_RESPONSIVE_REDUCED_MOTION_CONTENT_LOADING",
       "integrationDisposition": "HELD_FOR_BROWSER_QUALIFICATION"
     }
