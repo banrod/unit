@@ -1,10 +1,10 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.8.0",
+  "schemaVersion": "visionarybrains-lane-status/1.8.1",
   "lane": "VisionaryBrains — Doctrine",
   "taskId": "VB-DOC-009",
-  "status": "PR_READY_FOR_INTEGRATION",
-  "observedAt": "2026-08-07T00:12:00Z",
-  "baseCommit": "16334eacbe517818ab428a08358d7f15cc108de9",
+  "status": "PR_READY_FOR_INTEGRATION_REBASED",
+  "observedAt": "2026-08-07T01:10:25Z",
+  "baseCommit": "68f692e7223c1de9ccb1dc71e564a6209f8be898",
   "sourcesConsumed": ["VB-SRC-002", "VB-SRC-011"],
   "sourceClassification": {"VB-SRC-002":"PUBLIC_CANON","VB-SRC-011":"PUBLIC_DERIVED"},
   "publicClaimTransformations": [
@@ -43,5 +43,5 @@
     "VB-SRC-011 is PUBLIC_DERIVED from an internal academic redigestion; the bounded-role architecture is teachable, but named internal role inventories remain excluded from public copy.",
     "No claim is made that any particular persona has independent real-world authority, agency, consciousness, or truth privilege."
   ],
-  "nextLaneRequest": "Integrate should review the Doctrine-only PR for additive preservation of VB-SRC-009 and VB-SRC-010, verify the seven new safety boundaries and PUBLIC_DERIVED provenance for VB-SRC-011, then merge VB-DOC-009 before returning Builder PR 31 to integration review."
+  "nextLaneRequest": "Integrate should re-review PR 37 after its rebase onto the latest integration baseline; the Doctrine payload is unchanged except for this status refresh and remains confined to Doctrine-owned files."
 }
