@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-visitor-paths/1.0.0",
-  "taskId": "VB-TEACH-001",
+  "schemaVersion": "visionarybrains-visitor-paths/1.1.0",
+  "taskId": "VB-TEACH-002",
   "paths": [
     {
       "id": "first-encounter-path",
@@ -14,6 +14,19 @@
         {"order": 5, "stage": "synthesis", "lessonId": "visitor-synthesis", "prompt": "How do identity, agency, stewardship, and meaning fit together?"}
       ],
       "completion": "The visitor can explain IAM without invoking private operations, unrestricted agency, or literal metaphysical proof."
+    },
+    {
+      "id": "stewardship-and-nature-path",
+      "title": "Deepen into agency, stewardship, and IAM nature",
+      "audience": "Visitors who understand the first-encounter path and want a practical account of how IAM governs action, change, relationship, and specialized roles",
+      "steps": [
+        {"order": 1, "stage": "first-encounter", "lessonId": "agency-is-bounded-authorship", "prompt": "Where can a person shape the frame, and where do legitimate limits still apply?"},
+        {"order": 2, "stage": "orientation", "lessonId": "readiness-is-not-self-declared", "prompt": "What evidence, review, authorization, and recovery path support this change?"},
+        {"order": 3, "stage": "deepening", "lessonId": "relation-without-control", "prompt": "What context helps interpretation without overriding agency, privacy, dissent, or uncertainty?"},
+        {"order": 4, "stage": "practice", "lessonId": "commitment-with-exits-and-repair", "prompt": "Who is accountable, what can be challenged or amended, and what obligations survive release?"},
+        {"order": 5, "stage": "synthesis", "lessonId": "iam-as-governed-ecology", "prompt": "How do bounded specialist roles compose without becoming one privileged source of truth?"}
+      ],
+      "completion": "The visitor can distinguish agency from authorization, readiness from authorship, relation from control, commitment from ambient authority, and coordinated specialization from claims of sovereign or omnipotent intelligence."
     }
   ]
 }
