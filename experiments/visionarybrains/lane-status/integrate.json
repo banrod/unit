@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.14.0",
+  "schemaVersion": "visionarybrains-lane-status/1.14.1",
   "lane": "VisionaryBrains — Integrate",
   "observedAt": "2026-08-07T01:50:00Z",
   "status": "VB_DOC_009_MERGED_BUILDER_REPAIR_RELEASED",
@@ -32,6 +32,11 @@
       "browserReview": "PENDING",
       "sequenceCompatibility": "REBASE_NOW_REQUIRED_ON_POST_VB_DOC_009_BASELINE",
       "integrationDisposition": "HELD_FOR_BUILDER_REPAIR"
+    },
+    "queueReconciliation": {
+      "VB-DOC-009": "COMPLETED",
+      "VB-BUILD-001": "IN_REPAIR_REBASE_AND_BROWSER_QUALIFICATION_RELEASED",
+      "queueCommit": "3869efc57f8c00bde4da97f416cfa7284e4e2d20"
     }
   },
   "unresolvedDefects": [
@@ -40,10 +45,13 @@
     "The VisionaryBrains validation workflow still invokes the Builder site validator on Doctrine-only branches, producing a known scope-mismatch failure."
   ],
   "nextActions": [
-    "Builder should rebase PR 31 onto integration commit 2e4e96c2f12a049dd2ad5cdf4afdc027c9c4a30a without dropping the integrated VB-DOC-009 nature content.",
+    "Builder should rebase PR 31 onto the post-VB-DOC-009 integration baseline without dropping the integrated nature content.",
     "Builder should provide deterministic and browser-level qualification evidence for contrast, keyboard navigation, responsive behavior, reduced motion, content loading, forbidden-claim scanning, and unsafe-reference scanning.",
     "Integrate should re-review PR 31 after repair and merge it only if all remaining public-shell gates pass.",
     "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
-  "controlCommits": ["2e4e96c2f12a049dd2ad5cdf4afdc027c9c4a30a"]
+  "controlCommits": [
+    "d6f20dabeaa2dc2f462049d5c9e163df16c466d2",
+    "3869efc57f8c00bde4da97f416cfa7284e4e2d20"
+  ]
 }
