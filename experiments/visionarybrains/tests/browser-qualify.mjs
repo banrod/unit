@@ -133,10 +133,27 @@ async function key(cdp, keyValue, code, windowsVirtualKeyCode) {
 
 const contrastExpression = `(() => {
   const parse = (value) => {
-    const match = value.match(/rgba?\\(([^)]+)\\)/i);
-    if (!match) return null;
-    const parts = match[1].split(/[ ,/]+/).filter(Boolean).map(Number);
-    return { r: parts[0], g: parts[1], b: parts[2], a: Number.isFinite(parts[3]) ? parts[3] : 1 };
+    const rgb = value.match(/rgba?\\(([^)]+)\\)/i);
+    if (rgb) {
+      const parts = rgb[1].split(/[ ,/]+/).filter(Boolean).map(Number);
+      return { r: parts[0], g: parts[1], b: parts[2], a: Number.isFinite(parts[3]) ? parts[3] : 1 };
+    }
+
+    const srgb = value.match(/color\\(srgb\\s+([^)]+)\\)/i);
+    if (srgb) {
+      const [channelsPart, alphaPart] = srgb[1].split('/').map((part) => part.trim());
+      const channels = channelsPart.split(/\\s+/).filter(Boolean).map(Number);
+      if (channels.length < 3 || channels.some((channel) => !Number.isFinite(channel))) return null;
+      const alpha = alphaPart === undefined ? 1 : Number(alphaPart);
+      return {
+        r: channels[0] * 255,
+        g: channels[1] * 255,
+        b: channels[2] * 255,
+        a: Number.isFinite(alpha) ? alpha : 1
+      };
+    }
+
+    return null;
   };
   const luminance = ({ r, g, b }) => {
     const channel = (v) => {
@@ -163,7 +180,12 @@ const contrastExpression = `(() => {
     if (!element) return { selector, error: 'missing' };
     const foreground = parse(getComputedStyle(element).color);
     const background = backgroundFor(element);
-    if (!foreground || !background) return { selector, error: 'unparsed-color' };
+    if (!foreground || !background) return {
+      selector,
+      error: 'unparsed-color',
+      foreground: getComputedStyle(element).color,
+      background: getComputedStyle(element).backgroundColor
+    };
     return { selector, ratio: ratio(foreground, background) };
   });
 })()`;
@@ -199,6 +221,7 @@ try {
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
+    '--remote-debugging-address=127.0.0.1',
     `--remote-debugging-port=${cdpPort}`,
     `--user-data-dir=${profile}`,
     'about:blank'
@@ -300,6 +323,10 @@ try {
 
 console.log(`\nBROWSER_QUALIFICATION_EVIDENCE ${JSON.stringify(evidence)}`);
 if (failures.length) {
+  for (const failure of failures) {
+    const annotation = failure.replaceAll('%', '%25').replaceAll('\r', '%0D').replaceAll('\n', '%0A');
+    console.error(`::error title=VisionaryBrains browser qualification::${annotation}`);
+  }
   console.error(`\n${failures.length} browser qualification failure(s).`);
   process.exit(1);
 }
