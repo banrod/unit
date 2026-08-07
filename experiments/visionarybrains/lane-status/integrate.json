@@ -1,49 +1,43 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.22.0",
+  "schemaVersion": "visionarybrains-lane-status/1.23.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T21:46:58Z",
-  "status": "VB_BUILD_001_BROWSER_HARNESS_CDP_READINESS_FAILED",
+  "observedAt": "2026-08-07T22:46:39Z",
+  "status": "VB_BUILD_001_BROWSER_HARNESS_STILL_FAILING_CURRENT_HEAD",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "8c115673577ce890fdd623641782dcd0eeb41ef5",
+  "integrationCommit": "1a7434513c8750bfc4d1637637a73f0094903036",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "28cd654477db466f5006a2485442d91b362e2903",
-      "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY",
+      "headSha": "80abb8189917408c4f45129a81278f035b14f4e2",
+      "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY_9_FILES",
       "laneStatusPresent": "PASS",
       "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "FAIL_RUN_31220794710_HEADLESS_CHROMIUM_QUALIFICATION",
-        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31220794710",
-        "test": "PASS_RUN_31220794705",
-        "workstationValidation": "PASS_RUN_31220794706"
+        "visionaryBrainsValidation": "FAIL_RUN_31224471767_HEADLESS_CHROMIUM_QUALIFICATION",
+        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31224471767",
+        "test": "PASS_RUN_31224471862",
+        "workstationValidation": "PASS_RUN_31224471851"
       },
-      "browserReview": "FAIL_HARNESS_CDP_READINESS_FETCH",
-      "browserFailureEvidence": "GitHub annotation reports browser:harness TypeError: fetch failed in pollJson at tests/browser-qualify.mjs:37, reached from line 230 while polling the local Chromium CDP endpoint.",
-      "repairRequest": "Repair the local Chromium CDP startup/readiness path so the browser harness can reliably reach its loopback debugging endpoint in GitHub Actions. Keep the repair inside Builder-owned files, do not add remote runtime dependencies, and provide a green VisionaryBrains validation run on the repaired PR head before integration.",
+      "browserReview": "FAIL_HEADLESS_CHROMIUM_QUALIFICATION_CURRENT_HEAD",
+      "browserFailureEvidence": "GitHub job 93015835601 completed with the deterministic public-shell step passing and the headless Chromium qualification step failing on PR head 80abb8189917408c4f45129a81278f035b14f4e2. GitHub exposes only a generic exit-code annotation for this run, so the harness must surface Chromium startup stderr and endpoint-discovery evidence directly.",
+      "repairRequest": "Repair browser harness startup and CDP discovery deterministically. Prefer an ephemeral remote-debugging port and parse Chromium's 'DevTools listening on ws://...' stderr endpoint, or otherwise capture child exit plus stderr and use the discovered local endpoint instead of assuming fixed-port readiness. Keep all traffic loopback-only, add no remote/runtime dependency, preserve Builder-owned scope, and require a green VisionaryBrains validation run on the repaired head before integration.",
       "integrationDisposition": "HELD_FOR_GREEN_BROWSER_QUALIFICATION"
-    },
-    "reviewMutation": "REQUEST_CHANGES_NOT_POSTED_GITHUB_REJECTED_SELF_REVIEW_422"
+    }
   },
   "unresolvedDefects": [
-    "PR 31 head 28cd654477db466f5006a2485442d91b362e2903 fails VisionaryBrains validation run 31220794710 because the headless browser harness cannot fetch the local Chromium CDP readiness endpoint."
+    "PR 31 head 80abb8189917408c4f45129a81278f035b14f4e2 remains mergeable and scope-clean but fails VisionaryBrains validation run 31224471767 in the headless Chromium qualification step.",
+    "Current GitHub annotations do not expose the underlying Chromium startup/readiness error, so the browser harness lacks sufficient deterministic diagnostics for integration acceptance."
   ],
   "nextActions": [
-    "Builder should repair CDP process startup/readiness or loopback endpoint discovery without expanding scope or adding remote dependencies.",
+    "Builder should make Chromium startup/CDP endpoint discovery self-diagnosing and runner-portable, ideally by parsing the DevTools endpoint from Chromium stderr rather than assuming a fixed readiness endpoint.",
     "Integrate should require a green VisionaryBrains validation run on the repaired PR head before merge.",
-    "After the browser gate is green, re-check mergeability against the latest experiment/visionarybrains head, changed-path ownership, public-safety claims, and structural compatibility before merging PR 31.",
+    "After the browser gate is green, re-check mergeability against the latest experiment/visionarybrains head, changed-path ownership, public-safety claims, structural compatibility, semantic structure, keyboard behavior, reduced motion, and contrast evidence before merging PR 31.",
     "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "controlCommits": [
-    "c863f205399983cbe5d6056e247703f39a5a6cac",
-    "8aa0b10be609b45f2c1ee5952d9995bca4f06bbf",
-    "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
-    "38205fd01d3d912ae657839c5a9859d55e6d5e38",
-    "7f5ba462a36f2122ffec5ebcbd805918fc82e675",
-    "25a74b058ac031e45459ab070c793e271e00363b",
-    "8c115673577ce890fdd623641782dcd0eeb41ef5"
+    "1a7434513c8750bfc4d1637637a73f0094903036"
   ]
 }
