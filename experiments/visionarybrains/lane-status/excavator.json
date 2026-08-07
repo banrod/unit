@@ -1,13 +1,9 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.6",
+  "schemaVersion": "visionarybrains-lane-status/1.0.7",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-07T02:03:02Z",
-  "verdict": "NO_NEW_SOURCE_REQUIRED_EXISTING_CORPUS_RELEASED_TO_TEACHER",
+  "observedAt": "2026-08-07T02:59:15Z",
+  "verdict": "NO_NEW_SOURCE_REQUIRED_PUBLIC_TEACHING_CORPUS_COMPLETE_FOR_CURRENT_MVP",
   "taskId": null,
-  "baseCommit": "ae6fd744760e200e39a84394fb2e71105963c4c3",
-  "materialCommits": [
-    "dfada753945827c7abaeea5d149d6f5910d48a9c"
-  ],
   "sourcesClassified": {
     "PUBLIC_CANON": 4,
     "PUBLIC_DERIVED": 6,
@@ -16,21 +12,14 @@
     "newThisFiring": 0
   },
   "assessment": {
-    "sourceCorpus": "SUFFICIENT_FOR_NEXT_MISSING_TEACHING_LAYER",
-    "doctrineCoverage": "VB-DOC-005_THROUGH_VB-DOC-009_INTEGRATED",
-    "visitorCurriculumGap": "VB-TEACH-001_PRECEDES_LATER_AGENCY_STEWARDSHIP_RELATION_COMMITMENT_AND_IAM_NATURE_DOCTRINE",
+    "sourceCorpus": "SUFFICIENT_FOR_CURRENT_MVP",
+    "doctrineCoverage": "VB-DOC-001_THROUGH_VB-DOC-009_COMPLETED",
+    "visitorCurriculumCoverage": "VB-TEACH-001_AND_VB-TEACH-002_COMPLETED",
+    "currentGap": "BUILDER_REPAIR_AND_BROWSER_QUALIFICATION_ONLY",
     "openVisionaryBrainsPRs": [31]
   },
   "outputs": [
-    "experiments/visionarybrains/work-queue.json",
     "experiments/visionarybrains/lane-status/excavator.json"
-  ],
-  "publicTeachingFrame": [
-    "agency as bounded authorship with possibility, resolution, evidence, and authorization kept distinct",
-    "readiness, independent review, recovery, and repair as stewardship rather than ambient authority",
-    "relation and emergence with continuity, contestability, consent, and non-coercive mythic framing",
-    "accountable commitment with covenant retained only as optional metaphor subordinate to evidence and explicit authority",
-    "IAM as a governed ecology of bounded specialist responsibilities rather than a single omnipotent intelligence"
   ],
   "unsafeExclusions": [
     "new claims not supported by integrated PUBLIC_CANON or PUBLIC_DERIVED material",
@@ -38,9 +27,7 @@
     "personas presented as independent consciousnesses, sovereign minds, or privileged truth authorities",
     "private routing mechanics, schedules, identifiers, schemas, receipts, hashes, topology, security controls, or workflow transcripts"
   ],
-  "readyTasks": [
-    "VB-TEACH-002"
-  ],
+  "readyTasks": [],
   "blockers": [],
-  "nextLaneRequest": "Teacher should select VB-TEACH-002 and extend visitor-facing lessons, paths, site copy, and teaching cards from the already-integrated public-safe doctrine before Builder final integration. No additional Excavator source packet is currently justified."
+  "nextLaneRequest": "Builder should complete VB-BUILD-001 repair using the integrated teaching content and provide deterministic plus browser-level qualification. Integrate should review that repair. Excavator should remain idle unless a specific public teaching gap is identified that cannot be resolved from the existing classified source corpus."
 }
