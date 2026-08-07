@@ -3,10 +3,9 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REVIEW",
-  "observedAt": "2026-08-07T12:35:14Z",
+  "observedAt": "2026-08-07T13:35:00Z",
   "baseCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
   "changedFiles": [
-    "experiments/visionarybrains/tests/validate.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
   ],
   "contentSourcesConsumed": [
@@ -19,21 +18,17 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "repairRequest": "INTEGRATE_REVIEW_4880952387",
-    "priorGreenHead": "7e61888a107c047cfc8797dc8f1db0a5ec712531",
-    "priorVisionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31170863239",
-    "priorRepositoryTest": "PASS_GITHUB_ACTIONS_RUN_31170863222",
-    "priorWorkstationValidation": "PASS_GITHUB_ACTIONS_RUN_31170863238",
-    "implementationHead": "6652272070455d0a26b02e357d6ff8afb5acc15d",
-    "renderedCorpusClaimScan": "IMPLEMENTED_FOR_SITE_COPY_VISITOR_PATHS_TEACHING_CARDS_PRINCIPLES_THEOLOGY_GLOSSARY",
-    "rendererRequiredShapeChecks": "IMPLEMENTED_FOR_SITE_COPY_CARDS_PATHS_PRINCIPLES_THEOLOGY_GLOSSARY",
-    "forbiddenAssertionPatterns": "EXPLICIT_ASSERTION_PATTERNS_APPLIED_TO_SHELL_FALLBACK_AND_RENDERED_PUBLIC_JSON",
-    "currentImplementationChecks": "PENDING_GITHUB_ACTIONS",
-    "pullRequestMergeabilityAtImplementationHead": "MERGEABLE",
+    "validatedHead": "ff400943d84a82b7b7145e2f43f807551c9a3b55",
+    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31178973375",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31178974186",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31178973273",
+    "renderedCorpusClaimScan": "PASS_VIA_VALIDATED_HEAD",
+    "rendererRequiredShapeChecks": "PASS_VIA_VALIDATED_HEAD",
+    "forbiddenAssertionPatterns": "PASS_VIA_VALIDATED_HEAD",
+    "pullRequestMergeabilityAtObservation": "MERGEABLE",
     "browserQualification": "PENDING"
   },
   "unresolvedRisks": [
-    "GitHub Actions must confirm the repaired validator on implementation head 6652272070455d0a26b02e357d6ff8afb5acc15d or its status-only successor.",
     "Browser-level qualification remains outstanding for contrast, keyboard navigation, responsive behavior, reduced motion, and content loading."
   ]
 }
