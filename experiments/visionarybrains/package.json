@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "validate": "node tests/validate.mjs",
+    "validate:browser": "node tests/browser-qualify.mjs",
     "serve": "python3 -m http.server 4173"
   }
 }
