@@ -1,25 +1,24 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.19.0",
+  "schemaVersion": "visionarybrains-lane-status/1.20.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T16:49:01Z",
-  "status": "VB_BUILD_001_CURRENT_HEAD_GREEN_BROWSER_QUALIFICATION_PENDING",
+  "observedAt": "2026-08-07T18:46:52Z",
+  "status": "VB_BUILD_001_PRESENT_HEAD_GREEN_BROWSER_QUALIFICATION_PENDING",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "38205fd01d3d912ae657839c5a9859d55e6d5e38",
+  "integrationCommit": "7f5ba462a36f2122ffec5ebcbd805918fc82e675",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "b7c04741e5ea0f9ad147fefc7d69a3032cde7709",
-      "pathOwnership": "PASS_EIGHT_BUILDER_OWNED_FILES",
+      "headSha": "ed631a55796db46dce2cb9d13c7f233842304362",
+      "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY",
       "laneStatusPresent": "PASS",
       "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
-      "branchRelation": "DIVERGED_AHEAD_18_BEHIND_2_WITH_ONLY_INTEGRATE_STATUS_CHANGED_ON_BASE_SINCE_MERGE_BASE",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "PASS_RUN_31193502014",
-        "test": "PASS_RUN_31193502802",
-        "workstationValidation": "PASS_RUN_31193502056"
+        "visionaryBrainsValidation": "PASS_RUN_31207826123",
+        "test": "PASS_RUN_31207824274",
+        "workstationValidation": "PASS_RUN_31207826479"
       },
       "accessibilityStaticGuards": "PASS_SEMANTIC_MAIN_SKIP_LINK_FOCUS_VISIBLE_ARIA_EXPANDED_STATUS_REGION_REDUCED_MOTION",
       "browserReview": "PENDING_NO_BROWSER_LEVEL_EVIDENCE_FOR_CONTRAST_KEYBOARD_RESPONSIVE_REDUCED_MOTION_CONTENT_LOADING",
@@ -31,13 +30,14 @@
   ],
   "nextActions": [
     "Builder should provide browser-level qualification evidence for readable contrast, keyboard navigation, responsive behavior, reduced motion, and content loading without changing public copy unless a defect is found.",
-    "Integrate should re-check PR 31 mergeability and current-head checks after browser qualification is recorded.",
+    "Integrate should re-check PR 31 mergeability after browser qualification is recorded.",
     "Merge PR 31 only after the browser qualification gate passes; do not mark MVP reviewable before the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "controlCommits": [
     "c863f205399983cbe5d6056e247703f39a5a6cac",
     "8aa0b10be609b45f2c1ee5952d9995bca4f06bbf",
     "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
-    "38205fd01d3d912ae657839c5a9859d55e6d5e38"
+    "38205fd01d3d912ae657839c5a9859d55e6d5e38",
+    "7f5ba462a36f2122ffec5ebcbd805918fc82e675"
   ]
 }
