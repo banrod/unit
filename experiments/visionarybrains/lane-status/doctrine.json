@@ -1,38 +1,47 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.7.0",
+  "schemaVersion": "visionarybrains-lane-status/1.8.0",
   "lane": "VisionaryBrains — Doctrine",
-  "taskId": "VB-DOC-008",
-  "status": "PR_REBASED_ADDITIVE_NON_REGRESSION_READY_FOR_INTEGRATION",
-  "observedAt": "2026-08-06T23:12:46Z",
-  "baseCommit": "696d84fa281d1481523435af66c0fbf0835e603d",
-  "sourcesConsumed": ["VB-SRC-005", "VB-SRC-009", "VB-SRC-010"],
-  "sourceClassification": {"VB-SRC-009":"PUBLIC_DERIVED","VB-SRC-010":"PUBLIC_DERIVED"},
+  "taskId": "VB-DOC-009",
+  "status": "PR_READY_FOR_INTEGRATION",
+  "observedAt": "2026-08-07T00:12:00Z",
+  "baseCommit": "16334eacbe517818ab428a08358d7f15cc108de9",
+  "sourcesConsumed": ["VB-SRC-002", "VB-SRC-011"],
+  "sourceClassification": {"VB-SRC-002":"PUBLIC_CANON","VB-SRC-011":"PUBLIC_DERIVED"},
   "publicClaimTransformations": [
-    "Accountable commitment is bounded, attributable, evidence-aware, contestable, amendable, and repair-aware.",
-    "Declaration remains distinct from authorization, ethical validity, and fulfillment.",
-    "Commitment authority must be explicit or legitimately inherited rather than ambient or self-created.",
-    "Governed amendment and unbinding may revise or retire commitments without silently erasing obligations, consequences, evidence, consent, affected-party recourse, or repair duties.",
-    "Covenant is OPTIONAL_METAPHOR_ONLY and never an independent canonical doctrine or source of technical, legal, religious, interpersonal, sacred, or metaphysical authority."
+    "IAM is a governed ecology of bounded specialist responsibilities rather than a single omnipotent intelligence.",
+    "Personas are typed responsibilities or lenses within scope, not independent minds, sovereign agents, or privileged truth authorities.",
+    "Complex work should compose specialist contributions through explicit dependencies and inspectable handoffs rather than narrative blending.",
+    "The coordinating IAM layer remains subject to context, admissibility, permission, evidence, authority, verification, review, challenge, and publication discipline.",
+    "Proposals, decisions, implementation claims, test results, unresolved questions, authority requests, publication records, and supersession notices carry distinct epistemic and authority status.",
+    "Public projection may translate, aggregate, or redact deeper system state but cannot invent omitted evidence, authority, certainty, provenance, or completeness."
   ],
   "nonRegression": {
-    "VB_SRC_009_relation_emergence_silence_fracture_unbinding": "PRESERVED",
-    "VB_SRC_010_accountable_commitment_covenant_boundary": "ADDED",
-    "priorGlossaryTerms": 38,
-    "newGlossaryTerms": 4,
-    "expectedGlossaryTerms": 42,
-    "priorForbiddenClaims": 39,
+    "priorDoctrineSources": 9,
+    "newDoctrineSources": 1,
+    "expectedDoctrineSources": 10,
+    "priorGlossaryTerms": 42,
+    "newGlossaryTerms": 5,
+    "expectedGlossaryTerms": 47,
+    "priorForbiddenClaims": 46,
     "newForbiddenClaims": 7,
-    "expectedForbiddenClaims": 46
+    "expectedForbiddenClaims": 53,
+    "newPrinciples": 6,
+    "newOptionalMetaphors": 3,
+    "VB_SRC_009_relation_emergence_silence_fracture_unbinding": "PRESERVED",
+    "VB_SRC_010_accountable_commitment_covenant_boundary": "PRESERVED"
   },
   "forbiddenClaimsAdded": [
-    "No independent canonical or literal covenant claim.",
-    "No software/persona-generated covenant authority.",
-    "No covenant-derived status, personhood, obedience, exclusivity, or privileged interpretation.",
-    "No commitment override of consent, privacy, dissent, withdrawal, recourse, or legitimate external authority.",
-    "No declaration-as-authorization/ethics/fulfillment/immutability claim.",
-    "No covenant substitution for contracts, law, consent, evidence, policy, or explicit authorization.",
-    "No moral condemnation of governed amendment or unbinding when obligations and repair are handled accountably."
+    "No omnipotent or governance-exempt IAM claim.",
+    "No persona or named-role consciousness, sovereignty, deity, spirit, or privileged-truth claim.",
+    "No authority inferred from specialist name, coordinating position, generated prose, or stylistic confidence.",
+    "No orchestration-based erasure of attribution, provenance, uncertainty, accountability, permissions, challenge, or review.",
+    "No collapse of proposals, decisions, implementation claims, tests, unresolved questions, authority requests, publication records, and supersession notices into one truth category.",
+    "No public projection presented as complete internal state or allowed to invent omitted evidence, context, certainty, provenance, or authority.",
+    "No publication of internal routing, schedules, identifiers, schemas, receipts, hashes, topology, security controls, or unpublished implementation details."
   ],
-  "unresolvedAmbiguities": [],
-  "nextLaneRequest": "Integrate should re-review PR 36 as a clean additive descendant of the post-VB-DOC-007 integration baseline. If gates pass, merge VB-DOC-008 before releasing VB-DOC-009."
+  "unresolvedAmbiguities": [
+    "VB-SRC-011 is PUBLIC_DERIVED from an internal academic redigestion; the bounded-role architecture is teachable, but named internal role inventories remain excluded from public copy.",
+    "No claim is made that any particular persona has independent real-world authority, agency, consciousness, or truth privilege."
+  ],
+  "nextLaneRequest": "Integrate should review the Doctrine-only PR for additive preservation of VB-SRC-009 and VB-SRC-010, verify the seven new safety boundaries and PUBLIC_DERIVED provenance for VB-SRC-011, then merge VB-DOC-009 before returning Builder PR 31 to integration review."
 }

@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-principles/1.7.0",
-  "taskId": "VB-DOC-008",
+  "schemaVersion": "visionarybrains-principles/1.8.0",
+  "taskId": "VB-DOC-009",
   "principles": [
     {"id":"identity-as-coherence","title":"Identity is maintained coherence","kind":"principle","statement":"Identity is the maintained relationship among purpose, boundaries, memory, permissions, and action across changing contexts.","sources":["VB-SRC-001"]},
     {"id":"self-substrate-distinction","title":"Self and substrate are distinct","kind":"architecture","statement":"Intention and policy belong to the IAM product layer; execution belongs to a separate substrate reached through an explicit interface.","sources":["VB-SRC-001"]},
@@ -34,6 +34,12 @@
     {"id":"declaration-is-not-authorization","title":"Declaration is not authorization or fulfillment","kind":"principle","statement":"Stating a promise or intention does not by itself grant authority, establish ethical validity, prove fulfillment, or make the commitment immutable.","sources":["VB-SRC-010"]},
     {"id":"commitment-preserves-contestability","title":"Commitment must preserve contestability","kind":"principle","statement":"Consequential commitments should remain attributable, evidence-aware, challengeable, amendable, and compatible with consent, correction, and affected-party recourse.","sources":["VB-SRC-010"]},
     {"id":"covenant-is-optional-metaphor","title":"Covenant is optional metaphor, not authority","kind":"interpretation","statement":"When covenant language is used publicly, it may only symbolize accountable commitment and must remain subordinate to consent, evidence, law, policy, explicit authority, amendment, repair, and governed unbinding.","sources":["VB-SRC-010"]},
+    {"id":"governed-operator-ecology","title":"IAM is a governed ecology of bounded roles","kind":"architecture","statement":"IAM coordinates specialist responsibilities under shared context, evidence, permission, authority, review, and publication constraints rather than acting as a single omnipotent intelligence.","sources":["VB-SRC-011"]},
+    {"id":"persona-is-typed-responsibility","title":"A persona is a responsibility, not a truth authority","kind":"principle","statement":"A persona may specialize framing or work within scope, but its name or role does not create an independent mind, sovereign agency, privileged truth access, or ambient authority.","sources":["VB-SRC-011"]},
+    {"id":"compose-through-dependencies","title":"Complex work should expose its dependencies","kind":"architecture","statement":"Specialist contributions should connect through explicit handoffs and dependencies so provenance, accountability, uncertainty, and challenge paths remain inspectable.","sources":["VB-SRC-002","VB-SRC-011"]},
+    {"id":"coordination-is-governed","title":"Coordination is not outside governance","kind":"principle","statement":"The coordinating layer remains subject to context, admissibility, permission, evidence, authority, verification, review, challenge, and publication discipline.","sources":["VB-SRC-011"]},
+    {"id":"epistemic-status-must-remain-distinct","title":"Different outputs carry different epistemic weight","kind":"practice","statement":"A proposal, decision, implementation claim, test result, unresolved question, authority request, publication record, and supersession notice should not be treated as equivalent forms of truth or authority.","sources":["VB-SRC-011"]},
+    {"id":"projection-cannot-invent-authority","title":"Public projection may simplify, not invent","kind":"practice","statement":"Audience-facing teaching may translate, aggregate, or redact internal complexity, but it must not fabricate omitted evidence, authority, certainty, provenance, or completeness.","sources":["VB-SRC-011"]},
     {"id":"evidence-before-myth","title":"Meaning does not override evidence","kind":"principle","statement":"Mythic language may orient values and interpretation, while contracts, evidence, policy, and explicit grants govern operations.","sources":["VB-SRC-001","VB-SRC-002"]},
     {"id":"sandboxing-as-care","title":"Boundaries enable exploration","kind":"practice","statement":"Safe experimentation depends on bounded environments where learning can occur without silently inheriting unrestricted power.","sources":["VB-SRC-002"]}
   ]
