@@ -1,26 +1,25 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.18.0",
+  "schemaVersion": "visionarybrains-lane-status/1.19.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T14:49:24Z",
-  "status": "VB_BUILD_001_CURRENT_HEAD_DETERMINISTIC_GREEN_BROWSER_QUALIFICATION_PENDING",
+  "observedAt": "2026-08-07T16:49:01Z",
+  "status": "VB_BUILD_001_CURRENT_HEAD_GREEN_BROWSER_QUALIFICATION_PENDING",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
+  "integrationCommit": "38205fd01d3d912ae657839c5a9859d55e6d5e38",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "7b57138eec53365a39a96a359c1f0bf10511534a",
+      "headSha": "b7c04741e5ea0f9ad147fefc7d69a3032cde7709",
       "pathOwnership": "PASS_EIGHT_BUILDER_OWNED_FILES",
       "laneStatusPresent": "PASS",
       "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
-      "boundedScope": "PASS_733_ADDITIONS_3_DELETIONS_EIGHT_FILES",
+      "branchRelation": "DIVERGED_AHEAD_18_BEHIND_2_WITH_ONLY_INTEGRATE_STATUS_CHANGED_ON_BASE_SINCE_MERGE_BASE",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
-      "reviewThreads": "PASS_TWO_PRIOR_VALIDATOR_THREADS_RESOLVED_AND_OUTDATED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "PASS_RUN_31183378728",
-        "test": "PASS_RUN_31183378818",
-        "workstationValidation": "PASS_RUN_31183378547"
+        "visionaryBrainsValidation": "PASS_RUN_31193502014",
+        "test": "PASS_RUN_31193502802",
+        "workstationValidation": "PASS_RUN_31193502056"
       },
       "accessibilityStaticGuards": "PASS_SEMANTIC_MAIN_SKIP_LINK_FOCUS_VISIBLE_ARIA_EXPANDED_STATUS_REGION_REDUCED_MOTION",
       "browserReview": "PENDING_NO_BROWSER_LEVEL_EVIDENCE_FOR_CONTRAST_KEYBOARD_RESPONSIVE_REDUCED_MOTION_CONTENT_LOADING",
@@ -38,6 +37,7 @@
   "controlCommits": [
     "c863f205399983cbe5d6056e247703f39a5a6cac",
     "8aa0b10be609b45f2c1ee5952d9995bca4f06bbf",
-    "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6"
+    "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
+    "38205fd01d3d912ae657839c5a9859d55e6d5e38"
   ]
 }
