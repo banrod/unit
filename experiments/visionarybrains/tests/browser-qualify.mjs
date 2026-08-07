@@ -221,7 +221,6 @@ try {
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
-    '--remote-debugging-address=127.0.0.1',
     `--remote-debugging-port=${cdpPort}`,
     `--user-data-dir=${profile}`,
     'about:blank'
