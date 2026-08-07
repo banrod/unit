@@ -3,7 +3,7 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REVIEW",
-  "observedAt": "2026-08-07T15:36:05Z",
+  "observedAt": "2026-08-07T17:34:22Z",
   "baseCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
   "changedFiles": [
     "experiments/visionarybrains/lane-status/builder.json"
@@ -18,18 +18,17 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "validatedHead": "7b57138eec53365a39a96a359c1f0bf10511534a",
-    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31183378728",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31183378818",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31183378547",
+    "validatedHead": "b7c04741e5ea0f9ad147fefc7d69a3032cde7709",
+    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31193502014",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31193502802",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31193502056",
     "renderedCorpusClaimScan": "PASS_VIA_VALIDATED_HEAD",
     "rendererRequiredShapeChecks": "PASS_VIA_VALIDATED_HEAD",
     "forbiddenAssertionPatterns": "PASS_VIA_VALIDATED_HEAD",
-    "pullRequestMergeabilityAtObservation": "NOT_MERGEABLE",
+    "pullRequestMergeabilityAtObservation": "MERGEABLE",
     "browserQualification": "PENDING"
   },
   "unresolvedRisks": [
-    "GitHub currently reports PR 31 as not mergeable against experiment/visionarybrains and requires Integrate to determine whether a base synchronization is needed.",
     "Browser-level qualification remains outstanding for contrast, keyboard navigation, responsive behavior, reduced motion, and content loading."
   ]
 }
