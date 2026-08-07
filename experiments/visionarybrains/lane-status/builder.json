@@ -3,8 +3,8 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REPAIR",
-  "observedAt": "2026-08-07T21:35:31Z",
-  "baseCommit": "8c115673577ce890fdd623641782dcd0eeb41ef5",
+  "observedAt": "2026-08-07T22:35:52Z",
+  "baseCommit": "1a7434513c8750bfc4d1637637a73f0094903036",
   "changedFiles": [
     "experiments/visionarybrains/tests/browser-qualify.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
@@ -19,23 +19,22 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "failedBrowserHead": "7c5866feb121c64d7f2df67c7a6d45bbab3073b1",
-    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31216862238_BROWSER_STEP_ONLY",
-    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31216862238",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31216864473",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31216865005",
-    "browserFailureStep": "Qualify VisionaryBrains in headless Chromium",
-    "repairHead": "19f44782b5bcd5e0594e74c7e813a01f54d13db7",
+    "failedBrowserHead": "28cd654477db466f5006a2485442d91b362e2903",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31220794710_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31220794710",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31220794705",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31220794706",
+    "browserFailure": "CDP readiness fetch failed at pollJson after the previous repair added an explicit --remote-debugging-address flag",
+    "repairHead": "102f5ddb8ca3163a65b555b10e2e5b735a76e6e2",
     "repair": [
-      "accept Chromium computed color(srgb ...) serialization in WCAG contrast parsing",
-      "preserve rgb()/rgba() parsing",
-      "bind Chrome remote debugging explicitly to 127.0.0.1",
-      "emit browser qualification failures as GitHub annotations for deterministic diagnosis"
+      "remove the explicit Chrome --remote-debugging-address=127.0.0.1 override that regressed GitHub runner CDP readiness",
+      "retain loopback-only client polling at http://127.0.0.1:9222 and local static server binding",
+      "retain Chromium color(srgb ...) parsing and deterministic GitHub failure annotations"
     ],
-    "currentHeadGitHubChecks": "PENDING_AFTER_BROWSER_QUALIFICATION_PORTABILITY_REPAIR"
+    "currentHeadGitHubChecks": "PENDING_AFTER_CDP_READINESS_REPAIR"
   },
   "unresolvedRisks": [
     "The repaired browser qualification has not yet completed in GitHub Actions, so no browser PASS claim is made.",
-    "The Builder branch is behind integration head 8c115673577ce890fdd623641782dcd0eeb41ef5 and PR 31 was reported non-mergeable before this repair; Integrate should re-evaluate synchronization after current checks."
+    "The Builder branch remains behind integration head 1a7434513c8750bfc4d1637637a73f0094903036; Integrate should re-evaluate synchronization after current checks."
   ]
 }
