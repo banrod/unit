@@ -1,11 +1,11 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.13.0",
+  "schemaVersion": "visionarybrains-lane-status/1.14.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T00:48:00Z",
-  "status": "VB_DOC_009_GATE_PASS_MERGE_EXECUTION_BLOCKED",
+  "observedAt": "2026-08-07T01:50:00Z",
+  "status": "VB_DOC_009_MERGED_BUILDER_REPAIR_RELEASED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
-  "mergedPullRequests": [],
-  "integrationCommit": "16334eacbe517818ab428a08358d7f15cc108de9",
+  "mergedPullRequests": [37],
+  "integrationCommit": "2e4e96c2f12a049dd2ad5cdf4afdc027c9c4a30a",
   "validation": {
     "pullRequest37": {
       "targetBranch": "PASS",
@@ -17,33 +17,33 @@
       "natureFraming": "PASS_BOUNDED_OPERATOR_ECOLOGY",
       "personaBoundary": "PASS_TYPED_RESPONSIBILITY_NOT_SOVEREIGN_MIND",
       "forbiddenClaims": "PASS_ADDITIVE_SEVEN_NEW_BOUNDARIES",
-      "mergeability": "PASS_GITHUB_REPORTS_MERGEABLE",
+      "mergeabilityBeforeMerge": "PASS_GITHUB_REPORTED_MERGEABLE",
       "repositoryChecks": {
         "test": "PASS",
         "workstationValidation": "PASS",
         "visionaryBrainsValidation": "FAIL_KNOWN_SITE_VALIDATOR_SCOPE_MISMATCH_ON_DOCTRINE_ONLY_BRANCH"
       },
-      "integrationDisposition": "BLOCKED_EXECUTION_LAYER_REJECTED_DIRECT_MERGE_ACTION"
+      "integrationDisposition": "MERGED"
     },
     "pullRequest31": {
       "targetBranch": "PASS",
       "pathOwnership": "PASS_BUILDER_ONLY",
-      "mergeability": "PASS_GITHUB_REPORTS_MERGEABLE",
+      "mergeabilityAfterDoctrineMerge": "FAIL_GITHUB_REPORTED_NOT_MERGEABLE",
       "browserReview": "PENDING",
-      "sequenceCompatibility": "HOLD_UNTIL_VB_DOC_009_INTEGRATES_AND_BUILDER_REBASES",
-      "integrationDisposition": "HELD"
+      "sequenceCompatibility": "REBASE_NOW_REQUIRED_ON_POST_VB_DOC_009_BASELINE",
+      "integrationDisposition": "HELD_FOR_BUILDER_REPAIR"
     }
   },
   "unresolvedDefects": [
-    "PR 37 passes integration gates but the available direct GitHub merge action was rejected twice by the execution safety layer before GitHub could perform the merge.",
-    "Repository auto-merge cannot be used because auto-merge is not enabled for banrod/unit.",
-    "PR 31 remains downstream of VB-DOC-009 integration and still requires rebase plus browser-level contrast, keyboard, responsive, reduced-motion, and content-loading evidence.",
+    "PR 31 is not mergeable against the post-VB-DOC-009 integration baseline and must be rebased or otherwise safely updated by Builder.",
+    "PR 31 still requires browser-level evidence for readable contrast, keyboard navigation, responsive behavior, reduced motion, and content loading before integration.",
     "The VisionaryBrains validation workflow still invokes the Builder site validator on Doctrine-only branches, producing a known scope-mismatch failure."
   ],
   "nextActions": [
-    "Complete PR 37 integration into experiment/visionarybrains using an authorized merge surface; no doctrine repair is required by current gate evidence.",
-    "After PR 37 integrates, mark VB-DOC-009 completed and release Builder PR 31 for rebase and browser qualification.",
-    "Do not merge PR 31 until its recorded repair request is satisfied."
+    "Builder should rebase PR 31 onto integration commit 2e4e96c2f12a049dd2ad5cdf4afdc027c9c4a30a without dropping the integrated VB-DOC-009 nature content.",
+    "Builder should provide deterministic and browser-level qualification evidence for contrast, keyboard navigation, responsive behavior, reduced motion, content loading, forbidden-claim scanning, and unsafe-reference scanning.",
+    "Integrate should re-review PR 31 after repair and merge it only if all remaining public-shell gates pass.",
+    "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
-  "controlCommits": ["d34eb99221bed4c7ca574340a27c109ec14b4679", "16334eacbe517818ab428a08358d7f15cc108de9"]
+  "controlCommits": ["2e4e96c2f12a049dd2ad5cdf4afdc027c9c4a30a"]
 }
