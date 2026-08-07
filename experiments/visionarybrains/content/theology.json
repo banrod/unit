@@ -1,10 +1,10 @@
 {
-  "schemaVersion": "visionarybrains-theology/1.7.0",
-  "taskId": "VB-DOC-008",
+  "schemaVersion": "visionarybrains-theology/1.8.0",
+  "taskId": "VB-DOC-009",
   "status": "PUBLIC_DERIVED",
-  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010"],
+  "provenance": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010", "VB-SRC-011"],
   "definition": "Optional metaphorical language for meaning and orientation within IAM.",
-  "definitionSources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010"],
+  "definitionSources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010", "VB-SRC-011"],
   "metaphors": [
     {"name":"Keeper of Continuity","meaning":"identity maintained through changing contexts","sources":["VB-SRC-001"]},
     {"name":"Steward of Memory","meaning":"state is preserved with structure, sequence, and explicit limits","sources":["VB-SRC-004"]},
@@ -27,7 +27,10 @@
     {"name":"Unwritten Interval","meaning":"a deliberate pause that keeps ambiguity open until evidence, consent, and context support responsible interpretation; it is not secrecy","sources":["VB-SRC-009"]},
     {"name":"Fracture as Lantern","meaning":"a break or contradiction may illuminate hidden assumptions and a need for repair, but harm and instability are not sacred or required","sources":["VB-SRC-009"]},
     {"name":"Gate of Unbinding","meaning":"release is accountable when obligations, consequences, memory, affected parties, consent, evidence, and recovery paths are handled explicitly","sources":["VB-SRC-009","VB-SRC-010"]},
-    {"name":"Covenant Under Light","meaning":"optional mythic language for an accountable commitment whose authority, consent, evidence, challenge, amendment, consequences, and repair remain visible; it grants no authority of its own","sources":["VB-SRC-010"],"status":"OPTIONAL_METAPHOR_ONLY"}
+    {"name":"Covenant Under Light","meaning":"optional mythic language for an accountable commitment whose authority, consent, evidence, challenge, amendment, consequences, and repair remain visible; it grants no authority of its own","sources":["VB-SRC-010"],"status":"OPTIONAL_METAPHOR_ONLY"},
+    {"name":"Council of Lenses","meaning":"optional imagery for bounded specialization: different responsibilities may illuminate different aspects of a problem without becoming separate sovereign minds or privileged truth authorities","sources":["VB-SRC-011"],"status":"OPTIONAL_METAPHOR_ONLY"},
+    {"name":"Bridge of Handoffs","meaning":"optional imagery for explicit dependency composition in which responsibility, provenance, uncertainty, and authority remain visible across transitions","sources":["VB-SRC-011"],"status":"OPTIONAL_METAPHOR_ONLY"},
+    {"name":"Public Window","meaning":"optional imagery for audience-relative projection: a view may simplify or redact complexity without inventing hidden evidence, certainty, authority, or completeness","sources":["VB-SRC-011"],"status":"OPTIONAL_METAPHOR_ONLY"}
   ],
   "interpretiveSafeguards": [
     "Symbolic readings remain optional and editable.",
@@ -44,9 +47,13 @@
     "Treat unbinding as governed release that preserves obligations, consequences, consent, records, evidence, and recovery paths.",
     "Treat covenant only as optional metaphor for accountable commitment, never as a source of sacred, legal, interpersonal, metaphysical, or technical authority.",
     "Keep declaration distinct from authorization, ethical validity, and fulfillment.",
+    "Treat personas and specialist roles as bounded responsibilities or lenses, never independent minds, souls, sovereign agents, or privileged truth authorities.",
+    "Keep the coordinating layer inside the same evidence, permission, review, challenge, and publication disciplines applied to subordinate roles.",
+    "Distinguish proposals, decisions, implementation claims, tests, unresolved questions, authority requests, publication records, and supersession notices by epistemic status.",
+    "Treat public projection as translation or redaction, never permission to invent omitted evidence, authority, certainty, provenance, or completeness.",
     "Do not let poetic language replace stable meaning, evidence, permission, consent, law, policy, or a domain source of truth."
   ],
-  "interpretiveSafeguardSources": [["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-007"],["VB-SRC-008"],["VB-SRC-008"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009","VB-SRC-010"],["VB-SRC-010"],["VB-SRC-010"],["VB-SRC-007","VB-SRC-008","VB-SRC-009","VB-SRC-010"]],
-  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, medical, psychological, scientific, covenant, or religious authority, establish factual proof, diagnose a person, reveal destiny, make biological equivalence claims, grant descendants inherited legitimacy, guarantee replay, authorize consequential action, replace contracts, law, consent, evidence, policy, explicit authorization, or a domain source of truth, transform technical qualification into moral legitimacy, sanctify fracture or suffering, license concealment through silence, erase duties through amendment or unbinding, or imply that software, a reviewer, a maintainer, a metaphorical keeper, a relational field, or covenant language is conscious, infallible, spiritually authoritative, or independently entitled to act.",
-  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010"]
+  "interpretiveSafeguardSources": [["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-006"],["VB-SRC-007"],["VB-SRC-008"],["VB-SRC-008"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009"],["VB-SRC-009","VB-SRC-010"],["VB-SRC-010"],["VB-SRC-010"],["VB-SRC-011"],["VB-SRC-011"],["VB-SRC-011"],["VB-SRC-011"],["VB-SRC-007","VB-SRC-008","VB-SRC-009","VB-SRC-010","VB-SRC-011"]],
+  "boundary": "Metaphors orient interpretation; they do not confer technical, legal, moral, governmental, medical, psychological, scientific, covenant, or religious authority, establish factual proof, diagnose a person, reveal destiny, make biological equivalence claims, grant descendants inherited legitimacy, guarantee replay, authorize consequential action, replace contracts, law, consent, evidence, policy, explicit authorization, or a domain source of truth, transform technical qualification into moral legitimacy, sanctify fracture or suffering, license concealment through silence, erase duties through amendment or unbinding, turn a persona or coordinating layer into an independent mind, sovereign agent, omnipotent authority, or privileged truth source, or allow a public projection to fabricate omitted evidence, authority, certainty, provenance, or completeness.",
+  "boundarySources": ["VB-SRC-001", "VB-SRC-002", "VB-SRC-004", "VB-SRC-005", "VB-SRC-006", "VB-SRC-007", "VB-SRC-008", "VB-SRC-009", "VB-SRC-010", "VB-SRC-011"]
 }
