@@ -1,38 +1,40 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.21.0",
+  "schemaVersion": "visionarybrains-lane-status/1.22.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T20:51:17Z",
-  "status": "VB_BUILD_001_BROWSER_QUALIFICATION_FAILED",
+  "observedAt": "2026-08-07T21:46:58Z",
+  "status": "VB_BUILD_001_BROWSER_HARNESS_CDP_READINESS_FAILED",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "25a74b058ac031e45459ab070c793e271e00363b",
+  "integrationCommit": "8c115673577ce890fdd623641782dcd0eeb41ef5",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "7c5866feb121c64d7f2df67c7a6d45bbab3073b1",
+      "headSha": "28cd654477db466f5006a2485442d91b362e2903",
       "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY",
       "laneStatusPresent": "PASS",
       "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "FAIL_RUN_31216862238_BROWSER_QUALIFICATION_STEP_EXIT_1",
-        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31216862238",
-        "test": "PASS_RUN_31216864473",
-        "workstationValidation": "PASS_RUN_31216865005"
+        "visionaryBrainsValidation": "FAIL_RUN_31220794710_HEADLESS_CHROMIUM_QUALIFICATION",
+        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31220794710",
+        "test": "PASS_RUN_31220794705",
+        "workstationValidation": "PASS_RUN_31220794706"
       },
-      "browserReview": "FAIL_HEADLESS_CHROMIUM_QUALIFICATION",
-      "repairRequest": "Repair the browser qualification harness or browser-observed defect and provide a green VisionaryBrains validation run on the repaired Builder head. Preserve Builder-owned scope and public-safe content boundaries.",
+      "browserReview": "FAIL_HARNESS_CDP_READINESS_FETCH",
+      "browserFailureEvidence": "GitHub annotation reports browser:harness TypeError: fetch failed in pollJson at tests/browser-qualify.mjs:37, reached from line 230 while polling the local Chromium CDP endpoint.",
+      "repairRequest": "Repair the local Chromium CDP startup/readiness path so the browser harness can reliably reach its loopback debugging endpoint in GitHub Actions. Keep the repair inside Builder-owned files, do not add remote runtime dependencies, and provide a green VisionaryBrains validation run on the repaired PR head before integration.",
       "integrationDisposition": "HELD_FOR_GREEN_BROWSER_QUALIFICATION"
-    }
+    },
+    "reviewMutation": "REQUEST_CHANGES_NOT_POSTED_GITHUB_REJECTED_SELF_REVIEW_422"
   },
   "unresolvedDefects": [
-    "PR 31 head 7c5866feb121c64d7f2df67c7a6d45bbab3073b1 fails VisionaryBrains validation run 31216862238 at the headless Chromium qualification step with exit code 1."
+    "PR 31 head 28cd654477db466f5006a2485442d91b362e2903 fails VisionaryBrains validation run 31220794710 because the headless browser harness cannot fetch the local Chromium CDP readiness endpoint."
   ],
   "nextActions": [
-    "Builder should repair the browser qualification harness or the browser-observed defect without expanding scope.",
+    "Builder should repair CDP process startup/readiness or loopback endpoint discovery without expanding scope or adding remote dependencies.",
     "Integrate should require a green VisionaryBrains validation run on the repaired PR head before merge.",
-    "After the browser gate is green, re-check mergeability, changed-path ownership, public-safety claims, and structural compatibility before merging PR 31.",
+    "After the browser gate is green, re-check mergeability against the latest experiment/visionarybrains head, changed-path ownership, public-safety claims, and structural compatibility before merging PR 31.",
     "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
   ],
   "controlCommits": [
@@ -41,6 +43,7 @@
     "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
     "38205fd01d3d912ae657839c5a9859d55e6d5e38",
     "7f5ba462a36f2122ffec5ebcbd805918fc82e675",
-    "25a74b058ac031e45459ab070c793e271e00363b"
+    "25a74b058ac031e45459ab070c793e271e00363b",
+    "8c115673577ce890fdd623641782dcd0eeb41ef5"
   ]
 }
