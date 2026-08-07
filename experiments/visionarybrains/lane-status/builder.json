@@ -3,7 +3,7 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REVIEW",
-  "observedAt": "2026-08-07T17:34:22Z",
+  "observedAt": "2026-08-07T18:36:47Z",
   "baseCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
   "changedFiles": [
     "experiments/visionarybrains/lane-status/builder.json"
@@ -18,10 +18,10 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "validatedHead": "b7c04741e5ea0f9ad147fefc7d69a3032cde7709",
-    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31193502014",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31193502802",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31193502056",
+    "validatedHead": "c94e22312226a68eb37e30422ac568497a0069d7",
+    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31202995421",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31202995675",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31202995424",
     "renderedCorpusClaimScan": "PASS_VIA_VALIDATED_HEAD",
     "rendererRequiredShapeChecks": "PASS_VIA_VALIDATED_HEAD",
     "forbiddenAssertionPatterns": "PASS_VIA_VALIDATED_HEAD",
