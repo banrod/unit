@@ -3,9 +3,12 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REVIEW",
-  "observedAt": "2026-08-07T18:36:47Z",
-  "baseCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
+  "observedAt": "2026-08-07T20:37:15Z",
+  "baseCommit": "25a74b058ac031e45459ab070c793e271e00363b",
   "changedFiles": [
+    "experiments/visionarybrains/tests/browser-qualify.mjs",
+    "experiments/visionarybrains/package.json",
+    ".github/workflows/visionarybrains-validation.yml",
     "experiments/visionarybrains/lane-status/builder.json"
   ],
   "contentSourcesConsumed": [
@@ -18,17 +21,24 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "validatedHead": "c94e22312226a68eb37e30422ac568497a0069d7",
-    "visionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31202995421",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31202995675",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31202995424",
-    "renderedCorpusClaimScan": "PASS_VIA_VALIDATED_HEAD",
-    "rendererRequiredShapeChecks": "PASS_VIA_VALIDATED_HEAD",
-    "forbiddenAssertionPatterns": "PASS_VIA_VALIDATED_HEAD",
-    "pullRequestMergeabilityAtObservation": "MERGEABLE",
-    "browserQualification": "PENDING"
+    "previousValidatedHead": "ed631a55796db46dce2cb9d13c7f233842304362",
+    "previousVisionaryBrainsValidation": "PASS_GITHUB_ACTIONS_RUN_31207826123",
+    "previousRepositoryTest": "PASS_GITHUB_ACTIONS_RUN_31207824274",
+    "previousWorkstationValidation": "PASS_GITHUB_ACTIONS_RUN_31207826479",
+    "browserQualificationHarness": "ADDED_ZERO_DEPENDENCY_HEADLESS_CHROMIUM_CDP",
+    "browserChecks": [
+      "integrated content loading",
+      "two-or-more visitor paths rendered",
+      "narrow responsive navigation",
+      "keyboard activation of navigation toggle",
+      "prefers-reduced-motion emulation",
+      "computed WCAG text contrast >= 4.5:1",
+      "wide responsive navigation and grid"
+    ],
+    "currentHeadGitHubChecks": "PENDING_AFTER_BROWSER_QUALIFICATION_INCREMENT"
   },
   "unresolvedRisks": [
-    "Browser-level qualification remains outstanding for contrast, keyboard navigation, responsive behavior, reduced motion, and content loading."
+    "The new headless-browser qualification must complete successfully in GitHub Actions before browser PASS is claimed.",
+    "The Builder branch is behind the latest integration head but GitHub reported PR 31 mergeable at the start of this firing; Integrate should re-check mergeability after the new commits."
   ]
 }
