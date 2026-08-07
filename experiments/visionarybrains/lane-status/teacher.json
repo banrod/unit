@@ -1,52 +1,71 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.1",
+  "schemaVersion": "visionarybrains-lane-status/1.1.0",
   "lane": "VisionaryBrains — Teacher",
-  "taskId": "VB-TEACH-001",
-  "status": "PR_READY_REPAIRED",
+  "taskId": "VB-TEACH-002",
+  "status": "PR_READY",
   "baseBranch": "experiment/visionarybrains",
-  "baseCommit": "9313d54854d251e73c0e102d73f405ba9bce5497",
+  "baseCommit": "79032862191ee7746626fd7879188447c9b8495b",
   "doctrineConsumed": [
-    "content/principles.json@visionarybrains-principles/1.1.0",
-    "content/doctrine.json@visionarybrains-doctrine/1.1.0",
+    "content/doctrine.json@visionarybrains-doctrine/1.8.0",
+    "content/principles.json@visionarybrains-principles/1.8.0",
+    "content/theology.json@visionarybrains-theology/1.8.0",
     "content/forbidden-claims.json"
   ],
   "doctrineObjectsConsumed": [
-    "identity-as-coherence",
-    "self-substrate-distinction",
-    "capability-as-stewardship",
-    "composition-as-relationship",
-    "memory-as-accountable-continuity",
-    "evidence-before-myth",
-    "sandboxing-as-care"
+    "agency-as-authorship",
+    "states-before-authority",
+    "readiness-as-evidence",
+    "separate-creation-from-promotion",
+    "history-as-repair-stewardship",
+    "relation-as-context",
+    "emergence-with-continuity",
+    "epistemic-silence-not-secrecy",
+    "fracture-as-diagnosis",
+    "declaration-is-not-authorization",
+    "commitment-preserves-contestability",
+    "unbinding-as-governed-release",
+    "covenant-is-optional-metaphor",
+    "governed-operator-ecology",
+    "persona-is-typed-responsibility",
+    "compose-through-dependencies",
+    "coordination-is-governed",
+    "epistemic-status-must-remain-distinct",
+    "projection-cannot-invent-authority"
   ],
   "lessonsAdded": [
-    "iam-in-one-sentence",
-    "power-has-boundaries",
-    "meaning-and-evidence",
-    "relationship-before-complexity",
-    "visitor-synthesis"
+    "agency-is-bounded-authorship",
+    "readiness-is-not-self-declared",
+    "relation-without-control",
+    "commitment-with-exits-and-repair",
+    "iam-as-governed-ecology"
+  ],
+  "visitorPathsAdded": [
+    "stewardship-and-nature-path"
   ],
   "audienceAssumptions": [
-    "No prior knowledge of IAM, Project Q, AlienOS, or InfiniChain",
-    "Visitors may prefer plain language before optional mythic interpretation"
+    "No prior knowledge of Project Q, AlienOS, InfiniChain, internal routing, or operational implementation is required",
+    "Visitors may enter through plain-language principles before choosing optional mythic framing",
+    "Visitors benefit from explicit distinctions between agency and authorization, authorship and readiness, relation and control, commitment and authority, and role specialization and sovereign intelligence"
   ],
   "accessibilityReadability": [
-    "Short summaries and explicit labels distinguish principle, architecture, practice, and metaphor",
-    "The learning path uses ordered stages and question prompts",
-    "No lesson depends on animation, sound, color, or specialist notation"
+    "New lessons preserve the five-stage first encounter, orientation, deepening, practice, and synthesis sequence",
+    "Each lesson uses one short title, one plain-language summary, and explicit principle, practice, or architecture labeling",
+    "Mythic language is explained as optional interpretation rather than required vocabulary",
+    "No lesson depends on animation, sound, color, specialist notation, or knowledge of private IAM projects"
   ],
-  "repairRecord": {
-    "reason": "Integrate found a memory reference without declared VB-DOC-002 consumption.",
-    "change": "The coherence card now cites memory-as-accountable-continuity and this status records the integrated memory doctrine explicitly."
-  },
   "unresolvedRisks": [
-    "Covenant remains unsupported and absent from visitor teaching",
-    "Builder must validate JSON shape and rendered reading order"
+    "Builder must render the second visitor path without obscuring or replacing the first-encounter path",
+    "Builder validation should confirm all new lesson and card source identifiers resolve to integrated doctrine objects",
+    "Browser-level reading-order and navigation review remains outside Teacher ownership"
   ],
   "publicSafety": {
     "privateOperationalContent": "excluded",
+    "privateIdentifiersAndWorkflowDetails": "excluded",
     "metaphysicalProofClaims": "excluded",
-    "unrestrictedAgencyClaims": "excluded",
-    "medicalLegalFinancialClaims": "excluded"
+    "coerciveReligiousClaims": "excluded",
+    "sovereignPersonaClaims": "excluded",
+    "medicalPsychologicalLegalFinancialClaims": "excluded",
+    "covenantFraming": "OPTIONAL_METAPHOR_ONLY",
+    "publicProjection": "may simplify but may not invent evidence, authority, certainty, provenance, or completeness"
   }
 }
