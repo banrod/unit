@@ -3,8 +3,8 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REVIEW",
-  "observedAt": "2026-08-07T03:37:56Z",
-  "baseCommit": "1343ec11cf84019a34047f060d2c10e8c42552a4",
+  "observedAt": "2026-08-07T04:37:33Z",
+  "baseCommit": "3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
   "changedFiles": [
     ".github/workflows/visionarybrains-validation.yml",
     "experiments/visionarybrains/README.md",
@@ -25,7 +25,11 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "deterministicValidator": "COMMITTED_PENDING_GITHUB_CHECK",
+    "deterministicValidator": "REPAIRED_NEGATION_FALSE_POSITIVE_PENDING_GITHUB_CHECK",
+    "failureRootCause": "The unrestricted-access forbidden-claim regex matched a visitor-safe negated boundary sentence; the validator now requires an affirmative grant/allow/provide/has construction before rejecting unrestricted access language.",
+    "priorVisionaryBrainsRun": "31145140445_FAIL_EXIT_1_ON_HEAD_6a6dafd31d71b9aee57814b34787cb27f4e6e254",
+    "repositoryTest": "PRIOR_HEAD_PASS",
+    "workstationValidation": "PRIOR_HEAD_PASS",
     "visitorPaths": "RENDERS_ALL_INTEGRATED_PATHS",
     "natureAndStewardship": "CONSUMED_FROM_SITE_COPY_V1_1",
     "semanticStructure": "STATIC_CHECK_ENFORCED",
@@ -38,7 +42,7 @@
     "unsafeExternalReferences": "VALIDATOR_REJECTS_REMOTE_URLS_IN_PUBLIC_SHELL"
   },
   "unresolvedRisks": [
-    "Browser-level qualification has not been performed in this firing.",
-    "GitHub Actions result is pending for the repaired head; no passing-CI claim is made until a completed run is observed."
+    "GitHub Actions results for the repaired final head have not yet been observed; no passing-CI claim is made until completed checks are available.",
+    "Browser-level qualification remains outstanding for contrast, keyboard navigation, responsive behavior, reduced motion, and content loading."
   ]
 }
