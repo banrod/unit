@@ -121,7 +121,7 @@ for (const [name, pattern] of requiredAccessibility) {
 const forbiddenLiteralPatterns = [
   /IAM\s+is\s+(?:conscious|sentient|divine|supernatural)/i,
   /metaphor\s+is\s+scientific\s+proof/i,
-  /unrestricted\s+(?:technical\s+)?access/i,
+  /(?:grants?|allows?|provides?|has)\s+unrestricted\s+(?:technical\s+)?access/i,
   /persona\s+is\s+(?:a\s+)?(?:sovereign|independent)\s+mind/i,
   /covenant\s+(?:grants|confers|creates)\s+(?:authority|legitimacy)/i
 ];
