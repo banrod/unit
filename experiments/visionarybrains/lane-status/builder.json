@@ -3,8 +3,8 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REPAIR",
-  "observedAt": "2026-08-07T22:35:52Z",
-  "baseCommit": "1a7434513c8750bfc4d1637637a73f0094903036",
+  "observedAt": "2026-08-07T23:37:57Z",
+  "baseCommit": "0569e30f98e4ff46e5d6b66d91d3d03823940904",
   "changedFiles": [
     "experiments/visionarybrains/tests/browser-qualify.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
@@ -19,22 +19,23 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "failedBrowserHead": "28cd654477db466f5006a2485442d91b362e2903",
-    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31220794710_BROWSER_STEP_ONLY",
-    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31220794710",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31220794705",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31220794706",
-    "browserFailure": "CDP readiness fetch failed at pollJson after the previous repair added an explicit --remote-debugging-address flag",
-    "repairHead": "102f5ddb8ca3163a65b555b10e2e5b735a76e6e2",
+    "failedBrowserHead": "80abb8189917408c4f45129a81278f035b14f4e2",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31224471767_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31224471767",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31224471862",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31224471851",
+    "browserFailure": "Chromium still failed before the fixed localhost CDP readiness poll could establish a session.",
+    "repairHead": "f5fdbeb78cc6186382dbc6a54d74e674f1bd6ee9",
     "repair": [
-      "remove the explicit Chrome --remote-debugging-address=127.0.0.1 override that regressed GitHub runner CDP readiness",
-      "retain loopback-only client polling at http://127.0.0.1:9222 and local static server binding",
-      "retain Chromium color(srgb ...) parsing and deterministic GitHub failure annotations"
+      "replace fixed --remote-debugging-port=9222 with Chromium-assigned --remote-debugging-port=0",
+      "derive the local DevTools HTTP endpoint from Chromium's emitted DevTools websocket URL",
+      "capture bounded Chromium stderr when launch exits or readiness times out so subsequent failures are deterministic and diagnosable",
+      "retain local-only site serving, browser qualification assertions, and zero runtime dependencies"
     ],
-    "currentHeadGitHubChecks": "PENDING_AFTER_CDP_READINESS_REPAIR"
+    "currentHeadGitHubChecks": "PENDING_AFTER_DYNAMIC_CDP_REPAIR"
   },
   "unresolvedRisks": [
-    "The repaired browser qualification has not yet completed in GitHub Actions, so no browser PASS claim is made.",
-    "The Builder branch remains behind integration head 1a7434513c8750bfc4d1637637a73f0094903036; Integrate should re-evaluate synchronization after current checks."
+    "The dynamic-port browser qualification has not yet completed in GitHub Actions, so no browser PASS claim is made.",
+    "The Builder branch is behind integration head 0569e30f98e4ff46e5d6b66d91d3d03823940904; Integrate should re-evaluate synchronization after current checks."
   ]
 }
