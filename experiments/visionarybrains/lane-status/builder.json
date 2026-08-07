@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "visionarybrains-lane-status/1.0",
+  "lane": "VisionaryBrains — Builder",
+  "taskId": "VB-BUILD-001",
+  "status": "IN_REVIEW",
+  "observedAt": "2026-08-07T03:37:56Z",
+  "baseCommit": "1343ec11cf84019a34047f060d2c10e8c42552a4",
+  "changedFiles": [
+    ".github/workflows/visionarybrains-validation.yml",
+    "experiments/visionarybrains/README.md",
+    "experiments/visionarybrains/app.js",
+    "experiments/visionarybrains/index.html",
+    "experiments/visionarybrains/package.json",
+    "experiments/visionarybrains/styles.css",
+    "experiments/visionarybrains/tests/validate.mjs",
+    "experiments/visionarybrains/lane-status/builder.json"
+  ],
+  "contentSourcesConsumed": [
+    "content/site-copy.json@visionarybrains-site-copy/1.1.0",
+    "content/visitor-paths.json@visionarybrains-visitor-paths/1.1.0",
+    "content/teaching-cards.json",
+    "content/principles.json",
+    "content/theology.json",
+    "content/glossary.json",
+    "content/forbidden-claims.json"
+  ],
+  "validationEvidence": {
+    "deterministicValidator": "COMMITTED_PENDING_GITHUB_CHECK",
+    "visitorPaths": "RENDERS_ALL_INTEGRATED_PATHS",
+    "natureAndStewardship": "CONSUMED_FROM_SITE_COPY_V1_1",
+    "semanticStructure": "STATIC_CHECK_ENFORCED",
+    "keyboardNavigation": "STATIC_GUARDS_PRESENT_BROWSER_OBSERVATION_PENDING",
+    "reducedMotion": "STATIC_GUARD_PRESENT_BROWSER_OBSERVATION_PENDING",
+    "responsiveLayout": "CSS_BREAKPOINT_PRESENT_BROWSER_OBSERVATION_PENDING",
+    "contrast": "SYSTEM_COLOR_INTENT_PRESENT_BROWSER_OBSERVATION_PENDING",
+    "contentLoading": "STATUS_REGION_PRESENT_BROWSER_OBSERVATION_PENDING",
+    "unsafeHtmlInjection": "VALIDATOR_REJECTS_KNOWN_INJECTION_PRIMITIVES",
+    "unsafeExternalReferences": "VALIDATOR_REJECTS_REMOTE_URLS_IN_PUBLIC_SHELL"
+  },
+  "unresolvedRisks": [
+    "Browser-level qualification has not been performed in this firing.",
+    "GitHub Actions result is pending for the repaired head; no passing-CI claim is made until a completed run is observed."
+  ]
+}
