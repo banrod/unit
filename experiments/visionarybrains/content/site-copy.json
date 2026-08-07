@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-site-copy/1.0.0",
-  "taskId": "VB-TEACH-001",
+  "schemaVersion": "visionarybrains-site-copy/1.1.0",
+  "taskId": "VB-TEACH-002",
   "hero": {
     "eyebrow": "A public introduction to the IAM ecosystem",
     "title": "Identity that can move without losing its boundaries",
@@ -12,9 +12,21 @@
     "title": "What IAM means here",
     "body": "IAM is presented as a design and meaning framework. It asks how purpose remains coherent, how action receives permission, how relationships stay inspectable, and how metaphor can enrich interpretation without replacing evidence."
   },
+  "nature": {
+    "title": "A governed ecology of responsibilities",
+    "body": "IAM is taught here as coordinated specialization: bounded roles contribute different kinds of work through explicit handoffs, evidence, permissions, review, and challenge paths. A named persona is a responsibility or lens, not a separate sovereign mind or privileged source of truth."
+  },
+  "stewardship": {
+    "title": "Change should remain repairable",
+    "body": "Agency, readiness, commitment, relationship, and release all carry stewardship duties. Claims should show their evidence and authority; consequential changes should be reviewable; uncertainty should stay visible; and correction, amendment, contest, and recovery should remain possible."
+  },
+  "mythicLayer": {
+    "title": "Mythic language is optional",
+    "body": "Images such as thresholds, keepers, covenants, councils, bridges, or lanterns may help visitors think about responsibility and meaning. They are interpretive tools only and do not create factual, sacred, legal, interpersonal, or technical authority."
+  },
   "interpretationBoundary": {
     "title": "Metaphor is invitation, not authority",
-    "body": "Mythic and cosmological language is optional. It does not establish scientific proof, religious obligation, unrestricted technical access, or operational authority."
+    "body": "Mythic and cosmological language is optional. It does not establish scientific proof, religious obligation, unrestricted technical access, operational authority, medical or psychological judgment, or a privileged claim about another person's identity."
   },
-  "sourceNote": "Visitor teaching is derived only from public-safe source classifications and integrated doctrine objects. Private operations and sensitive implementation details are excluded."
+  "sourceNote": "Visitor teaching is derived only from public-safe source classifications and integrated doctrine objects. Public explanations may simplify internal complexity, but they must not invent omitted evidence, certainty, authority, provenance, or completeness. Private operations and sensitive implementation details are excluded."
 }

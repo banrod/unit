@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "visionarybrains-lessons/1.0.0",
-  "taskId": "VB-TEACH-001",
+  "schemaVersion": "visionarybrains-lessons/1.1.0",
+  "taskId": "VB-TEACH-002",
   "lessons": [
     {
       "id": "iam-in-one-sentence",
@@ -41,6 +41,46 @@
       "summary": "IAM joins identity, bounded agency, visible relationships, stewardship, and optional mythic interpretation into one public teaching frame.",
       "kind": "synthesis",
       "sources": ["identity-as-coherence", "capability-as-stewardship", "composition-as-relationship", "evidence-before-myth"]
+    },
+    {
+      "id": "agency-is-bounded-authorship",
+      "stage": "first-encounter",
+      "title": "Agency is authorship inside boundaries",
+      "summary": "Agency means having meaningful influence over framing, alternatives, challenge paths, and action while consent, permission, evidence, safety, and rights still set limits.",
+      "kind": "principle",
+      "sources": ["agency-as-authorship", "states-before-authority"]
+    },
+    {
+      "id": "readiness-is-not-self-declared",
+      "stage": "orientation",
+      "title": "Readiness needs evidence and review",
+      "summary": "Creating a change does not make it ready. Validation, independent review, resolved objections, explicit authorization, and recovery paths support trustworthy promotion.",
+      "kind": "practice",
+      "sources": ["readiness-as-evidence", "separate-creation-from-promotion", "history-as-repair-stewardship"]
+    },
+    {
+      "id": "relation-without-control",
+      "stage": "deepening",
+      "title": "Relationship gives context, not control",
+      "summary": "Context and relationship can shape meaning without overriding agency, privacy, dissent, or the right to revise an interpretation. Silence may protect uncertainty, but not conceal material risk.",
+      "kind": "principle",
+      "sources": ["relation-as-context", "emergence-with-continuity", "epistemic-silence-not-secrecy", "fracture-as-diagnosis"]
+    },
+    {
+      "id": "commitment-with-exits-and-repair",
+      "stage": "practice",
+      "title": "Commitment stays accountable",
+      "summary": "A promise does not create authority by itself. Consequential commitments should remain attributable, challengeable, amendable, consent-aware, and responsible for repair and governed release.",
+      "kind": "practice",
+      "sources": ["declaration-is-not-authorization", "commitment-preserves-contestability", "unbinding-as-governed-release", "covenant-is-optional-metaphor"]
+    },
+    {
+      "id": "iam-as-governed-ecology",
+      "stage": "synthesis",
+      "title": "IAM is a governed ecology, not one all-knowing mind",
+      "summary": "IAM coordinates bounded specialist responsibilities through explicit dependencies, evidence, permission, review, and publication discipline. Personas are roles or lenses, not sovereign minds or privileged truth sources.",
+      "kind": "architecture",
+      "sources": ["governed-operator-ecology", "persona-is-typed-responsibility", "compose-through-dependencies", "coordination-is-governed", "epistemic-status-must-remain-distinct", "projection-cannot-invent-authority"]
     }
   ]
 }
