@@ -31,3 +31,6 @@ jobs:
       - name: Validate VisionaryBrains public shell
         working-directory: experiments/visionarybrains
         run: npm run validate
+      - name: Qualify VisionaryBrains in headless Chromium
+        working-directory: experiments/visionarybrains
+        run: npm run validate:browser
