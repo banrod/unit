@@ -1,0 +1,10 @@
+{
+  "name": "visionarybrains-public-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "validate": "node tests/validate.mjs",
+    "serve": "python3 -m http.server 4173"
+  }
+}
