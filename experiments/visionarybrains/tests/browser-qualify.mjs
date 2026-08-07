@@ -5,7 +5,6 @@ import { join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const port = 4173;
-const cdpPort = 9222;
 const url = `http://127.0.0.1:${port}/`;
 const failures = [];
 const evidence = {};
@@ -43,6 +42,46 @@ async function pollJson(endpoint, timeoutMs = 10000) {
     await sleep(100);
   }
   throw lastError || new Error(`Timed out waiting for ${endpoint}`);
+}
+
+function waitForDevToolsEndpoint(process, timeoutMs = 10000) {
+  return new Promise((resolveEndpoint, rejectEndpoint) => {
+    let stderr = '';
+    let settled = false;
+
+    const finish = (error, value) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      process.stderr?.off('data', onData);
+      process.off('exit', onExit);
+      if (error) rejectEndpoint(error);
+      else resolveEndpoint(value);
+    };
+
+    const onData = (chunk) => {
+      stderr += chunk.toString();
+      const match = stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);
+      if (match) finish(null, match[1]);
+    };
+
+    const onExit = (code, signal) => {
+      const detail = stderr.trim().slice(-4000);
+      finish(
+        new Error(
+          `Chromium exited before DevTools became ready (code=${code ?? 'null'}, signal=${signal ?? 'null'})${detail ? `\n${detail}` : ''}`
+        )
+      );
+    };
+
+    const timer = setTimeout(() => {
+      const detail = stderr.trim().slice(-4000);
+      finish(new Error(`Timed out waiting for Chromium DevTools endpoint${detail ? `\n${detail}` : ''}`));
+    }, timeoutMs);
+
+    process.stderr?.on('data', onData);
+    process.once('exit', onExit);
+  });
 }
 
 class Cdp {
@@ -221,13 +260,16 @@ try {
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
-    `--remote-debugging-port=${cdpPort}`,
+    '--remote-debugging-port=0',
     `--user-data-dir=${profile}`,
     'about:blank'
   ], { stdio: ['ignore', 'ignore', 'pipe'] });
 
-  await pollJson(`http://127.0.0.1:${cdpPort}/json/version`);
-  const page = await fetch(`http://127.0.0.1:${cdpPort}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' }).then((response) => {
+  const browserWsUrl = await waitForDevToolsEndpoint(chrome);
+  const browserEndpoint = new URL(browserWsUrl);
+  const cdpHttpBase = `${browserEndpoint.protocol === 'wss:' ? 'https:' : 'http:'}//${browserEndpoint.host}`;
+  await pollJson(`${cdpHttpBase}/json/version`);
+  const page = await fetch(`${cdpHttpBase}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' }).then((response) => {
     if (!response.ok) throw new Error(`Unable to create Chromium target: ${response.status}`);
     return response.json();
   });
