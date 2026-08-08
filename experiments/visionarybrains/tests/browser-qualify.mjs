@@ -5,9 +5,7 @@ import { join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const sitePort = 4173;
-const debugPort = 9222;
 const siteUrl = `http://127.0.0.1:${sitePort}/`;
-const debugBase = `http://127.0.0.1:${debugPort}`;
 const failures = [];
 const evidence = {};
 
@@ -46,53 +44,73 @@ async function pollOk(endpoint, timeoutMs = 10000) {
   throw lastError || new Error(`Timed out waiting for ${endpoint}`);
 }
 
-async function pollJson(endpoint, timeoutMs = 10000) {
-  const started = Date.now();
-  let lastError;
-  while (Date.now() - started < timeoutMs) {
-    try {
-      const response = await fetch(endpoint);
-      if (response.ok) return response.json();
-      lastError = new Error(`${response.status} ${response.statusText}`);
-    } catch (error) {
-      lastError = error;
-    }
-    await sleep(100);
-  }
-  throw lastError || new Error(`Timed out waiting for ${endpoint}`);
-}
-
-class Cdp {
-  constructor(wsUrl) {
+class CdpPipe {
+  constructor(writePipe, readPipe, timeoutMs = 10000) {
+    this.writePipe = writePipe;
+    this.readPipe = readPipe;
+    this.timeoutMs = timeoutMs;
     this.nextId = 1;
     this.pending = new Map();
-    this.socket = new WebSocket(wsUrl);
-    this.ready = new Promise((resolveReady, rejectReady) => {
-      this.socket.addEventListener('open', resolveReady, { once: true });
-      this.socket.addEventListener('error', rejectReady, { once: true });
-    });
-    this.socket.addEventListener('message', (event) => {
-      const message = JSON.parse(event.data);
-      if (!message.id) return;
-      const pending = this.pending.get(message.id);
-      if (!pending) return;
-      this.pending.delete(message.id);
-      if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
-      else pending.resolve(message.result || {});
-    });
+    this.buffer = Buffer.alloc(0);
+
+    readPipe.on('data', (chunk) => this.onData(chunk));
+    readPipe.on('error', (error) => this.rejectAll(error));
+    readPipe.on('close', () => this.rejectAll(new Error('Chromium DevTools pipe closed')));
+    writePipe.on('error', (error) => this.rejectAll(error));
   }
 
-  async send(method, params = {}) {
-    await this.ready;
+  onData(chunk) {
+    this.buffer = Buffer.concat([this.buffer, chunk]);
+    let delimiter = this.buffer.indexOf(0);
+    while (delimiter !== -1) {
+      const frame = this.buffer.subarray(0, delimiter).toString('utf8');
+      this.buffer = this.buffer.subarray(delimiter + 1);
+      if (frame) this.onMessage(frame);
+      delimiter = this.buffer.indexOf(0);
+    }
+  }
+
+  onMessage(frame) {
+    let message;
+    try {
+      message = JSON.parse(frame);
+    } catch {
+      return;
+    }
+    if (!message.id) return;
+    const pending = this.pending.get(message.id);
+    if (!pending) return;
+    this.pending.delete(message.id);
+    clearTimeout(pending.timer);
+    if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
+    else pending.resolve(message.result || {});
+  }
+
+  rejectAll(error) {
+    for (const pending of this.pending.values()) {
+      clearTimeout(pending.timer);
+      pending.reject(error);
+    }
+    this.pending.clear();
+  }
+
+  send(method, params = {}, sessionId) {
     const id = this.nextId++;
     return new Promise((resolveSend, rejectSend) => {
-      this.pending.set(id, { resolve: resolveSend, reject: rejectSend, method });
-      this.socket.send(JSON.stringify({ id, method, params }));
+      const timer = setTimeout(() => {
+        this.pending.delete(id);
+        rejectSend(new Error(`${method}: timed out waiting for Chromium DevTools pipe response`));
+      }, this.timeoutMs);
+      this.pending.set(id, { resolve: resolveSend, reject: rejectSend, method, timer });
+      const message = { id, method, params };
+      if (sessionId) message.sessionId = sessionId;
+      this.writePipe.write(`${JSON.stringify(message)}\0`);
     });
   }
 
   close() {
-    this.socket.close();
+    try { this.writePipe.end(); } catch {}
+    try { this.readPipe.destroy(); } catch {}
   }
 }
 
@@ -182,6 +200,7 @@ let server;
 let chrome;
 let profile;
 let cdp;
+let pageCdp;
 let chromeStderr = '';
 
 try {
@@ -197,62 +216,69 @@ try {
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
-    `--remote-debugging-port=${debugPort}`,
+    '--remote-debugging-pipe',
     `--user-data-dir=${profile}`,
     'about:blank'
-  ], { stdio: ['ignore', 'ignore', 'pipe'] });
+  ], { stdio: ['ignore', 'ignore', 'pipe', 'pipe', 'pipe'] });
   chrome.stderr?.on('data', (chunk) => {
     chromeStderr = `${chromeStderr}${chunk.toString()}`.slice(-4000);
   });
 
-  let version;
+  const pipeWrite = chrome.stdio[3];
+  const pipeRead = chrome.stdio[4];
+  if (!pipeWrite || !pipeRead) throw new Error('Chromium DevTools pipe descriptors were not created');
+  cdp = new CdpPipe(pipeWrite, pipeRead);
+
   try {
-    version = await pollJson(`${debugBase}/json/version`);
+    await cdp.send('Browser.getVersion');
   } catch (error) {
-    throw new Error(`Chromium DevTools readiness failed: ${error.message}${chromeStderr.trim() ? `\n${chromeStderr.trim()}` : ''}`);
+    throw new Error(`Chromium DevTools pipe readiness failed: ${error.message}${chromeStderr.trim() ? `\n${chromeStderr.trim()}` : ''}`);
   }
-  if (!version.webSocketDebuggerUrl) throw new Error('Chromium DevTools version response omitted webSocketDebuggerUrl');
 
-  const page = await fetch(`${debugBase}/json/new?${encodeURIComponent(siteUrl)}`, { method: 'PUT' }).then((response) => {
-    if (!response.ok) throw new Error(`Unable to create Chromium target: ${response.status}`);
-    return response.json();
-  });
-  cdp = new Cdp(page.webSocketDebuggerUrl);
-  await cdp.ready;
-  await cdp.send('Page.enable');
-  await cdp.send('Runtime.enable');
-  await cdp.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
-  await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+  const target = await cdp.send('Target.createTarget', { url: siteUrl });
+  if (!target.targetId) throw new Error('Chromium DevTools did not return a targetId');
+  const attached = await cdp.send('Target.attachToTarget', { targetId: target.targetId, flatten: true });
+  if (!attached.sessionId) throw new Error('Chromium DevTools did not return a sessionId');
+  pageCdp = {
+    send(method, params = {}) {
+      return cdp.send(method, params, attached.sessionId);
+    }
+  };
 
-  const loaded = await waitFor(cdp, `document.querySelector('#load-status')?.textContent.includes('loaded from integrated doctrine and teaching files')`);
+  await pageCdp.send('Page.enable');
+  await pageCdp.send('Runtime.enable');
+  await pageCdp.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+  await pageCdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+
+  const loaded = await waitFor(pageCdp, `document.querySelector('#load-status')?.textContent.includes('loaded from integrated doctrine and teaching files')`);
   loaded ? pass('browser:content-loading', 'integrated public-safe JSON rendered over local HTTP') : fail('browser:content-loading', 'integrated content did not reach loaded state');
 
-  const pathCount = await evaluate(cdp, `document.querySelectorAll('#visitor-paths .path-card').length`);
+  const pathCount = await evaluate(pageCdp, `document.querySelectorAll('#visitor-paths .path-card').length`);
   pathCount >= 2 ? pass('browser:visitor-paths', `${pathCount} integrated learning paths rendered`) : fail('browser:visitor-paths', `expected at least 2 rendered paths, found ${pathCount}`);
 
-  const narrow = await evaluate(cdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
+  const narrow = await evaluate(pageCdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
   narrow.toggle !== 'none' && narrow.nav === 'none' ? pass('browser:responsive-narrow', JSON.stringify(narrow)) : fail('browser:responsive-narrow', JSON.stringify(narrow));
 
-  await evaluate(cdp, `document.querySelector('.nav-toggle').focus()`);
-  await key(cdp, ' ', 'Space', 32);
-  const keyboardOpen = await evaluate(cdp, `(() => ({expanded:document.querySelector('.nav-toggle').getAttribute('aria-expanded'),navDisplay:getComputedStyle(document.querySelector('#primary-nav')).display,focused:document.activeElement===document.querySelector('.nav-toggle')}))()`);
+  await evaluate(pageCdp, `document.querySelector('.nav-toggle').focus()`);
+  await key(pageCdp, ' ', 'Space', 32);
+  const keyboardOpen = await evaluate(pageCdp, `(() => ({expanded:document.querySelector('.nav-toggle').getAttribute('aria-expanded'),navDisplay:getComputedStyle(document.querySelector('#primary-nav')).display,focused:document.activeElement===document.querySelector('.nav-toggle')}))()`);
   keyboardOpen.expanded === 'true' && keyboardOpen.navDisplay !== 'none' && keyboardOpen.focused
     ? pass('browser:keyboard-navigation', JSON.stringify(keyboardOpen))
     : fail('browser:keyboard-navigation', JSON.stringify(keyboardOpen));
 
-  const reducedMotion = await evaluate(cdp, `(() => ({media:matchMedia('(prefers-reduced-motion: reduce)').matches,scrollBehavior:getComputedStyle(document.documentElement).scrollBehavior}))()`);
+  const reducedMotion = await evaluate(pageCdp, `(() => ({media:matchMedia('(prefers-reduced-motion: reduce)').matches,scrollBehavior:getComputedStyle(document.documentElement).scrollBehavior}))()`);
   reducedMotion.media && reducedMotion.scrollBehavior === 'auto'
     ? pass('browser:reduced-motion', JSON.stringify(reducedMotion))
     : fail('browser:reduced-motion', JSON.stringify(reducedMotion));
 
-  const contrasts = await evaluate(cdp, contrastExpression);
+  const contrasts = await evaluate(pageCdp, contrastExpression);
   const contrastFailures = contrasts.filter((entry) => entry.error || entry.ratio < 4.5);
   contrastFailures.length === 0
     ? pass('browser:contrast', contrasts.map((entry) => `${entry.selector}=${entry.ratio.toFixed(2)}`).join(', '))
     : fail('browser:contrast', JSON.stringify(contrastFailures));
 
-  await cdp.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
-  const wide = await evaluate(cdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
+  await pageCdp.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  const wide = await evaluate(pageCdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
   wide.toggle === 'none' && wide.nav !== 'none' && wide.columns.split(' ').length >= 3
     ? pass('browser:responsive-wide', JSON.stringify(wide))
     : fail('browser:responsive-wide', JSON.stringify(wide));
