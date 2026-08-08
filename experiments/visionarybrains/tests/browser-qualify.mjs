@@ -4,11 +4,14 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const port = 4173;
-const url = `http://127.0.0.1:${port}/`;
+const sitePort = 4173;
+const debugPort = 9222;
+const siteUrl = `http://127.0.0.1:${sitePort}/`;
+const debugBase = `http://127.0.0.1:${debugPort}`;
 const failures = [];
 const evidence = {};
 
+const sleep = (ms) => new Promise((resolveSleep) => setTimeout(resolveSleep, ms));
 const pass = (name, detail = '') => {
   evidence[name] = detail || true;
   console.log(`PASS ${name}${detail ? `: ${detail}` : ''}`);
@@ -18,7 +21,6 @@ const fail = (name, detail) => {
   failures.push(`${name}: ${detail}`);
   console.error(`FAIL ${name}: ${detail}`);
 };
-const sleep = (ms) => new Promise((resolveSleep) => setTimeout(resolveSleep, ms));
 
 function findChrome() {
   for (const candidate of ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser']) {
@@ -44,51 +46,10 @@ async function pollJson(endpoint, timeoutMs = 10000) {
   throw lastError || new Error(`Timed out waiting for ${endpoint}`);
 }
 
-function waitForDevToolsEndpoint(process, timeoutMs = 10000) {
-  return new Promise((resolveEndpoint, rejectEndpoint) => {
-    let stderr = '';
-    let settled = false;
-
-    const finish = (error, value) => {
-      if (settled) return;
-      settled = true;
-      clearTimeout(timer);
-      process.stderr?.off('data', onData);
-      process.off('exit', onExit);
-      if (error) rejectEndpoint(error);
-      else resolveEndpoint(value);
-    };
-
-    const onData = (chunk) => {
-      stderr += chunk.toString();
-      const match = stderr.match(/DevTools listening on (ws:\/\/[^\s]+)/);
-      if (match) finish(null, match[1]);
-    };
-
-    const onExit = (code, signal) => {
-      const detail = stderr.trim().slice(-4000);
-      finish(
-        new Error(
-          `Chromium exited before DevTools became ready (code=${code ?? 'null'}, signal=${signal ?? 'null'})${detail ? `\n${detail}` : ''}`
-        )
-      );
-    };
-
-    const timer = setTimeout(() => {
-      const detail = stderr.trim().slice(-4000);
-      finish(new Error(`Timed out waiting for Chromium DevTools endpoint${detail ? `\n${detail}` : ''}`));
-    }, timeoutMs);
-
-    process.stderr?.on('data', onData);
-    process.once('exit', onExit);
-  });
-}
-
 class Cdp {
   constructor(wsUrl) {
     this.nextId = 1;
     this.pending = new Map();
-    this.listeners = new Map();
     this.socket = new WebSocket(wsUrl);
     this.ready = new Promise((resolveReady, rejectReady) => {
       this.socket.addEventListener('open', resolveReady, { once: true });
@@ -96,16 +57,12 @@ class Cdp {
     });
     this.socket.addEventListener('message', (event) => {
       const message = JSON.parse(event.data);
-      if (message.id) {
-        const pending = this.pending.get(message.id);
-        if (!pending) return;
-        this.pending.delete(message.id);
-        if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
-        else pending.resolve(message.result || {});
-        return;
-      }
-      const queue = this.listeners.get(message.method);
-      if (queue?.length) queue.shift()(message.params || {});
+      if (!message.id) return;
+      const pending = this.pending.get(message.id);
+      if (!pending) return;
+      this.pending.delete(message.id);
+      if (message.error) pending.reject(new Error(`${pending.method}: ${message.error.message}`));
+      else pending.resolve(message.result || {});
     });
   }
 
@@ -115,19 +72,6 @@ class Cdp {
     return new Promise((resolveSend, rejectSend) => {
       this.pending.set(id, { resolve: resolveSend, reject: rejectSend, method });
       this.socket.send(JSON.stringify({ id, method, params }));
-    });
-  }
-
-  wait(method, timeoutMs = 10000) {
-    return new Promise((resolveWait, rejectWait) => {
-      const timer = setTimeout(() => rejectWait(new Error(`Timed out waiting for ${method}`)), timeoutMs);
-      const wrapped = (params) => {
-        clearTimeout(timer);
-        resolveWait(params);
-      };
-      const queue = this.listeners.get(method) || [];
-      queue.push(wrapped);
-      this.listeners.set(method, queue);
     });
   }
 
@@ -156,18 +100,8 @@ async function waitFor(cdp, expression, timeoutMs = 10000) {
 }
 
 async function key(cdp, keyValue, code, windowsVirtualKeyCode) {
-  await cdp.send('Input.dispatchKeyEvent', {
-    type: 'keyDown',
-    key: keyValue,
-    code,
-    windowsVirtualKeyCode
-  });
-  await cdp.send('Input.dispatchKeyEvent', {
-    type: 'keyUp',
-    key: keyValue,
-    code,
-    windowsVirtualKeyCode
-  });
+  await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: keyValue, code, windowsVirtualKeyCode });
+  await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: keyValue, code, windowsVirtualKeyCode });
 }
 
 async function stopProcess(process) {
@@ -188,21 +122,14 @@ const contrastExpression = `(() => {
       const parts = rgb[1].split(/[ ,/]+/).filter(Boolean).map(Number);
       return { r: parts[0], g: parts[1], b: parts[2], a: Number.isFinite(parts[3]) ? parts[3] : 1 };
     }
-
     const srgb = value.match(/color\\(srgb\\s+([^)]+)\\)/i);
     if (srgb) {
       const [channelsPart, alphaPart] = srgb[1].split('/').map((part) => part.trim());
       const channels = channelsPart.split(/\\s+/).filter(Boolean).map(Number);
       if (channels.length < 3 || channels.some((channel) => !Number.isFinite(channel))) return null;
       const alpha = alphaPart === undefined ? 1 : Number(alphaPart);
-      return {
-        r: channels[0] * 255,
-        g: channels[1] * 255,
-        b: channels[2] * 255,
-        a: Number.isFinite(alpha) ? alpha : 1
-      };
+      return { r: channels[0] * 255, g: channels[1] * 255, b: channels[2] * 255, a: Number.isFinite(alpha) ? alpha : 1 };
     }
-
     return null;
   };
   const luminance = ({ r, g, b }) => {
@@ -230,12 +157,7 @@ const contrastExpression = `(() => {
     if (!element) return { selector, error: 'missing' };
     const foreground = parse(getComputedStyle(element).color);
     const background = backgroundFor(element);
-    if (!foreground || !background) return {
-      selector,
-      error: 'unparsed-color',
-      foreground: getComputedStyle(element).color,
-      background: getComputedStyle(element).backgroundColor
-    };
+    if (!foreground || !background) return { selector, error: 'unparsed-color' };
     return { selector, ratio: ratio(foreground, background) };
   });
 })()`;
@@ -244,133 +166,87 @@ let server;
 let chrome;
 let profile;
 let cdp;
+let chromeStderr = '';
 
 try {
   profile = await mkdtemp(join(tmpdir(), 'visionarybrains-chrome-'));
-  server = spawn('python3', ['-m', 'http.server', String(port), '--bind', '127.0.0.1'], {
+  server = spawn('python3', ['-m', 'http.server', String(sitePort), '--bind', '127.0.0.1'], {
     cwd: root,
-    stdio: ['ignore', 'pipe', 'pipe']
+    stdio: ['ignore', 'ignore', 'pipe']
   });
+  await pollJson(siteUrl);
 
-  const serverReady = await (async () => {
-    const started = Date.now();
-    while (Date.now() - started < 10000) {
-      try {
-        const response = await fetch(url);
-        if (response.ok) return true;
-      } catch {}
-      await sleep(100);
-    }
-    return false;
-  })();
-  if (!serverReady) throw new Error('Local HTTP server did not become ready');
-
-  const chromePath = findChrome();
-  chrome = spawn(chromePath, [
+  chrome = spawn(findChrome(), [
     '--headless=new',
     '--no-sandbox',
     '--disable-gpu',
     '--disable-dev-shm-usage',
-    '--remote-debugging-port=0',
+    `--remote-debugging-port=${debugPort}`,
     `--user-data-dir=${profile}`,
     'about:blank'
   ], { stdio: ['ignore', 'ignore', 'pipe'] });
+  chrome.stderr?.on('data', (chunk) => {
+    chromeStderr = `${chromeStderr}${chunk.toString()}`.slice(-4000);
+  });
 
-  const browserWsUrl = await waitForDevToolsEndpoint(chrome);
-  const browserEndpoint = new URL(browserWsUrl);
-  const cdpHttpBase = `${browserEndpoint.protocol === 'wss:' ? 'https:' : 'http:'}//${browserEndpoint.host}`;
-  await pollJson(`${cdpHttpBase}/json/version`);
-  const page = await fetch(`${cdpHttpBase}/json/new?${encodeURIComponent(url)}`, { method: 'PUT' }).then((response) => {
+  let version;
+  try {
+    version = await pollJson(`${debugBase}/json/version`);
+  } catch (error) {
+    throw new Error(`Chromium DevTools readiness failed: ${error.message}${chromeStderr.trim() ? `\n${chromeStderr.trim()}` : ''}`);
+  }
+  if (!version.webSocketDebuggerUrl) throw new Error('Chromium DevTools version response omitted webSocketDebuggerUrl');
+
+  const page = await fetch(`${debugBase}/json/new?${encodeURIComponent(siteUrl)}`, { method: 'PUT' }).then((response) => {
     if (!response.ok) throw new Error(`Unable to create Chromium target: ${response.status}`);
     return response.json();
   });
-
   cdp = new Cdp(page.webSocketDebuggerUrl);
   await cdp.ready;
   await cdp.send('Page.enable');
   await cdp.send('Runtime.enable');
+  await cdp.send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: false });
+  await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
 
-  await cdp.send('Emulation.setDeviceMetricsOverride', {
-    width: 390,
-    height: 844,
-    deviceScaleFactor: 1,
-    mobile: false
-  });
-  await cdp.send('Emulation.setEmulatedMedia', {
-    features: [{ name: 'prefers-reduced-motion', value: 'reduce' }]
-  });
-
-  const loaded = await waitFor(
-    cdp,
-    `document.querySelector('#load-status')?.textContent.includes('loaded from integrated doctrine and teaching files')`
-  );
-  if (loaded) pass('browser:content-loading', 'integrated public-safe JSON rendered over local HTTP');
-  else fail('browser:content-loading', 'integrated content did not reach the loaded state');
+  const loaded = await waitFor(cdp, `document.querySelector('#load-status')?.textContent.includes('loaded from integrated doctrine and teaching files')`);
+  loaded ? pass('browser:content-loading', 'integrated public-safe JSON rendered over local HTTP') : fail('browser:content-loading', 'integrated content did not reach loaded state');
 
   const pathCount = await evaluate(cdp, `document.querySelectorAll('#visitor-paths .path-card').length`);
-  if (pathCount >= 2) pass('browser:visitor-paths', `${pathCount} integrated learning paths rendered`);
-  else fail('browser:visitor-paths', `expected at least 2 rendered paths, found ${pathCount}`);
+  pathCount >= 2 ? pass('browser:visitor-paths', `${pathCount} integrated learning paths rendered`) : fail('browser:visitor-paths', `expected at least 2 rendered paths, found ${pathCount}`);
 
-  const narrow = await evaluate(cdp, `(() => ({
-    toggle: getComputedStyle(document.querySelector('.nav-toggle')).display,
-    nav: getComputedStyle(document.querySelector('#primary-nav')).display,
-    columns: getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns
-  }))()`);
-  if (narrow.toggle !== 'none' && narrow.nav === 'none') pass('browser:responsive-narrow', JSON.stringify(narrow));
-  else fail('browser:responsive-narrow', JSON.stringify(narrow));
+  const narrow = await evaluate(cdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
+  narrow.toggle !== 'none' && narrow.nav === 'none' ? pass('browser:responsive-narrow', JSON.stringify(narrow)) : fail('browser:responsive-narrow', JSON.stringify(narrow));
 
   await evaluate(cdp, `document.querySelector('.nav-toggle').focus()`);
   await key(cdp, 'Enter', 'Enter', 13);
-  const keyboardOpen = await evaluate(cdp, `(() => ({
-    expanded: document.querySelector('.nav-toggle').getAttribute('aria-expanded'),
-    navDisplay: getComputedStyle(document.querySelector('#primary-nav')).display,
-    focused: document.activeElement === document.querySelector('.nav-toggle')
-  }))()`);
-  if (keyboardOpen.expanded === 'true' && keyboardOpen.navDisplay !== 'none' && keyboardOpen.focused) {
-    pass('browser:keyboard-navigation', JSON.stringify(keyboardOpen));
-  } else {
-    fail('browser:keyboard-navigation', JSON.stringify(keyboardOpen));
-  }
+  const keyboardOpen = await evaluate(cdp, `(() => ({expanded:document.querySelector('.nav-toggle').getAttribute('aria-expanded'),navDisplay:getComputedStyle(document.querySelector('#primary-nav')).display,focused:document.activeElement===document.querySelector('.nav-toggle')}))()`);
+  keyboardOpen.expanded === 'true' && keyboardOpen.navDisplay !== 'none' && keyboardOpen.focused
+    ? pass('browser:keyboard-navigation', JSON.stringify(keyboardOpen))
+    : fail('browser:keyboard-navigation', JSON.stringify(keyboardOpen));
 
-  const reducedMotion = await evaluate(cdp, `(() => ({
-    media: matchMedia('(prefers-reduced-motion: reduce)').matches,
-    scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior,
-    transitionDuration: getComputedStyle(document.querySelector('.nav-toggle')).transitionDuration
-  }))()`);
-  if (reducedMotion.media && reducedMotion.scrollBehavior === 'auto') pass('browser:reduced-motion', JSON.stringify(reducedMotion));
-  else fail('browser:reduced-motion', JSON.stringify(reducedMotion));
+  const reducedMotion = await evaluate(cdp, `(() => ({media:matchMedia('(prefers-reduced-motion: reduce)').matches,scrollBehavior:getComputedStyle(document.documentElement).scrollBehavior}))()`);
+  reducedMotion.media && reducedMotion.scrollBehavior === 'auto'
+    ? pass('browser:reduced-motion', JSON.stringify(reducedMotion))
+    : fail('browser:reduced-motion', JSON.stringify(reducedMotion));
 
   const contrasts = await evaluate(cdp, contrastExpression);
   const contrastFailures = contrasts.filter((entry) => entry.error || entry.ratio < 4.5);
-  if (contrastFailures.length === 0) {
-    pass('browser:contrast', contrasts.map((entry) => `${entry.selector}=${entry.ratio.toFixed(2)}`).join(', '));
-  } else {
-    fail('browser:contrast', JSON.stringify(contrastFailures));
-  }
+  contrastFailures.length === 0
+    ? pass('browser:contrast', contrasts.map((entry) => `${entry.selector}=${entry.ratio.toFixed(2)}`).join(', '))
+    : fail('browser:contrast', JSON.stringify(contrastFailures));
 
-  await cdp.send('Emulation.setDeviceMetricsOverride', {
-    width: 1280,
-    height: 900,
-    deviceScaleFactor: 1,
-    mobile: false
-  });
-  const wide = await evaluate(cdp, `(() => ({
-    toggle: getComputedStyle(document.querySelector('.nav-toggle')).display,
-    nav: getComputedStyle(document.querySelector('#primary-nav')).display,
-    columns: getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns
-  }))()`);
-  if (wide.toggle === 'none' && wide.nav !== 'none' && wide.columns.split(' ').length >= 3) {
-    pass('browser:responsive-wide', JSON.stringify(wide));
-  } else {
-    fail('browser:responsive-wide', JSON.stringify(wide));
-  }
+  await cdp.send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  const wide = await evaluate(cdp, `(() => ({toggle:getComputedStyle(document.querySelector('.nav-toggle')).display,nav:getComputedStyle(document.querySelector('#primary-nav')).display,columns:getComputedStyle(document.querySelector('#principle-list')).gridTemplateColumns}))()`);
+  wide.toggle === 'none' && wide.nav !== 'none' && wide.columns.split(' ').length >= 3
+    ? pass('browser:responsive-wide', JSON.stringify(wide))
+    : fail('browser:responsive-wide', JSON.stringify(wide));
 } catch (error) {
   fail('browser:harness', error.stack || error.message);
 } finally {
   try { cdp?.close(); } catch {}
   await stopProcess(chrome);
   await stopProcess(server);
-  if (profile) await rm(profile, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
+  if (profile) await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 150 });
 }
 
 console.log(`\nBROWSER_QUALIFICATION_EVIDENCE ${JSON.stringify(evidence)}`);
