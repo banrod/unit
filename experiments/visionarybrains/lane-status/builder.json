@@ -3,8 +3,8 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REPAIR",
-  "observedAt": "2026-08-08T00:34:48Z",
-  "baseCommit": "c9d4265c937eb57c06b817f46a93193ce33f9187",
+  "observedAt": "2026-08-08T01:37:24Z",
+  "baseCommit": "7425537e0ccbc2591f70a1da84163b04a1bbe1cd",
   "changedFiles": [
     "experiments/visionarybrains/tests/browser-qualify.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
@@ -19,32 +19,24 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "failedBrowserHead": "fbd13b625a6c57a9d0fe6ba790cae94ce29d1335",
-    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31227854003_BROWSER_STEP_ONLY",
-    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31227854003",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31227854025",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31227854001",
-    "browserEvidence": [
-      "PASS content-loading",
-      "PASS visitor-paths",
-      "PASS responsive-narrow",
-      "FAIL keyboard-navigation because CDP rawKeyDown did not invoke the button default activation behavior",
-      "PASS reduced-motion",
-      "PASS WCAG contrast",
-      "PASS responsive-wide",
-      "cleanup then raised ENOTEMPTY while Chromium still owned profile files"
-    ],
-    "repairHead": "e66f51171b4262b1737a8de5aaa20a4005234b93",
+    "failedBrowserHead": "680ea6644ff3d2b57b4fe0f0b5a3ff9e264c090e",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31230577680_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31230577680",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31230577685",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31230577740",
+    "exactBrowserFailure": "browser:harness: Timed out waiting for Chromium DevTools endpoint",
+    "repairHead": "b44c83c1654fb255460e9c14c161e972e8c1315b",
     "repair": [
-      "dispatch Enter with CDP keyDown/keyUp so Chromium performs native focused-button activation",
-      "wait for Chromium and local HTTP server exit before deleting the temporary browser profile",
-      "retain recursive profile cleanup with bounded retries",
-      "retain loopback-only browser traffic and zero runtime dependencies"
+      "restore the previously evidenced fixed loopback DevTools port strategy instead of relying on Chromium to emit a dynamic endpoint",
+      "poll the local-only http://127.0.0.1:9222/json/version endpoint and surface bounded Chromium stderr if readiness fails",
+      "retain CDP keyDown/keyUp native keyboard activation repair",
+      "retain bounded Chromium/server shutdown and recursive profile cleanup",
+      "retain zero runtime dependencies and loopback-only browser traffic"
     ],
-    "currentHeadGitHubChecks": "PENDING_AFTER_EVIDENCED_KEYBOARD_AND_CLEANUP_REPAIR"
+    "currentHeadGitHubChecks": "PENDING_AFTER_FIXED_LOOPBACK_CDP_STARTUP_REPAIR"
   },
   "unresolvedRisks": [
-    "The repaired browser qualification has not yet completed in GitHub Actions, so no browser PASS claim is made.",
-    "The Builder branch remains behind integration head c9d4265c937eb57c06b817f46a93193ce33f9187; Integrate should re-evaluate synchronization after current checks."
+    "The repaired current head has not yet completed GitHub validation, so no browser PASS claim is made.",
+    "The Builder branch is behind integration head 7425537e0ccbc2591f70a1da84163b04a1bbe1cd; Integrate should re-evaluate synchronization after current-head checks complete."
   ]
 }
