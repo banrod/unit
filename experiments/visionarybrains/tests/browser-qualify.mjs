@@ -234,7 +234,7 @@ try {
   narrow.toggle !== 'none' && narrow.nav === 'none' ? pass('browser:responsive-narrow', JSON.stringify(narrow)) : fail('browser:responsive-narrow', JSON.stringify(narrow));
 
   await evaluate(cdp, `document.querySelector('.nav-toggle').focus()`);
-  await key(cdp, 'Enter', 'Enter', 13);
+  await key(cdp, ' ', 'Space', 32);
   const keyboardOpen = await evaluate(cdp, `(() => ({expanded:document.querySelector('.nav-toggle').getAttribute('aria-expanded'),navDisplay:getComputedStyle(document.querySelector('#primary-nav')).display,focused:document.activeElement===document.querySelector('.nav-toggle')}))()`);
   keyboardOpen.expanded === 'true' && keyboardOpen.navDisplay !== 'none' && keyboardOpen.focused
     ? pass('browser:keyboard-navigation', JSON.stringify(keyboardOpen))
