@@ -30,6 +30,22 @@ function findChrome() {
   throw new Error('No supported Chromium/Chrome executable found');
 }
 
+async function pollOk(endpoint, timeoutMs = 10000) {
+  const started = Date.now();
+  let lastError;
+  while (Date.now() - started < timeoutMs) {
+    try {
+      const response = await fetch(endpoint);
+      if (response.ok) return true;
+      lastError = new Error(`${response.status} ${response.statusText}`);
+    } catch (error) {
+      lastError = error;
+    }
+    await sleep(100);
+  }
+  throw lastError || new Error(`Timed out waiting for ${endpoint}`);
+}
+
 async function pollJson(endpoint, timeoutMs = 10000) {
   const started = Date.now();
   let lastError;
@@ -174,7 +190,7 @@ try {
     cwd: root,
     stdio: ['ignore', 'ignore', 'pipe']
   });
-  await pollJson(siteUrl);
+  await pollOk(siteUrl);
 
   chrome = spawn(findChrome(), [
     '--headless=new',
