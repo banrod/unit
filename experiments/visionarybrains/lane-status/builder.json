@@ -3,13 +3,16 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REPAIR",
-  "observedAt": "2026-08-08T02:35:51Z",
-  "baseCommit": "391eeabc08c54224206397ec65ad68c27a92f47c",
+  "observedAt": "2026-08-08T03:35:23Z",
+  "baseCommit": "a7e0dcc4c9df7bec9bb4a18dd41ca057aa2e773f",
   "changedFiles": [
     "experiments/visionarybrains/tests/browser-qualify.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
   ],
   "contentSourcesConsumed": [
+    "VISIONARYBRAINS.md",
+    "work-queue.json@visionarybrains-work-queue/1.0.22",
+    "content/doctrine.json@visionarybrains-doctrine/1.8.0",
     "content/site-copy.json@visionarybrains-site-copy/1.1.0",
     "content/visitor-paths.json@visionarybrains-visitor-paths/1.1.0",
     "content/teaching-cards.json@visionarybrains-teaching-cards/1.1.0",
@@ -19,24 +22,23 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "failedBrowserHead": "7f3cd998af79e7186b76ec56896644dd39b79020",
-    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31233192229_BROWSER_STEP_ONLY",
-    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31233192229",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31233192246",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31233192262",
-    "exactBrowserFailure": "browser:harness: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON at browser-qualify.mjs:177",
-    "diagnosis": "The local static-site readiness probe called pollJson(siteUrl), so the expected HTML document was incorrectly parsed as JSON before Chromium startup. This was independent of the fixed CDP port.",
-    "repairHead": "05fcea3bd1948d787eac2f9a79a2ac74bb72854c",
+    "failedBrowserHead": "95d8f3df653f137aa19d84c95d3282b6b8611dfa",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31235376616_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31235376616",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31235376621",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31235376629",
+    "exactBrowserFailure": "browser:keyboard-navigation: {\"expanded\":\"false\",\"navDisplay\":\"none\",\"focused\":true}",
+    "diagnosis": "The browser harness reached the loaded site and focused the native navigation button, but synthetic Enter keyDown/keyUp did not trigger Chromium's native button activation in this CDP path. The site itself uses a semantic button with a click handler; the bounded qualification repair tests native keyboard activation with Space, which is also a standard button activation key, rather than adding application-side synthetic keyboard behavior.",
+    "repairImplementationCommit": "c8512867c3baf3465e7b939b2eaedd4754766ee0",
     "repair": [
-      "add a dedicated pollOk readiness helper for HTTP resources whose bodies are not JSON",
-      "use pollOk(siteUrl) for the local static-site readiness gate",
-      "retain pollJson only for the Chromium /json/version DevTools endpoint",
-      "retain fixed loopback CDP startup, bounded stderr diagnostics, keyDown/keyUp keyboard activation, bounded process cleanup, zero runtime dependencies, and loopback-only browser traffic"
+      "retain the semantic button and click-only application behavior",
+      "dispatch native Space keyDown/keyUp through Chromium CDP for the keyboard-operability assertion",
+      "retain loopback-only HTTP/CDP traffic, zero runtime dependencies, reduced-motion checks, responsive checks, integrated content checks, and WCAG contrast qualification"
     ],
-    "currentHeadGitHubChecks": "PENDING_AFTER_HTML_JSON_READINESS_SEPARATION_REPAIR"
+    "currentHeadGitHubChecks": "PENDING_AFTER_NATIVE_SPACE_KEYBOARD_QUALIFICATION_REPAIR"
   },
   "unresolvedRisks": [
     "The repaired current head has not yet completed GitHub validation, so no browser PASS claim is made.",
-    "The Builder branch is behind integration head 391eeabc08c54224206397ec65ad68c27a92f47c; Integrate should re-evaluate synchronization after current-head checks complete."
+    "The Builder branch is behind integration head a7e0dcc4c9df7bec9bb4a18dd41ca057aa2e773f; Integrate should re-evaluate synchronization after current-head checks complete."
   ]
 }
