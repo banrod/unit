@@ -3,8 +3,8 @@
   "lane": "VisionaryBrains — Builder",
   "taskId": "VB-BUILD-001",
   "status": "IN_REPAIR",
-  "observedAt": "2026-08-08T01:37:24Z",
-  "baseCommit": "7425537e0ccbc2591f70a1da84163b04a1bbe1cd",
+  "observedAt": "2026-08-08T02:35:51Z",
+  "baseCommit": "391eeabc08c54224206397ec65ad68c27a92f47c",
   "changedFiles": [
     "experiments/visionarybrains/tests/browser-qualify.mjs",
     "experiments/visionarybrains/lane-status/builder.json"
@@ -19,24 +19,24 @@
     "content/forbidden-claims.json"
   ],
   "validationEvidence": {
-    "failedBrowserHead": "680ea6644ff3d2b57b4fe0f0b5a3ff9e264c090e",
-    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31230577680_BROWSER_STEP_ONLY",
-    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31230577680",
-    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31230577685",
-    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31230577740",
-    "exactBrowserFailure": "browser:harness: Timed out waiting for Chromium DevTools endpoint",
-    "repairHead": "b44c83c1654fb255460e9c14c161e972e8c1315b",
+    "failedBrowserHead": "7f3cd998af79e7186b76ec56896644dd39b79020",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31233192229_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31233192229",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31233192246",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31233192262",
+    "exactBrowserFailure": "browser:harness: SyntaxError: Unexpected token '<', \"<!doctype \"... is not valid JSON at browser-qualify.mjs:177",
+    "diagnosis": "The local static-site readiness probe called pollJson(siteUrl), so the expected HTML document was incorrectly parsed as JSON before Chromium startup. This was independent of the fixed CDP port.",
+    "repairHead": "05fcea3bd1948d787eac2f9a79a2ac74bb72854c",
     "repair": [
-      "restore the previously evidenced fixed loopback DevTools port strategy instead of relying on Chromium to emit a dynamic endpoint",
-      "poll the local-only http://127.0.0.1:9222/json/version endpoint and surface bounded Chromium stderr if readiness fails",
-      "retain CDP keyDown/keyUp native keyboard activation repair",
-      "retain bounded Chromium/server shutdown and recursive profile cleanup",
-      "retain zero runtime dependencies and loopback-only browser traffic"
+      "add a dedicated pollOk readiness helper for HTTP resources whose bodies are not JSON",
+      "use pollOk(siteUrl) for the local static-site readiness gate",
+      "retain pollJson only for the Chromium /json/version DevTools endpoint",
+      "retain fixed loopback CDP startup, bounded stderr diagnostics, keyDown/keyUp keyboard activation, bounded process cleanup, zero runtime dependencies, and loopback-only browser traffic"
     ],
-    "currentHeadGitHubChecks": "PENDING_AFTER_FIXED_LOOPBACK_CDP_STARTUP_REPAIR"
+    "currentHeadGitHubChecks": "PENDING_AFTER_HTML_JSON_READINESS_SEPARATION_REPAIR"
   },
   "unresolvedRisks": [
     "The repaired current head has not yet completed GitHub validation, so no browser PASS claim is made.",
-    "The Builder branch is behind integration head 7425537e0ccbc2591f70a1da84163b04a1bbe1cd; Integrate should re-evaluate synchronization after current-head checks complete."
+    "The Builder branch is behind integration head 391eeabc08c54224206397ec65ad68c27a92f47c; Integrate should re-evaluate synchronization after current-head checks complete."
   ]
 }
