@@ -157,7 +157,7 @@ async function waitFor(cdp, expression, timeoutMs = 10000) {
 
 async function key(cdp, keyValue, code, windowsVirtualKeyCode) {
   await cdp.send('Input.dispatchKeyEvent', {
-    type: 'rawKeyDown',
+    type: 'keyDown',
     key: keyValue,
     code,
     windowsVirtualKeyCode
@@ -168,6 +168,17 @@ async function key(cdp, keyValue, code, windowsVirtualKeyCode) {
     code,
     windowsVirtualKeyCode
   });
+}
+
+async function stopProcess(process) {
+  if (!process || process.exitCode !== null) return;
+  const exited = new Promise((resolveExit) => process.once('exit', resolveExit));
+  process.kill('SIGTERM');
+  await Promise.race([exited, sleep(2000)]);
+  if (process.exitCode === null) {
+    process.kill('SIGKILL');
+    await Promise.race([exited, sleep(1000)]);
+  }
 }
 
 const contrastExpression = `(() => {
@@ -357,9 +368,9 @@ try {
   fail('browser:harness', error.stack || error.message);
 } finally {
   try { cdp?.close(); } catch {}
-  chrome?.kill('SIGTERM');
-  server?.kill('SIGTERM');
-  if (profile) await rm(profile, { recursive: true, force: true });
+  await stopProcess(chrome);
+  await stopProcess(server);
+  if (profile) await rm(profile, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
 }
 
 console.log(`\nBROWSER_QUALIFICATION_EVIDENCE ${JSON.stringify(evidence)}`);
