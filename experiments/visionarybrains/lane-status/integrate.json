@@ -1,40 +1,39 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.24.0",
+  "schemaVersion": "visionarybrains-lane-status/1.25.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-07T23:47:55Z",
-  "status": "VB_BUILD_001_DYNAMIC_CDP_REPAIR_STILL_FAILING",
+  "observedAt": "2026-08-08T00:46:23Z",
+  "status": "VB_BUILD_001_CHROMIUM_DEVTOOLS_STARTUP_TIMEOUT",
   "milestone": "M4_PUBLIC_SHELL_PENDING",
   "mergedPullRequests": [],
-  "integrationCommit": "7597529dace66a81c8fbda14958d8366f78080b1",
+  "integrationCommit": "c9d4265c937eb57c06b817f46a93193ce33f9187",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "fbd13b625a6c57a9d0fe6ba790cae94ce29d1335",
+      "headSha": "680ea6644ff3d2b57b4fe0f0b5a3ff9e264c090e",
       "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY_9_FILES",
       "laneStatusPresent": "PASS",
       "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
       "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "FAIL_RUN_31227854003_HEADLESS_CHROMIUM_QUALIFICATION",
-        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31227854003",
-        "test": "PASS_RUN_31227854025",
-        "workstationValidation": "PASS_RUN_31227854001"
+        "visionaryBrainsValidation": "FAIL_RUN_31230577680_HEADLESS_CHROMIUM_QUALIFICATION",
+        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31230577680",
+        "test": "PASS_RUN_31230577685",
+        "workstationValidation": "PASS_RUN_31230577740"
       },
-      "browserReview": "FAIL_HEADLESS_CHROMIUM_QUALIFICATION_AFTER_DYNAMIC_PORT_REPAIR",
-      "browserFailureEvidence": "GitHub job 93025630328 fails only the headless Chromium qualification on PR head fbd13b625a6c57a9d0fe6ba790cae94ce29d1335. Check annotations expose only the workflow exit code, not the browser:harness stack or bounded Chromium stderr, so the precise failing stage remains unavailable to Integrate.",
-      "mergeability": "HELD_GITHUB_REPORTED_NOT_MERGEABLE_AFTER_INTEGRATION_CONTROL_COMMIT",
-      "branchRelation": "DIVERGED_AHEAD_30_BEHIND_9_MERGE_BASE_3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
-      "repairRequest": "Make the exact browser:harness failure and bounded Chromium stderr deterministically visible in GitHub check output or job summary before another broad browser-startup rewrite. Repair the evidenced failing stage only, keep browser traffic loopback-only, add no remote/runtime dependency, remain inside Builder-owned paths, and provide a green VisionaryBrains validation run. After the browser gate is green, synchronize the Builder branch with experiment/visionarybrains and re-run checks before integration.",
-      "integrationDisposition": "HELD_FOR_DIAGNOSABLE_GREEN_BROWSER_QUALIFICATION_AND_SAFE_SYNCHRONIZATION"
+      "browserReview": "FAIL_CHROMIUM_DEVTOOLS_ENDPOINT_STARTUP_TIMEOUT",
+      "browserFailureEvidence": "GitHub check annotation for job 93033470372 now deterministically reports browser:harness: Error: Timed out waiting for Chromium DevTools endpoint at tests/browser-qualify.mjs:79. This isolates the current failure to browser startup/readiness before the page-level qualification stages execute.",
+      "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE_AT_OBSERVATION",
+      "branchRelation": "DIVERGED_AHEAD_32_BEHIND_10_MERGE_BASE_3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
+      "repairRequest": "Repair only the evidenced Chromium DevTools startup/readiness timeout. Preserve loopback-only browser traffic, zero runtime dependencies, bounded diagnostics, Builder-owned paths, and the existing page-level accessibility/content assertions. Provide a green VisionaryBrains validation run on the repaired head. After the browser gate is green, safely synchronize the Builder branch with experiment/visionarybrains and re-run checks before integration.",
+      "integrationDisposition": "HELD_FOR_GREEN_BROWSER_STARTUP_QUALIFICATION_AND_SAFE_SYNCHRONIZATION"
     }
   },
   "unresolvedDefects": [
-    "PR 31 head fbd13b625a6c57a9d0fe6ba790cae94ce29d1335 still fails VisionaryBrains validation run 31227854003 in the headless Chromium qualification after the dynamic-port/CDP-endpoint repair.",
-    "GitHub's exposed annotations do not contain the harness stack or Chromium stderr, so another behavioral rewrite would be insufficiently evidence-driven.",
-    "The Builder branch is now diverged from experiment/visionarybrains by 30 commits ahead and 9 commits behind; GitHub currently reports the PR not mergeable after the integration control update."
+    "PR 31 head 680ea6644ff3d2b57b4fe0f0b5a3ff9e264c090e fails VisionaryBrains validation run 31230577680 in the headless Chromium qualification because the DevTools endpoint does not become ready within the harness timeout.",
+    "The Builder branch is diverged from experiment/visionarybrains by 32 commits ahead and 10 commits behind."
   ],
   "nextActions": [
-    "Builder should surface the exact browser:harness failure and bounded Chromium stderr in deterministic GitHub-visible evidence, then repair only the evidenced failing stage.",
+    "Builder should repair the isolated Chromium DevTools startup/readiness timeout without broadening scope or introducing remote/runtime dependencies.",
     "Integrate should require a green VisionaryBrains validation run on the repaired head before considering merge.",
     "After browser qualification is green, Builder should safely synchronize with the latest experiment/visionarybrains head; Integrate should then re-check changed-path ownership, public-safety claims, structural compatibility, semantic structure, keyboard behavior, reduced motion, contrast evidence, and mergeability.",
     "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
