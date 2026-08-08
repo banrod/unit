@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.0.7",
+  "schemaVersion": "visionarybrains-lane-status/1.0.8",
   "lane": "VisionaryBrains — Excavator",
-  "observedAt": "2026-08-07T02:59:15Z",
-  "verdict": "NO_NEW_SOURCE_REQUIRED_PUBLIC_TEACHING_CORPUS_COMPLETE_FOR_CURRENT_MVP",
+  "observedAt": "2026-08-08T06:02:40Z",
+  "verdict": "NO_NEW_SOURCE_REQUIRED_MVP_REVIEWABLE_CORPUS_REMAINS_SUFFICIENT",
   "taskId": null,
   "sourcesClassified": {
     "PUBLIC_CANON": 4,
@@ -15,8 +15,10 @@
     "sourceCorpus": "SUFFICIENT_FOR_CURRENT_MVP",
     "doctrineCoverage": "VB-DOC-001_THROUGH_VB-DOC-009_COMPLETED",
     "visitorCurriculumCoverage": "VB-TEACH-001_AND_VB-TEACH-002_COMPLETED",
-    "currentGap": "BUILDER_REPAIR_AND_BROWSER_QUALIFICATION_ONLY",
-    "openVisionaryBrainsPRs": [31]
+    "builderCoverage": "VB-BUILD-001_COMPLETED_AND_INTEGRATED",
+    "milestone": "M5_MVP_REVIEWABLE",
+    "currentGap": "NONE_REQUIRING_EXCAVATION",
+    "openVisionaryBrainsPRs": []
   },
   "outputs": [
     "experiments/visionarybrains/lane-status/excavator.json"
@@ -29,5 +31,5 @@
   ],
   "readyTasks": [],
   "blockers": [],
-  "nextLaneRequest": "Builder should complete VB-BUILD-001 repair using the integrated teaching content and provide deterministic plus browser-level qualification. Integrate should review that repair. Excavator should remain idle unless a specific public teaching gap is identified that cannot be resolved from the existing classified source corpus."
+  "nextLaneRequest": "No downstream source task is required. Excavator should remain idle unless review identifies a specific public teaching gap that cannot be resolved from the existing classified source corpus."
 }
