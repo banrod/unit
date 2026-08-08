@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "visionarybrains-lane-status/1.0",
+  "lane": "VisionaryBrains — Builder",
+  "taskId": "VB-BUILD-001",
+  "status": "IN_REPAIR",
+  "observedAt": "2026-08-08T04:37:44Z",
+  "baseCommit": "f91749f8b5304b8dec1922e1aae8e8048325aa0d",
+  "changedFiles": [
+    "experiments/visionarybrains/tests/browser-qualify.mjs",
+    "experiments/visionarybrains/lane-status/builder.json"
+  ],
+  "contentSourcesConsumed": [
+    "VISIONARYBRAINS.md",
+    "work-queue.json@visionarybrains-work-queue/1.0.22",
+    "content/doctrine.json@visionarybrains-doctrine/1.8.0",
+    "content/lessons.json@visionarybrains-lessons/1.1.0",
+    "content/site-copy.json@visionarybrains-site-copy/1.1.0",
+    "content/visitor-paths.json@visionarybrains-visitor-paths/1.1.0",
+    "content/teaching-cards.json@visionarybrains-teaching-cards/1.1.0",
+    "content/principles.json@visionarybrains-principles/1.8.0",
+    "content/theology.json@visionarybrains-theology/1.8.0",
+    "content/glossary.json@visionarybrains-glossary/1.8.0",
+    "content/forbidden-claims.json"
+  ],
+  "validationEvidence": {
+    "failedBrowserHead": "a2c2731eae35f69c0e5c932676eedd4a64e7a5ae",
+    "visionaryBrainsValidation": "FAIL_GITHUB_ACTIONS_RUN_31237612589_BROWSER_STEP_ONLY",
+    "publicShellValidationStep": "PASS_GITHUB_ACTIONS_RUN_31237612589",
+    "repositoryTest": "PASS_GITHUB_ACTIONS_RUN_31237612549",
+    "workstationValidation": "PASS_GITHUB_ACTIONS_RUN_31237612544",
+    "exactBrowserFailure": "browser:harness: Error: Chromium DevTools readiness failed: fetch failed at browser-qualify.mjs:212",
+    "diagnosis": "The latest failure occurred before page qualification: Chromium's TCP DevTools endpoint on loopback did not become fetchable on the GitHub runner. The browser gate therefore did not exercise the Space-key repair in this run.",
+    "repairImplementationCommit": "116eb69d23b55817d2dd23820e8f83831529a6ed",
+    "repair": [
+      "replace TCP DevTools startup and readiness polling with Chromium --remote-debugging-pipe local process IPC",
+      "use Target.createTarget and flattened Target.attachToTarget over the pipe for page-scoped CDP commands",
+      "bound every DevTools command with a deterministic timeout and preserve bounded Chromium stderr on readiness failure",
+      "retain loopback-only site HTTP, zero runtime dependencies, semantic-button keyboard qualification, reduced-motion checks, responsive checks, integrated content checks, and WCAG contrast qualification"
+    ],
+    "currentHeadGitHubChecks": "PENDING_AFTER_DEVTOOLS_PIPE_TRANSPORT_REPAIR",
+    "browserPassClaimed": false
+  },
+  "unresolvedRisks": [
+    "The DevTools-pipe repair has not yet completed GitHub validation, so no browser PASS claim is made.",
+    "The Builder branch is behind integration head f91749f8b5304b8dec1922e1aae8e8048325aa0d; Integrate should re-evaluate synchronization after current-head checks complete."
+  ]
+}

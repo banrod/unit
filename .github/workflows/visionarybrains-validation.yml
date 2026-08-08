@@ -5,7 +5,14 @@ on:
     branches:
       - experiment/visionarybrains
     paths:
-      - 'experiments/visionarybrains/**'
+      - 'experiments/visionarybrains/index.html'
+      - 'experiments/visionarybrains/app.js'
+      - 'experiments/visionarybrains/styles.css'
+      - 'experiments/visionarybrains/package.json'
+      - 'experiments/visionarybrains/README.md'
+      - 'experiments/visionarybrains/assets/**'
+      - 'experiments/visionarybrains/tests/**'
+      - 'experiments/visionarybrains/lane-status/builder.json'
       - '.github/workflows/visionarybrains-validation.yml'
   workflow_dispatch:
 
@@ -18,6 +25,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Validate public teaching site
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate VisionaryBrains public shell
         working-directory: experiments/visionarybrains
-        run: node tests/validate.mjs
+        run: npm run validate
+      - name: Qualify VisionaryBrains in headless Chromium
+        working-directory: experiments/visionarybrains
+        run: npm run validate:browser
