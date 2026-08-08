@@ -1,42 +1,54 @@
 {
-  "schemaVersion": "visionarybrains-lane-status/1.28.0",
+  "schemaVersion": "visionarybrains-lane-status/1.29.0",
   "lane": "VisionaryBrains — Integrate",
-  "observedAt": "2026-08-08T03:48:30Z",
-  "status": "VB_BUILD_001_CDP_READINESS_GATE",
-  "milestone": "M4_PUBLIC_SHELL_PENDING",
-  "mergedPullRequests": [],
-  "integrationCommit": "a7e0dcc4c9df7bec9bb4a18dd41ca057aa2e773f",
+  "observedAt": "2026-08-08T04:49:30Z",
+  "status": "MVP_REVIEWABLE",
+  "milestone": "M5_MVP_REVIEWABLE",
+  "mergedPullRequests": [
+    {
+      "number": 31,
+      "title": "[VisionaryBrains Builder] Build public teaching shell",
+      "headSha": "18a0ef9069b22d7e89489feb22b14775d26f0e73",
+      "mergeCommit": "0b03388391f003f2a11a1c1060c714a632dce100"
+    }
+  ],
+  "integrationCommit": "c699910e5a33272ca4cba2295b618607678af6f7",
   "validation": {
     "pullRequest31": {
       "targetBranch": "PASS_EXPERIMENT_VISIONARYBRAINS",
-      "headSha": "a2c2731eae35f69c0e5c932676eedd4a64e7a5ae",
       "pathOwnership": "PASS_BUILDER_OWNED_PATHS_ONLY_9_FILES",
+      "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE_AND_MERGED_CLEANLY",
       "laneStatusPresent": "PASS",
-      "diffSafetyReview": "PASS_NO_REMOTE_RUNTIME_ASSETS_TRACKERS_UNSAFE_HTML_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
-      "contentCompatibility": "PASS_PUBLIC_SAFE_INTEGRATED_DOCTRINE_AND_TEACHER_INPUTS_CONSUMED",
+      "diffSafetyReview": "PASS_NO_CREDENTIALS_PRIVATE_URLS_TRACKERS_REMOTE_RUNTIME_ASSETS_UNSAFE_HTML_INJECTION_PRIMITIVES_OR_OPERATIONAL_MATERIAL_OBSERVED",
+      "claimProvenance": "PASS_RENDERED_DOCTRINE_REFERENCES_PUBLIC_CANON_OR_PUBLIC_DERIVED_SOURCE_IDS; BUILT_IN_FALLBACKS MATCH_INTEGRATED_PUBLIC_SAFE PRINCIPLES_AND_BOUNDARIES",
+      "contentCompatibility": "PASS_SITE_CONSUMES_INTEGRATED_SITE_COPY_VISITOR_PATHS_TEACHING_CARDS_PRINCIPLES_THEOLOGY_GLOSSARY_AND_FORBIDDEN_CLAIMS",
+      "accessibility": "PASS_SEMANTIC_MAIN_NAV_BUTTON_SKIP_LINK_FOCUS_VISIBLE_REDUCED_MOTION_STATUS_REGION_RESPONSIVE_BROWSER_CHECKS_AND_WCAG_CONTRAST_QUALIFICATION",
       "repositoryChecks": {
-        "visionaryBrainsValidation": "FAIL_RUN_31237612589_HEADLESS_CHROMIUM_CDP_READINESS",
-        "deterministicPublicShellStep": "PASS_WITHIN_RUN_31237612589",
-        "test": "PASS_RUN_31237612549",
-        "workstationValidation": "PASS_RUN_31237612544"
+        "visionaryBrainsValidation": "PASS_RUN_31239975024",
+        "test": "PASS_RUN_31239975061",
+        "workstationValidation": "PASS_RUN_31239975023"
       },
-      "browserReview": "FAIL_BEFORE_PAGE_QUALIFICATION_CHROMIUM_DEVTOOLS_READINESS_FETCH_FAILED",
-      "browserFailureEvidence": "GitHub check annotation for job 93052939507 reports browser:harness: Error: Chromium DevTools readiness failed: fetch failed at tests/browser-qualify.mjs:212. The failure occurs while polling the fixed loopback DevTools /json/version endpoint, before content, keyboard, reduced-motion, contrast, or responsive browser assertions can run on this head.",
-      "mergeability": "PASS_GITHUB_REPORTED_MERGEABLE_AT_OBSERVATION",
-      "branchRelation": "DIVERGED_AHEAD_38_BEHIND_13_MERGE_BASE_3bdf9d1001fd8aedb2e2dcef17c47800cab57aa6",
-      "repairRequest": "Repair only Chromium DevTools readiness in tests/browser-qualify.mjs. Preserve loopback-only browser traffic and zero runtime dependencies. Prefer deriving the actual local DevTools endpoint from Chromium's DevToolsActivePort profile file or another deterministic local startup signal instead of assuming fixed port 9222 is reachable; explicitly detect early Chromium exit and include bounded stderr/startup diagnostics when readiness fails. Do not alter production site behavior or weaken content, keyboard, reduced-motion, contrast, or responsive assertions. Provide a green VisionaryBrains validation run on the repaired head, then safely synchronize with the latest experiment/visionarybrains head and rerun checks before integration.",
-      "integrationDisposition": "HELD_FOR_GREEN_BROWSER_CDP_READINESS_AND_SAFE_SYNCHRONIZATION"
+      "browserQualification": "PASS_WITHIN_VISIONARYBRAINS_VALIDATION_RUN_31239975024_USING_LOCAL_CHROMIUM_DEVTOOLS_PIPE",
+      "mergeDisposition": "MERGED"
+    },
+    "mvpReviewability": {
+      "publicSafeSourceIndex": "PASS",
+      "doctrinePrinciplesTheologyGlossary": "PASS",
+      "visitorPaths": "PASS",
+      "teachingCards": "PASS",
+      "heroNavigationResponsiveDesign": "PASS",
+      "accessibilitySafeguards": "PASS",
+      "deterministicValidation": "PASS",
+      "highSeverityIssues": "NONE_OBSERVED"
     }
   },
-  "unresolvedDefects": [
-    "PR 31 head a2c2731eae35f69c0e5c932676eedd4a64e7a5ae fails VisionaryBrains validation run 31237612589 because Chromium DevTools readiness polling to the fixed loopback endpoint returns fetch failed before browser assertions begin.",
-    "The Builder branch is diverged from experiment/visionarybrains by 38 commits ahead and 13 commits behind."
-  ],
+  "unresolvedDefects": [],
   "nextActions": [
-    "Builder should repair the isolated Chromium DevTools readiness path using a deterministic local endpoint discovery/startup signal and bounded failure diagnostics.",
-    "Integrate should require a green VisionaryBrains validation run on the repaired head before considering merge.",
-    "After browser qualification is green, Builder should safely synchronize with the latest experiment/visionarybrains head; Integrate should then re-check changed-path ownership, public-safety claims, structural compatibility, semantic structure, keyboard behavior, reduced motion, contrast evidence, and mergeability.",
-    "Do not mark MVP reviewable until the Builder shell is integrated and no unresolved high-severity issue remains."
+    "User or designated reviewer may now perform the first integrated MVP review on experiment/visionarybrains.",
+    "Keep production deployment, domain attachment, external publication, and spending blocked pending explicit user authorization.",
+    "Future worker increments should begin only from newly READY queue tasks and preserve public-safe provenance and lane ownership boundaries."
   ],
-  "controlCommits": []
+  "controlCommits": [
+    "c699910e5a33272ca4cba2295b618607678af6f7"
+  ]
 }
