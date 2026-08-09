@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "validate": "node tests/validate.mjs",
+    "validate": "node tests/validate.mjs && node tests/validate-public-boundary.mjs",
     "validate:browser": "node tests/browser-qualify.mjs",
     "serve": "python3 -m http.server 4173"
   }

@@ -13,21 +13,35 @@ VisionaryBrains teaches public visitors about the principles, mythic theology, a
 - Public teaching must distinguish principle, metaphor, architecture, and practice.
 - Only `PUBLIC_CANON` and `PUBLIC_DERIVED` source classifications may reach visitor-facing content.
 
-## Safety boundary
+## Public projection boundary
 
-The experiment must not publish credentials, private repository links, internal identifiers, operational digests, personal data, private workflow transcripts, security-sensitive implementation details, or unsupported claims.
+VisionaryBrains is distributed as a projection of a deeper source workspace. The public tree retains only material deliberately qualified for public interpretation.
 
-## Learning pipeline
+The public tree may contain:
+- integrated visitor content;
+- a public provenance index;
+- site implementation and assets;
+- public-boundary validation.
 
-1. Excavator classifies and abstracts sources.
-2. Doctrine converts safe evidence into principles, theology, nature, glossary, and forbidden claims.
-3. Teacher converts doctrine into visitor paths and lessons.
-4. Builder implements the public teaching site.
-5. Integrate verifies provenance, safety, accessibility, and structural coherence.
+The public tree must not contain:
+- raw excavation notes or `INTERNAL_ONLY` source packets;
+- exact private artifact names, locations, or private lineage;
+- worker queues, lane-status records, receipts, schedules, routing mechanics, or operational identifiers;
+- credentials, private repository links, personal data, workflow transcripts, or security-sensitive implementation details.
+
+Public projection may translate, aggregate, or redact. It may not invent omitted evidence, provenance, certainty, authority, or completeness.
+
+## Projection pipeline
+
+1. Source qualification separates public canon, safe derivation, internal-only material, and rejected material.
+2. Doctrine compiles only public-qualified evidence into principles, theology, nature, glossary, and forbidden claims.
+3. Pedagogy converts doctrine into visitor paths, lessons, and teaching cards.
+4. Build renders only the public teaching corpus.
+5. Qualification verifies provenance, safety, accessibility, structural coherence, and public-boundary hygiene.
 
 ## Initial teaching frame
 
-The first public layer should explain:
+The public layer explains:
 
 - IAM as a system for preserving coherent identity across changing contexts.
 - The separation of intention and policy from execution substrate.
