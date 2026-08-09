@@ -10,9 +10,11 @@ on:
       - 'experiments/visionarybrains/styles.css'
       - 'experiments/visionarybrains/package.json'
       - 'experiments/visionarybrains/README.md'
+      - 'experiments/visionarybrains/VISIONARYBRAINS.md'
       - 'experiments/visionarybrains/assets/**'
+      - 'experiments/visionarybrains/content/**'
+      - 'experiments/visionarybrains/provenance/**'
       - 'experiments/visionarybrains/tests/**'
-      - 'experiments/visionarybrains/lane-status/builder.json'
       - '.github/workflows/visionarybrains-validation.yml'
   workflow_dispatch:
 

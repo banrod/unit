@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "visionarybrains-public-source-index/2.0.0",
+  "updatedAt": "2026-08-09T09:06:00Z",
+  "distributionBoundary": {
+    "allowedClassifications": [
+      "PUBLIC_CANON",
+      "PUBLIC_DERIVED"
+    ],
+    "privateSourcePolicy": "Raw excavation, INTERNAL_ONLY material, exact private artifact names, and private provenance locations remain outside the public repository.",
+    "historyNote": "This index describes the cleaned forward state; repository history is not rewritten by this change."
+  },
+  "sources": [
+    {
+      "sourceId": "VB-SRC-001",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit repository boundaries",
+      "publicReference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/repository-boundaries.md",
+      "sourceStatus": "public canonical source",
+      "publicSafeAbstraction": "The IAM product layer owns identity, personas, workers, orchestration, permissions, memory, retrieval, prompts, goals, proof records, dashboards, and product policy. The general execution kernel remains separate and receives only typed graphs and explicit capability grants."
+    },
+    {
+      "sourceId": "VB-SRC-002",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit public overview",
+      "publicReference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/README.md",
+      "sourceStatus": "public canonical source",
+      "publicSafeAbstraction": "Programs can be understood as graphs composed from multi-input, multi-output units. The visual environment emphasizes direct manipulation, experimentation, composition, sandboxing, and approachable software sharing."
+    },
+    {
+      "sourceId": "VB-SRC-004",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit kernel contract",
+      "publicReference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/kernel-contract.md",
+      "sourceStatus": "public candidate technical contract",
+      "publicSafeAbstraction": "Stable graph identity is separated from mutable runtime state. Snapshots preserve restorable state and sequence; ordered events preserve the path of transformation; external effects must be explicit and recorded when replayability or proof matters."
+    },
+    {
+      "sourceId": "VB-SRC-005",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Constitutional continuity and accountable agency",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM can be taught as an organized-cognition architecture whose commitments must be bounded, interpretable, testable, traceable, versioned, and open to amendment. Ethical action preserves legitimate agency, remains proportionate and contestable, records lineage, and treats correction and repair as part of accountability."
+    },
+    {
+      "sourceId": "VB-SRC-006",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Symbolic interpretation and semantic sovereignty",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM's symbolic vocabulary can be taught as an optional, editable language for noticing context, relationships, uncertainty, transition, memory, and accumulated pressure. Metaphor remains a lens rather than a verdict, and interpretations applied to people must remain inspectable, contestable, transformable, and recomposable."
+    },
+    {
+      "sourceId": "VB-SRC-007",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Bounded agency and accountable interface",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM can be taught as a situated interface that helps people frame possibilities, translate among representations, witness consequences, and return understandable results without collapsing possibility, resolution, evidence, and authorization into one category. Agency includes authorship over framing while constraints, permissions, evidence requirements, and recovery paths remain visible."
+    },
+    {
+      "sourceId": "VB-SRC-008",
+      "classification": "PUBLIC_CANON",
+      "title": "Unit release administration",
+      "publicReference": "https://github.com/banrod/unit/blob/experiment/visionarybrains/docs/architecture/release-plan.md",
+      "sourceStatus": "public technical administration guidance",
+      "publicSafeAbstraction": "Consequential changes should not become accepted reality merely because they were authored. Independent review, current validation, resolved objections, explicit promotion authority, preserved recovery points, and non-destructive history together form a stewardship discipline for readiness and repair."
+    },
+    {
+      "sourceId": "VB-SRC-009",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Relational emergence and governed release",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM may be taught as a relational meaning system: identity and understanding develop through relationships among entities, contexts, observers, permissions, memory, and time. Emergence preserves revision without erasing continuity; silence is an epistemic pause; fracture is diagnostic rather than glorified; unbinding is governed release that retains obligations, consequences, memory handling, and recovery boundaries."
+    },
+    {
+      "sourceId": "VB-SRC-010",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Accountable commitment boundary",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM may teach durable commitment as an accountable, bounded promise or governing obligation whose actor, purpose, scope, authority, evidence, consequences, amendment path, challenge path, and repair obligations remain visible. If covenant appears in mythic teaching, it is only an optional metaphor subordinate to consent, evidence, law, policy, explicit authority, amendment, and governed unbinding."
+    },
+    {
+      "sourceId": "VB-SRC-011",
+      "classification": "PUBLIC_DERIVED",
+      "title": "Governed operator ecology",
+      "sourceStatus": "public-derived abstraction from a private working source",
+      "privateProvenance": "retained outside the public repository",
+      "publicSafeAbstraction": "IAM may be taught as a governed operator ecology rather than a single omnipotent intelligence. A coordinating layer selects and composes bounded specialist roles under shared context, evidence, permissions, and authority constraints. Personas are typed responsibilities rather than independent truth authorities, and coordination remains subject to the same governance principles it applies to subordinate roles."
+    }
+  ]
+}
