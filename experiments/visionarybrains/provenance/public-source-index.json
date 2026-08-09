@@ -6,7 +6,7 @@
       "PUBLIC_CANON",
       "PUBLIC_DERIVED"
     ],
-    "privateSourcePolicy": "Raw excavation, INTERNAL_ONLY material, exact private artifact names, and private provenance locations remain outside the public repository.",
+    "privateSourcePolicy": "Raw excavation, non-public material, exact private artifact names, and private provenance locations remain outside the public repository.",
     "historyNote": "This index describes the cleaned forward state; repository history is not rewritten by this change."
   },
   "sources": [
