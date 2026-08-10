@@ -6,7 +6,15 @@ The consolidated `main` merge commit is:
 
 `1e6aaaf6e1660af11eb1ffbaab6f1f24a9caf35a`
 
-After release ownership and version semantics are confirmed, create the annotated tag:
+Canonical tag target:
+
+`unit-kernel-v0.1.0`
+
+Current repository state: **TAG_PENDING_ADMINISTRATION**. The canonical tag is not yet
+present in the repository. Do not substitute a branch name, later hardening commit, or
+merge commit for this recovery boundary.
+
+Create the annotated tag as a repository-administration operation:
 
 ```sh
 git tag -a unit-kernel-v0.1.0 1e6aaaf6e1660af11eb1ffbaab6f1f24a9caf35a \
@@ -14,8 +22,20 @@ git tag -a unit-kernel-v0.1.0 1e6aaaf6e1660af11eb1ffbaab6f1f24a9caf35a \
 git push origin unit-kernel-v0.1.0
 ```
 
-The tag deliberately targets the consolidation baseline rather than the subsequent
-hardening branch, preserving an exact recovery boundary.
+After creation, verify all of the following before marking the release boundary complete:
+
+```sh
+git rev-parse unit-kernel-v0.1.0^{}
+git show --no-patch --format='%H %D' unit-kernel-v0.1.0^{}
+git ls-remote --tags origin unit-kernel-v0.1.0
+```
+
+The resolved commit must be exactly:
+
+`1e6aaaf6e1660af11eb1ffbaab6f1f24a9caf35a`
+
+The tag deliberately targets the consolidation baseline rather than subsequent hardening
+and interoperability commits, preserving an exact recovery boundary.
 
 ## Branch protection
 

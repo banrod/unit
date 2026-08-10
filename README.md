@@ -4,6 +4,10 @@ Next Generation Visual Programming System
 
 ![Unit merge sort example](/public/gif/0.gif)
 
+## Fork stewardship
+
+This repository is the `banrod/unit` maintained fork used for post-consolidation kernel work. The original Unit project and authorship remain with [samuelmtimbo/unit](https://github.com/samuelmtimbo/unit); upstream project links, community references, copyright, and license attribution below are intentionally preserved.
+
 ## Unit
 
 Unit is a General Purpose Visual Programming Language and Environment built with a primary focus on Developer Experience.
@@ -28,10 +32,10 @@ Check out a collection of public open source units at [unit.tools](https://unit.
 
 Install [npm](https://nodejs.org/en/download/) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if you haven't already.
 
-Clone this repository:
+Clone this maintained fork:
 
 ```
-git clone git@github.com:samuelmtimbo/unit.git
+git clone git@github.com:banrod/unit.git
 ```
 
 Get into the unit folder:
