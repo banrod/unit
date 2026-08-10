@@ -16,41 +16,45 @@ Before safe remediation:
 - low: 3
 
 Safe, non-forced remediation updated direct dependencies within their compatible release
-lines and refreshed transitive lockfile resolutions. The resulting audited state is:
+lines and refreshed transitive lockfile resolutions. That first maintenance pass reduced
+the audited state to seven high-severity findings with no critical, moderate, or low
+findings.
 
-- total vulnerabilities: 7
+The TypeScript-ESLint follow-on migration then qualified the lint toolchain on its supported
+ESLint 8 floor and reduced the current audited state to:
+
+- total vulnerabilities: 1
 - critical: 0
-- high: 7
+- high: 1
 - moderate: 0
 - low: 0
 
-The two critical transitive findings (`form-data` and `shell-quote`) were removed by the
-safe lockfile remediation. Compatible direct upgrades included:
+No `npm audit fix --force`, `--force`, or `--legacy-peer-deps` result was accepted.
 
-- `compression` 1.7.4 -> 1.8.1
-- `express` 4.21.2 -> 4.22.2
-- `ws` 8.18.1 -> 8.21.3
-- `electron` 28.1.1 -> 28.3.3
+## Qualified TypeScript-ESLint migration
 
-No `npm audit fix --force` result was accepted.
+The following development-toolchain migration is qualified as one compatibility unit:
 
-## Residual high-severity findings
+- `@typescript-eslint/eslint-plugin` 6.20.0 -> 8.66.0
+- `@typescript-eslint/parser` 6.20.0 -> 8.66.0
+- `@typescript-eslint/typescript-estree` 6.20.0 -> 8.66.0
+- `eslint` 8.5.0 -> 8.57.1
+- `eslint-plugin-unused-imports` 3.0.0 -> 4.4.1
+- removed unused `typescript-eslint` 0.0.1-alpha.0 meta-package
 
-The remaining seven high-severity audit entries are development-toolchain debt. They are
-rooted in two major-version migration boundaries rather than unresolved compatible fixes:
+The v8 recommended preset changes several rule identities and introduces additional
+recommended rules compared with v6.20.0. This repository explicitly keeps the following
+v8-only or replacement rules disabled so the dependency-security migration does not change
+the pre-existing lint policy or require kernel/runtime source rewrites:
 
-### TypeScript-ESLint migration
+- `@typescript-eslint/no-empty-object-type`
+- `@typescript-eslint/no-require-imports`
+- `@typescript-eslint/no-unsafe-function-type`
+- `@typescript-eslint/no-unused-expressions`
+- `@typescript-eslint/no-wrapper-object-types`
+- `@typescript-eslint/prefer-namespace-keyword`
 
-Direct packages currently remain at 6.20.0:
-
-- `@typescript-eslint/eslint-plugin`
-- `@typescript-eslint/parser`
-- `@typescript-eslint/typescript-estree`
-
-Their remaining transitive findings include `@typescript-eslint/type-utils`,
-`@typescript-eslint/utils`, and `minimatch`. npm reports the remediation path through the
-TypeScript-ESLint 8.x line, which is a major toolchain migration and must be qualified
-against the repository lint configuration and TypeScript version before promotion.
+## Residual high-severity finding
 
 ### Electron migration
 
@@ -58,6 +62,8 @@ Electron is retained at 28.3.3 after applying the compatible 28.x remediation. n
 that eliminating the remaining Electron high-severity finding requires a later major
 Electron line. Treat that as a platform migration requiring application/runtime
 qualification, not as an automatic audit fix.
+
+The Electron finding is the sole currently recorded high-severity dependency finding.
 
 ## CI policy
 
@@ -68,8 +74,8 @@ Pull-request CI must:
 3. fail when npm reports any critical vulnerability;
 4. continue to run build, registry parity, lint, typecheck, and runtime tests.
 
-High-severity findings are not silently accepted: the current seven are explicitly
-recorded above and should decrease only through qualified toolchain migrations. Any new
+High-severity findings are not silently accepted: the current Electron finding is explicitly
+recorded above and should be removed only through a qualified platform migration. Any new
 critical finding is a blocking regression.
 
 ## Promotion rule
