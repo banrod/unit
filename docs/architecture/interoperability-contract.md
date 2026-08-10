@@ -76,6 +76,20 @@ External resources should map to existing portable capabilities such as
 `extension.*` capability when a host-specific operation has no canonical Unit
 capability.
 
+The evidence manifest records the normalized required and optional capability manifest
+along with the evaluated grant and denial sets. This makes the execution boundary
+reconstructable without importing the host's policy rationale into Unit.
+
+## Lifecycle cleanup
+
+Once graph instantiation succeeds, `runRuntimeInvocation` attempts `stop(graphId)` exactly
+once before returning or propagating an execution failure. This applies when `start`,
+`push`, `take`, snapshot creation, or snapshot identity verification fails.
+
+If execution succeeds but cleanup fails, the cleanup error is propagated. If execution
+has already failed and cleanup also fails, the original execution failure remains the
+primary error.
+
 ## Evidence manifest
 
 `RuntimeEvidenceManifest` records generic execution evidence only:
@@ -84,11 +98,17 @@ capability.
 - request ID;
 - graph ID and canonical graph hash;
 - normalized source descriptors and caller-supplied digests;
+- ordered input-pin bindings, including source IDs when supplied, without input payloads;
 - requested output pin IDs;
+- normalized required and optional capabilities plus the evaluated grant and denial sets;
 - snapshot graph ID, graph hash, and execution sequence.
 
+Input payloads and output values are intentionally not duplicated into the evidence
+manifest. Downstream systems may separately persist or hash those values when their
+provenance policy requires it.
+
 The manifest deliberately excludes product receipts, organizational identities, policy
-results, approval records, and arbitrary output serialization. Downstream systems may
+rationale, approval records, and arbitrary output serialization. Downstream systems may
 bind those records to the graph hash and snapshot sequence without changing Unit's
 kernel vocabulary.
 
@@ -116,4 +136,5 @@ capabilities across Node, Web, Worker, and future hosts.
 
 Repository tests cover modality classification, deterministic source normalization,
 duplicate-source rejection, source-to-pin provenance validation, capability enforcement,
-output capture, and evidence binding to snapshot identity.
+capability evidence, output capture, snapshot identity binding, and cleanup after both
+successful and failed execution.

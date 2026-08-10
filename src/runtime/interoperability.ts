@@ -65,13 +65,29 @@ export type RuntimeEvidenceSource = {
   digest?: string
 }
 
+export type RuntimeEvidenceInput = {
+  pinId: string
+  sourceId?: string
+}
+
+export type RuntimeEvidenceCapabilities = {
+  required: Capability[]
+  optional: Capability[]
+  granted: Capability[]
+  deniedRequired: Capability[]
+  deniedOptional: Capability[]
+  allowed: boolean
+}
+
 export type RuntimeEvidenceManifest = {
   version: 'unit.runtime-evidence/1'
   requestId: string
   graphId: RuntimeGraphId
   graphHash: string
   sources: RuntimeEvidenceSource[]
+  inputs: RuntimeEvidenceInput[]
   outputPins: string[]
+  capabilities: RuntimeEvidenceCapabilities
   snapshot: {
     graphId: RuntimeGraphId
     graphHash: string
@@ -172,6 +188,12 @@ export async function runRuntimeInvocation(
 
     return { ...input, pinId, sourceId }
   })
+  const evidenceInputs: RuntimeEvidenceInput[] = inputs.map(
+    ({ pinId, sourceId }) => ({
+      pinId,
+      ...(sourceId ? { sourceId } : {}),
+    })
+  )
   const outputPins = (invocation.outputs ?? []).map(({ pinId }) =>
     normalizeToken(pinId, 'runtime output pin id')
   )
@@ -182,7 +204,7 @@ export async function runRuntimeInvocation(
 
   const manifest = normalizeCapabilityManifest(invocation.manifest)
   const availableCapabilities = invocation.availableCapabilities ?? []
-  assertCapabilities(manifest, availableCapabilities)
+  const capabilityDecision = assertCapabilities(manifest, availableCapabilities)
 
   const graphHash = await hashGraphSpec(invocation.spec)
   await runtime.validate(invocation.spec)
@@ -191,41 +213,78 @@ export async function runRuntimeInvocation(
     manifest,
   })
 
-  await runtime.start(graphId)
+  let operationFailed = false
+  let operationError: unknown
+  let result: RuntimeInvocationResult | undefined
 
-  for (const input of inputs) {
-    await runtime.push(graphId, input.pinId, input.data)
-  }
+  try {
+    await runtime.start(graphId)
 
-  const outputs: Record<string, unknown> = {}
-  for (const pinId of outputPins) {
-    outputs[pinId] = await runtime.take(graphId, pinId)
-  }
+    for (const input of inputs) {
+      await runtime.push(graphId, input.pinId, input.data)
+    }
 
-  const snapshot = await runtime.snapshot(graphId)
-  await runtime.stop(graphId)
+    const outputs: Record<string, unknown> = {}
+    for (const pinId of outputPins) {
+      outputs[pinId] = await runtime.take(graphId, pinId)
+    }
 
-  if (snapshot.graphHash !== graphHash) {
-    throw new Error(
-      `runtime snapshot hash mismatch: expected ${graphHash}, received ${snapshot.graphHash}`
-    )
-  }
+    const snapshot = await runtime.snapshot(graphId)
 
-  return {
-    outputs,
-    snapshot,
-    evidence: {
-      version: 'unit.runtime-evidence/1',
-      requestId,
-      graphId,
-      graphHash,
-      sources,
-      outputPins,
-      snapshot: {
-        graphId: snapshot.graphId,
-        graphHash: snapshot.graphHash,
-        sequence: snapshot.sequence,
+    if (snapshot.graphHash !== graphHash) {
+      throw new Error(
+        `runtime snapshot hash mismatch: expected ${graphHash}, received ${snapshot.graphHash}`
+      )
+    }
+
+    result = {
+      outputs,
+      snapshot,
+      evidence: {
+        version: 'unit.runtime-evidence/1',
+        requestId,
+        graphId,
+        graphHash,
+        sources,
+        inputs: evidenceInputs,
+        outputPins,
+        capabilities: {
+          ...manifest,
+          ...capabilityDecision,
+        },
+        snapshot: {
+          graphId: snapshot.graphId,
+          graphHash: snapshot.graphHash,
+          sequence: snapshot.sequence,
+        },
       },
-    },
+    }
+  } catch (error) {
+    operationFailed = true
+    operationError = error
   }
+
+  let cleanupFailed = false
+  let cleanupError: unknown
+
+  try {
+    await runtime.stop(graphId)
+  } catch (error) {
+    cleanupFailed = true
+    cleanupError = error
+  }
+
+  if (operationFailed) {
+    throw operationError
+  }
+
+  if (cleanupFailed) {
+    throw cleanupError
+  }
+
+  if (!result) {
+    throw new Error('runtime invocation completed without a result')
+  }
+
+  return result
 }
