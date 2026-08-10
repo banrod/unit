@@ -1,8 +1,18 @@
 import { GraphSpec } from '../types/GraphSpec'
-import { Capability, CapabilityManifest } from '../types/Capability'
+import {
+  Capability,
+  CapabilityManifest,
+  CapabilityProof,
+  ScopedCapability,
+} from '../types/Capability'
 
 export type RuntimeGraphId = string
 export type RuntimePinDirection = 'input' | 'output'
+
+export type RuntimeAuthorityEnforcement = {
+  scopedCapabilities?: 'unit.scoped-capabilities/1'
+  resourceBudgets?: 'unit.resource-budgets/1'
+}
 
 export type RuntimeEvent = {
   sequence: number
@@ -34,9 +44,12 @@ export type RuntimeSnapshot = {
 export type InstantiateGraphOptions = {
   capabilities?: Capability[]
   manifest?: CapabilityManifest
+  scopedCapabilities?: ScopedCapability[]
+  capabilityProof?: CapabilityProof
 }
 
 export interface GraphRuntime {
+  readonly authorityEnforcement?: RuntimeAuthorityEnforcement
   validate(spec: GraphSpec): Promise<void> | void
   instantiate(
     spec: GraphSpec,

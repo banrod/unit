@@ -1,4 +1,5 @@
 export * from './capability'
+export * from './capability-calculus'
 export * from './conformance'
 export * from './contract'
 export * from './interoperability'

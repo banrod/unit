@@ -13,8 +13,30 @@ const DEFAULT_METADATA_KEYS = [
   'updatedAt',
   'viewport',
 ]
-
 const DEFAULT_ROOT_KEYS = ['system']
+
+function formatPath(path: string[]): string {
+  return path.length ? path.join('.') : '<root>'
+}
+
+function assertPlainDataObject(
+  value: object,
+  path: string[]
+): asserts value is Record<string, unknown> {
+  const prototype = Object.getPrototypeOf(value)
+
+  if (prototype !== Object.prototype && prototype !== null) {
+    throw new TypeError(
+      `graph identity supports only plain JSON objects at ${formatPath(path)}`
+    )
+  }
+
+  if (Object.getOwnPropertySymbols(value).length) {
+    throw new TypeError(
+      `graph identity does not support symbol keys at ${formatPath(path)}`
+    )
+  }
+}
 
 function normalize(
   value: unknown,
@@ -41,6 +63,8 @@ function normalize(
   }
 
   if (typeof value === 'object') {
+    assertPlainDataObject(value, path)
+
     const source = value as Record<string, unknown>
     const target: Record<string, unknown> = {}
     const insideMetadata = path[path.length - 1] === 'metadata'
@@ -54,22 +78,52 @@ function normalize(
         continue
       }
 
-      const item = source[key]
+      const descriptor = Object.getOwnPropertyDescriptor(source, key)
+      if (!descriptor) {
+        continue
+      }
+
+      if ('get' in descriptor || 'set' in descriptor) {
+        throw new TypeError(
+          `graph identity does not support accessor properties at ${formatPath([
+            ...path,
+            key,
+          ])}`
+        )
+      }
+
+      const item = descriptor.value
       if (item === undefined) {
         continue
       }
 
-      if (typeof item === 'function' || typeof item === 'symbol' || typeof item === 'bigint') {
-        throw new TypeError(`graph identity does not support ${typeof item} values at ${[...path, key].join('.')}`)
+      if (
+        typeof item === 'function' ||
+        typeof item === 'symbol' ||
+        typeof item === 'bigint'
+      ) {
+        throw new TypeError(
+          `graph identity does not support ${typeof item} values at ${formatPath([
+            ...path,
+            key,
+          ])}`
+        )
       }
 
-      target[key] = normalize(item, metadataKeys, rootKeys, [...path, key])
+      Object.defineProperty(target, key, {
+        value: normalize(item, metadataKeys, rootKeys, [...path, key]),
+        enumerable: true,
+        configurable: true,
+        writable: true,
+      })
     }
 
     return target
   }
 
-  throw new TypeError(`graph identity does not support ${typeof value} values at ${path.join('.')}`)
+  throw new TypeError(
+    `graph identity does not support ${typeof value} values at ${formatPath(path)}`
+  )
 }
 
 export function canonicalizeGraphSpec(
