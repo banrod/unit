@@ -1,3 +1,5 @@
 import './capability'
+import './capability-calculus'
+import './capability-lattice'
 import './conformance'
 import './interoperability'
