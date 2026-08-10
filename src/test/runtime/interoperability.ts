@@ -63,6 +63,7 @@ assert.throws(
 class MemoryRuntime implements GraphRuntime {
   private data = new Map<string, Record<string, unknown>>()
   private hashes = new Map<string, string>()
+  public stopped: string[] = []
 
   validate(_spec: GraphSpec): void {}
 
@@ -101,15 +102,26 @@ class MemoryRuntime implements GraphRuntime {
     return snapshot.graphId
   }
 
-  stop(_graphId: string): void {}
+  stop(graphId: string): void {
+    this.stopped.push(graphId)
+  }
 
   async *events(_graphId: string): AsyncIterable<RuntimeEvent> {}
+}
+
+class PushFailureRuntime extends MemoryRuntime {
+  push(_graphId: string, _pinId: string, _data: unknown): void {
+    throw new Error('push failure')
+  }
 }
 
 const invocation: RuntimeInvocation = {
   requestId: ' expression-route-1 ',
   spec: { id: 'interop-fixture', name: 'interoperability fixture' },
-  manifest: { required: ['network.http'] },
+  manifest: {
+    required: ['network.http'],
+    optional: ['media.microphone'],
+  },
   availableCapabilities: ['network.http'],
   sources: [
     {
@@ -123,15 +135,50 @@ const invocation: RuntimeInvocation = {
   outputs: [{ pinId: 'value' }],
 }
 
-void runRuntimeInvocation(new MemoryRuntime(), invocation)
+const runtime = new MemoryRuntime()
+
+void runRuntimeInvocation(runtime, invocation)
   .then((result) => {
     assert.deepEqual(result.outputs, { value: 42 })
     assert.equal(result.evidence.requestId, 'expression-route-1')
     assert.equal(result.evidence.sources[0].modality, 'text')
     assert.equal(result.evidence.sources[0].digest, 'abcdef')
+    assert.deepEqual(result.evidence.inputs, [
+      { pinId: 'value', sourceId: 'source-1' },
+    ])
+    assert.deepEqual(result.evidence.capabilities, {
+      required: ['network.http'],
+      optional: ['media.microphone'],
+      granted: ['network.http'],
+      deniedRequired: [],
+      deniedOptional: ['media.microphone'],
+      allowed: true,
+    })
     assert.equal(result.evidence.snapshot.sequence, 7)
     assert.equal(result.evidence.graphHash, result.snapshot.graphHash)
+    assert.deepEqual(runtime.stopped, ['graph-0'])
   })
+  .catch((error) => {
+    setImmediate(() => {
+      throw error
+    })
+  })
+
+const failingRuntime = new PushFailureRuntime()
+
+void runRuntimeInvocation(failingRuntime, {
+  ...invocation,
+  requestId: 'expression-route-failure',
+})
+  .then(
+    () => {
+      throw new Error('expected runtime invocation to fail')
+    },
+    (error) => {
+      assert.match(String(error), /push failure/)
+      assert.deepEqual(failingRuntime.stopped, ['graph-0'])
+    }
+  )
   .catch((error) => {
     setImmediate(() => {
       throw error
