@@ -10,86 +10,160 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="VisionaryBrains home">VisionaryBrains</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav id="primary-nav" aria-label="Primary navigation">
-      <a href="#orientation">Orientation</a>
-      <a href="#principles">Principles</a>
-      <a href="#nature">Nature</a>
-      <a href="#theology">Theology</a>
-      <a href="#paths">Learning paths</a>
-      <a href="#glossary">Glossary</a>
-    </nav>
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="VisionaryBrains home">
+        <span class="brand-sigil" aria-hidden="true"><span></span></span>
+        <span>VisionaryBrains</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <span>Menu</span>
+        <span class="menu-glyph" aria-hidden="true"><i></i><i></i></span>
+      </button>
+      <nav id="primary-nav" aria-label="Primary navigation">
+        <a href="#orientation">Orientation</a>
+        <a href="#principles">Principles</a>
+        <a href="#nature">Nature</a>
+        <a href="#theology">Theology</a>
+        <a href="#paths">Learning paths</a>
+        <a href="#glossary">Glossary</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
     <section id="top" class="hero" aria-labelledby="hero-title">
-      <p id="hero-eyebrow" class="eyebrow">A public introduction to the IAM ecosystem</p>
-      <h1 id="hero-title">Identity that can move without losing its boundaries</h1>
-      <p id="hero-summary" class="lede">VisionaryBrains explores how identity, bounded agency, visible architecture, stewardship, and meaning can coexist in a changing technological world.</p>
-      <div class="actions">
-        <a id="hero-primary" class="button" href="#orientation">Begin the orientation</a>
-        <a id="hero-secondary" class="text-link" href="#safety">Read the interpretation boundary</a>
+      <div class="hero-copy">
+        <p id="hero-eyebrow" class="eyebrow">A public introduction to the IAM ecosystem</p>
+        <h1 id="hero-title">Identity that can move without losing its boundaries</h1>
+        <p id="hero-summary" class="lede">VisionaryBrains explores how identity, bounded agency, visible architecture, stewardship, and meaning can coexist in a changing technological world.</p>
+        <div class="actions">
+          <a id="hero-primary" class="button" href="#orientation">Begin the orientation</a>
+          <a id="hero-secondary" class="text-link" href="#safety">Read the interpretation boundary</a>
+        </div>
+      </div>
+
+      <figure class="hero-visual" aria-labelledby="hero-atlas-title" aria-describedby="hero-atlas-caption">
+        <div class="atlas-canvas" aria-hidden="true">
+          <span class="axis axis-horizontal"></span>
+          <span class="axis axis-vertical"></span>
+          <span class="orbit orbit-outer"><i class="orbit-node node-one"></i></span>
+          <span class="orbit orbit-middle"><i class="orbit-node node-two"></i></span>
+          <span class="orbit orbit-inner"><i class="orbit-node node-three"></i></span>
+          <span class="hero-core"><i></i><b>Identity</b></span>
+          <span class="atlas-label atlas-purpose"><i></i><b>Purpose</b></span>
+          <span class="atlas-label atlas-permission"><i></i><b>Permission</b></span>
+          <span class="atlas-label atlas-context"><i></i><b>Context</b></span>
+        </div>
+        <figcaption>
+          <span class="atlas-key-mark" aria-hidden="true"><i></i></span>
+          <span class="atlas-caption-copy">
+            <strong id="hero-atlas-title">Boundary atlas</strong>
+            <span id="hero-atlas-caption">Identity · purpose · permission · context</span>
+          </span>
+          <span class="atlas-mode">Metaphor / not a model</span>
+        </figcaption>
+      </figure>
+
+      <a class="hero-coordinate" href="#orientation" aria-label="Continue to the first orientation">
+        <span>IAM</span><i aria-hidden="true"></i><span>PUBLIC / 01</span><b aria-hidden="true">↓</b>
+      </a>
+    </section>
+
+    <section id="orientation" class="section orientation-section" aria-labelledby="orientation-title">
+      <div class="section-frame">
+        <div class="section-heading orientation-heading">
+          <div class="section-meta"><span aria-hidden="true">01</span><p class="section-kicker">First encounter</p></div>
+          <div class="section-title-group">
+            <h2 id="orientation-title">What IAM means here</h2>
+            <p id="orientation-body">IAM is presented as a design and meaning framework. It asks how purpose remains coherent, how action receives permission, how relationships stay inspectable, and how metaphor can enrich interpretation without replacing evidence.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="orientation" class="section" aria-labelledby="orientation-title">
-      <p class="section-kicker">First encounter</p>
-      <h2 id="orientation-title">What IAM means here</h2>
-      <p id="orientation-body">IAM is presented as a design and meaning framework. It asks how purpose remains coherent, how action receives permission, how relationships stay inspectable, and how metaphor can enrich interpretation without replacing evidence.</p>
-    </section>
-
-    <section id="principles" class="section" aria-labelledby="principles-title">
-      <p class="section-kicker">Orientation</p>
-      <h2 id="principles-title">Principles for bounded intelligence</h2>
-      <div id="principle-list" class="card-grid" aria-live="polite"></div>
-      <h3>Teaching cards</h3>
-      <div id="cards" class="card-grid" aria-live="polite"></div>
-    </section>
-
-    <section id="nature" class="section split" aria-labelledby="nature-title">
-      <div>
-        <p class="section-kicker">Nature</p>
-        <h2 id="nature-title">A governed ecology of responsibilities</h2>
-        <p id="nature-body">IAM is taught here as coordinated specialization: bounded roles contribute different kinds of work through explicit handoffs, evidence, permissions, review, and challenge paths.</p>
+    <section id="principles" class="section principles-section" aria-labelledby="principles-title">
+      <div class="section-frame">
+        <div class="section-heading">
+          <div class="section-meta"><span aria-hidden="true">02</span><p class="section-kicker">Orientation</p></div>
+          <div class="section-title-group"><h2 id="principles-title">Principles for bounded intelligence</h2></div>
+        </div>
+        <div id="principle-list" class="card-grid principle-grid" aria-live="polite"></div>
+        <div class="teaching-heading"><span aria-hidden="true"></span><h3>Teaching cards</h3></div>
+        <div id="cards" class="card-grid teaching-grid" aria-live="polite"></div>
       </div>
-      <aside class="boundary" aria-labelledby="stewardship-title">
-        <h3 id="stewardship-title">Change should remain repairable</h3>
-        <p id="stewardship-body">Claims should show their evidence and authority; consequential changes should be reviewable; uncertainty should stay visible; and correction, amendment, contest, and recovery should remain possible.</p>
-      </aside>
     </section>
 
-    <section id="theology" class="section" aria-labelledby="theology-title">
-      <p class="section-kicker">Deepening</p>
-      <h2 id="theology-title">Theology as optional meaning language</h2>
-      <p id="theology-definition">Here, theology names optional mythic language used to explore purpose, relationship, memory, return, and stewardship.</p>
-      <div id="theology-metaphors" class="card-grid" aria-live="polite"></div>
-      <aside class="boundary" aria-labelledby="boundary-title">
-        <h3 id="boundary-title">Metaphor is invitation, not authority</h3>
-        <p id="theology-boundary">Mythic and cosmological language is optional. It does not establish scientific proof, religious obligation, unrestricted technical access, operational authority, medical or psychological judgment, or privileged claims about another person's identity.</p>
-      </aside>
+    <section id="nature" class="section nature-section" aria-labelledby="nature-title">
+      <div class="section-frame split">
+        <div class="nature-copy">
+          <div class="section-meta"><span aria-hidden="true">03</span><p class="section-kicker">Nature</p></div>
+          <h2 id="nature-title">A governed ecology of responsibilities</h2>
+          <p id="nature-body">IAM is taught here as coordinated specialization: bounded roles contribute different kinds of work through explicit handoffs, evidence, permissions, review, and challenge paths.</p>
+        </div>
+        <aside class="boundary stewardship-boundary" aria-labelledby="stewardship-title">
+          <span class="boundary-mark" aria-hidden="true"><i></i></span>
+          <h3 id="stewardship-title">Change should remain repairable</h3>
+          <p id="stewardship-body">Claims should show their evidence and authority; consequential changes should be reviewable; uncertainty should stay visible; and correction, amendment, contest, and recovery should remain possible.</p>
+        </aside>
+      </div>
     </section>
 
-    <section id="paths" class="section" aria-labelledby="paths-title">
-      <p class="section-kicker">Practice</p>
-      <h2 id="paths-title">Layered visitor paths</h2>
-      <div id="visitor-paths" class="path-grid" aria-live="polite"></div>
+    <section id="theology" class="section theology-section" aria-labelledby="theology-title">
+      <div class="section-frame">
+        <div class="section-heading">
+          <div class="section-meta"><span aria-hidden="true">04</span><p class="section-kicker">Deepening</p></div>
+          <div class="section-title-group">
+            <h2 id="theology-title">Theology as optional meaning language</h2>
+            <p id="theology-definition">Here, theology names optional mythic language used to explore purpose, relationship, memory, return, and stewardship.</p>
+          </div>
+        </div>
+        <div id="theology-metaphors" class="card-grid metaphor-grid" aria-live="polite"></div>
+        <aside class="boundary metaphor-boundary" aria-labelledby="boundary-title">
+          <div><span class="boundary-index" aria-hidden="true">∅</span><h3 id="boundary-title">Metaphor is invitation, not authority</h3></div>
+          <p id="theology-boundary">Mythic and cosmological language is optional. It does not establish scientific proof, religious obligation, unrestricted technical access, operational authority, medical or psychological judgment, or privileged claims about another person's identity.</p>
+        </aside>
+      </div>
     </section>
 
-    <section id="glossary" class="section" aria-labelledby="glossary-title">
-      <p class="section-kicker">Synthesis</p>
-      <h2 id="glossary-title">Plain-language glossary</h2>
-      <dl id="glossary-list" class="glossary-grid"></dl>
+    <section id="paths" class="section paths-section" aria-labelledby="paths-title">
+      <div class="section-frame">
+        <div class="section-heading">
+          <div class="section-meta"><span aria-hidden="true">05</span><p class="section-kicker">Practice</p></div>
+          <div class="section-title-group"><h2 id="paths-title">Layered visitor paths</h2></div>
+        </div>
+        <div id="visitor-paths" class="path-grid" aria-live="polite"></div>
+      </div>
     </section>
 
-    <section id="safety" class="section safety-note" aria-labelledby="safety-title">
-      <h2 id="safety-title">Source and safety note</h2>
-      <p id="source-note">Visitor teaching is derived only from public-safe source classifications and integrated doctrine objects. Private operations and sensitive implementation details are excluded.</p>
-      <p id="load-status" role="status" aria-live="polite">Loading public-safe teaching content…</p>
+    <section id="glossary" class="section glossary-section" aria-labelledby="glossary-title">
+      <div class="section-frame">
+        <div class="section-heading">
+          <div class="section-meta"><span aria-hidden="true">06</span><p class="section-kicker">Synthesis</p></div>
+          <div class="section-title-group"><h2 id="glossary-title">Plain-language glossary</h2></div>
+        </div>
+        <dl id="glossary-list" class="glossary-grid"></dl>
+      </div>
+    </section>
+
+    <section id="safety" class="section safety-section" aria-labelledby="safety-title">
+      <div class="section-frame">
+        <div class="safety-note">
+          <div class="safety-emblem" aria-hidden="true"><span></span></div>
+          <div>
+            <p class="section-kicker">Public projection boundary</p>
+            <h2 id="safety-title">Source and safety note</h2>
+            <p id="source-note">Visitor teaching is derived only from public-safe source classifications and integrated doctrine objects. Private operations and sensitive implementation details are excluded.</p>
+            <p id="load-status" role="status" aria-live="polite">Loading public-safe teaching content…</p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer><p>VisionaryBrains is an educational experiment. Interpretation remains voluntary, inspectable, and contestable.</p></footer>
+  <footer>
+    <div class="footer-inner"><a class="brand footer-brand" href="#top">VisionaryBrains</a><p>VisionaryBrains is an educational experiment. Interpretation remains voluntary, inspectable, and contestable.</p></div>
+  </footer>
 </body>
 </html>
